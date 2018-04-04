@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 规格 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_specifications>
+        <item>
+          <!-- 标识 -->
+          <host_specifications_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_specifications_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 规格名称 -->
+          <host_specifications_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 所属主机 -->
+          <host_specifications_site value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 规格类型 --> 
+          <host_specifications_type value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 规格值 -->
+          <host_specifications_value value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 该规格的备注 -->
+          <host_specifications_remark value="MEMO"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_specifications>
+    </table>
+  </database>
+</tekinfo>

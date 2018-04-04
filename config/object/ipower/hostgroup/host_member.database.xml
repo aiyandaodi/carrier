@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主机群组组员 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_member>
+        <item>
+          <!-- 标识 -->
+          <host_member_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_member_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <host_member_name value="VARCHAR(32) NOT NULL"/>
+          <!-- 权限 -->
+          <host_member_right value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 所属主机群组 -->
+          <host_member_group value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属系统用户 -->
+          <host_member_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <host_member_creator value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 成员最近访问组时间 -->
+          <host_member_latest value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_member>
+    </table>
+  </database>
+</tekinfo>

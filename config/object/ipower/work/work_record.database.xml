@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 任务返回信息 -->
+<tekinfo>
+  <database>
+    <table>
+      <work_record>
+        <item>
+          <!-- 标识 -->
+          <work_record_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <work_record_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 执行的工作 -->
+          <work_record_work value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 执行工作的主机 -->
+          <work_record_site value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 工作返回的信息记录 -->
+          <work_record_remark value="MEMO"/>
+          <!-- 执行状态 --> 
+          <work_record_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </work_record>
+    </table>
+  </database>
+</tekinfo>

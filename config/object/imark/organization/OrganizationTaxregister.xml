@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 分类目录 -->
+<tekinfo>
+  <object>
+    <OrganizationTaxregister 
+    	ResourceBundle="com.takall.object.organization.OrganizationTaxregister"
+        Structure="com.takall.organization.OrganizationTaxregister"
+        ObjectRm="com.takall.remoting.organization.OrganizationTaxregisterRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <taxregister_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+        <!--<taxregister_code/>-->
+      </nosamevalue>
+      
+      <table nameIdentity="taxregister_name" codeIdentity="taxregister_code">
+      	<organization_taxregister identity="taxregister_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <taxregister_registercode/>
+            <taxregister_name/>
+            <taxregister_residence/>
+            <taxregister_taxtype/>
+            <taxregister_hoster/>
+            <taxregister_accepttype/>
+			<taxregister_code/>
+			<taxregister_phone/>
+			<taxregister_postcode/>
+			<taxregister_url/>
+			<taxregister_street/>
+			<taxregister_condominium/>
+			<taxregister_registertype/>
+			<taxregister_membership/>
+			<taxregister_standard/>
+			<taxregister_date/>
+			<taxregister_authority/>
+			<taxregister_status/>
+			<taxregister_organization/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          	<taxregister_registercode/>
+            <taxregister_name/>
+            <taxregister_residence/>
+            <taxregister_taxtype/>
+            <taxregister_hoster/>
+            <taxregister_accepttype/>
+			<taxregister_code/>
+			<taxregister_phone/>
+			<taxregister_postcode/>
+			<taxregister_url/>
+			<taxregister_street/>
+			<taxregister_condominium/>
+			<taxregister_registertype/>
+			<taxregister_membership/>
+			<taxregister_standard/>
+			<taxregister_date/>
+			<taxregister_authority/>
+			<taxregister_status/>
+			<taxregister_organization/>
+          </item>
+        </edit>
+        
+        <read>
+          <item>
+           <taxregister_registercode/>
+            <taxregister_name/>
+            <taxregister_residence/>
+            <taxregister_taxtype/>
+            <taxregister_hoster/>
+            <taxregister_accepttype/>
+			<taxregister_code/>
+			<taxregister_phone/>
+			<taxregister_postcode/>
+			<taxregister_url/>
+			<taxregister_street/>
+			<taxregister_condominium/>
+			<taxregister_registertype/>
+			<taxregister_membership/>
+			<taxregister_standard/>
+			<taxregister_date/>
+			<taxregister_authority/>
+			<taxregister_status/>
+			<taxregister_organization/>
+          </item>
+        </read>
+        
+        <list>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+          	<taxregister_id/>
+            <taxregister_registercode/>
+            <taxregister_name/>
+            <taxregister_residence/>
+            <taxregister_taxtype/>
+            <taxregister_hoster/>
+            <taxregister_accepttype/>
+			<taxregister_code/>
+			<taxregister_phone/>
+			<taxregister_postcode/>
+			<taxregister_url/>
+			<taxregister_street/>
+			<taxregister_condominium/>
+			<taxregister_registertype/>
+			<taxregister_membership/>
+			<taxregister_standard/>
+			<taxregister_date/>
+			<taxregister_authority/>
+			<taxregister_status/>
+			<taxregister_organization/>
+          </item>
+      	</list>
+
+        <search>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <taxregister_code/>
+            <taxregister_name/>
+          </item>
+      	</search>
+      	        
+        <remove>
+        	<parameter>
+        		<remove_sub value="true"/>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <taxregister_id variable="long" notnull="true" forbidEdit="true"/>
+		
+        <!-- 工商注册号 -->
+        <taxregister_code variable="string" maxlength="32" notnull="true" right="admin"/>
+		
+		<!-- 税前登记账号 -->
+        <taxregister_account variable="string" maxlength="32" notnull="true" right="admin"/>
+		
+        <!-- 名字 -->
+        <taxregister_name variable="string" maxlength="128" notnull="true"/>
+		
+         <!-- 住所 -->
+        <taxregister_residence variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 法人代表 -->
+        <taxregister_hoster variable="string" maxlength="128" notnull="true"/>
+		<!-- 税前登记类型 -->
+        <taxregister_taxtype variable="string" maxlength="128" notnull="true"/>
+		
+        <!-- 登记受理类型 -->
+        <taxregister_accepttype variable="string" maxlength="128" notnull="true"/>
+		
+        <!-- 组织机构代码 -->
+        <taxregister_registercode variable="string" maxlength="32" notnull="true" right="admin"/>
+		
+        <!-- 联系电话 -->
+        <taxregister_phone variable="string" maxlength="32" notnull="true"/>
+		
+         <!-- 邮政编码 -->
+        <taxregister_postcode variable="string" maxlength="32" notnull="true"/>
+		
+	    <!-- 企业网址 -->
+		<taxregister_url variable="string" maxlength="128" notnull="true"/>
+		
+		 <!-- 所属街乡 -->
+		<taxregister_street variable="string" maxlength="255" notnull="true"/>
+		
+		<!-- 国地税共管户标识 -->
+		<taxregister_condominium  variable="string" maxlength="128" notnull="true"/>
+		
+		 <!-- 登记注册类型 -->
+        <taxregister_registertype variable="string" maxlength="128" notnull="true"/>
+		
+	    <!-- 隶属关系 -->
+        <taxregister_membership variable="string" maxlength="255" notnull="true"/>
+		
+		<!-- 国家标准行业 -->
+        <taxregister_standard variable="string" maxlength="255" notnull="true"/>
+		
+		 <!-- 税务登记日期 -->
+        <taxregister_date variable="string" maxlength="10" parse="date" format="yyyy-MM-dd" default="now"/>
+		
+		 <!-- 主管税务机关 -->
+        <taxregister_authority variable="string" maxlength="255" notnull="true"/>
+		
+		 <!-- 纳税人状态 -->
+        <taxregister_status variable="string" maxlength="128" notnull="true"/>	
+		
+        <!-- 所属机构 -->
+        <taxregister_organization variable="long" parse="object:Organization" default="0"/>
+        
+      	<createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </OrganizationTaxregister>
+  </object>
+</tekinfo>

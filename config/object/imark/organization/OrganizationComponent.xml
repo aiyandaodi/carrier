@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 机构  -->
+<tekinfo>
+  <object>
+    <OrganizationComponent ResourceBundle="com.takall.object.organization.OrganizationComponent"
+        Structure="com.takall.organization.OrganizationComponent"
+        ObjectRm="com.takall.remoting.organization.OrganizationComponentRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <component_id base="identity"/>
+        <component_code base="yyMMdd" step="1" digit="8" tree="false"/>
+      </autovalue>
+      <nosamevalue>
+        <component_id/>
+        <component_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="component_name" codeIdentity="null">
+        <component identity="component_id"/>
+      </table>
+
+      <blob table="null"
+        urlField="null"
+        blobField="null" 
+        mimeField="null"
+        lengthField="null" 
+        timeField="modifyTime"
+        mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          	<component_code/>
+            <component_name/>
+            <component_group/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <component_code/>
+            <component_name/>
+            <component_group/>
+          </item>
+        </edit>
+        
+        <read>
+        	<parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x10"/>
+          </parameter>
+          <item>
+            <component_name/>
+            <component_code/>
+            <component_group/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <component_name/>
+            <component_code/>
+            <component_group/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <component_code/>
+            <component_name/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <component_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <component_code variable="string" maxlength="136" notnull="true"/>
+        <!-- 名称 -->
+        <component_name variable="string" maxlength="64" notnull="true"/>
+        
+        <!-- 机构 --> 
+        <component_organization variable="long" parse="object:Organization" notnull="true"/>
+        <!-- 组 -->
+        <component_group variable="long" parse="object:Group" notnull="true"/>
+        
+        <!-- 组的类型，由ObjectDictionary定义 -->
+        <component_type variable="int" parse="dictionary:OrganizationComponent" notnull="true" default="0"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </OrganizationComponent>
+  </object>
+</tekinfo>

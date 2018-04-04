@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 省/州 --> 
+<tekinfo>
+  <database>
+    <table>
+      <state>
+        <item>
+          <!-- 标识 -->
+          <state_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <state_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 名称 -->
+          <state_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 全称 -->
+          <state_fullname value="VARCHAR(255) NOT NULL"/>
+          <!-- 简称 -->
+          <state_shortname value="VARCHAR(64) NOT NULL"/>
+          <!-- 区号 -->
+          <state_areacode value="VARCHAR(8)"/>
+          <!-- 时区 -->
+          <state_timezone value="CHAR(3)"/>
+          <!-- 所属国家/地区 -->
+          <state_country value="CHAR(2) NOT NULL"/> 
+          <!-- 区域 -->
+          <state_locale value="VARCHAR(10) NOT NULL"/>
+          <!-- 是否有效 -->
+          <state_valid value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </state>
+    </table>
+  </database>
+</tekinfo>

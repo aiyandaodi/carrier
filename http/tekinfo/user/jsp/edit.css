@@ -1,0 +1,13 @@
+#main { 
+	width: 96%; 
+}
+
+#menu{
+	background:url(../../../images/grey_menu_back_inner.gif) no-repeat;
+	height:43px;
+	width:auto;
+	text-align: left;
+	text-decoration: none;
+	list-style-type:none;
+	margin:0px;
+}

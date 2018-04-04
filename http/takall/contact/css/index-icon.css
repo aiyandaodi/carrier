@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+#apply-subject-list,#apply-member-list li,#lastest-added-member-list{}
+
+#apply-subject-list li,#apply-member-list li,#lastest-added-member-list li{ list-style:none;}
+
+#apply-subject-list li .label-self,#apply-member-list li .label-self,#lastest-added-member-list li .label-self{padding:3px 2px !important;}
+
+.turn-page-active{ background-color:#EEEEEE !important;}
+
+.turn-page-dot{ padding:6px 12px !important;}
+
+.group-info-div-content{ padding:10px 10px !important;margin:10px 10px !important;}
+
+/*************************************tags.menu&catalog.menu**********************************************************************/
+.selected-subject-tag-ul,.selected-subject-catalog-ul{ list-style:none;}
+.selected-subject-tag-ul li,.selected-subject-catalog-ul li{ display:inline;margin:0; padding:0;}
+.selected-subject-tag-ul li a,.selected-subject-catalog-ul li a{ margin:5px; padding:5px 6px;border:#aaa solid 1px; position:relative}
+.selected-subject-tag-ul li a i,.selected-subject-catalog-ul li a i{position:absolute; z-index:2;right:-5px;top:-5px;}
+
+#tag_menu #tag_menu_tab a{ border: 1px solid #AAA !important;}
+#tag_menu #tag_menu_tab a.active{ border-bottom:1px solid #FFF !important;}
+#tag_menu #tag_menu_content{border: 1px solid #AAA; background-color:#FBFBFB; padding:5px 0 0 0;}
+#tag_menu #tag_menu_content ul{ list-style:none;}
+#tag_menu #tag_menu_content ul li{ display:inline; margin:0; padding:0; }
+#tag_menu #tag_menu_content ul li a{ margin:0; padding:2px 5px;border-right:#aaa solid 1px;}
+#tag_menu #tag_menu_content ul li:last-child a{ border-right:none;}
+#tag_menu #tag_menu_content ul li a:hover{ text-decoration:underline;}
+
+#catalog_menu{border: 1px solid #AAA; background-color:#FBFBFB; padding:10px 0 0 0;}
+
+/*************************************end tags.menu&catalog.menu**********************************************************************/
+.subject-icon{max-width:185px !important;}
+.subject-icon:hover{ border:#999 1px solid; border-bottom:2px #999 solid;border-right:2px #999 solid; border-radius:5px; }
+
+
+/*控制长图*/
+.bthumb2-overflow{max-height:180px !important;overflow-y:hidden !important;text-overflow:ellipsis;white-space:nowrap !important;}
+
+#subjects_tbody tr td{ text-align:center;}
+
+.navbar {
+    background: -moz-linear-gradient(center top , #F8F8F8, #F2F2F2) repeat scroll 0% 0% transparent;
+    border-bottom: 1px solid #F2F2F2;
+    box-shadow: 0px 1px 1px #F2F2F2 inset;
+}
+

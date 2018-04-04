@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 对象目录分类  -->
+<tekinfo>
+  <object>
+    <ObjectCatalog ResourceBundle="net.tekinfo.object.classification.ObjectCatalog"
+        Structure="net.tekinfo.classification.ObjectCatalog"
+        ObjectRm="net.tekinfo.remoting.classification.ObjectCatalogRm"
+        version="2.0" resourceVersion="1.0">
+      <autovalue>
+        <catalog_id base="identity"/>
+        <!-- 编码 -->
+        <catalog_code base="" step="1" digit="4" tree="dewey"/>
+      </autovalue>
+      <nosamevalue>
+        
+      </nosamevalue>
+      
+      <table nameIdentity="catalog_name" codeIdentity="catalog_code" ownerIdentity="catalog_owner">
+        <object_catalog identity="catalog_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x80"/>
+            
+            <!-- 操作角色（以“,”分割多个角色） -->
+            <role value="0x10"/>
+          </parameter>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+            <catalog_owner/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x80"/>
+
+            <!-- 操作角色（以“,”分割多个角色） -->
+            <role value="0x10"/>
+          </parameter>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+            <catalog_owner/>
+            <booking/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+            <catalog_owner/>
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+            
+            <!-- 要获取以下字段信息，需要传入：read-option=1 -->
+            <catalog_config/>
+            <catalog_base/>
+            <catalog_depth/>
+            <catalog_digit/>
+            <catalog_step/>
+            <catalog_tree/>
+            <booking/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+            <catalog_owner/>
+            <booking/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+            <booking/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <catalog_code/>
+            <catalog_name/>
+            <catalog_object/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <catalog_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <catalog_code variable="string" maxlength="20" notnull="true" right="admin"/>
+        <!-- 名字 -->
+        <catalog_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 所属对象类型名 -->
+        <catalog_object variable="string" parse="objectName" maxlength="64" notnull="true"/>
+        <!-- 所有者 -->
+        <catalog_owner variable="long" parse="object:User" default="0"/>
+        <!-- 是否停用 -->
+        <booking variable="int" parse="boolean" default="0" notnull="true"/>
+        
+        <!-- 虚拟域：配置 -->
+        <catalog_config variable="string" notnull="true"/>
+        <!-- 虚拟域：基值 -->
+        <catalog_base variable="string" notnull="true"/>
+        <!-- 虚拟域：深度 -->
+        <catalog_depth variable="string" notnull="true"/>
+        <!-- 虚拟域：位数 -->
+        <catalog_digit variable="string" notnull="true"/>
+        <!-- 虚拟域：步长 -->
+        <catalog_step variable="string" notnull="true"/>
+        <!-- 虚拟域：编码方式 -->
+        <catalog_tree variable="string" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectCatalog>
+  </object>
+</tekinfo>

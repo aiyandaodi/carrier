@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* CSS Document */
+.wiki-catalog-wrap {
+    margin: 35px 0;
+	zoom:1;
+}
+.wiki-catalog-wrap:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.wiki-catalog-wrap .wiki-catalog {
+    background: #fbfbfb none repeat scroll 0 0;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    float: left;
+    font-family: arial,tahoma,"Microsoft Yahei","宋体",sans-serif;
+}
+
+.wiki-catalog-wrap .wiki-catalog .wiki-title {
+    float: left;
+    font-size: 1em;
+    font-weight: 400;
+    height: 48px;
+    line-height: 48px;
+    margin: 22px 0 0 20px;
+    text-align: center;
+    width: 63px;
+	color: #333;
+}
+.wiki-catalog-wrap .wiki-catalog .column-1 {
+    width: auto;
+}
+.wiki-catalog-wrap .wiki-catalog .wiki-list {
+    background-color: #fff;
+    border-left: 1px solid #ebebeb;
+    display: block;
+    float: left;
+    overflow: hidden;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    position: relative;
+}
+.wiki-catalog-wrap .wiki-catalog .column-1 ol {
+    width: 234px;
+
+}
+.wiki-catalog-wrap .wiki-catalog .wiki-list ol {
+    border-left: 1px solid #f5f5f5;
+    float: left;
+}
+ul, ol, li {
+    list-style: outside none none;
+	font-size: 1em !important;
+    padding: 0;
+    margin: 0;
+}
+.wiki-catalog-wrap ol li::before {
+    font-size: 1em;
+    line-height: 24px;
+    position: absolute;
+    margin-left: 2em;
+}
+.wiki-catalog-wrap .wiki-catalog .wiki-list ol li {
+    padding-left: 2em;
+    line-height: 28px;
+}
+.wiki-catalog .wiki-list ol li a{
+    cursor: pointer;
+}
+ul, ol, li {
+    list-style: outside none none;
+}
+.show-content p, .show-content li,.show-content div{
+    text-indent: 2em;
+}
+.show-content h3 {
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.show-brief li a:focus{
+	text-decoration: none;
+}
+/* body {
+    brackground: ;
+} */
+#tekinfo_main .container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息电话 -->
+<tekinfo>
+  <database>
+    <table>
+      <contact_telephone>
+        <item>
+          <!-- 标识 -->
+          <telephone_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <telephone_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名字 -->
+          <telephone_name value="VARCHAR(32) NOT NULL"/>
+          <!-- 国际区号 -->
+          <telephone_intercode value="VARCHAR(8)"/>
+          <!-- 地区区号 -->
+          <telephone_areacode value="VARCHAR(8)"/>
+          <!-- 电话号码 -->
+          <telephone_number value="VARCHAR(16)"/>
+          <!-- 电话类型 -->
+          <telephone_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属联系信息 -->
+          <telephone_contact value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </contact_telephone>
+    </table>
+  </database>
+</tekinfo>

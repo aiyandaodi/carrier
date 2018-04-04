@@ -1,0 +1,10 @@
+name=组织机构代码信息
+
+#property
+
+property.coderegister_id=标识
+property.coderegister_code=组织机构代码
+property.coderegister_issue=代码证颁发机关
+property.coderegister_organization=所属机构    
+
+#message

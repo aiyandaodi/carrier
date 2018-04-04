@@ -1,0 +1,28 @@
+
+#btn {
+    text-align: center;
+}
+
+#btn button {
+    margin-left: 5%;
+    float: none;
+}
+
+#btn button:first-child {
+    margin: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    line-height: normal;
+    margin-top: 12px;
+}
+
+label {
+    word-wrap: break-word;
+    display: block;
+    line-height: 15px;
+    float: left;
+    margin: 0px;
+    padding-top: 10px;
+    display: block;
+}

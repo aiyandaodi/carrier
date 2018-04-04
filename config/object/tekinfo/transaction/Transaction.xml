@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 问题对象 -->
+<tekinfo>
+  <object>
+    <Transaction ResourceBundle="net.tekinfo.object.transaction.Transaction"
+        Structure="net.tekinfo.transaction.Transaction"
+        ObjectRm="net.tekinfo.remoting.transaction.TransactionRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <transaction_id base="identity"/>
+        <transaction_code base="yyyyMMdd" step="1" digit="4" tree="default"/>
+        <transaction_owner base="userid"/>
+      </autovalue>
+       
+      <table nameIdentity="transaction_name" codeIdentity="transaction_code" ownerIdentity="transaction_owner">
+        <transaction identity="transaction_id"/>
+        <transaction_blob identity="transaction_id"/>
+      </table>
+      
+      <blob table="transaction_blob"  
+          urlField="transaction_path"
+          blobField="transaction_blob"
+          mimeField="transaction_mime"
+          lengthField="transaction_length" 
+          timeField="modifyTime"
+          mimeType="text/plain"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/tekinfo/transaction/read.html"/>
+          </parameter>
+          <item>
+            <transaction_code/>
+            <transaction_name/>
+            <transaction_type/>
+            
+            <transaction_content/>
+            
+            <transaction_objectName/>
+            <transaction_objectId/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/tekinfo/transaction/read.html"/>
+          </parameter>
+          <item>
+            <transaction_code/>
+            <transaction_name/>
+            <transaction_type/>
+            
+             <transaction_summary/> 
+            <transaction_content/>
+            
+            <transaction_status/>
+            
+            <transaction_read/>
+            <transaction_answer/>
+            <transaction_objectName/>
+            <transaction_objectId/>
+          </item>
+        </edit>
+
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <transaction_id/>
+            <transaction_code/>
+            <transaction_name/>
+            <transaction_type/>
+            <transaction_owner/>
+            <transaction_status/>
+            <transaction_objectName/>
+            <transaction_objectId/>
+            <transaction_answerCount/>
+            <transaction_summary/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <transaction_id/>
+            <transaction_code/>
+            <transaction_name/>
+            <transaction_type/>
+            <transaction_summary/>
+            <transaction_length/>
+            <transaction_mime/>
+            <transaction_path/>
+            <transaction_owner/>
+            <transaction_status/>
+            <transaction_start/>
+            <transaction_end/>
+            <transaction_read/>
+            <transaction_answer/>
+            <transaction_objectName/>
+            <transaction_objectId/>
+            <transaction_answerCount/>
+            
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <transaction_code/>
+            <transaction_name/>
+            <transaction_type/>
+            <transaction_summary/>
+            <transaction_tags/>
+            <transaction_status/>
+            <transaction_owner/>
+          </item>
+        </search>
+
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <!-- <upload></upload> -->
+
+        <download>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </download>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <transaction_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <transaction_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 问题名 -->
+        <transaction_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 问题类型 -->
+        <transaction_type variable="int" parse="enum" format="option" default="0x10" notnull="true">
+          <question value="0x10"/>	<!-- 提问， 一般性问题提问 -->
+          
+          <worksheet value="0x20"/>	<!-- 工单 -->
+          
+          <complaint value="0x40"/>	<!-- 投诉，投诉系统 -->
+          <report value="0x41"/>	<!-- 举报，通常举报针对第三方 -->
+          
+          <consult value="0x80"/>	<!-- 咨询，请求帮助 -->
+          <suggestion value="0x81"/>	<!-- 建议，用户提供的建议 -->
+        </transaction_type>
+        <!-- 问题标签 -->
+        <transaction_tags parse="tag" variable="string"/>
+        <!-- 问题目录树 -->
+        <transaction_catalog variable="string" parse="object:ObjectCatalog"/>
+
+        <!-- 概要 -->
+        <transaction_summary variable="string" maxlength="1024"/>
+        
+        <!-- 问题内容大小 -->
+        <transaction_length variable="long" parse="long" default="0" notnull="true"/>
+        <!-- 问题内容MIME格式 -->
+        <transaction_mime variable="string" maxlength="255"/>
+        <!-- 问题内容本地存放路径 -->
+        <transaction_path variable="string" maxlength="1024"/>
+        <!-- 二进制文件存放域 -->
+        <transaction_blob variable="blob" parse="blob" format="download"/>
+        
+        <!-- 所有者 -->
+        <transaction_owner variable="long" parse="object:User"/>
+        <!-- 状态 -->
+        <transaction_status variable="int" parse="enum" format="single" default="1" notnull="true">
+          <stop value="-1"/>    <!-- 禁止 -->
+          <apply value="0"/>    <!-- 申请中 -->
+          <release value="1"/>    <!-- 发布 -->
+        </transaction_status>
+        <!-- 问题开始时间 -->
+        <transaction_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now" notnull="true"/>
+        <!-- 问题结束时间（默认90天） -->
+        <transaction_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"/>
+        <!-- 问题最新更新时间 -->
+        <transaction_latestTime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"/>
+        
+        <!-- 问题阅读权限 -->
+        <transaction_read variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <system value="0x00"/>    <!-- 系统审计员 -->
+          <objectAdmin value="0x01"/>    <!-- 相关对象管理者 -->
+          <objectEdit value="0x02"/>    <!-- 相关对象修改者 -->
+          <objectRead value="0x04"/>    <!-- 相关对象阅读者 -->
+          <user value="0x10"/>    <!-- 普通用户阅读 -->
+          <anonymous value="0x40"/>    <!-- 匿名阅读 -->
+        </transaction_read>
+        <!-- 问题回答权限 -->
+        <transaction_answer variable="int" parse="enum" format="single" default="0x10" notnull="true">
+          <system value="0x00"/>    <!-- 系统审计员 -->
+          <objectAdmin value="0x01"/>    <!-- 相关对象管理者 -->
+          <objectEdit value="0x02"/>    <!-- 相关对象修改者 -->
+          <objectRead value="0x04"/>    <!-- 相关对象阅读者 -->
+          <user value="0x10"/>    <!-- 普通用户回答 -->
+          <anonymous value="0x40"/>    <!-- 匿名回答 -->
+        </transaction_answer>
+
+        <!-- 关联对象类型名（如：主题、小组等） -->
+        <transaction_objectName variable="string" maxlength="128"/>
+        <!-- 关联对象标识 -->
+        <transaction_objectId variable="long" parse="object:this.transaction_objectName"/>
+        
+        <!-- 对该问题的解答数（TransDo的数量） -->
+        <transaction_answerCount variable="int" default="0x00" notnull="true"/>
+
+        <!-- 对该问题的评价（1-5星评价，是每个人1-5星评价的加权平均。预留扩展） -->
+        <transaction_evaluate variable="int" parse="enum" format="single" ></transaction_evaluate>
+        
+        <!-- 虚拟域：内容（用于新建时，将内容拆分成summary和blob） -->
+        <transaction_content variable="string"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <attachment>
+        <!-- 删除问答，相关回答全部删掉 -->
+        <transDo object="TransDo" column="trans_do_transaction"/>
+      </attachment>
+    </Transaction>
+  </object>
+</tekinfo>

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+    width: 53px;
+    height: 53px;
+    line-height: 46px;
+    border-radius: 100% !important;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+
+}
+.popmenu .ui-list{
+    bottom:120px;
+}
+
+.ui-12 .ui-content{
+    max-width:1200px;
+    margin:50px auto;
+}
+/* UI head */
+.ui-12 .ui-head{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    top: 21px;
+    left:22px;
+    box-shadow:2px 2px 0px 2px rgba(0,0,0,0.1) !important;
+}
+/* Heading */
+.ui-12 .ui-head h2{
+    font-size:1.4em;
+    line-height: 40px;
+    margin-left:14px;
+    color:#fff;
+    text-transform:uppercase;
+}
+/* UI Body */
+.ui-12 .ui-body{
+    padding:25px;
+    border-width:2px;
+    background:#fff;
+    box-shadow:4px 4px 0px 2px rgba(0,0,0,0.05) !important;
+}
+/* Icon */
+.ui-12 .ui-body h3{
+    font-size:1em;
+    line-height:28px;
+    margin-top:5px;
+    text-transform:uppercase;
+}
+.ui-12  .ui-feature ul{
+    margin-bottom:15px;
+}
+.ui-12 .ui-feature ul li{
+    padding:4px 0px;
+}
+.ui-12  .ui-feature ul > li:before{
+    content: "\f101";
+    font-family: FontAwesome;
+    color:#ccc;
+    font-size:14px;
+}
+/* Ui description */
+.ui-12 .ui-description{
+    background:#f7f7f7;
+    padding:10px 15px;
+    box-shadow:4px 4px 0px 2px rgba(0,0,0,0.05) !important;
+}
+@media(max-width:767px){
+    .ui-12 .ui-description{
+        margin-top:20px;
+    }
+}

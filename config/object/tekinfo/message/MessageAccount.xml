@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 信息收发账号 -->
+<tekinfo>
+  <object>
+    <MessageAccount ResourceBundle="net.tekinfo.object.message.MessageAccount"
+        Structure="net.tekinfo.message.MessageAccount"
+        ObjectRm="net.tekinfo.remoting.message.MessageAccountRm">
+      <autovalue>
+        <message_account_id base="identity"/>
+        <message_account_code base="yyyyMM" step="1" digit="14"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="message_account_name" codeIdentity="null" ownerIdentity="null">
+        <message_account identity="message_account_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField=""
+          blobField=""
+          mimeField=""
+          lengthField=""
+          timeField="modifyTime"
+          mimeType=""/>
+      
+      <command>
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          
+          <item>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_dayMax/>
+            <message_account_monthMax/>
+            <message_account_owner/>
+            <message_account_device/>
+          </item>
+        </list>
+
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <message_account_code rightrole="auditor"/>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_login/>
+            <message_account_pass/>
+            <message_account_params rightrole="auditor"/>
+            <message_account_dayMax/>
+            <message_account_monthMax/>
+            <message_account_owner/>
+            <message_account_device/>
+            <createTime/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          
+          <item>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_login/>
+            <message_account_pass/>
+            <message_account_params/>
+            <message_account_dayMax/>
+            <message_account_monthMax/>
+            <message_account_owner rightrole="auditor"/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          
+          <item>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_login/>
+            <message_account_pass/>
+            <message_account_params/>
+            <message_account_dayMax/>
+            <message_account_monthMax/>
+            <message_account_owner rightrole="auditor"/>
+          </item>
+        </edit>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_owner/>
+            <message_account_device/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <message_account_name/>
+            <message_account_type/>
+            <message_account_status/>
+            <message_account_owner/>
+            <message_account_device/>
+          </item>
+        </textSearch>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <message_account_id variable="long" forbidEdit="true" />
+        <!-- 编码 -->
+        <message_account_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 名称 -->
+        <message_account_name variable="string" maxlength="64" notnull="true"/>
+
+        <!-- 类型 -->
+        <message_account_type variable="int" parse="enum" format="single" notnull="true">
+          <email value="1"/>       <!-- 电子邮件 -->
+          <sms value="2"/>         <!-- SMS短信 -->
+          <qq value="11"/>         <!-- QQ消息 -->
+          <weixin value="12"/>     <!-- 微信消息 -->
+          <sina value="21"/>       <!-- 新浪微博 -->
+          <tekinfo value="99"/>    <!-- TekInfo信息服务器 -->
+        </message_account_type>
+        <!-- 状态 -->
+        <message_account_status variable="int" parse="enum" format="option" default="10" notnull="true">
+          <stop value="-1"/>      <!-- 停用 -->
+          <reserve value="0"/>    <!-- 备用账号 -->
+          <primary value="1"/>    <!-- 主账号 -->
+        </message_account_status>
+        <!-- 连接用户名 -->
+        <message_account_login variable="string" maxlength="64" parse="password" format="privacy"/>
+        <!-- 连接密码 -->
+        <message_account_pass variable="string" maxlength="128" parse="password" format="privacy"/>
+        <!-- 其他参数 -->
+        <message_account_params variable="string" maxlength="255" parse="password" format="privacy"/>
+        <!--·每日最大发送数 -->
+        <message_account_dayMax variable="int" default="0" notnull="true"/>
+        <!--·每月最大发送数 -->
+        <message_account_monthMax variable="int" default="0" notnull="true"/>
+        
+        <!-- 所属用户 -->
+        <message_account_owner variable="long" parse="User"/>
+        <!-- 所属设备 -->
+        <message_account_device variable="long" parse="Device" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </MessageAccount>
+  </object>
+</tekinfo>

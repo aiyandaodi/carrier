@@ -1,0 +1,271 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding:0px;
+	margin:0px;
+}
+
+img{
+	border:0px;
+}
+
+html{
+	width:100%;
+	height:500px;
+}
+
+body{
+	width: 820px;
+	height:100%;
+	margin:0 auto;
+	position:relative
+}
+
+html > body{
+	height:auto;
+	min-height:100%
+}
+
+#load_content{
+	min-width:820px;
+	//background-image:url(images/corner.png);
+	//background-position:top left;
+	//background-repeat:no-repeat;
+	position:relative;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: small;
+	color:#595959;
+}
+
+.content_area{
+	width:560px;
+	float:left;
+	padding: 10px 10px 0 10px;
+}
+
+.title_area{
+	float:left;
+	margin:4px 4px 10px auto;
+}
+
+.menu_area {
+	float:left;
+	font-size:small;
+	list-style:none;
+	text-align:left;
+	width:360px;
+}
+
+
+.menu_area a:link, .menu_area a:visited, .menu_area a:hover
+{ 
+	text-decoration: none;
+}
+
+.menu_area a{
+	display:inline-block;
+	width:66px;
+	height:27px;
+	color:#5A5A5A;
+	text-align:center;
+	padding-top:4px;
+}
+
+.menu_area a:hover{
+	color:#F3FEF9;
+	background:url(../../system/images/nav_over.png) no-repeat top left; 
+}
+
+.menu_area h2{
+	text-align:center;
+	color:#4B4B4B;
+}
+
+.search_area{
+	float:right;
+	font-size:small;
+}
+
+#searchbox
+{
+    width:208px;
+	height:30px;
+	float:left;
+}
+
+#searchBtn{
+	width:55px;
+	height:30px;
+	background:url(../../system/images/search.png) no-repeat top center;
+	border:none;
+	cursor:pointer;
+
+}
+
+
+
+.item_area{
+	font-size:small;
+	color: #5F5F5F;
+	list-style:none;
+	text-decoration:none;
+	margin-bottom: 10px;
+	padding:8px 2px 0 2px;
+	clear:both;
+	border:2px solid  #C4E3D6;
+    background: url(../../system/images/item_back.png) no-repeat;
+}
+
+
+.item_area p{
+	font:small;
+	float:right;
+	padding:9px 0 5px 3px
+}
+
+.item_area a{
+	color: #003366; 
+	text-decoration: none; 	
+	font: small bold;
+	padding:2px 2px 2px 0;
+}
+
+.item_area .link{
+	padding-left:400px;
+}
+
+.item_area a:visited{text-decoration:underline}
+.item_area a:hover{
+	text-decoration: underline;
+}
+
+.rightcolumn_area{
+	width:200px;
+	float:left;
+	padding:16px 0 96px 10px;
+}
+
+.column{
+	padding:0 0 15px 0
+}
+
+.column h2{
+	color:#D4E9F0;
+	width: 200px;
+	font-size:small;
+	background-color:#0F6A8B;
+	font-size: normal;
+	line-height:20px;
+	margin-top:10px;
+	margin-bottom: 6px;
+	padding-left:6px;
+}
+
+.column li{
+	list-style:circle;
+	font-size:small;
+	line-height:16px;
+	margin-left:20px;
+	margin-bottom:6px;
+}
+
+.column a{
+	text-decoration:none;
+}
+
+.column p{
+	font-size: small;
+	color:#808080;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+.column p a{
+	float:right;
+	color:#2083B6;
+	text-decoration:underline
+}
+.column p a:visited{text-decoration:underline}
+.column p a:hover{text-decoration:none}
+
+.help_area{
+	width:560px;
+	text-align:left;
+	font-size:small;
+	color:#666;
+	float:left;
+	margin:0 20px 10px 10px;
+}
+
+
+.help_area h2{
+	text-align:center;
+	margin:4px 0 4px 0;
+}
+
+.help_area h3{
+	text-decoration:underline;
+	margin:8px 0 4px 0;
+}
+
+
+.item_area .contact_name{
+	padding-left:2px;
+	clear:both;
+    height:25px;
+    border-bottom:1px solid #34599f;
+    line-height:30px;
+	font-size:normal;
+	font-weight:bold;
+    color: #1F5F69;
+}
+
+.item_area .contact_title{
+	float:left;
+	margin-right:40px;
+}
+
+.item_area .contact_unit{
+	clear:both;
+}
+
+.item_area .telephone_number{
+	float:left;
+	margin-right:6px;
+}
+
+.item_area .email_box{
+	float:left;
+	margin-right:6px;
+}
+
+.item_area .remark
+{
+	 padding-left:2px;
+	 clear:both;
+     margin-top:10px;
+     border:none;
+     border-top:1px solid #34599f; 
+     height:30px;
+	 color:#336699;
+}
+
+
+.column .contact_name{
+	color:#D4E9F0;
+	width: 200px;
+	line-height:19px;
+	background-color:#0F6A8B;
+	font-size: small;
+	margin-bottom: 10px;
+	padding-left:6px;
+}
+
+.column .contact_email{
+	
+	font-size: x-small;
+	text-decoration: none;
+	padding-right:10px;
+}

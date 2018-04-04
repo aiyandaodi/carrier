@@ -1,0 +1,159 @@
+/** UI 12 **/
+.ui-12 .ui-content{
+    max-width:600px;
+    margin:20px auto;
+}
+/* UI head */
+.ui-12 .ui-head{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    top: 21px;
+    left:22px;
+    box-shadow:2px 2px 0px 2px rgba(0,0,0,0.1);
+}
+/* Heading */
+.ui-12 .ui-head h2{
+    font-size:15px;
+    line-height: 40px;
+    margin-left:14px;
+    color:#fff;
+    text-transform:uppercase;
+}
+/* UI Body */
+.ui-12 .ui-body{
+    padding:25px;
+    border-width:2px;
+    background:#fff;
+    box-shadow:4px 4px 0px 2px rgba(0,0,0,0.05);
+}
+/* Icon */
+.ui-12 .ui-body h3{
+    font-size:14px;
+    line-height:28px;
+    margin-top:5px;
+    text-transform:uppercase;
+}
+.ui-12  .ui-feature ul{
+    margin-bottom:15px;
+}
+.ui-12 .ui-feature ul li{
+    padding:4px 0px;
+}
+.ui-12  .ui-feature ul > li:before{
+    content: "\f101";
+    font-family: FontAwesome;
+    color:#ccc;
+    font-size:14px;
+}
+/* Ui description */
+.ui-12 .ui-description{
+    background:#f7f7f7;
+    padding:10px 15px;
+    box-shadow:4px 4px 0px 2px rgba(0,0,0,0.05);
+}
+@media(max-width:767px){
+    .ui-12 .ui-description{
+        margin-top:20px;
+    }
+}
+
+
+
+
+
+/* Widget */
+.widget{
+    margin:40px 0px 20px 0px;
+    background:#fff;
+    padding:0px 22px 0px 22px;
+    border:1px solid #e8e8e8;
+    border-radius:4px !important;
+    box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.06) !important;
+}
+/* Widget placeholder for drag and drop */
+.widget-placeholder{
+    border-radius:5px;
+    border:1px dashed #ebe3c9;
+    background:#fffcf4;
+    height:100px;
+    margin:10px 0px 20px 0px;
+}
+.widget-placeholder:before{
+    content: "Drop Here";
+    font-size:20px;
+    color:rgba(0,0,0,0.2);
+    text-align:center;
+    display:block;
+    margin-top:35px;
+}
+/* Widget head */
+.widget .w-head{
+    border-bottom:1px solid #eee;
+    padding:10px 0px;
+}
+.w-dragdrop .widget .w-head{
+    cursor:move;
+}
+.widget .w-head h3{
+    font-size:1.2em;
+    line-height:34px;
+    color:#888;
+    margin:0px;
+    padding:0px;
+}
+.widget .w-head h3 i{
+    margin-right:15px;
+    font-weight:400;
+}
+.widget .w-head .pull-right .w-mimax .fa{
+    font-size:2em;
+}
+.widget .w-head .w-links{
+    margin-top:5px;
+}
+.widget .w-head .w-links > a{
+    color:#aaa;
+    font-weight:normal;
+}
+.widget .w-head .w-links > a.w-full{
+    font-size:11px;
+}
+
+.widget .w-head .pagination{
+    display:block;
+    margin:0px;
+}
+.widget .w-head .breadcrumb{
+    margin:0px;
+}
+.widget .w-head .pager{
+    margin:0px;
+}
+/* Widget body */
+.widget .w-body.w-scroll{
+    height:300px;
+}
+.form-control-line{
+    display: inline-block;
+    height: 32px;
+    padding: 6px 1px;
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #555;
+    border:none;
+    border-bottom: 1px solid #ddd;
+}
+/* Widget table */
+.widget table tr:first-child td,
+.widget table tr:first-child th{
+    border-top:0px !important;
+}
+
+/* Pages widget */
+.pages-widget .table *{
+    text-align:center !important;
+}
+.pages-widget .table i{
+    font-size:14px;
+}

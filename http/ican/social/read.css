@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.popmenu .ui-list{
+	bottom:-70px;
+}
+.table-responsive{
+	max-width:800px;
+	margin:50px auto;
+}
+.table td{ 
+	padding:10px;
+}
+.table thead th{
+	color:#333;
+	font-size:1em;
+}
+.table tbody tr td{
+	vertical-align:middle;
+	color:#666;
+} 
+.table tbody tr td:nth-child(2) a{
+	color:#666;
+}
+.table tbody tr td:nth-child(2) a:hover{
+	color:#FF3F55;
+}
+.ui-list form{
+	position:absolute;
+	right:50px;
+	top:60px;
+	display:none;
+}

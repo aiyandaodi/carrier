@@ -1,0 +1,411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh"><!-- InstanceBegin template="/Templates/i-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- InstanceBeginEditable name="doctitle" -->
+        <title>新建个人 ICAN.VIP</title>
+        <!-- InstanceEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+        <link rel="Bookmark" href="../../../favicon.ico"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Stylesheets -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  		<!-- Font awesome icon -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  		<!-- jQuery UI -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  		<!-- Calendar -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/> 
+  <!-- owl css -->
+  <link href="../../style/extend/css/owl.carousel.css" rel="stylesheet">
+        <!-- Custom CSS -->
+		<link href="../../style/macadmin/css/style.css" rel="stylesheet">
+        
+        <!-- popmenu css -->
+        <link href="../../common/popmenu/popmenu.css" rel="stylesheet">
+        
+        <link href="../../tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../../tekinfo/css/tekinfo-dialog.css" rel="stylesheet">
+        
+        <link href="../../vip/css/i.css" rel="stylesheet">
+        <link href="../../vip/css/i-dialog.css" rel="stylesheet">
+        
+        <!-- InstanceBeginEditable name="head-css" -->
+        <!-- my css in head -->
+        <link href="add.css" rel="stylesheet">
+		<!-- InstanceEndEditable -->
+        
+        <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../../style/macadmin/js/respond.min.js"></script>
+         
+        <!-- InstanceBeginEditable name="head-js" -->
+        <!-- my head js-->
+		<!-- InstanceEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				initial();
+			});
+  		</script>
+        <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+	</head>
+	
+<body>
+<div id="tekinfo_main" class="main">
+<!-- InstanceBeginEditable name="main content" -->
+<!-- main content -->
+<!-- UI # -->
+<div class="ui-301">			
+    <!-- Login Ends -->
+    <div class="login-reg">
+        <!-- Login Form -->
+        <div class="login-reg-form">
+            <!-- Heading -->
+            <h4>新建个人</h4>
+            <br />
+            <!-- Form -->
+            <form class="form-horizontal" role="form" id="profile_form">
+                <!--<div class="form-group">
+                    <label for="person_name" class="col-sm-3 control-label">用户名</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="person_name" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                	<label for="person_password" class="col-sm-3 control-label">用户密码</label>
+                    <div class="col-sm-9">
+                    	<input type="text" class="form-control" id="person_password" placeholder="请输入你的密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                	<label for="person_password_sure" class="col-sm-3 control-label">确认密码</label>
+                    <div class="col-sm-9">
+                    	<input type="text" class="form-control" id="person_password_sure" placeholder="请再次输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person_sex" class="col-sm-3 control-label">用户性别</label>
+                    <div class="col-sm-9">
+                    	<div class="col-sm-4">
+                        	<input type="radio" class="col-sm-2" id="person_sex_male"  value="male" name="person_sex" checked>
+                            <label for="person_sex_male" class="col-sm-10">男</label> 
+                        </div>
+                    	<div class="col-sm-4">
+                        	<input type="radio" class="col-sm-2" id="person_sex_female" value="female" name="person_sex">
+                            <label for="person_sex_female" class="col-sm-10">女</label>
+                        </div>
+                        <div class="col-sm-4">
+                        	<input type="radio" class="col-sm-2" id="person_sex_unknow" value="unknow" name="person_sex">
+                            <label for="person_sex_unknow" class="col-sm-10">保密</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person_birth" class="col-sm-3 control-label">出生年月</label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="person_birth">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person_education" class="col-sm-3 control-label">最高学历</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="person_education">
+                            <option>选择你的最高学历</option>
+                            <option>专科</option>
+                            <option>本科</option>
+                            <option>硕士</option>
+                            <option>博士</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person_address" class="col-sm-3 control-label">现居地址</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="person_address" placeholder="请输入现居地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person_industry" class="col-sm-3 control-label">行业经验</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="person_industry" placeholder="请输入行业经验">
+                    </div>
+                </div>  
+                 <div class="form-group">
+                    <label for="person_wanted_industry" class="col-sm-3 control-label">职业状态</label>
+                       <div class="col-sm-9">
+                        <select class="form-control" id="person_education">
+                            <option>选择你的职业状态</option>
+                            <option>在职，寻求新职业</option>
+                            <option>正在找工作，快速上岗</option>
+                            <option>离职，随时上岗</option>
+                            <option>应届毕业生</option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="person_wanted_workplace" class="col-sm-3 control-label">期望地址</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="person_wanted_workplace" placeholder="请输入期望地址">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="person_wanted_industry" class="col-sm-3 control-label">目标行业</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="person_wanted_industry" placeholder="请输入目标行业">
+                    </div>
+                </div> 
+                 <div class="form-group">
+                    <label for="person_motto" class="col-sm-3 control-label">人生格言</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" class="form-control" id="person_motto" placeholder="请输入你的人生格言"></textarea>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="person_introduction" class="control-label col-sm-3">一句话介绍</label>
+                    <div class="col-sm-9">
+                       <textarea type="text" rows="3" class="form-control" id="person_introduction" placeholder="请用一句话介绍自己"></textarea>
+                    </div>
+                </div>  -->    
+            </form>
+            <br/>
+            <hr/>
+            <!-- Social Media Login -->
+            <div class="s-media" id="profile_btn">
+            </div>
+        </div>
+    </div>			
+    <!-- Login Ends -->
+</div>
+<!--日历-->
+<div id="calendar_div" class="bd" style="margin:20px 5px 6px 0px; border:double 2px solid; width: 180px; position:absolute; display:none;z-index:200;" onblur="calendarBlur(this);" tabindex=2></div>
+
+
+<!--自定义删除标签-->
+<div id="tag-modal-dialog" class="modal fade in" >
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h3 id="tag-modal-dialog-title" class="center">自定义删除标签</h3>
+	  </div>
+	  <div id="tag-modal-dialog-body" class="modal-body">
+		<!--目录树-->
+		<div class="tag-content" id="tag-content"></div>
+	  </div>
+	</div>
+  </div><!-- end .modal-dialog-->
+</div>
+<!-- InstanceEndEditable -->
+</div>
+<!-- Footer -->
+<div id="tekinfo_footer">
+<!-- 自动载入vip/html/i-footer.html 内容 -->
+</div>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class="text-center"></p>
+        <span id="waiting-timer-msg" class="text-center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<!--<div id="tekinfo_Layer" onClick="javascript:changeTekinfoLayerColor();">-->
+    <!--<h1>蒙版</h1>
+    &nbsp;-->
+<!--</div>-->
+
+<!-- InstanceBeginEditable name="pop_menu" --> 
+
+<!-- Scroll to top --> 
+<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span>
+			
+<!-- InstanceEndEditable -->
+		
+<!-- Javascript files -->
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- slimscroll -->
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<script src="../../style/macadmin/js/excanvas.min.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.stack.js"></script>
+
+
+<!-- jQuery Notification - Noty -->
+<script src="../../style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="../../style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<script src="../../style/macadmin/js/charts.js"></script> <!-- Charts & Graphs -->
+
+<!-- Owl carousel -->
+<script src="../../style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../../style/extend/js/placeholder.js"></script>
+
+<!-- Tekinfo JS -->
+<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+<script type="text/javascript" src="../../common/tek/js/user.js"></script>
+<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+<script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+<script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+<script type="text/javascript" src="../../common/popmenu/popmenu.js"></script>
+<script type="text/javascript" src="../../common/touchscreen/touchscreen.js"></script>
+<script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+<script type="text/javascript" src="../../vip/js/i.js"></script>
+<script type="text/javascript" src="../js/ican-dialog.js"></script>
+<script type="text/javascript" src="../login/index.js"></script> 
+        
+		<!-- InstanceBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+        <script type="text/javascript" language="JavaScript" src="../../common/calendar/all.js"></script> 
+        <script type="text/javascript" language="JavaScript" src="../../common/calendar/qmcalendar.js"></script> 
+        <script type="text/javascript" language="JavaScript" src="../../common/calendar/qmlunar.js"></script>
+        <script type="text/javascript" src="../../common/tek/js/mac-edit.js"></script>
+        <script type="text/javascript" src="../../common/tek/js/classify/tag.js"></script>
+        <script type="text/javascript" src="../../common/tek/js/classify/color.js"></script>
+		<script type="text/javascript" src="add-edit-common.js"></script>
+        <script type="text/javascript" src="add.js"></script>
+		<!-- InstanceEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+function initial(){
+	$("#tekinfo_footer").load(tek.common.getRootPath() + "http/vip/html/i-footer.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-footer.js",function(){
+			if(typeof initFooter == "function"){
+				initFooter();
+			}
+		});
+	});
+	
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	showUser(); //tekinfo.js
+	
+	//tek.serverTimer.show();
+	if (tek.common.isLoggedIn()) {
+		showUserInfo();
+	} else {
+		/*tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');*/
+		iLogin();
+	}
+	
+	var error = request["error"];
+	
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	
+	 
+	/** 弹出菜单 **/
+	if(typeof popmenu_start == "function"){
+		popmenu_start();
+	}
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	
+	/**
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		scrollPage();
+	}
+	
+	if (typeof init == "function")
+		init();
+	
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+	//alert("ok");
+}
+</script>
+
+	</body>	
+<!-- InstanceEnd --></html>

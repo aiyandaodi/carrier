@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 证书文件BLOB  -->
+<tekinfo> 
+	<database> 
+		<table> 
+			<certificates_file_blob> 
+			<item> 
+				<!-- 标识 -->  
+				<object_file_id value="BIGINT NOT NULL PRIMARY KEY"/>  
+				<!-- 二进制文件 -->  
+				<object_file_blob value="BLOB"/> 
+			</item>
+
+			</certificates_file_blob> 
+		</table> 
+	</database> 
+</tekinfo>

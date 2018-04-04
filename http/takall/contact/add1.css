@@ -1,0 +1,50 @@
+/* CSS Document */
+
+.form-group .btn{
+	margin:0;
+	padding:0;
+}
+
+.color-option{
+	width:36px;
+	height:36px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+.color_red{
+	background-color: #f00;
+}
+
+.color_orange{
+	background-color: #f90;
+}
+
+.color_yellow{
+	background-color: #ff0;
+}
+
+.color_green{
+	background-color: #090;
+}
+
+.color_darkblue{
+	background-color: #39c;
+}
+
+.color_blue{
+	background-color: #03f;
+}
+
+.color_purple{
+	background-color: #900;
+}
+
+.color_pink{
+	background-color: #f3f;
+}
+
+.color_none{
+	background-color: #fff;
+}

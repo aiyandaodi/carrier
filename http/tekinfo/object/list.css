@@ -1,0 +1,9 @@
+
+#quickSearchSubmit:hover{
+	cursor:pointer;
+} 
+
+
+.table-bordered>tbody>tr>td {
+	text-align: center;
+}

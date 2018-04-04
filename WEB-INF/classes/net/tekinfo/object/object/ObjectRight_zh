@@ -1,0 +1,13 @@
+name=对象权限
+
+#property
+property.right_id=标识
+property.right_code=编码
+property.right_name=名称
+property.right_owner=所属对象名
+property.right_ownerId=所属对象
+property.right_target=目标对象名
+property.right_condition=目标条件
+property.right_command=操作命令
+property.right_start=有效期开始时间
+property.right_end=有效期结束时间

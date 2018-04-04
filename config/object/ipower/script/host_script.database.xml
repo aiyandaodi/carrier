@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 脚本 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_script>
+        <item>
+          <!-- 标识 -->
+          <host_script_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_script_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 脚本名称 -->
+          <host_script_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 所属管理组 -->
+          <host_script_group value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 脚本标签 -->
+          <host_script_tag value="VARCHAR(255)"/>
+          <!-- 脚本颜色 -->
+          <host_script_color value="VARCHAR(255)"/>
+          <!-- 脚本适用的服务 -->
+          <host_script_services value="VARCHAR(255)"/>
+          <!-- 脚本状态 --> 
+          <host_script_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 脚本备注 -->
+          <host_script_remark value="MEMO"/>
+          <!-- 脚本所有者 -->
+          <host_script_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_script>
+    </table>
+  </database>
+</tekinfo>

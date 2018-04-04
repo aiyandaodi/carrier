@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 互联网服务器主机定义 -->
+<tekinfo>
+  <object>
+    <!-- 对象。
+         属性定义：ResourceBundle - 资源文件路径
+             Structure - 对象结构类路径
+             version - 对象定义版本号
+             resourceVersion - 资源文件版本号 -->
+    <ServiceProvider ResourceBundle="net.tekinfo.object.system.ServiceProvider" version="1.0" resourceVersion ="1.0" 
+    	Structure="net.tekinfo.system.ServiceProvider"
+    	ObjectRm="net.tekinfo.remoting.system.ServiceProviderRm">
+      <autovalue>
+        <service_provider_id base="identity"/>
+        <service_provider_code base="yyyyMMdd" step="1" digit="4"/>
+      </autovalue>
+      <nosamevalue/>
+      
+      <table nameIdentity="service_provider_name">
+      	<service_provider identity="service_provider_id"/>
+      </table>
+      
+      <blob table="null"  
+       	  urlField=""
+       	  blobField="" 
+       	  mimeField=""
+       	  lengthField="" 
+       	  timeField="modifyTime"
+       	  mimeType=""/>
+       	  
+      <index icon="object/System/ServiceProvider.gif" 
+       	       image="object/System/ServiceProvider-32.gif"/> 
+       	       
+      <command>
+        <list>
+          <parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+          	<record value="0x10"/>
+      	  </parameter>
+          
+          <item>
+          	<service_provider_code/>
+            <service_provider_name/>
+
+            <service_provider_url/>
+            
+            <service_provider_protocol/>
+            
+            <service_provider_status/>
+            <service_provider_default/>
+
+          </item>
+        </list>
+
+        <read>
+          <parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x10"/>
+      	  </parameter>
+          <item>
+          	<service_provider_code/>
+            <service_provider_name/>
+
+            <service_provider_url/>
+            <service_provider_port/>
+
+            <service_provider_protocol/>
+            <service_provider_version/>
+
+            <service_provider_param/>
+            <service_provider_appid/>
+
+            <service_provider_status/>
+            <service_provider_default/>
+
+          </item>
+        </read>
+
+        <add>
+        	<parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+      	  </parameter>
+      	  
+           <item>
+          	<service_provider_code/>
+            <service_provider_name/>
+
+            <service_provider_url/>
+            <service_provider_port/>
+
+            <service_provider_protocol/>
+            <service_provider_version/>
+
+            <service_provider_param/>
+            <service_provider_appid/>
+
+            <service_provider_status/>
+            <service_provider_default/>
+
+          </item>
+        </add>
+        
+        <edit>
+        	<parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+      	  </parameter>
+     
+          <item>
+          	<service_provider_code/>
+          	<service_provider_name/>
+
+            <service_provider_url/>
+            <service_provider_port/>
+
+            <service_provider_protocol/>
+            <service_provider_version/>
+
+            <service_provider_param/>
+            <service_provider_appid/>
+
+            <service_provider_status/>
+            <service_provider_default/>
+
+          </item>
+        </edit>
+        
+        <remove>
+        	<parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+      	  </parameter>
+      	</remove>
+
+        <search>
+        	<parameter>
+      	    <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x10"/>
+      	  </parameter>
+          <item>
+          	<service_provider_code/>
+          	<service_provider_name/>
+			      <service_provider_url/>
+          </item>
+        </search>
+      </command>
+   
+      <property>
+			  <!-- 标识 -->
+			  <service_provider_id variable="long" forbidEdit="true" />
+			  <!-- 编码 -->
+			  <service_provider_code variable="string" maxlength="20" notnull="true"/>
+			  <!--名称 -->
+			  <service_provider_name variable="string" maxlength="128" notnull="true"/>
+			     
+			  <!-- 主机网址 -->
+			  <service_provider_url variable="string" maxlength="256" notnull="true"/>
+        <!-- 主机端口 -->
+        <service_provider_port variable="int" notnull="true"/>
+        <!-- 服务主机状态 -->
+        <service_provider_status variable="int" parse="enum" format="single" default="1">
+          <apply value="0"/>
+          <valid value="1"/>
+          <stop value="-1"/>
+        </service_provider_status>
+
+			  <!-- 服务协议 -->
+			  <service_provider_protocol variable="string"/>
+        <!--
+
+			  	<http value="80"/>
+			  	<https value="443"/>
+			  	
+			  	<pop3 value="110"/>
+			  	<imap value="143"/>
+			  	
+			  	<smtp value="25"/>
+			  	
+			  	<smtp_tls value="587"/>
+			  	
+			  	<sip value="5061"/>
+          <xmpp value="5269"/> 
+          <ftp value="21"/>
+          <ipsee value="9091"/>
+        -->
+        
+        <!-- 服务协议版本 -->
+        <service_provider_version variable="string" maxlength="128" notnull="true"/>
+        <!-- 是否该协议默认服务 -->
+        <service_provider_default variable="int" parse="boolean" default="0"/>
+        <!-- 其他参数 -->
+        <service_provider_param variable="string" maxlength="128"/>
+			  <!-- 主机APPID -->
+			  <service_provider_appid variable="string" maxlength="256"/>
+
+	      <createTime/>
+	      <createIp/>
+	      <modifyTime/>
+	      <modifyIp/>
+	      <accessTime/>
+	      <accessIp/>
+	      <accessCount/>
+      </property>
+
+    </ServiceProvider>
+  </object>
+</tekinfo>

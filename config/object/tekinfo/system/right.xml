@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 自定义权限 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <right>
+        <item>
+          <!-- 标识 -->
+          <right_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <right_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 权限名 -->
+          <right_name value="VARCHAR(20) NOT NULL"/>
+          <!-- 权限所属对象名 -->
+          <right_object value="VARCHAR(32) NOT NULL"/>
+          <!-- 权限所属对象 -->
+          <right_objectId value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 目标对象名 -->
+          <right_target value="VARCHAR(32) NOT NULL"/>
+          <!-- 目标对象 -->
+          <right_targetId value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 目标命令 -->
+          <right_command value="VARCHAR(255) NOT NULL"/>
+          <!-- 有效期开始时间 -->
+          <right_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效期结束时间 -->
+          <right_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </right>
+    </table>
+  </database>
+</tekinfo>

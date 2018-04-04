@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 信息队列 -->
+<tekinfo>
+  <object>
+    <MessageQueue ResourceBundle="net.tekinfo.object.message.MessageQueue"
+        Structure="net.tekinfo.message.MessageQueue"
+        ObjectRm="net.tekinfo.remoting.message.MessageQueueRm">
+      <autovalue>
+        <message_queue_id base="identity"/>
+        <message_queue_code base="yyyyMMdd" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue/>
+      
+      <table nameIdentity="message_queue_name" codeIdentity="null" ownerIdentity="null">
+        <message_queue identity="message_queue_id"/>
+      </table>
+      
+      <blob blobObject="MessageQueueFile"
+          table="null"
+          urlField=""
+          blobField=""
+          mimeField=""
+          lengthField=""
+          timeField="modifyTime"
+          mimeType=""/>
+      
+      <command>
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <message_queue_code rightrole="auditor;customerService"/>
+            <message_queue_name/>
+            <message_queue_object rightrole="auditor"/>
+            <message_queue_objectId/>
+            <message_queue_type/>
+            <message_queue_number/>
+            <message_queue_ontime/>
+            <message_queue_time/>
+            <message_queue_status/>
+            <message_queue_times/>
+            <message_queue_account rightrole="auditor"/>
+          </item>
+        </list>
+
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <message_queue_code rightrole="auditor;customerService"/>
+            <message_queue_name/>
+            <message_queue_object rightrole="auditor"/>
+            <message_queue_objectId/>
+            <message_queue_user/>
+            <message_queue_mode/>
+            <message_queue_type/>
+            <message_queue_number/>
+            <message_queue_ontime/>
+            <message_queue_time/>
+            <message_queue_status/>
+            <message_queue_times/>
+            <message_queue_message/>
+            <message_queue_account rightrole="auditor"/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <message_queue_name/>
+            <message_queue_type/>
+            <message_queue_number/>
+            <message_queue_ontime/>
+            <message_queue_message/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <message_queue_name rightrole="auditor"/>
+            <message_queue_type rightrole="auditor"/>
+            <message_queue_number rightrole="auditor"/>
+            <message_queue_ontime rightrole="auditor"/>
+            <message_queue_status rightrole="auditor"/>
+            <message_queue_message rightrole="auditor"/>
+          </item>
+        </edit>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <message_queue_user/>
+            <message_queue_mode/>
+            <message_queue_type/>
+            <message_queue_number/>
+            <message_queue_ontime/>
+            <message_queue_time/>
+            <message_queue_status/>
+            <message_queue_times/>
+            <message_queue_message/>
+            <message_queue_account/>
+          </item>
+        </search>
+        <textSearch>
+          <item>
+            <message_queue_name/>
+            <message_queue_user/>
+            <message_queue_mode/>
+            <message_queue_type/>
+            <message_queue_number/>
+            <message_queue_status/>
+          </item>
+        </textSearch>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <message_queue_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <message_queue_code variable="string" maxlength="14" notnull="true"/>
+        <!-- 标题 -->
+        <message_queue_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 所属对象名 -->
+        <message_queue_owner variable="string" maxlength="32" notnull="true"/>
+        <!-- 所属对象 -->
+        <message_queue_ownerId variable="long" parse="object:this.message_queue_owner"/>
+        <!-- 所属用户 -->
+        <message_queue_user variable="long" parse="object:User" notnull="true"/>
+        <!-- 发送/接收 -->
+        <message_queue_mode variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <send value="0x01"/>    <!-- 发送 -->
+          <recv value="0x02"/>    <!-- 接收 -->
+        </message_queue_mode>
+        <!-- 类型 -->
+        <message_queue_type variable="int" parse="enum" format="option" notnull="true">
+          <email value="1"/>      <!-- 电子邮件 -->
+          <sms value="2"/>        <!-- SMS短信 -->
+          <qq value="11"/>        <!-- QQ消息 -->
+          <weixin value="12"/>    <!-- 微信消息 -->
+          <sina value="21"/>      <!-- 新浪微博 -->
+        </message_queue_type>
+        <!-- 号码  -->
+        <message_queue_number variable="string" maxlength="64" notnull="true"/>
+
+        <!-- 定时发送时间 -->
+        <message_queue_ontime variable="long" parse="datetime"/>
+        <!-- 实际发送时间 -->
+        <message_queue_time variable="long" parse="datetime"/>
+        <!-- 发送/接收状态 -->
+        <message_queue_status variable="int" parse="enum" format="option">
+          <failure value="-1"/>        <!-- 处理失败 -->
+          <unhandled value="0x00"/>    <!-- 未处理 -->
+          <handled value="0x01"/>      <!-- 已处理 -->
+        </message_queue_status>
+        <!-- 处理次数 -->
+        <message_queue_times variable="int"/>
+        <!-- 信息内容 -->
+        <message_queue_message variable="string" format="textarea:4" maxlength="1024"/>
+        <!-- 处理账号 -->
+        <message_queue_account variable="long" parse="object:MessageAccount"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+
+    </MessageQueue>
+  </object>
+</tekinfo>

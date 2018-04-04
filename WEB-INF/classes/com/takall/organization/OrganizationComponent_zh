@@ -1,0 +1,12 @@
+name=信息组
+
+#property
+property.component_id=标识
+property.component_code=编码
+property.component_name=组名
+property.component_organization=隶属机构
+property.component_group=成员组
+property.component_type=类型
+
+#message
+message.error.groupIsExist=该小组已经加入!

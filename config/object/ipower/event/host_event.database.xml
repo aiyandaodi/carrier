@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 事件对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_event>
+        <item>
+          <!-- 标识 -->
+          <host_event_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_event_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 事件名称 -->
+          <host_event_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 事件说明 -->
+          <host_event_value value="VARCHAR(255)"/>
+          <!-- 事件备注 -->
+          <host_event_remark value="MEMO"/>
+          <!-- 事件记录时间 -->
+          <host_event_time value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 事件紧急程度 --> 
+          <host_event_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_event>
+    </table>
+  </database>
+</tekinfo>

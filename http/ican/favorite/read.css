@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+	
+}
+.table-responsive{
+	margin-top:10px;
+}
+.table td{ 
+	padding:10px;
+}
+.table tr td:nth-child(1) a,
+.table tr td:nth-child(2) a{
+	color:#222;
+}
+.table tr td:nth-child(1) a:hover,
+.table tr td:nth-child(2) a:hover{
+	color:#F00;
+}
+.table tbody tr:nth-child(odd) td:nth-child(1),
+.table tbody tr:nth-child(odd) td:nth-child(2){
+	line-height:2.2;
+}
+.table tbody tr:nth-child(even){
+	display:none;
+}
+.ui-list form{
+	position:absolute;
+	right:50px;
+	top:60px;
+	display:none;
+}
+.ui-list .input-group input{
+	padding:0 5px;
+	border:1px solid #ccc;
+	height:37.65px;
+}
+.ui-list .input-group span{
+	border:1px solid #ccc;
+}
+.favoriteSet-info .ui-item, .favorite-info .ui-item {
+	border-bottom: 1px solid #ddd;
+}
+.ui-item .ui-rcontent {
+	padding: 5px;
+}
+
+.favoriteSet-info .ui-item .pull-left span, #favoriteSet-title span {
+	margin:5px 10px 0 0; 
+	width:30px;
+	height:20px;
+	display: inline-block;
+}
+.favoriteSet-info ul {
+	position: relative;
+}
+.favoriteSet-info .nav-tabs>li.addSet {
+	
+	float: none !important;
+	position: absolute !important;
+	right: 0;
+}
+
+.favorite-info .ui-item h4 {
+	font-size: 1em;
+}
+.favorite-info .ui-item .content {
+	font-size: 0.9em;
+	
+}
+h5 {
+	color: #000;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+.favorite-info .ui-item h5 span {
+	color: #999;
+	font-weight: normal;
+}
+.favorite-info .operateBtn {
+	color: #888;
+	margin-right: 6px;
+	font-size: 0.8em;
+}
+.back-favoriteSet {
+	margin-bottom: 10px;
+}
+#favoriteSet-title {
+	vertical-align: middle;
+} 
+
+
+.able-responsive {
+	margin-top: 10px;
+} 
+
+
+

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 机构  -->
+<tekinfo>
+  <object>
+    <HDEquipment ResourceBundle="com.takall.object.organization.HDEquipment"
+        Structure="com.takall.organization.HDEquipment"
+        ObjectRm="com.takall.remoting.organization.HDEquipmentRm">
+      <autovalue>
+        <hd_equipment_id base="identity"/>
+        <hd_equipment_code base="" step="1" digit="10"/>
+      </autovalue>
+      
+      <nosamevalue>
+        <hd_equipment_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="hd_equipment_name" codeIdentity="hd_equipment_code" ownerIdentity="null">
+        <hd_equipment identity="hd_equipment_id"/>
+        <hd_equipment_icon identity="hd_equipment_id"/>
+        <hd_equipment_icon_blob identity="hd_equipment_id"/>
+      </table>
+      
+      <icon table="hd_equipment_icon"
+          blobTable="hd_equipment_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <hd_equipment_name/>
+            <hd_equipment_type/>
+            <!-- <hd_equipment_tags/> -->
+            <hd_equipment_performance/>
+            <hd_equipment_remark/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <hd_equipment_code rightrole="audit"/>
+            <hd_equipment_name/>
+            <hd_equipment_type/>
+            <!-- <hd_equipment_tags/> -->
+            <hd_equipment_performance/>
+            <hd_equipment_remark/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <hd_equipment_code rightrole="audit"/>
+            <hd_equipment_name/>
+            <hd_equipment_type/>
+            <!-- <hd_equipment_tags/> -->
+            <hd_equipment_performance/>
+            <hd_equipment_remark/>
+            <hd_equipment_organization/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <hd_equipment_name/>
+            <hd_equipment_type/>
+            <!-- <hd_equipment_tags/> -->
+            <hd_equipment_performance/>
+            <hd_equipment_remark/>
+            <hd_equipment_organization/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <hd_equipment_name/>
+            <hd_equipment_type/>
+            <!-- <hd_equipment_tags/> -->
+          </item>
+        </search>
+        
+        <textSearch>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x0"/>
+          </parameter>
+          <item>
+          </item>
+        </textSearch>
+        
+        <upload>
+          <parameter>
+            <!-- 支持的文件后缀名（以“,”分割）-->
+            <support_suffix value="png,jpg,bmp"/>
+            <!-- 是否是图片文件 -->
+            <icon_file value="true"/>
+            <!-- 允许的文件最大长度 -->
+            <max_length value="5MB"/>
+            
+            <!-- 图片最小宽度 -->
+            <min_width value="300"/>
+            <!-- 图片最大宽度 -->
+            <max_width value="400"/>
+            <!-- 图片最小高度 -->
+            <min_height value="0"/>
+            <!-- 图片最大高度 -->
+            <max_height value="0"/>
+          </parameter>
+        </upload>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <hd_equipment_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <hd_equipment_code variable="string" maxlength="10" notnull="true" forbitEdit="false"/>
+        <!-- 名称 -->
+        <hd_equipment_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 类型 -->
+        <hd_equipment_type variable="int" parse="dictionary:HDEquipment" format="single" notnull="true"/>
+        <!-- 标签分类
+        <hd_equipment_tags variable="string" maxlength="255"/> -->
+        <!-- 性能参数 -->
+        <hd_equipment_performance variable="string" maxlength="1024" format="textarea:4"/>
+        <!-- 简介 -->
+        <hd_equipment_remark variable="string" maxlength="1024" format="textarea:4"/>
+        <!-- 所属机构 -->
+        <hd_equipment_organization variable="long" parse="object:Organization" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </HDEquipment>
+  </object>
+</tekinfo>

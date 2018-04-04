@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 客户端LOGO支持  -->
+<tekinfo>
+  <database>
+    <table>
+      <client_icon_blob>
+        <item>
+          <!-- 标识 -->
+          <client_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <icon_blob value="BLOB"/>
+        </item>
+      </client_icon_blob>
+    </table>
+  </database>
+</tekinfo>

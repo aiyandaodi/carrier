@@ -1,0 +1,10 @@
+name=网址
+
+#property
+property.contact_url_id=标识
+property.contact_url_code=编码
+property.contact_url_name=名称
+property.contact_url_address=网址
+property.contact_url_contact=所属联系信息
+
+#contacturl

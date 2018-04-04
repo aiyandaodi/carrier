@@ -1,0 +1,11 @@
+name=检验鉴定服务目录附加信息
+
+#property
+property.appraisal_catalog_id=标识
+property.appraisal_catalog_code=编码
+property.appraisal_catalog_name=名称
+property.appraisal_catalog_unit=单位
+property.appraisal_catalog_min=最低基准价
+property.appraisal_catalog_max=最高基准价
+property.appraisal_catalog_remark=说明
+property.appraisal_catalog_catalog=所属目录

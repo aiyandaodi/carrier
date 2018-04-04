@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构工商注册对象 -->
+<tekinfo>
+  <database>
+    <table>
+    	<!-- 数据库表名 -->
+      <organization_coderegister>
+        <item>
+          <!-- 标识 -->
+          <coderegister_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 组织机构代码 -->
+          <coderegister_code value="VARCHAR(64) NOT NULL"/>
+         <!-- 代码证颁发机关 -->
+          <coderegister_issue value="VARCHAR(128) NOT NULL"/>
+          <!-- 所属机构 -->
+          <coderegister_organization value="BIGINT NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </organization_coderegister>
+    </table>
+  </database>
+</tekinfo>

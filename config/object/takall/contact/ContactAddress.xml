@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 地址 -->
+<tekinfo>
+  <object>
+    <ContactAddress ResourceBundle="com.takall.contact.ContactAddress"
+        Structure="com.takall.contact.ContactAddress"
+        ObjectRm="com.takall.remoting.contact.ContactAddressRm"
+        version="2.0" resourceVersion="2.0">
+      <autovalue>
+        <address_id base="identity"/>
+        <address_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="address_name" codeIdentity="null">
+        <contact_address identity="address_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <address_name/>
+            <address_zip/>
+            <address_country/>
+            <address_state/>
+            <address_city/>
+            <address_street/>
+            <address_landmark/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <address_name/>
+            <address_zip/>
+            <address_country/>
+            <address_state/>
+            <address_city/> 
+            <address_street/>
+            <address_landmark/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <address_code/>
+            <address_name/>
+            <address_zip/>
+            <address_country/>
+            <address_state/>
+            <address_city/>
+            <address_street/>
+            <address_landmark/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <address_code/>
+            <address_name/>
+            <address_zip/>
+            <address_country/>
+            <address_state/>
+            <address_city/>
+            <address_street/>
+            <address_landmark/>
+          </item>
+        </read>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <address_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <address_code variable="string" maxlength="10"/>
+        <!-- 名称 -->
+        <address_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 国家（标准的2字节代码） -->
+        <address_country variable="string" parse="country" format="option"/>
+        <!-- 省（州）二级行政单位 -->
+        <address_state variable="string"/>
+        <!-- 县（市、区）三级行政单位 -->
+        <address_city variable="string"/>
+        <!-- 街道 -->
+        <address_street variable="string" maxlength="255"/>
+        <!-- 附近地标 -->
+        <address_landmark variable="string" maxlength="64"/>
+        <!-- 邮编 -->
+        <address_zip variable="string" maxlength="255"/>
+        <!-- 所属联系人 -->
+        <address_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactAddress>
+  </object>
+</tekinfo>

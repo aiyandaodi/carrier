@@ -1,0 +1,12 @@
+name=主题目录
+
+#property
+property.catalog_id=标识
+property.catalog_code=编码
+property.catalog_name=目录名称
+property.catalog_object=所属对象
+property.catalog_type=类型
+property.catalog_group=所属小组
+property.catalog_user=所属用户
+
+#message

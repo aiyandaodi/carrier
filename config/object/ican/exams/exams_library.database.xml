@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 考试题库 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_library>
+        <item>
+          <!-- 标识 -->
+          <exams_library_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 题库编码 -->
+          <exams_library_code value="VARCHAR(16) NOT NULL"/>
+          <!-- 题库名称 -->
+          <exams_library_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 目录分类 -->
+          <exams_library_catalog value="VARCHAR(32)"/>
+          <!-- 标签 -->
+          <exams_library_tags value="VARCHAR(512)"/>
+          <!-- 级别 -->
+          <exams_library_grade value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 阅读权限 -->
+          <exams_library_read value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 修改权限 -->
+          <exams_library_write value="SMALLINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 所属组 -->
+          <exams_library_group value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <exams_library_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 停用日期 -->
+          <exams_library_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_library>
+    </table>
+  </database>
+</tekinfo>

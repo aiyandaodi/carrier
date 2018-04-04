@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../jquery/1.8.1/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="../tool.js"></script>
+    <script type="text/javascript" src="../common.js"></script>
+    <script type="text/javascript" src="../dataUtility.js"></script>
+
+    <script type="text/javascript" src="catalog.js"></script>
+    <script type="text/javascript" src="tag.js"></script>
+    <script type="text/javascript" src="color.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var params = {
+        object: "Subject",
+        owner: "0"
+    };
+    var setting = {
+        load: {
+            async: true
+        },
+        callback: {
+            success: success,
+            error: error
+        }
+    };
+
+    var re = tek.catalog.init(params, setting);
+    if (re.flag) {
+        tek.catalog.getNodes();
+    } else {
+        console.error(re.message);
+    }
+
+    function success(nodes) {
+        console.debug(nodes);
+
+        var n = tek.catalog.getNodeByParam("code", "00010003");
+        console.log(n);
+
+        var ns = tek.catalog.getNodesByParam("pCode", "00020000");
+        console.log(ns);
+    }
+
+    function error(errorMsg) {
+        console.debug(errorMsg);
+    }
+</script>
+
+<script type="text/javascript">
+    var params = {
+        object: "Subject"
+    };
+    var callback = {
+        success: function (tags) {
+            console.debug(tags);
+        },
+        error: function (errorMsg) {
+            console.debug(errorMsg);
+        }
+    };
+    var re = tek.tag.init(params);
+    if (re.flag) {
+        tek.tag.getTags(callback);
+    } else {
+        console.error(re.message);
+    }
+
+    //根据id值获取标签
+    console.log(tek.tag.getTagById('123674123819'));
+    //根据参数获取标签
+    console.log(tek.tag.getTagsByParam('name', '标签名字'));
+
+    //获取权限
+    console.log(tek.tag.getRight());
+    //是否有创建权
+    console.log(tek.tag.isCanCreate());
+
+    //定义私有标签
+    tek.tag.addTag('我的标签1', function (newTag) {
+        console.log(newTag);
+    }, function (errorMsg) {
+        console.log(errorMsg);
+    });
+    //删除一条自定义标签
+    tek.tag.remove('148213y489', function (deleteTag) {
+        console.log(deleteTag);
+    }, function (errorMsg) {
+        console.log(errorMsg);
+    });
+    //删除多个自定义标签
+    tek.tag.removes(['148213y489', '834y8123479'], function (deleteTags) {
+        console.log(deleteTags);
+    }, function (errorMsg) {
+        console.log(errorMsg);
+    });
+
+</script>
+
+<script type="text/javascript">
+    //颜色的用法同标签，把 tek.tag.xxx 换成 tek.color.xxx 即可
+    var params = {
+	    object: "Subject"
+    };
+    var callback = {
+	    success: function (colors) {
+		    console.debug(colors);
+	    },
+	    error: function (errorMsg) {
+		    console.debug(errorMsg);
+	    }
+    };
+    var re = tek.color.init(params);
+    if (re.flag) {
+	    tek.color.getColors(callback);
+    } else {
+	    console.error(re.message);
+    }
+</script>
+
+</body>
+</html>

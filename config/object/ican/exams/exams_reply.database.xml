@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试卷答题 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_reply>
+        <item>
+          <!-- 标识 -->
+          <exams_reply_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_reply_code value="VARCHAR(14) NOT NULL"/>
+          <!-- 答案 -->
+          <exams_reply_name value="VARCHAR(255)"/>
+          
+          <!-- 得分 -->
+          <exams_reply_score value="SMALLINT DEFAULT '0'"/>
+          <!-- 状态 -->
+          <exams_reply_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属试题 -->
+          <exams_reply_question value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 试题类型 -->
+          <exams_reply_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属考卷 -->
+          <exams_reply_paper value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_reply>
+    </table>
+  </database>
+</tekinfo>

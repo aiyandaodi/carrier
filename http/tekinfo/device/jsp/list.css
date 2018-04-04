@@ -1,0 +1,8 @@
+
+#listorder .device_name, .item1 .device_name, .item2 .device_name {width:28%;}
+#listorder .device_type, .item1 .device_type, .item2 .device_type {width:14%;}
+#listorder .device_address, .item1 .device_address, .item2 .device_address {width:24%;}
+#listorder .device_ini, .item1 .device_ini, .item2 .device_ini {width:13%;}
+#listorder .device_valid, .item1 .device_valid, .item2 .device_valid {width:12%;}
+
+.item1 .device_name, .item2 .device_name{text-align:left;}

@@ -1,0 +1,17 @@
+name=订单:技术协作
+
+#property
+property.cooperation_id=标识
+property.cooperation_code=编码
+property.cooperation_name=委托单位
+property.cooperation_contact=联系人
+property.cooperation_phone=联系手机
+property.cooperation_email=联系邮箱
+property.cooperation_recommend=推荐码
+property.cooperation_start=委托时间
+property.cooperation_agreetime=接受办理时间调整
+property.cooperation_making=委托材料
+property.cooperation_remark=委托要求
+property.cooperation_remark_secrecy=委托要求是否加密
+property.cooperation_order=所属订单
+property.cooperation_owner=订单所有者

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 国家/地区 -->
+<tekinfo>
+  <database>
+    <table>
+      <country>
+        <item>
+          <!-- 标识 -->
+          <country_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <country_code value="CHAR(2) NOT NULL"/>
+          <!-- 简称 -->
+          <country_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 全称 -->
+          <country_fullname value="VARCHAR(256) NOT NULL"/>
+          <!-- 时区 -->
+          <country_timezone value="CHAR(3)"/>
+          <!-- 货币 -->
+          <country_currency value="CHAR(3)"/>
+          <!-- 区号 -->
+          <country_areacode value="VARCHAR(8)"/>
+          <!-- 当前记录语言 -->
+          <country_locale value="VARCHAR(10) NOT NULL"/>
+          <!-- 是否有效 -->
+          <country_valid value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </country>
+    </table>
+  </database>
+</tekinfo>

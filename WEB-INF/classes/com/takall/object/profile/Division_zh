@@ -1,0 +1,13 @@
+#FriendDivision
+name=好友
+
+#property
+property.division_id=标识
+property.division_code=编码
+property.division_name=名字
+property.division_owner=所有者
+property.division_admin=管理者
+
+#menu
+
+

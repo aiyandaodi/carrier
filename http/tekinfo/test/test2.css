@@ -1,0 +1,61 @@
+td {
+	padding: 2px 5px;
+}
+
+td.case_number {
+	background:#7CC8FF;
+	text-align:center;
+}
+
+td.case_remark {
+	background:#7CC8FF;
+	color:#F66;
+	text-align:left;
+}
+
+td.case_message {
+	background:#7CC8FF;
+	color:#F66;
+	text-align:left;
+}
+
+td.case_result {
+	text-align:center;
+}
+
+td.case_result_1 {
+	background:#47E43D;
+}
+
+td.case_result_0 {
+	background:#D82E2E;
+}
+
+td.case_type {
+	text-align:center;
+}
+
+td.case_type_servlet {
+	background:#9C9;
+}
+td.case_type_result {
+	background:#7CC8FF;
+	color:#F66;
+}
+
+td.case_type_case {
+	background:#CC9;
+}
+td.case_type_login {
+	background:#DFFEFE;
+}
+td.case_type_logout {
+	background:#F3F1E5;
+}
+td.case_type_change {
+	background:#9EF8DE;
+	color:#F00;
+}
+td.case_type_other {
+	background:#EAF7DA;
+}

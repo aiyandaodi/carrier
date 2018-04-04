@@ -1,0 +1,13 @@
+name=机构关系
+
+#property
+property.organizationrelation_id=标识
+property.organizationrelation_code=编码
+property.organizationrelation_name=名称
+property.organizationrelation_source=机构:父
+property.organizationrelation_target=机构:子
+property.organizationrelation_type=关系程度
+property.organizationrelation_status=状态
+property.organizationrelation_owner=机构关系创建者
+property.organizationrelation_auditor=机构关系审核员
+property.organizationrelation_auditortime=机构关系审核日期

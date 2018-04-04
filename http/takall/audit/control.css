@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document takall.css*/
+
+#tekinfo_main header{
+	position:relative;
+}
+
+.bread-crumb{
+	width:300px;
+	margin:0;
+	padding:0;
+}
+
+.bread-crumb .quick_search{
+	float:left;
+	width:280px;
+	height:36px;
+	padding:0 40px 0 6px;
+	border:1px #EBF6FA;
+}
+
+.bread-crumb .input-group-btn{
+	font-size: 0.8em;
+	line-height:32px;
+	width:36px;
+	height:36px;
+	margin-left: 240px;
+	position:absolute;
+	padding: 0;
+	
+}
+
+.bread-crumb .input-group-btn > .btn {
+    padding: 0;
+	background:none;
+}
+
+.bread-crumb .input-group-btn img{
+	height:36px;
+	padding:0;
+	margin:0;
+}

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构 -->
+<tekinfo>
+  <database>
+    <table>
+      <organization>
+        <item>
+          <!-- 标识 -->
+          <organization_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码:机构编码（12位编码，国际区号(5位) + 组织机构代码(10位(不够的前面补0)+1位校验)） -->
+          <organization_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称：机构名称 -->
+          <organization_name value="VARCHAR(200) NOT NULL"/>
+          
+          <!-- 法人代表 -->
+          <organization_person value="VARCHAR(128)"/>
+          <!-- 负责人 -->
+          <organization_leader value="VARCHAR(128)"/>
+          
+          <!-- 机构类型 -->
+          <organization_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 机构目录分类 -->
+          <organization_catalog value="VARCHAR(128)"/>
+          <!-- 机构标签分类 -->
+          <organization_tags value="VARCHAR(255)"/>
+          
+          <!-- 机构网址 -->
+          <organization_url value="VARCHAR(255)"/>
+          <!-- 机构说明 -->
+          <organization_remark value="MEMO"/>
+          
+          <!-- 机构状态 -->
+          <organization_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <organization_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <!-- 国家（标准的2字节代码） -->
+          <organization_country value="CHAR(2)"/>
+          <!-- 省（州）二级行政单位 -->
+          <organization_state value="VARCHAR(250)"/>
+          <!-- 县（市）三级行政单位 -->
+          <organization_city value="VARCHAR(250)"/>
+          <!-- 街道 -->
+          <organization_street value="VARCHAR(250)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </organization>
+    </table>
+  </database>
+</tekinfo>

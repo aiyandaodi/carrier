@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 群组  -->
+<tekinfo>
+  <object>
+    <!-- 对象。
+         属性定义：ResourceBundle - 资源文件路径
+             Structure - 对象结构类路径
+             version - 对象定义版本号
+             resourceVersion - 资源文件版本号 -->
+    <UserObjectRight ResourceBundle="com.takall.group.UserObjectRight"
+        ObjectRm="com.takall.remoting.group.UserObjectRightRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <user_object_right_id base="identity"/>
+      </autovalue>
+      
+      
+      <table nameIdentity="user_system_username" codeIdentity="null">
+        <user_object_right identity="user_object_right_id"/>
+      </table>
+
+      <command>
+        <read>
+          <item>
+            <user_system_username/>
+            <user_object_group/>
+            <user_object_name/>
+            <user_object_id/>
+            <user_object_right/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <list_counts value="50"/>
+          </parameter>
+          <item>
+          	<user_system_user/>
+            <user_system_username/>
+            <user_object_right/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </list>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <user_system_user/>
+            <user_system_username/>
+            <user_object_group/>
+            <user_object_name/>
+            <user_object_id/>
+            <user_object_right/>
+          </item>
+        </edit>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <user_object_right_id/>
+            <user_system_user/>
+            <user_system_username/>
+            <user_object_group/>
+            <user_object_name/>
+            <user_object_id/>
+            <user_object_right/>
+          </item>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <user_object_right_id variable="long" notnull="true" forbidEdit="true"/>
+        <!--成员组，0表示everyone  -->
+        <user_system_user variable="long" default="0" notnull="true" />
+        <!-- 成员组名字 -->
+        <user_system_username variable="string" maxlength="255" notnull="true"/>
+        
+        <!--目标组，0表示公共  -->
+        <user_object_group variable="long" default="0" notnull="true"/>
+        <!-- 目标组中对象类型名 -->
+        <user_object_name variable="string" maxlength="255" notnull="true"/>
+        <!--目标组指定对象标识，0表示所有同类对象  -->
+        <user_object_id variable="long" default="0" notnull="true"/>
+        
+        <!-- 默认主题权限 -->
+        <user_object_right variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <none value="0"/> <!-- 禁止访问-->
+          <list value="0x01"/>   <!--列表 -->
+          <read value="0x02"/>    <!-- 允许读取主题 -->
+          <create value="0x04"/>    <!-- 允许创建主题 -->
+          <write value="0x08"/>    <!-- 允许创建主题 -->
+          <admin value="0x80"/>    <!-- 允许管理 -->
+        </user_object_right>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </UserObjectRight>
+  </object>
+</tekinfo>

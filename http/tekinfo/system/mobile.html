@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link   rel= "Shortcut Icon"   href= "../../../favicon.ico"/>
+<link   rel= "Bookmark"   href= "../../../favicon.ico"/>
+<link href="mobile.css" rel="stylesheet" type="text/css" media="screen" />
+
+<title>TekInfo TAKALL - Mobile</title>
+</head>
+<body>
+    <!-- 自定义form -->
+    <form id="form1" name="form1" method="post"  accept-charset="<%=charset%>" style="display:none"></form>
+
+  <div id="main">
+  <!-- 选项卡开始 -->
+  <div class="nTab">
+    <!-- 标题开始 -->
+    <div class="TabTitle">
+      <ul id="tab">
+        <li id="account" name="account" class="normal" onclick="action(this.id)">手机账号</li>
+        <li id="answer" name="workunit" class="normal" onclick="action(this.id)">短信应答</li>
+        <li id="send" name="messagebox" class="normal" onclick="action(this.id)">发送队列</li>
+        <li id="recv" name="address" class="normal" onclick="action(this.id)">接收队列</li>
+      </ul>
+    </div>
+    
+    <!-- 内容开始 -->
+    <div id="TabContent" class="TabContent">
+      <iframe id="accountFrame" frameborde="true" name="accountFrame" style="display:none"></iframe>
+      <iframe id="answerFrame" frameborde="true" name="answerFrame" style="display:none"></iframe>
+      <iframe id="sendFrame" frameborde="true" name="sendFrame" style="display:none"></iframe>
+      <iframe id="recvFrame" frameborde="true" name="recvFrame" style="display:none"></iframe>
+    </div>
+    
+    <script language="javascript">
+	  var init=new Array(0, 0, 0, 0);
+	  //默认显示"手机账号"
+	  action("account");
+
+      /**
+       * 操作
+       */
+      function action(id) {
+        var form = document.getElementById("form1");
+        if (form == null)
+          return;
+
+        form.innerHTML="";
+        form.target=id+"Frame";
+
+        if (id=="account") {
+          form.action = "../message/mobile/account/list.jsp";
+	    } else if (id=="answer") {
+          form.action = "../message/mobile/answer/list.jsp";
+        } else if (id=="send") {
+          form.action = "../message/mobile/sendqueue/list.jsp";
+        } else if (id=="recv") {
+          form.action = "../message/mobile/recvqueue/list.jsp";
+        } else
+          return;
+
+        form.submit();
+
+		selectTab(id);
+      }
+	
+      /**
+       * 改变Tab标签显示
+       */
+      function selectTab(id) {
+        var tabList=document.getElementById("tab").getElementsByTagName("li");
+		if (tabList) {
+          for(i=0; i <tabList.length; i++) {
+			if (tabList[i].id == id) {
+              tabList[i].className = "active";
+			  document.getElementById(tabList[i].id+"Frame").style.display="block";
+			  if (init[i]==0) {
+			    //action(id);
+				init[i]=1;
+			  }
+			} else {
+              tabList[i].className = "normal"; 
+			  document.getElementById(tabList[i].id+"Frame").style.display="none";
+			}
+		  }
+        } // end if (tabList)
+	  }
+    </script>
+  <!-- end .nTab -->
+  </div>
+  <!-- end #main -->
+  </div>
+</body>
+</html>

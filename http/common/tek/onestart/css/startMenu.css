@@ -1,0 +1,148 @@
+.startbutton {
+	position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 108800;
+    border-radius: 25px;
+    background: #2695A6!important;
+	
+	
+    float: inherit !important;
+    padding: inherit !important;
+    margin-top:  inherit !important;
+    margin-right:  inherit !important;
+    margin-bottom:  inherit !important;
+    
+    border: inherit !important;
+}
+
+.startbutton a, .startbutton a:visited{
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+
+.startbutton a:hover {
+	color: #B7F9A7;
+	text-decoration: none;
+}
+
+.startbutton a i { 
+	margin-top:7px; 
+}
+
+.startbutton img{
+	width: 32px;
+	height: 32px;
+	
+	filter: alpha(Opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.5;
+}
+
+#oneStartDiv{
+	background-color:#fff;
+	width: 66px;
+	height: 66px;
+	position:fixed;
+	bottom:20px;
+		
+	z-index:80;
+		
+	border-radius: 40px;
+	transition:border-radius 0.5s,width 0.5s,height 0.5s,right 0.5s,left 0.5s,background-size 0.3s,background-image 0.3s;
+	-moz-transition:border-radius 0.5s,width 0.5s,height 0.5s,right 0.5s,left 0.5s,background-size 0.3s,background-image 0.3s;/* Firefox 4 */
+	-webkit-transition:border-radius 0.5s,width 0.5s,height 0.5s,right 0.5s,left 0.5s,background-size 0.3s,background-image 0.3s;/* Safari 和 Chrome */
+	-o-transition:border-radius 0.5s,width 0.5s,height 0.5s,right 0.5s,left 0.5s,background-size 0.3s,background-image 0.3s; /* Opera */
+			
+	box-shadow: 1px 1px 1px #888888;
+}
+#oneStartDiv.active{
+	height:300px;
+	width:300px;
+	border-radius: 10px;
+}
+#oneStartDiv .btnImg{
+	position:absolute;
+			
+	bottom:4px;
+	height: 58px;
+	width: 58px;
+	border:1px solid #0C9698;
+	border-radius: 37px;
+	transition:width 0.5s,height 0.5s;
+	-moz-transition:width 0.5s,height 0.5s;/* Firefox 4 */
+	-webkit-transition:width 0.5s,height 0.5s; /* Safari 和 Chrome */
+	-o-transition:width 0.5s,height 0.5s;/* Opera */
+	z-index:99;
+			
+	background-image:url(../image/readbook2x.png);
+	background-repeat:no-repeat;
+	background-position: 8px 8px;
+	background-size: 40px 40px;
+}
+#oneStartDiv .btnImg.active{
+	height:40px;
+	width:40px;
+	background-image:url(../image/cancel.png);
+	background-size:32px 32px;
+	background-position:center;
+}
+#oneStartDiv ul{
+	list-style:none;
+	margin:15px 20px;
+	transition:opacity 0.3s ease-in;
+	-moz-transition:opacity 0.3s ease-in;/* Firefox 4 */
+	-webkit-transition:opacity 0.3s ease-in; /* Safari 和 Chrome */
+	-o-transition:opacity 0.3s ease-in;/* Opera */
+	opacity:0;
+	display:none;
+			
+	-moz-user-select:none;/*火狐*/
+	-webkit-user-select:none;/*webkit浏览器*/
+	-ms-user-select:none;/*IE10*/
+	-khtml-user-select:none;/*早期浏览器*/
+	user-select:none;
+	
+	max-height:255px;
+	overflow:hidden;
+}
+#oneStartDiv ul div{
+	transition:margin-top 0.5s;
+	-moz-transition:margin-top 0.5s;/* Firefox 4 */
+	-webkit-transition:margin-top 0.5s; /* Safari 和 Chrome */
+	-o-transition:margin-top 0.5s;/* Opera */
+}	
+#oneStartDiv ul li{
+	border-bottom:1px solid #eee;
+	height:40px;
+	line-height:40px;
+	text-indent:60px;
+	padding:5px;
+	background-image:url(../image/Pasted.png);
+	background-repeat:no-repeat;
+	background-position:7px 7px;
+	background-size:36px 36px;
+}
+#oneStartDiv ul.show{
+	cursor:pointer;
+	display:block;
+}
+		
+#oneStartBG{
+	position:fixed;
+	height:100vh;
+	width:100vw;
+	z-index:70;
+	background-color:#000;
+	opacity:0;
+	top:0;
+	left:0;
+	transition:opacity 0.3s ease-in;
+	-moz-transition:opacity 0.3s ease-in;/* Firefox 4 */
+	-webkit-transition:opacity 0.3s ease-in; /* Safari 和 Chrome */
+	-o-transition:opacity 0.3s ease-in;/* Opera */
+}

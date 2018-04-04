@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 客户端 -->
+<tekinfo>
+  <object>
+    <AppDevice ResourceBundle="net.tekinfo.object.system.AppDevice"
+        Structure="net.tekinfo.system.AppDevice"
+        ObjectRm="net.tekinfo.remoting.system.AppDeviceRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <appdevice_id base="identity"/>
+        <appdevice_code base="yyyyMM" step="1" digit="8"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="appdevice_name" codeIdentity="null">
+        <app_device identity="appdevice_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <appdevice_name/>
+            <appdevice_identity/>
+            <appdevice_status/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <appdevice_name/>
+            <appdevice_identity/>
+            <appdevice_status/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0"/>
+          </parameter>
+          <item>
+            <appdevice_name/>
+            <appdevice_identity/>
+            <appdevice_user/>
+            <appdevice_status/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0"/>
+          </parameter>
+          <item>
+            <appdevice_name/>
+            <appdevice_identity/>
+            <appdevice_user/>
+            <appdevice_status/>
+          </item>
+        </read>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+
+        <import/>
+        <export/>
+
+        <!-- 统一认证的系统获取列表信息 -->
+        <auth-list>
+          <item>
+            <appdevice_id/>
+            <appdevice_code/>
+            <appdevice_name/>
+            <appdevice_user/>
+            <appdevice_status/>
+          </item>
+        </auth-list>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <appdevice_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <appdevice_code variable="string" maxlength="64" notnull="true"/>
+        <!-- 名称 -->
+        <appdevice_name variable="string" maxlength="200" notnull="true"/>
+        
+        <!-- 设备MAC地址
+        <appdevice_mac variable="string" parse="string" notnull="true"/> -->
+        <!-- 设备标识,例如：IMEI:xxx等。如果没有，使用：MAC:00-00-...
+        <appdevice_idstr variable="string" maxlength="250"> -->
+        
+        <!-- 设备操作系统
+        <appdevice_os variable="string" maxlength="200" notnull="true"/> -->
+        <!-- 设备操作系统版本
+        <appdevice_ver variable="string" maxlength="50" notnull="true"/> -->
+        
+        <!-- 该设备指定注册用户
+        <appdevice_reguser variable="long" parse="object:UniUser"/> -->
+        
+        <!-- 设备号(IMEI等) -->
+        <appdevice_identity variable="string" maxlength="32" notnull="true"/>
+        <!-- 授权码 -->
+        <appdevice_token variable="string" maxlength="512" notnull="true"/>
+        <!-- 授权码密钥 -->
+        <appdevice_tokenSecret variable="string" maxlength="512" notnull="true"/>
+        <!-- 所属用户 -->
+        <appdevice_user variable="long" parse="object:User"/>
+        <!-- 状态 -->
+        <appdevice_status variable="int" parse="enum" format="single"  default="1">
+          <stop value="-1"/>    <!-- 停用 -->
+          <normal value="1"/>    <!-- 正常 -->
+        </appdevice_status>
+
+        <!-- 该设备最近被使用时间
+        <appdevice_latestTime variable="long" parse="datetime" format="yyyy-MM-dd hh:mm:ss"/> -->
+        <!-- 该设备最近被使用的IP
+        <appdevice_latestIp variable="long" parse="ip"/> -->
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+
+    </AppDevice>
+  </object>
+</tekinfo>

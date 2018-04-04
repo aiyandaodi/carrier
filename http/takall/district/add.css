@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#add_a_city{
+  line-height: 50px;
+  font-size: 18px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 15px;
+}
+
+#city_form>div>label{
+  text-align: right;
+}
+
+#city_btn{
+  text-align: right;
+}
+
+#city_btn button{
+  margin: 5px;
+}

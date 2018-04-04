@@ -1,0 +1,13 @@
+name=任务返回信息
+
+#property
+property.work_record_id=标识
+property.work_record_code=编码
+property.work_record_work=执行的工作
+property.work_record_site=执行工作的主机
+property.work_record_remark=工作返回的信息记录
+property.work_record_status=执行状态
+property.work_record_status.now=正在执行
+property.work_record_status.apply=执行错误
+property.work_record_status.success=执行成功
+

@@ -1,0 +1,17 @@
+name=对象回复
+
+#property
+property.object_reply_id=标识
+property.object_reply_code=编码
+property.object_reply_name=名称
+property.object_reply_remark=回复内容
+property.object_reply_score=评分
+property.object_reply_status=状态
+property.object_reply_status.stop=禁止
+property.object_reply_status.apply=等待审核
+property.object_reply_status.normal=正常
+property.object_reply_user=所有者
+property.object_reply_linkName=所属对象名
+property.object_reply_linkId=所属对象
+
+#message

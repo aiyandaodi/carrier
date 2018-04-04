@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 即时通 -->
+<tekinfo>
+  <object>
+    <ContactInstance ResourceBundle="com.takall.contact.ContactInstance"
+        Structure="com.takall.contact.ContactInstance"
+        ObjectRm="com.takall.remoting.contact.ContactInstanceRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <instance_id base="identity"/>
+        <instance_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="instance_name" codeIdentity="null">
+        <contact_instance identity="instance_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <instance_name/>
+            <instance_type/>
+            <instance_address/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <instance_name/>
+            <instance_type/>
+            <instance_address/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <instance_name/>
+            <instance_type/>
+            <instance_address/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <instance_name/>
+            <instance_type/>
+            <instance_address/>
+          </item>
+        </read>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <instance_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <instance_code variable="string" maxlength="10"/>
+        <!-- 名字 -->
+        <instance_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 类型 -->
+        <instance_type variable="string" parse="enum" format="option" default="qq" notnull="true">
+          <qq value="qq"/>    <!-- QQ -->
+          <wechat value="wechat"/>    <!-- 微信 -->
+          <blog value="blog"/>    <!-- 微博 -->
+          <other value="other"/>    <!-- 其他 -->
+          <!-- <facebook value="facebook"/>    Facebook -->
+          <!-- <googletalk value="gtalk"/> GoogleTalk -->
+          <!-- <msn value="msn"/>    MSN -->
+          <!-- <skype value="skype"/> -->
+          <!-- <xmpp value="xmpp"/>    XMPP -->
+          <!-- <yahoo value="yahoo"/>    Yahoo -->
+        </instance_type>
+        <!-- 即时通地址 -->
+        <instance_address variable="string" maxlength="255" notnull="true"/>
+        <!-- 所属联系人 -->
+        <instance_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactInstance>
+  </object>
+</tekinfo>

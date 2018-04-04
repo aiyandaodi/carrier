@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 雇员对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <job_recruitment>
+        <item>
+          <!-- 标识 -->
+          <job_recruitment_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <job_recruitment_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 雇员名称 -->
+          <job_recruitment_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 雇员状态 --> 
+          <job_recruitment_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属职位 -->
+          <job_recruitment_job value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <job_recruitment_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 籍贯 -->
+          <job_recruitment_nativeplace value="VARCHAR(255) NOT NULL"/>
+          <!-- 居住地 -->
+          <job_recruitment_resident value="VARCHAR(255) NOT NULL"/>
+          <!-- 最高学历 -->
+          <job_recruitment_schooling value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 首次参加工作时间 -->
+          <job_recruitment_workstart value="VARCHAR(10) NOT NULL"/>
+		  
+          <!-- 申请说明 -->
+          <job_recruitment_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </job_recruitment>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 文档对象的数据库表定义  -->
+<tekinfo>
+  <database>
+    <table>
+      <document>
+        <item>
+          <!-- 标识 -->
+          <doc_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <doc_code  value="VARCHAR(255) NOT NULL"/>
+          <!-- 文档名 -->
+          <doc_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 关键字（标签） -->
+          <doc_keywords value="VARCHAR(255)"/>
+          <!-- 概要 -->
+          <doc_summary value="VARCHAR(1024)"/>
+          <!-- 文档长度 -->
+          <doc_length value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 文档作者 -->
+          <doc_author value="VARCHAR(255) NOT NULL"/>
+          <!-- 所属主题 -->
+          <doc_subject value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 文档所有者 -->
+          <doc_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 文档MIME格式 -->
+          <doc_mime value="VARCHAR(255)"/>
+          <!-- 文档本地存放路径 -->
+          <doc_path value="VARCHAR(255)"/>
+          <!-- 文档状态 -->
+          <doc_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 文档评价 -->
+          <doc_credit value="INT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </document>
+    </table>
+  </database>
+</tekinfo>

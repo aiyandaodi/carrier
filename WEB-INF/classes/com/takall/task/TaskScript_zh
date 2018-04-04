@@ -1,0 +1,11 @@
+name=执行任务脚本
+
+#property
+property.task_script_id=标识
+property.task_script_code=编码
+property.task_script_task=被执行的任务
+property.task_script_script=执行的目标脚本
+property.task_script_status=有效状态
+property.task_script_status.wait=暂停
+property.task_script_status.apply=永久停止
+property.task_script_status.valid=有效

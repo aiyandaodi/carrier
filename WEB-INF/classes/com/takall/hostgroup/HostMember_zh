@@ -1,0 +1,15 @@
+name=主机群组
+
+#property
+property.host_member_id=标识
+property.host_member_code=编码
+property.host_member_name=名称
+property.host_member_right=权限
+property.host_member_right.none=无权限
+property.host_member_right.read_brief=允许操作
+property.host_member_right.read_detail=允许操作
+property.host_member_group=所属主机群组
+property.host_member_user=所属系统用户
+property.host_member_creator=创建者
+property.host_member_latest=成员最近访问组的时间
+

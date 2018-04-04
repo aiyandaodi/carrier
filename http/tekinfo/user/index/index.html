@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+说明：文档索引、列表、图标页面。
+参数：group_id - 小组标识
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel= "Shortcut Icon" href= "../../../../images/favicon.ico"/>
+<link rel= "Bookmark"  href= "../../../../images/favicon.ico"/>
+
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="index.css" id="link">
+
+<script language="javascript" type="text/javascript" src="../../../common/tek/js/common.js"></script>
+<script language="javascript" type="text/javascript" src="../../../common/jquery/1.8.1/jquery-1.8.1.js"></script>
+<script language="javascript" type="text/javascript" src="../../../common/js/normal.js"></script>
+<script language="javascript" type="text/javascript" src="../../../common/tek/js/refresh.js"></script>
+<script language="javascript" type="text/javascript" src="../../../common/lhgdialog/lhgcore.lhgdialog.min.js?self=false&amp;skin=idialog"></script>
+
+<script language="javascript" type="text/javascript" src="index.js"></script>
+
+<script>
+  $(document).ready(function(){
+	  initial();
+  });
+  
+  function SetWinHeight(obj) { 
+    var win=obj; 
+    if (document.getElementById) { 
+      if (win && !window.opera) {
+        if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+          win.height = win.contentDocument.body.offsetHeight; 
+        else if(win.Document && win.Document.body.scrollHeight) 
+          win.height = win.Document.body.scrollHeight; 
+      } 
+    } 
+  }
+</script>
+
+<title>User 用户- 索引</title>
+</head>
+
+<body>
+	 <div id="main">
+        <div id="menu">
+          <!-- 检索框 -->
+          <div id="search-box" class="search">
+          
+            <div style="float:left;">
+              <input id="quick-search" type="text" name="quick-search" value="" placeholder="用户查询" onkeyup="inputEnter(event);" onclick="javascript:this.select();" title="检索内容：用户名"/>
+              <input id="go" type="image" src="../images/search_box_btn.gif" onclick="quicksearch();" alt="用户查询" title="用户查询"/>
+            </div>
+            <script type="text/javascript" language="javascript">
+              /**
+               * 判断输入字符，"回车"自动检索
+               */
+              function inputEnter(evt) {
+                evt = evt ? evt : ((window.event) ? window.event : "");    //兼容IE和Firefox获得keyBoardEvent对象
+                var key = evt.keyCode ? evt.keyCode : evt.which;
+                if (key == 13)
+                  quicksearch();
+    
+                if (evt && evt.stopPropagation)
+                  evt.stopPropagation();
+                else
+                  window.event.cancelBubble=true;
+              }
+            </script>
+          </div><!-- end.search_box-->
+      
+          <!-- 菜单 -->
+          <ul class="menu">
+            <li class="menuout" onmouseover="this.className='menuover'" onmouseout="this.className='menuout'"><a href="../../../../">首页</a></li>
+            <li class="menuout" onmouseover="this.className='menuover'" onmouseout="this.className='menuout'" onclick="refreshList();"><a href="#">刷新</a></li>
+          </ul><!--end.ul.menu-->
+        </div><!-- end.menu-->	
+        
+        <!-- 列表 -->
+        <div class="outer">
+          <div id="listitem"></div>
+          <!-- 列表信息数 -->
+          <div id="list-count"></div>
+          <!-- 翻页按钮 -->
+          <div id="turn">
+            <ul id="turn-menu" class="menu"></ul>
+          </div><!-- end .turn -->
+        </div><!-- end .outer -->
+    
+        <!-- 提示信息 -->
+        <div id="msg" class="msg"></div>     
+     </div><!--#main-->
+     <script language="javascript">
+	 	var PAGE_COUNT = 20;	//每次显示20个
+		var PAGE_ORDER="user_latestTime";
+		var PAGE_SKIP = 0;		//
+		var PAGE_DESC=true;
+		
+	 	/*
+		* 入口函数
+		*/
+		function initial(){
+			quicksearch();
+		}
+		/**
+		 * 快速检索
+		 */
+		function quicksearch() {
+			list(PAGE_SKIP, PAGE_COUNT, PAGE_ORDER, PAGE_DESC);
+		}
+		//刷新
+		function refreshList(){
+			var qs=document.getElementById("quick-search");
+			if(qs && qs.value != "" && qs.value != "用户查询")
+				qs.value = "";
+			quicksearch();
+		}
+     </script>
+</body>
+</html>

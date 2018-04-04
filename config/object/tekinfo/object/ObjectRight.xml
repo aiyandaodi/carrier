@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象权限 -->
+<tekinfo>
+  <object>
+    <ObjectRight ResourceBundle="net.tekinfo.object.object.ObjectRight"
+        Structure="net.tekinfo.object.ObjectRight"
+        ObjectRm="net.tekinfo.remoting.object.ObjectRightRm">
+      <autovalue>
+        <right_id base="identity"/>
+        <right_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="right_name" codeIdentity="null">
+        <object_right identity="right_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <right_name/>
+            <right_owner/>
+            <right_ownerId/>
+            <right_target/>
+            <right_condition/>
+            <right_command/>
+            <right_start/>
+            <right_end/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <right_target/>
+            <right_condition/>
+            <right_command/>
+            <right_start/>
+            <right_end/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <right_name/>
+            <right_owner/>
+            <right_ownerId/>
+            <right_target/>
+            <right_condition/>
+            <right_command/>
+            <right_start/>
+            <right_end/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <right_name/>
+            <right_owner/>
+            <right_target/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <right_name/>
+            <right_owner/>
+            <right_target/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <import/>
+        <export/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <right_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <right_code variable="string" maxlength="6" notnull="true"/>
+        <!-- 名称 -->
+        <right_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 所属对象名 -->
+        <right_owner variable="string" maxlength="64" notnull="true"/>
+        <!-- 所属对象 -->
+        <right_ownerId variable="long" parse="object:this.right_owner" default="0"/>
+        <!-- 目标对象名 -->
+        <right_target variable="string" maxlength="64" notnull="true"/>
+        <!-- 目标条件 -->
+        <right_condition variable="string" maxlength="2048"/>
+        <!-- 目标命令 -->
+        <right_command variable="string" maxlength="255" notnull="true"/>
+        <!-- 有效期开始时间 -->
+        <right_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm" default="now"/>
+        <!-- 有效期结束时间 -->
+        <right_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectRight>
+  </object>
+</tekinfo>

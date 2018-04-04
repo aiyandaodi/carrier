@@ -1,0 +1,442 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh"><!-- InstanceBegin template="/Templates/i-read.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- InstanceBeginEditable name="doctitle" -->
+        <title>我的收藏 ICAN.VIP</title>
+        <!-- InstanceEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+        <link rel="Bookmark" href="../../../favicon.ico"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<!-- Stylesheets -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  		<!-- Font awesome icon -->
+ 		<link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  		<!-- jQuery UI -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  		<!-- Calendar -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  		<!-- prettyPhoto -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  		<!-- Star rating -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>		
+        <!-- owl css -->
+        <link href="../../style/extend/css/owl.carousel.css" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        
+        <link href="../../tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../../tekinfo/css/tekinfo-dialog.css" rel="stylesheet">
+        
+        <link href="../../vip/css/i.css" rel="stylesheet">
+        <link href="../../vip/css/i-dialog.css" rel="stylesheet">
+        
+        <!-- InstanceBeginEditable name="head-css" -->
+        <!-- my css in head -->
+        <link href="read.css" rel="stylesheet">
+		<!-- InstanceEndEditable -->
+        
+        <script src="../../common/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../../style/macadmin/js/respond.min.js"></script>
+         
+        <!-- InstanceBeginEditable name="head-js" -->
+        <!-- my js in head -->
+        
+        <!-- InstanceEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				initial();
+			});
+  		</script>
+        <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+	</head>
+	
+<body>
+<div id="index_banner" class="index-banner">
+	
+</div><!-- end .index-banner -->
+<!-- tekinfo_main 配合 tekinfo_footer 根据高度设置位置--->
+<div id="tekinfo_main" class="main">
+<!-- InstanceBeginEditable name="main content" -->
+<div id="tekinfo_banner" class="index-banner"></div><!-- end .index-banner -->
+
+
+<!-- main content -->
+<div class="main">
+	<div class="container">
+    	<br/><hr/><br/>
+    	<div class="row">
+        	<div class="col-md-8 col-sm-12">
+            	<div class="favoriteSet-info " id="favoriteSet_info">
+                	
+                	<ul class="nav nav-tabs nav-justifie" role="tabpanel">
+						<li role="tabpanel" class="active"><a href="#favorite_set_name" data-toggle="tab">收藏夹</a></li>
+						<!-- <li role="tabpanel"><a href="#favorite_set_type" data-toggle="tab">类型</a></li> -->
+						
+						<li calss="addSet" style="position: absolute;right: 0;"><a  href="javascript:;" onclick="addFavoriteSet()"><i class="fa fa-plus"></i>创建收藏集</a></li>
+						<div class="clearfix"></div>
+					</ul>
+					<div class="tab-content able-responsive ">
+						<!-- 收藏夹-->
+						<div class="tab-pane fade in active" id="favorite_set_name" role="tabpanel">
+							
+							<!-- <div class="ui-item clearfix">
+								<div class="ui-rcontent clearfix">
+									<div class="pull-right">
+										<a class="pull-right" ><i class="fa fa-edit"></i></a> 
+									</div>
+									<div class="pull-left">
+										<span></span>
+									</div>
+									<h4>
+										<a href="#" class="user-name">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+									</h4>
+									<p id="">2条内容</p>
+
+								</div>
+									
+							</div>
+							
+							<div class="ui-item clearfix">
+								<div class="ui-rcontent clearfix">
+									<div class="pull-right">
+										<a class="pull-right" ><i class="fa fa-edit"></i></a> 
+									</div>
+									<h4>
+										<a href="#" class="user-name">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+									</h4>
+									<p id="">2条内容</p>
+
+								</div>
+									
+							</div> -->
+							
+							
+							
+							
+						</div>
+						<!-- 类型 -->
+						<div class="tab-pane fade" id="favorite_set_type" role="tabpanel"></div>
+						
+					</div>
+                   
+            	</div>
+            	<div class="back-favoriteSet hide"><a href="javascript:;" onclick="backFavoriteSet();"><i class="fa fa-long-arrow-left"></i>&nbsp;返回收藏夹</a></div>
+            	<div class="favorite-info hide" id="favorite-info">
+            		<h4 id="favoriteSet-title"></h4>
+					<a class="operateBtn favorite-edit hide" target="_blank">编辑</a><a class="operateBtn favorite-remove hide" href="javascript:;">删除</a>
+           			<hr>
+           			<div id="favorite_name"></div>
+           			<!-- <div class="ui-item clearfix">
+						<div class="ui-rcontent clearfix">
+							
+							<h4>
+								<a href="#" class="user-name">前端工程师，你们都在研究哪些技术？</a>
+							</h4>
+							<div class="content">
+								<h5>系统管理员，<span>好好学习，天天向上！</span></h5>
+								<p>
+								今天天气好晴朗，处处好风光，好风光，这也茫茫，那儿也茫茫，小鸟也忙，白云也忙，啦啦啦啦啦啦啦啦啦啦。。。。
+								</p>
+							</div>
+							
+
+						</div>
+
+					</div>
+           			<div class="ui-item clearfix">
+						<div class="ui-rcontent clearfix">
+							
+							<h4>
+								<a href="#" class="user-name">前端工程师，你们都在研究哪些技术？</a>
+							</h4>
+							<div class="content">
+								<h5>系统管理员，<span>好好学习，天天向上！</span></h5>
+								<p>
+								今天天气好晴朗，处处好风光，好风光，这也茫茫，那儿也茫茫，小鸟也忙，白云也忙，啦啦啦啦啦啦啦啦啦啦。。。。
+								</p>
+							</div>
+							
+
+						</div>
+
+					</div>
+           			<div class="ui-item clearfix">
+						<div class="ui-rcontent clearfix">
+							
+							<h4>
+								<a href="#" class="user-name">前端工程师，你们都在研究哪些技术？</a>
+							</h4>
+							<div class="content" >
+								<h5>系统管理员，<span>好好学习，天天向上！</span></h5>
+								<p>
+								今天天气好晴朗，处处好风光，好风光，这也茫茫，那儿也茫茫，小鸟也忙，白云也忙，啦啦啦啦啦啦啦啦啦啦。。。。
+								</p>
+							</div>
+							
+
+						</div>
+
+					</div> -->
+            	</div>
+            </div>
+            <div class="col-md-4 col-sm-6" >
+        		<div class="ui-225 col-block">
+            		<h2 class="bg-lblue">公告</h2>
+                  <div id="subject_notice"></div>
+                   <!-- <div class="item">
+                    	<h3><a href="#">关于2017年职业审核通告</a></h3>
+                        <div class="meta">
+							<i class="fa fa-calendar"></i> <a href="#">2016-12-20</a> &nbsp; <i class="fa fa-user"></i> <a href="#">明讯通达</a>
+						</div>
+						<p>2017年将采用新的职业认证审核考试，支持在线和线下考试认证，敬请大家留意</p>
+					</div>
+                    <div class="item">
+						<h3><a href="#">最新在线考核通告</a></h3>
+						<div class="meta">
+							<i class="fa fa-calendar"></i><a href="#">2017-01-10</a> &nbsp; <i class="fa fa-user"></i> <a href="#">易商迅达</a>
+						</div>
+						<p>2017年将采用新的职业认证审核考试，支持在线和线下考试认证，敬请大家留意</p>
+					</div>-->
+                </div><!-- end .ui-225-->
+          	</div><!-- end col-md-4 -->	
+    	</div><!-- end .row-->	
+    </div><!-- end .container -->
+</div>
+<!-- InstanceEndEditable -->
+</div><!-- end .main-->  
+
+<!-- Footer 自动载入vip/html/i-footer.html 内容-->
+<div id="tekinfo_footer"></div>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class="text-center"></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<!--蒙版-->
+<!--<div id="tekinfo_Layer" onClick="javascript:changeTekinfoLayerColor();"></div>-->
+<!--<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> --> 
+<!-- popmenu -->
+<div id="tekinfo_popmenu"></div>
+		
+<!-- Javascript files -->
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- slimscroll -->
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<script src="../../style/macadmin/js/excanvas.min.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.stack.js"></script>
+
+
+<!-- jQuery Notification - Noty -->
+<script src="../../style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="../../style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<script src="../../style/macadmin/js/charts.js"></script> <!-- Charts & Graphs -->
+
+<!-- Owl carousel -->
+<script src="../../style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../../style/extend/js/placeholder.js"></script>
+
+<!-- Tekinfo JS -->
+<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+<script type="text/javascript" src="../../common/tek/js/user.js"></script>
+<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+<script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+<script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+<script type="text/javascript" src="../../common/touchscreen/touchscreen.js"></script>
+<script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+<script type="text/javascript" src="../../vip/js/i.js"></script>
+<script type="text/javascript" src="../../vip/js/i-dialog.js"></script>
+<script type="text/javascript" src="../login/index.js"></script> 
+                     
+		<!-- InstanceBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+       <script type="text/javascript" src="read.js"></script>
+		<!-- InstanceEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+function initial(){
+	/** 载入页面顶部信息 **/
+	$("#index_banner").load(tek.common.getRootPath() + "http/vip/html/i-header.html",function(){
+		var cssurl=tek.common.getRootPath()+"http/vip/html/i-header.css";
+			//alert("cssurl="+cssurl);
+			loadCSS(cssurl);
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-header.js",function(){
+			
+			if(typeof initHeader == "function"){
+				initHeader();
+			}
+		});
+		
+		$("#index_banner").css("position","relative");
+		$("#index_banner").show();
+		
+		tek.core.getURLRequest();
+	
+		tek.common.getUser();
+		showUser(); //tekinfo.js
+
+		//tek.serverTimer.show();
+		if (tek.common.isLoggedIn()) {
+			showUserInfo();
+			
+			if (tek.role.isAuditor(myRole)) {
+				$("#user_tekinfo").removeClass("hide"); 
+			} 
+			if(tek.role.isCustomerService(myRole)){
+				$("#user_takall").removeClass("hide");
+				$("#user_ican").removeClass("hide");
+			}
+		} else {
+			/*tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+			tek.macCommon.waitDialogHide(1500, 'goLogin()');*/
+			iLogin();
+		}
+
+		var error = request["error"];
+
+		if (error && error.length > 0)
+			showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+
+		var message = request["message"];
+		if (message && message.length > 0)
+			showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+		
+		if (typeof init == "function") 
+			init();
+	});
+	
+	
+	/** 载入页面底部信息 **/
+	$("#tekinfo_footer").load(tek.common.getRootPath() + "http/vip/html/i-footer.html",function(){
+		//alert("111 js="+tek.common.getRootPath() + "http/vip/html/i-footer.js");
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-footer.js",function(){
+			//alert("111 initFooter="+(typeof initFooter));
+			if(typeof initFooter == "function"){
+				initFooter();
+			}
+		});
+	});
+	
+	
+	/** 载入弹出菜单 **/
+	$("#tekinfo_popmenu").load(tek.common.getRootPath() + "http/vip/html/i-readmenu.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-readmenu.js",function(){
+			//alert("initReadmenu="+(typeof initReadmenu));
+			if(typeof initReadmenu == "function"){
+				initReadmenu();
+			}
+		});
+	});
+	
+	
+	
+	
+	
+	/**
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		scrollPage();
+	}
+	
+	
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+	//alert("ok");
+}
+</script>
+
+	</body>	
+<!-- InstanceEnd --></html>

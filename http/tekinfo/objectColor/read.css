@@ -1,0 +1,11 @@
+/* CSS Document */
+div.loading {
+	height: 180px;
+    padding-top: 90px;
+}
+
+.error-content {
+    height: 300px;
+    padding-top: 145px;
+    font-size: 1.3em;
+}

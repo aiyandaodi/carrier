@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*************** label ******************/
+form div.form-group > label { text-align: right; margin-bottom: 0; }
+/************** end label ******************/
+
+/*************** button ******************/
+div#btn button { margin: 0 50px 0 0; float:none; }
+div#btn button:last-child { margin:0; }
+.container {
+	margin-top: 20px;
+}
+/************** end button ******************/

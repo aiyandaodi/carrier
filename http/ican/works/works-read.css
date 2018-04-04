@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* UI - X */
+.ui-280{
+    max-width: 800px;
+    margin: 60px auto;
+}
+/* Item */
+@media(max-width: 500px){
+    .ui-280 .ui-item{
+        margin: 10px 0px;
+    }
+}
+/* Left Side */
+.ui-280 .ui-item .ui-left{
+    width: 120px;
+    float: left;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px !important;
+    padding: 10px 5px;
+    text-align: center;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-left{
+        float: none;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        margin: 0px auto;
+    }
+}
+.ui-280 .ui-item .ui-left:after,
+.ui-280 .ui-item .ui-left:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-left:after,
+    .ui-280 .ui-item .ui-left:before {
+        top: 100%;
+        left: 50%;
+    }
+}
+.ui-280 .ui-item .ui-left:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #fff;
+    border-width: 7px;
+    margin-top: -7px;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-left:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #fff;
+        margin-left: -7px;
+        margin-top: 0px;
+    }
+}
+.ui-280 .ui-item .ui-left:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-left-color: #ccc;
+    border-width: 8px;
+    margin-top: -8px;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-left:before {
+        border-color: rgba(221, 221, 221, 0);
+        border-top-color: #ddd;
+        margin-left: -8px;
+        margin-top: 0px;
+    }
+}
+/* Heading */
+.ui-280 .ui-item .ui-left h3{
+    font-size: 1em;
+    line-height: 24px;
+    display: inline;
+}
+/* Right Side */
+.ui-280 .ui-item .ui-right{
+    border-left: 1px solid #eee;
+    margin-left: 200px;
+    padding: 15px 10px;
+    position: relative;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-right{
+        border-left: 0px;
+        margin-left: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+/* Icon */
+.ui-280 .ui-item .ui-right a.ui-icon{
+    display: block;
+    width: 40px;
+    position: absolute;
+    top: 24px;
+    left: -20px;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-item .ui-right a.ui-icon{
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
+    }
+}
+.ui-280 .ui-item .ui-right a.ui-icon > i{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 100% !important;
+    color: #fff;
+    font-size: 18px;
+}
+/* Right Content */
+.ui-280 .ui-right .ui-rcontent{
+    position: relative;
+    margin-left: 40px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px !important;
+    padding: 10px 20px;
+    box-shadow:2px 2px 0px 1px rgba(0,0,0,0.07)  !important;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-right .ui-rcontent{
+        margin-left: 0px;
+        margin-top: 15px;
+        text-align: center;
+    }
+}
+.ui-280 .ui-right .ui-rcontent:after, .ui-280 .ui-right .ui-rcontent:before {
+    right: 100%;
+    top: 28px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-right .ui-rcontent:after, .ui-280 .ui-right .ui-rcontent:before {
+        bottom: 100%;
+        left: 50%;
+        top: 0px;
+    }
+}
+.ui-280 .ui-right .ui-rcontent:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 8px;
+    margin-top: -8px;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-right .ui-rcontent:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #fff;
+        border-width: 8px;
+        margin-left: -8px;
+        margin-top: -16px;
+    }
+}
+.ui-280 .ui-right .ui-rcontent:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: #ccc;
+    border-width: 9px;
+    margin-top: -9px;
+}
+@media(max-width: 500px){
+    .ui-280 .ui-right .ui-rcontent:before {
+        border-color: rgba(221, 221, 221, 0);
+        border-bottom-color: #ddd;
+        border-width: 9px;
+        margin-left: -9px;
+        margin-top: -18px;
+    }
+}
+/* Paragraph */
+.ui-280 .ui-right .ui-rcontent p{
+    font-size: 0.9em;
+    line-height: 25px;
+    color: #888;
+}

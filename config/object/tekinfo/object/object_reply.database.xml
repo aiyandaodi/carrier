@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象回复 -->
+<tekinfo>
+  <database>
+    <table>
+      <object_reply>
+        <item>
+          <!-- 标识 -->
+          <object_reply_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <object_reply_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 记录名 -->
+          <object_reply_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 备注 -->
+          <object_reply_remark value="MEMO NOT NULL"/>
+          <!-- 状态 -->
+          <object_reply_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 评分 -->
+          <object_reply_score value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所有者 -->
+          <object_reply_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属对象类型名 -->
+          <object_reply_linkName value="VARCHAR(128) NOT NULL"/>
+          <!-- 所属对象标识 -->
+          <object_reply_linkId value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </object_reply>
+    </table>
+  </database>
+</tekinfo>

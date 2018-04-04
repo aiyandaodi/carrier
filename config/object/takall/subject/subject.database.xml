@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主题 -->
+<tekinfo>
+  <database>
+    <table>
+      <subject>
+        <item>
+          <!-- 标识 -->
+          <subject_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <subject_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <subject_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 关键字 -->
+          <subject_keywords value="VARCHAR(255)"/>
+          <!-- 概要 -->
+          <subject_summary value="VARCHAR(1024)"/>
+          <!-- 状态 -->
+          <subject_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 类型 -->
+          <subject_type value="VARCHAR(32) NOT NULL"/>
+          <!-- 标签 -->
+          <subject_tags value="VARCHAR(512) NOT NULL"/>
+          <!-- 目录分类 -->
+          <subject_catalog value="VARCHAR(64)"/>
+          <!-- 发布时间 -->
+          <subject_date value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 开始时间 -->
+          <subject_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 结束时间 -->
+          <subject_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 信用度 -->
+          <subject_credit value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 国家/地区 
+          <subject_country value="VARCHAR(4) NOT NULL"/>-->
+          <!-- 省/州 
+          <subject_state value="BIGINT DEFAULT '0' NOT NULL"/>-->
+          <!-- 县/市
+          <subject_city value="BIGINT DEFAULT '0' NOT NULL"/> -->
+          <!-- 区域 
+          <subject_region value="BIGINT DEFAULT '0' NOT NULL"/>-->
+          <!-- 语言 
+          <subject_locale value="VARCHAR(32) NOT NULL"/>-->
+          <!-- 参与人数 -->
+          <subject_participate value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 推荐人数 -->
+          <subject_recommended value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 反对人数 -->
+          <subject_anti value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 阅读属性 -->
+          <subject_listen value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 附加文档属性 -->
+          <subject_speak value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所有者 -->
+          <subject_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 作者名 -->
+          <subject_author value="VARCHAR(255) NOT NULL"/>
+          <!-- 相关URL地址 -->
+          <subject_url value="VARCHAR(255)"/>
+          <!-- 所属群组 -->
+          <subject_group value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 发布经度 
+          <subject_longitude value="DOUBLE DEFAULT '360' NOT NULL"/>-->
+          <!-- 发布纬度 
+          <subject_latitude value="DOUBLE DEFAULT '360' NOT NULL"/>-->
+          <!-- 发布高度 
+          <subject_height value="BIGINT DEFAULT '0' NOT NULL"/>-->
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </subject>
+    </table>
+  </database>
+</tekinfo>

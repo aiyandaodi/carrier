@@ -1,0 +1,73 @@
+.ui-68{
+	max-width:1500px;
+	margin:100px auto;
+}
+.ui-68 .ui-content{
+	/*border:1px solid #ddd;*/
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+/* Form control */
+.ui-68 .form-control{
+	border:0px;
+	color:#999;
+	box-shadow:none;
+	padding:18px;
+	border-radius:0px;
+}
+.ui-68 .form-control:focus{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+/* Button and Icon */
+.ui-68 .ui-buttons{
+	/*border-top:1px solid #ddd;
+	background:#f6f6f6;*/
+	padding:10px 15px;
+	border-bottom-left-radius:5px !important;
+	border-bottom-right-radius:5px !important;
+}
+@media(max-width: 500px){
+	.ui-68 .ui-buttons{
+		text-align:center;
+	}
+}
+/* Icon */
+.ui-68 .ui-buttons .ui-icon{
+	float:left;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons .ui-icon{
+		float:none;
+		margin-bottom:10px;
+	}
+}
+.ui-68 .ui-buttons .ui-icon a i{
+	font-size:15px;
+	line-height:20px;
+	margin:5px 10px;
+	color:#999;
+}
+/* Button */
+.ui-68 .ui-buttons a.btn{
+	float:right;
+	border:0px;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons a.btn{
+		float:none;
+		margin-bottom:10px;
+	}
+}
+@media(max-width: 500px){
+   #summernote_pc{
+       display: none;
+   }
+}
+@media(max-width: 500px){
+    #summernote_phone{
+        display: block;
+    }
+}
+

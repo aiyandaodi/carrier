@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 通信好友 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <message_friend>
+        <item>
+          <!-- 标识 -->
+          <friend_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <friend_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 好友名 -->
+          <friend_name value="VARCHAR(256) NOT NULL"/>
+
+          <!-- 颜色分类 -->
+          <friend_color value="INT DEFAULT '0'"/>
+	        <!-- 好友标记 -->
+	        <friend_tag value="VARCHAR(128)" />
+	        <!-- 好友状态 -->
+	        <friend_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+	        <!-- 好友所属信息账号 -->
+          <friend_account value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 好友所有者 -->
+          <friend_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </message_friend>
+    </table>
+  </database>
+</tekinfo>

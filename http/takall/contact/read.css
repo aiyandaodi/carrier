@@ -1,0 +1,299 @@
+/* CSS Document */
+
+.ui-tooltip{
+	position:relative;
+	border:0;
+	box-shadow:none;
+}
+
+.fa{
+	font-size: 1.2em;
+}
+/* UI - X */
+.ui-52{
+	margin:60px auto;
+}
+@media(max-width: 800px){
+	.ui-52{
+		margin:60px 20px;
+	}
+}
+/* Column Padding */
+ .col-pad{
+	padding-left:0px;
+	padding-right:0px;
+}
+@media(max-width: 670px){
+	 .col-mob{
+		width:50%;
+	}
+}
+@media(max-width: 357px){
+	.col-mob{
+		width:100%;
+	}
+}
+/* Info */
+.ui-info{
+	position:relative;
+	border-radius:4px;
+	padding:35px 0px 25px;
+	margin:20px 0px 40px;
+	background:#fff;
+	border:1px solid #e7e7e7;
+	box-shadow:3px 3px 0px 1px rgba(0,0,0,0.05);
+}
+/* Image */
+.ui-info img{
+	width:150px;
+	height:150px;
+	border-radius:100%;
+	border:1px solid #eee;
+	padding:3px;
+	margin-left: 23px;
+	float:left;
+	box-shadow:2px 2px 0px 1px rgba(0,0,0,0.05);
+}
+@media(max-width: 525px){
+	 .ui-info img{
+/*		float:none;*/
+		margin:0px auto;
+		 width: 100px;
+		 height: 100px;
+	}
+}
+@media(max-width: 350px){
+	 .ui-info img{
+		margin-top: 10px;
+	}
+}
+/* Details */
+.ui-info .ui-details{
+	margin-left:180px;
+}
+@media(max-width: 525px){
+	 .ui-info .ui-details{
+		margin-left:0px;
+	}
+}
+@media(max-width: 357px){
+	 .ui-info .ui-details{
+		margin-left:0px;
+		text-align:center;
+	}
+}
+/* Item */
+ .ui-details .ui-item{
+	padding:7px 10px;
+	max-width:286px;
+	margin:0px auto 10px;
+}
+@media(max-width: 525px){
+	 .ui-details .ui-item{
+		text-align:center;
+	}
+}
+/* Heading */
+ .ui-details .ui-item h4{
+	font-size:12px;
+	line-height:22px;
+	color:#bbb;
+	text-transform:uppercase;
+	font-weight:600;
+}
+/* Content */
+ .ui-details .ui-item h5{
+	font-size:13px;
+	line-height:23px;
+	color:#777;
+	font-weight:600;
+}
+
+ .ui-info h4{
+	padding-left:10px;
+}
+
+/* Social */
+ .ui-info .ui-social{
+	position:absolute;
+	top: -15px;
+	right: 25px;
+	border:0;
+}
+@media(max-width: 525px){
+	 .ui-info .ui-social{
+		text-align:center;
+		right:0px;
+		width:100%;
+	}
+}
+/* Icon */
+.ui-info .ui-social a > i{
+	width:33px;
+	height:33px;
+	line-height:33px;
+	color:#fff;
+	text-align:center;
+	margin-right:2px;
+	border-radius:50px;
+}
+
+/** UI-117**/
+.ui-117 .ui-117-item{
+	width:100%;
+	margin:20px auto;
+}
+.ui-117 .ui-117-item-left{
+	float:left;
+	width:85px;
+}
+.ui-117 .ui-117-item-left a.ui-117-icon{
+	width:80px;
+	height:80px;
+	line-height:80px;
+	display:inline-block;
+	color:#fff;
+	font-size:30px;
+	border-radius:3px;
+	text-align:center;
+	margin-top:5px;
+}
+
+a.ui-117-icon .fa{
+	margin-top:20px;
+}
+
+.ui-117 .ui-117-item-right{
+	position:relative;
+	margin-left:95px;
+}
+.ui-117 .ui-117-item-right h4{
+	font-size:14px;
+	line-height:24px;
+	text-transform:uppercase;
+	margin:0px;
+}
+.ui-117 .ui-117-item-right h4 a{
+	color:#777;
+}
+.ui-117 .ui-117-item-right p{
+	color:#999;
+	font-size:1em;
+	line-height:25px;
+	margin:0px;
+}
+.ui-117 .ui-117-item-right .pull-right{
+	margin-right:26px;
+}
+td .label, td .label:hover {
+	color: #888;
+	font-weight: normal
+}
+@media (max-width: 525px) {
+	.ui-117-item-left {
+		display: none;
+	}
+	.ui-117 .ui-117-item-right {
+		margin-left: 5px;
+	}
+}
+.item-content {
+	padding: 0 20px;
+}
+
+
+/*.fa{
+    font-size: 14px;
+    font-weight: normal;
+}*/
+
+/* CSS Document */
+a {
+    text-decoration: none;
+   /* color: #777;*/
+    cursor: pointer;
+}
+
+a:hover, a:active, a:focus {
+    outline: 0;
+    text-decoration: none;
+    color: #999;
+}
+
+.agency-item {
+    position: relative;
+}
+
+.btn-icon {
+    cursor: pointer;
+}
+
+.operation a {
+    margin: 0 3px;
+}
+
+.form-group {
+    line-height: 30px;
+}
+
+.form-control-line {
+    display: inline-block;
+    height: 32px;
+    padding: 6px 1px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: none;
+    border-bottom: solid 1px #ddd;
+}
+
+.number-code {
+    width: 30px;
+}
+
+.account-number {
+    min-width: 150px;
+}
+
+thead tr  {
+    border-top: 1px solid #DDDDDD;
+}
+
+thead tr, tbody tr {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+thead td {
+    font-weight: bold;
+}
+
+tbody {
+    border-bottom: solid 1px #ddd;
+}
+
+tfoot .btn {
+    padding-left: 3px;
+    padding-right: 3px;
+	font-size: 13px;
+}
+
+
+#telephone_number input{
+    width: 120px;
+}
+
+#add_new_telephone .form-group span{
+    margin: 0;
+}
+
+#address_table {
+	border-bottom: 1px solid #ddd;
+}
+#address_table table {
+	margin-bottom: 0;
+}
+
+
+
+

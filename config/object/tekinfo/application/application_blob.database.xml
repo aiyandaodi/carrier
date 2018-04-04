@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Application 应用程序管理BLOB -->
+<tekinfo>
+  <database>
+    <table>
+      <application_blob>
+        <item>
+          <!-- 标识 -->
+          <application_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <application_blob value="BLOB"/>
+        </item>
+      </application_blob>
+    </table>
+  </database>
+</tekinfo>

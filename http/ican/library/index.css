@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* CSS Document */
+/* UI - X */
+.ui-312{
+	margin: 10px 0px;
+ 	overflow: hidden;
+}
+@media(max-width: 500px){
+	.ui-312 .col-mob{
+		width: 100%;
+	}
+}
+/* Item */
+.ui-312 .ui-item{
+	margin: 20px auto;
+	position: relative;
+}
+.ui-312 .ui-item .ui-last, 
+.ui-312 .ui-item .ui-middle, 
+.ui-312 .ui-item .ui-first{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	margin: 0px auto;
+	background: #fff;
+	height: 100%;
+	z-index: -1;
+	border: 1px solid #d8d8d8;
+	border-radius: 2px;
+}
+/* Last Layer */
+.ui-312 .ui-item .ui-last{
+	bottom: -15px;
+	width: 94%;	
+}
+/* Middle Layer */
+.ui-312 .ui-item .ui-middle{
+	bottom: -10px;
+	width: 96%;
+}
+/* First Layer */
+.ui-312 .ui-item .ui-first{
+	bottom: -5px;
+	width: 98%;
+}
+/* Top Most Layer */
+.ui-312 .ui-item .ui-top{
+	background: #fff;
+	border: 1px solid #d8d8d8;
+	padding: 12px 23px;
+	border-radius: 2px;
+}
+/* Heading */
+.ui-312 .ui-item .ui-top h3{
+	font-size: 1.2em;
+	line-height: 7;
+	text-align: center;
+	text-transform: uppercase;
+}
+/* Paragraph */
+.ui-312 .ui-item .ui-top p{
+	font-size: 1.1em;
+	line-height: 1.8;
+	color:#888;
+}
+
+/* UI - Item */
+.ui-312 .ui-item{
+	/* max-width:265px;
+	margin:20px auto;
+	border:2px solid rgba(0,0,0,0.05);
+	text-align:center;
+	padding:30px 0px; */
+	/*position:relative;*/
+	/* overflow:hidden; */
+}
+
+/* Heading */
+ .ui-312 .ui-item h3{
+	line-height:28px;
+	font-size:18px;
+	text-transform:uppercase;
+	font-weight:400;
+} 
+/* .ui-312 .ui-item h3 a{
+	color:#fff;
+} */
+/* Hover */
+ .ui-312  .ui-item .ui-hover{
+	width:30px;
+	height:30px;
+	background:#32c8de;
+	position:absolute;
+    z-index:20;
+	top:0px;
+	left: 0px;
+	border-bottom-right-radius:100% !important;	
+	-webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+	box-shadow:0px 0px 25px rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+.ui-item:hover .ui-hover{
+	width: 344px;
+	height: 186px;
+	-webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+/* Hover Content */
+.ui-item .ui-hover .ui-hcontent{
+	text-align:left;
+	padding:15px 15px;
+	width:85%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	opacity:0;
+	background:transparent;
+	color: #fff;
+}
+.ui-item:hover .ui-hover .ui-hcontent{
+	opacity:1;
+    -webkit-transition: all 1s ease-in 0.1s;
+    -moz-transition: all 1s ease-in 0.1s;
+    -o-transition: all 1s ease-in 0.1s;
+    transition: all 1s ease-in 0.1s;
+}
+/* Heading */	
+.ui-item .ui-hover .ui-hcontent h4{
+	font-size:14px;
+	text-transform:uppercase;
+	line-height:24px;
+}	
+/* Paragraph */
+.ui-item .ui-hover .ui-hcontent p{
+	font-size:12px;
+	line-height:28px;
+	color:#aaa;
+}

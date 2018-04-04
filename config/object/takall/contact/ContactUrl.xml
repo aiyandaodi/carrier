@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息URL地址 -->
+<tekinfo>
+  <object>
+
+    <ContactUrl ResourceBundle="com.takall.contact.ContactUrl"
+        Structure="com.takall.contact.ContactUrl"
+        ObjectRm="com.takall.remoting.contact.ContactUrlRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <contact_url_id base="identity"/>
+        <contact_url_code base="yyyy" step="1" digit="10"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="contact_url_name" codeIdentity="null">
+        <contact_url identity="contact_url_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <contact_url_code/> -->
+            <contact_url_name/>
+            <contact_url_address/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <contact_url_code/> -->
+            <contact_url_name/>
+            <contact_url_address/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <contact_url_code/>
+            <contact_url_name/>
+            <contact_url_address/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <contact_url_code/>
+            <contact_url_name/>
+            <contact_url_address/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <contact_url_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <contact_url_code variable="string" maxlength="64"/>
+        <!-- 名字 -->
+        <contact_url_name variable="string" maxlength="32" notnull="true"/>
+        <!-- URL地址 -->
+        <contact_url_address variable="string" maxlength="255" parse="url" notnull="true"/>
+        <!-- 所属联系信息 -->
+        <contact_url_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactUrl>
+  </object>
+</tekinfo>

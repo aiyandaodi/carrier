@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统公告：每个记录指向一个html页面，用于重要事项及APP客户端的全屏通告 -->
+<tekinfo>
+  <database>
+    <table>
+      <announcement>
+        <item>
+          <!-- 标识 -->
+          <announcement_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <announcement_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名字:简要内容 -->
+          <announcement_name value="VARCHAR(256) NOT NULL"/>
+          
+          <!-- 发布者User -->
+          <announcement_user value="BIGINT DEFAULT '0' "/>
+          <!-- 发布来源 -->
+          <announcement_source value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 发布状态 -->
+          <announcement_status value="SMALLINT DEFAULT '0' "/>
+          <!-- 发布URL -->
+          <announcement_url value="VARCHAR(256) NOT NULL"/>
+          
+          <!-- 发布指定有效日期 -->
+          <announcement_start value="BIGINT DEFAULT '0' "/>
+          <announcement_end value="BIGINT DEFAULT '0' "/>
+          
+          <createTime value="BIGINT DEFAULT '0' "/>
+          <createIp value="BIGINT DEFAULT '0' "/>
+          <modifyTime value="BIGINT DEFAULT '0' "/>
+          <modifyIp value="BIGINT DEFAULT '0' "/>
+          <accessTime value="BIGINT DEFAULT '0' "/>
+          <accessIp value="BIGINT DEFAULT '0' "/>
+          <accessCount value="INT DEFAULT '0' "/>
+        </item>
+      </announcement>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 试题选项 -->
+
+<tekinfo>
+  <object>
+    <ExamsAnswer ResourceBundle="com.takall.exams.ExamsAnswer"
+        Structure="com.takall.exams.ExamsAnswer"
+        ObjectRm="com.takall.remoting.exams.ExamsAnswerRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_answer_id base="identity"/>
+        <exams_answer_code base="" step="1" digit="20"/>
+        <exams_answer_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="exams_answer_name" codeIdentity="null" ownerIdentity="exams_answer_owner">
+        <exams_answer identity="exams_answer_id"/>
+        <exams_answer_blob identity="exams_answer_id"/>
+      </table>
+      
+      <blob table="exams_answer_blob"
+          urlField="null"
+          blobField="exams_answer_blob"
+          mimeField="exams_answer_mime"
+          lengthField="exams_answer_length" 
+          timeField="modifyTime"
+          mimeType="null"/>
+            
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_answer_code/>
+            <exams_answer_name/>
+            <exams_answer_correct/>
+            <exams_answer_question/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_answer_code/>
+            <exams_answer_name/>
+            <exams_answer_correct/>
+            <exams_answer_question/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_answer_code/>
+            <exams_answer_name/>
+            <exams_answer_correct/>
+            <exams_answer_question/>
+            <exams_answer_owner/>
+            <exams_question_mime rightuser="supervisor"/>
+            <exams_question_length rightuser="supervisor"/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_answer_name/>
+            <exams_answer_correct/>
+            <exams_answer_question/>
+            <exams_answer_owner/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_answer_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_answer_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 选项内容 -->
+        <exams_answer_name variable="string" maxlength="255"/>
+        
+        <!-- 是否正确 -->
+        <exams_answer_correct variable="int" parse="boolean" default="0" notnull="true"/>
+        <!-- 所属试题 -->
+        <exams_answer_question variable="long" parse="object:ExamsQuestion" default="0" notnull="true"/>
+        <!-- 创建者 -->
+        <exams_answer_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 文件长度 -->
+        <exams_answer_length variable="long" notnull="true" default="0"/>
+        <!-- 文件MIME类型 -->
+        <exams_answer_mime variable="string" maxlength="255"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ExamsAnswer>
+  </object>
+</tekinfo>

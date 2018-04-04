@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* CSS Document */
+.ui-243 {
+	margin: 0;
+	height: 1.6em;
+}
+
+
+a:hover, a:active, a:focus {
+    text-decoration: underline !important;
+    outline: none !important;
+	color:#F40307 !important;
+}

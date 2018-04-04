@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 社交账号 -->
+<tekinfo>
+  <database>
+    <table>
+      <contact_social>
+        <item>
+          <!-- 标识 -->
+          <social_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <social_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名字 -->
+          <social_name value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 社交网址 -->
+          <social_url value="VARCHAR(255) NOT NULL"/>
+          <!-- 社交账号 -->
+          <social_account value="VARCHAR(255) NOT NULL"/>
+          
+          
+          <!-- 所属联系人 -->
+          <social_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属机构 -->
+          <social_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属联系人 -->
+          <social_contact value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </contact_social>
+    </table>
+  </database>
+</tekinfo>

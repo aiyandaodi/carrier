@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 系统用户 -->
+<tekinfo>
+  <object>
+    <Account ResourceBundle="net.tekinfo.object.system.Account"
+        Structure="net.tekinfo.system.Account"
+        ObjectRm="net.tekinfo.remoting.system.AccountRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <account_id base="identity"/>
+        <account_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+       
+      <table nameIdentity="account_name" codeIdentity="null">
+        <account identity="account_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <account_code/>
+            <account_name/>
+            <account_login/>
+            <account_client/>
+            <account_auth/>
+            <modifyTime/>
+            <createTime/>
+            <createIp/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <account_code/>
+            <account_name/>
+            <account_login/>
+            <account_auth/>
+            <account_client/>
+            
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+            <account_pwdstrength/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <add/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 登录密码最小位数 -->
+            <password_min_size value="6"/>
+            <!-- 登录密码最大位数 -->
+            <password_max_size value="24"/>
+            <!-- 安全密码最少包含的不同字符数 -->
+            <password_diff_count value="5"/>
+          </parameter>
+          <item>
+            <account_login/>
+            <account_name/>
+            <account_password/>
+            <account_confirm/>
+            <account_auth rightrole="userManager"/>
+            <account_email/>
+            <account_mobile/>
+          </item>
+        </add>
+        
+        <!-- 修改密码 -->
+        <password>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+            <!-- 原密码类型：
+                 “1”：登录密码
+                 “2”：安全密码 -->
+            <old_type value="1"/>
+            <!-- 登录密码最小位数 -->
+            <password_min_size value="6"/>
+            <!-- 登录密码最大位数 -->
+            <password_max_size value="24"/>
+            <!-- 安全密码最少包含的不同字符数 -->
+            <password_diff_count value="5"/>
+          </parameter>
+          <item>
+            <account_old/>
+            <account_password/>
+            <account_confirm/>
+          </item>
+        </password>
+        
+        <search>
+          <item>
+            <account_login/>
+            <account_name/>
+          </item>
+        </search>
+
+        <textSearch>
+          <item>
+            <account_login/>
+            <account_name/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <!-- 重置密码 -->
+        <reset>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 重置密码页面URL -->
+            <reset-url value="http/ipass/account/password/reset.html"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+        </reset>
+
+        <import/>
+        <export/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <account_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <account_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名字 -->
+        <account_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 登录名 -->
+        <account_login variable="string" maxlength="20" notnull="true"/>
+        <!-- 保密字 -->
+        <account_password variable="string" parse="password" maxlength="255" notnull="true"/>
+        <!-- 认证状态 -->
+        <account_auth variable="int" parse="enum" format="multiple" default="0" notnull="true">
+          <none value="0x00"/>    <!-- 未认证 -->
+          <email value="0x01"/>    <!-- 电子邮箱认证 -->
+          <mobile value="0x02"/>    <!-- 手机认证 -->
+          <finger value="0x04"/>    <!-- 指纹认证 -->
+          <face value="0x08"/>    <!-- 面部识别 -->
+          <identity value="0xF0"/>    <!-- 实名认证 -->
+        </account_auth>
+        <!-- 所属客户端-->
+        <account_client variable="long" parse="object:Client" notnull="true"/>
+        
+        <!-- 虚拟域：原密码 -->
+        <account_old variable="string" parse="password" maxlength="20" notnull="true"/>
+        <!-- 虚拟域：新密码
+        <account_new vairable="string" parse="password" maxlength="20" notnull="true"/> -->
+        <!-- 虚拟域：确认新密码 -->
+        <account_confirm vairable="string" parse="password" maxlength="20"/>
+        <!-- 虚拟域：电子邮箱 -->
+        <account_email vairable="string" parse="string" maxlength="64"/>
+        <!-- 虚拟域：手机号码 -->
+        <account_mobile vairable="string" parse="string" maxlength="24"/>
+        <!-- 虚拟域：密码强度 -->
+        <account_pwdstrength variable="int" parse="enum" format="option" default="1">
+          <weak value="1"/>    <!-- 弱 -->
+          <normal value="5"/>  <!-- 中 -->
+          <strong value="10"/>  <!-- 强 -->
+        </account_pwdstrength>
+        <!-- 虚拟域：安全密码 -->
+        <account_pwd variable="string" parse="string" maxlength="255"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Account>
+  </object>
+</tekinfo>

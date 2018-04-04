@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定用户对目标组中的指定对象的权 -->
+<tekinfo>
+  <database>
+    <table>
+      <user_object_right  property="UNIQUE(user_system_user,user_object_group,user_object_name,user_object_id)">
+        <item>
+          <!-- 标识 -->
+          <user_object_right_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          
+          <!-- 拥有权限的用户 -->
+          <user_system_user value="BIGINT NOT NULL"/>
+          
+          <!-- 拥有权限的用户名 -->
+          <user_system_username value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目标组 -->
+          <user_object_group value="BIGINT NOT NULL"/>
+          
+          <!-- 目标组中对象类型名 -->
+          <user_object_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目标组中对象标识，如果是0，表示所有该类对象的默认权-->
+          <user_object_id value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 权限 -->
+          <user_object_right value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </user_object_right>
+    </table>
+  </database>
+</tekinfo>

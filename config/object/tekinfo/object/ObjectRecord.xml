@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 系统用户 -->
+<tekinfo>
+  <object>
+    <ObjectRecord ResourceBundle="net.tekinfo.object.object.ObjectRecord"
+        Structure="net.tekinfo.object.ObjectRecord" version="1.0" 
+        ObjectRm="net.tekinfo.remoting.object.ObjectRecordRm"
+        resourceVersion="1.0">
+      <autovalue>
+        <record_id base="identity"/>
+        <record_code base="yyyy" step="1" digit="60"/>
+        <record_time base="time"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+       
+      <table nameIdentity="record_name" codeIdentity="record_code">
+        <object_record identity="record_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 允许其他用户浏览的记录对象（“;”） -->
+            <public_valid_objects value="Group;Subject;Document;"/>
+          </parameter>
+          <item>
+            <record_id/>
+            <record_code rightuser="supervisor"/>
+            <record_name/>
+            
+            <record_user/>
+            <record_userdisplay/>
+            <record_device/>
+            <record_client/>
+            <record_object/>
+            <record_objectid/>
+            <record_command/>
+            
+            <record_os/>
+            <record_time/>
+            <record_ip/>
+            <record_longitude/>
+            <record_latitude/>
+            <record_height/>
+            
+            <record_remark/>
+          </item>
+        </list>
+        
+        <read>
+          <item>
+            <record_code rightuser="supervisor"/>
+            <record_name/>
+            
+            <record_user/>
+            <record_userdisplay/>
+            <record_device/>
+            <record_client/>
+            <record_object/>
+            <record_objectid/>
+            <record_command/>
+            
+            <record_os/>
+            <record_time/>
+            <record_ip/>
+            <record_longitude/>
+            <record_latitude/>
+            <record_height/>
+            
+            <record_remark/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+          </parameter>
+          <item>
+            <record_code/>
+            <record_name/>
+            
+            <record_user/>
+            <record_userdisplay/>
+            
+            <record_object/>
+            <record_objectid/>
+            <record_command/>
+            
+            <record_os/>
+            <record_ip/>
+            <record_longitude/>
+            <record_latitude/>
+            <record_height/>
+            
+            <record_remark/>
+          </item>
+        </add>
+        
+        <search>
+          <item>
+            <record_code/>
+            <record_name/>
+            <record_userdisplay/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <record_name/>
+            <record_remark/>
+            <record_userdisplay/>
+            <record_object/>
+            <record_command/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <record_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <record_code variable="string" maxlength="255" notnull="true"/>
+        <!-- 记录名字 -->
+        <record_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 记录信息 -->
+        <record_remark variable="string" format="textarea:4" notnull="true"/>
+        <!-- 用户标识 -->
+        <record_user variable="long" parse="object:User" forbidEdit="true" default="0" notnull="true"/>
+        <!-- 用户显示名 -->
+        <record_userdisplay variable="string" maxlength="255" notnull="true"/>
+        <!-- 应用设备 -->
+        <record_device variable="long" parse="object:ApplicationDevice"/>
+        <!-- 操作客户端 -->
+        <record_client variable="long" parse="object:Client"/>
+        <!-- 操作者操作系统 -->
+        <record_os variable="string" maxlength="255"/>
+        <!-- 记录IP地址 -->
+        <record_ip variable="long" parse="inetaddress" default="0" notnull="true"/>
+        <!-- 记录时间 -->
+        <record_time variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" notnull="true"/>
+        <!-- 操作者位置经度 -->
+        <record_longitude variable="double" default="0"/>
+        <!-- 操作者位置纬度 -->
+        <record_latitude variable="double" default="0"/>
+        <!-- 操作者位置高度 -->
+        <record_height variable="int" default="0"/>
+        <!-- 位置 -->
+        <record_location variable="string" maxlength="128"/>
+        <!-- 所属对象名 -->
+        <record_object variable="string" maxlength="255" notnull="true"/>
+        <!-- 所属对象标识 -->
+        <record_objectid variable="long" parse="object:this.record_object" default="0" notnull="true"/>
+        <!-- 记录命令名 -->
+        <record_command variable="string" maxlength="255" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectRecord>
+  </object>
+</tekinfo>

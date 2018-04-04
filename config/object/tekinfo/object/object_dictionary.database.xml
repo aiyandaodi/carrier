@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象类型字典表  -->
+<tekinfo>
+  <database>
+    <table>
+      <object_dictionary>
+        <item>
+          <!-- 标识 -->
+          <dictionary_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <dictionary_code  value="VARCHAR(128) NOT NULL"/>
+          <!-- 定义的目标对象原文翻译 -->
+          <dictionary_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 定义的目标对象原文 -->
+          <dictionary_original value="VARCHAR(255) NOT NULL"/>
+          <!-- 翻译成的语言（例如：原文original='苹果',目标对象翻译name='apple',翻译语言language='en_US'） -->
+          <dictionary_language value="CHAR(5) NOT NULL"/>
+
+          <!-- 定义的目标对象类型名（如Transaction、Group、Subject等） -->
+          <dictionary_targetObject value="VARCHAR(255) NOT NULL"/>
+          <!-- 定义的目标对象字段名 -->
+          <dictionary_targetFields value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 该词字典属性 -->
+          <dictionary_property value="VARCHAR(1024)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </object_dictionary>
+    </table>
+  </database>
+</tekinfo>

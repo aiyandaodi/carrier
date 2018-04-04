@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+.dashboard_target_box {
+	width: 250px;
+	height: 106px;
+	border: 3px dashed #E5E5E5;
+	text-align: center;
+	cursor: pointer
+}
+
+.dashboard_target_box.over {
+	border: 3px dashed #000;
+	background: #ffa
+}
+
+.dashboard_target_messages_container {
+	display: inline-block;
+	margin: 12px 0 0;
+	position: relative;
+	text-align: center;
+	height: 44px;
+	overflow: hidden;
+	z-index: 1000
+}
+
+.dashboard_target_box_message {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	margin: 4px auto;
+	font: 15px/18px helvetica, arial, sans-serif;
+	font-size: 15px;
+	color: #999;
+	font-weight: normal;
+	width: 150px;
+	line-height: 20px
+}
+
+.dashboard_target_box.over #dtb-msg1 {
+	color: #000;
+	font-weight: bold
+}
+
+.dashboard_target_box.over #dtb-msg3 {
+	color: #ffa;
+	border-color: #ffa
+}
+
+#dtb-msg2 {
+	color: orange
+}
+
+#dtb-msg3 {
+	display: block;
+	border-top: 1px #EEE dotted;
+	padding: 8px 24px
+}
+
+.addfileI {
+	cursor: pointer;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: blue;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	font-size: 0;
+}
+
+#dtb-msg2 input {
+	z-index: 10;
+}
+
+#dtb-msg2 span {
+	position: absolute;
+	z-index: -2;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+progress {
+	display: inline-block;
+	width: 200px;
+	height: 5px;
+	border: 0;
+	background-color: #ccc; /*FireFox Chrome Opera IE10 背景颜色样式*/
+	color: #0ab747; /*IE10 的完成进度颜色样式*/
+}
+
+progress::-moz-progress-bar {
+	background: #0ab747; /*FireFox 完成进度的颜色样式*/
+	background: -moz-linear-gradient(left, #1dddff, #06B025); /*火狐*/
+}
+
+progress::-webkit-progress-bar {
+	background: transparent; /*Chrome 背景跟随background样式*/
+}
+
+progress::-webkit-progress-value {
+	background: #0ab747;
+	background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#1dddff), to(#06B025)); /* Safari 4-5, Chrome 1-9*/
+	background: -webkit-linear-gradient(left, #1dddff, #06B025); /*Safari5.1 Chrome 10+*/
+}

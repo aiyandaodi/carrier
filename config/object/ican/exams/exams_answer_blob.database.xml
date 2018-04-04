@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试题选项BLOB -->
+<tekinfo>
+  <database>
+    <table>
+      <exams_answer_blob>
+        <item>
+          <!-- 标识 -->
+          <exams_answer_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <exams_answer_blob value="BLOB"/>
+        </item>
+      </exams_answer_blob>
+    </table>
+  </database>
+</tekinfo>

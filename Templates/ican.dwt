@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- TemplateBeginEditable name="doctitle" -->
+        <title>能力维度 ICAN.VIP</title>
+        <!-- TemplateEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../favicon.ico"/>
+        <link rel="Bookmark" href="../favicon.ico"/>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+	<!-- Stylesheets -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/style.css"/>
+  
+  <!-- owl css -->
+  <link href="../http/style/extend/css/owl.carousel.css" rel="stylesheet">		
+
+        
+        <!-- popmenu css -->
+        <link href="../http/common/popmenu/popmenu.css" rel="stylesheet">
+        <link href="../http/tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../http/ican/css/ican.css" rel="stylesheet">
+        
+        <!-- TemplateBeginEditable name="head-css" -->
+        <!-- my css in head -->
+            
+		<!-- TemplateEndEditable -->
+	
+        <script type="text/javascript" src="../http/common/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/tool.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/user.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/dataUtility.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/common.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/core.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/refresh.js"></script>
+        <script type="text/javascript" src="../http/common/tek/js/mac-common.js"></script>
+        
+        <script type="text/javascript" src="../http/common/popmenu/popmenu.js"></script>
+        <script type="text/javascript" src="../http/common/touchscreen/touchscreen.js"></script>
+        
+        <script type="text/javascript" src="../http/tekinfo/js/tekinfo.js"></script>
+		<script type="text/javascript" src="../http/ican/js/ican.js"></script>
+        <!-- TemplateBeginEditable name="head-js" -->
+        <!-- my head js-->
+		<!-- TemplateEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+		//alert("js");
+			$(document).ready(function() {
+				//alert("go");
+				initial();
+			});
+  		</script>
+        <!-- TemplateBeginEditable name="head" -->
+        <!-- TemplateEndEditable -->
+	</head>
+	
+<body>
+<!-- TemplateBeginEditable name="main content" -->
+<!-- main content -->
+<div class="foot blightblue">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          
+          <!-- User icon -->
+          <p>
+          	<span class="twitter-icon text-center">
+          		<img src="../http/ican/logo/ican-logo-white-128.png" height="64" alt="ican.vip" title="ican.vip" onClick="javascript:goHome();"/>
+          	</span>
+          </p>
+          <p>
+          	<a href="javascript:goHome();">
+          		能力维度评价系统
+          	</a>
+         </p>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<!-- TemplateEndEditable -->
+<!-- Footer -->
+
+<footer>
+  <div class="container">
+	<div class="row">
+    	<div class="col-md-12 copy">
+          	<div class="pull-left">Copyright &copy; 
+            	<a href="http://www.ican.vip">
+            		<img height="18" src="../http/ican/logo/ican-banner-128.png" alt="ican.vip 能力维度" title="能力维度"/>
+                    能力维度
+                </a>
+                - 
+                Powered by 
+            	<a href="http://www.takall.com" alt="TAKALL" target="_blank">
+                	<img src="../http/takall/logo/takall-128.png" height="22" alt="TAKALL" title="TAKALL 为创新而生"/>
+                </a>
+                
+            </div>
+            <div class="pull-right foot_menu">
+            	<a href="javascript:goHome();">Home</a> 
+                | 
+                <a href="../http/takall/interaction/index.html">Interaction</a> 
+                |
+                <a href="../http/takall/question/index.html">Questions</a>
+                |
+                <a href="../http/imark/qualification/index.html">Qualification</a>
+                |
+                <a href="../http/imark/job/index.html">Job</a>
+            
+            </div>
+      	</div><!-- end .col copy-->
+
+    </div><!-- end .row -->
+  	<div class="clearfix"></div>
+  </div><!-- en .container-->
+  <br/>
+</footer> 
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class='text-center'></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog--> 
+
+<!-- popmenu Starts -->
+<div id="pop_menu" class="popmenu">
+	<!-- UI # -->
+    <div class="menu-body">
+    	<div class="block-content">
+        	<!-- UI head -->
+            <div class="ui-head">
+            	<a href="javascript:goHome();" class="pull-left" alt="Home">
+                	<img src="../http/ican/logo/ican-banner-128.png" class="logo-image" height="28" alt="ican.vip"/>
+                </a>
+                <a id="go_resume" href="../http/ican/person/my.html" class="pull-right" alt="my">
+                	<i class="fa fa-user"></i>
+                </a>
+				<div class="clearfix"></div>
+			</div><!-- end .ui-head-->
+            <ul id="pop_menu_item" class="list-unstyled">
+            	<li>
+                	<a href="../http/takall/interaction/index.html">
+                    	<i class="fa fa-user left-icon lblue"></i>
+                      	<!--<span class="right-icon"><i class="fa fa-arrow-circle-o-down"></i></span>-->
+						<h5>动态</h5>
+						<span class="sub-text">好友互动...</span>
+						<div class="clearfix"></div>
+					</a>
+				</li>
+                <li>
+                	<a href="../http/takall/question/index.html">
+                    	<i class="fa fa-quora left-icon lblue"></i>
+                    	<h5>问答</h5>
+                        <span class="sub-text">提问并得到解答...</span>
+                        <div class="clearfix"></div>
+					</a>
+				</li>
+                
+                <li>
+                	<a href="../http/imark/qualification/index.html">
+                    	<i class="fa fa-paw left-icon lblue"></i>
+						<h5>资格</h5>
+                        <span class="sub-text">申报、申请资格认证...</span>
+						<div class="clearfix"></div>
+					</a>
+				</li>
+                <li>
+                	<a href="../http/imark/job/index.html">
+                    	<i class="fa fa-share-alt left-icon lblue"></i>
+                    	<!--<span class="right-icon"><i class="fa fa-arrow-circle-o-down"></i></span>-->
+                    	<h5>职位</h5>
+                    	<span class="sub-text">当前有效职位...</span>
+                    	<div class="clearfix"></div>
+					</a>
+				</li>
+				
+			</ul><!-- end .list-->
+            <!-- UI head -->
+            <div class="ui-foot">
+            	<div id="pop_foot_search" class="foot-search hide">
+					
+					<form role="form">
+                    	<!-- Input Group -->
+                        <div class="input-group">
+                        	<input id="quick_search" type="text" class="form-control" placeholder="快速检索">
+                            <span class="input-group-btn">
+                            	<a href="javascript:popmenuQuickSearch();" class="btn find-btn">
+                                	<img src="../http/images/search-32.png" class="img-responsive" title="输入快速检索词" alt="检索"/>
+                                </a>
+                            </span>
+						</div>
+					</form>
+					
+				</div>
+                
+            	<table id="pop_foot_menu" class="table">
+                	<tbody>
+                    	<tr>
+                        	<td>
+                    	<a href="javascript:popmenuInputSearch();">
+                    		<i class="fa fa-search lblue"></i>
+                        </a>
+                    		</td>
+                            <td>
+                    	<a href="help.html">
+                    		<i class="fa fa-question lblue"></i>
+                        </a>
+                    		</td>
+                            <td>
+                    	<a href="javascript:popmenuShare();">
+                    		<i class="fa fa-share-alt lblue"></i>
+                        </a>
+                       		</td>
+                            <td>
+                        <a href="#">
+                    		<i class="fa fa-chevron-up lblue"></i>
+                        </a>
+                    		</td>
+                    	</tr>
+                    </tbody>
+                    
+                </table>
+            	
+				<div class="clearfix"></div>
+			</div><!-- end .ui-head-->
+            
+		</div><!-- end .block-content-->
+    </div><!-- end .menu-body-->
+	
+    <!-- Button -->
+	<a href="javascript:void(0);" class="popmenu-btn bg-lblue">+</a>
+</div>
+
+<div id="popmenu_Layer" onClick="javascript:popmenu_close();">
+    <!--<h1>背景层</h1>
+    &nbsp;-->
+</div>
+
+<div id="option_Layer">
+    <!--<h1>系统配置页面</h1>
+    &nbsp;-->
+</div>
+		<!-- popmenu Ends -->
+		
+		<!-- Scroll to top
+		<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> --> 
+			
+		
+		<!-- Javascript files -->
+		<!-- jQuery 
+		<script src="../http/style/metroman/js/jquery.js"></script>-->
+		<script src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../http/style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../http/style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../http/style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../http/style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../http/style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../http/style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../http/style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../http/style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<!-- Owl carousel -->
+<script src="../http/style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../http/style/extend/js/placeholder.js"></script>
+		
+		<!-- TemplateBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+        
+		<!-- TemplateEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+
+function initial(){
+	
+	//tek.core.getURLRequest();
+	
+	//tek.common.getUser();
+	
+	//showUser(); //tekinfo.js
+	
+	//tek.serverTimer.show();
+	
+	//if (tek.common.isLoggedIn()) {
+	//	showUserInfo();
+	//} else {
+	//	tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+	//	tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	//}
+	/**
+	var error = request["error"];
+	
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	**/
+	
+	/** 弹出菜单 **/
+	if(typeof popmenu_start == "function"){
+		popmenu_start();
+	}
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	//alert("111");
+	scrollPage();
+	//alert("222");
+	if (typeof init == "function")
+		init();
+		
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+}
+</script>
+	</body>	
+</html>

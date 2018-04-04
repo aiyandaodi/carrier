@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 执行任务主机  -->
+<tekinfo>
+  <object>
+    <TaskSite ResourceBundle="com.takall.task.TaskSite"
+        Structure="com.takall.task.TaskSite"
+        ObjectRm="com.takall.remoting.task.TaskSiteRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <task_site_id base="identity"/>
+        <task_site_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <host_site_user base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <task_site_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="null" codeIdentity="null" ownerIdentity="null">
+        <task_site identity="task_site_id"/>
+      </table>
+
+      <command>
+        <add url="http/ipower/task/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <task_site_code/>
+            
+            <task_site_task/>
+            <task_site_site/>
+
+            <task_site_credentials/>
+            <task_site_status/>
+
+          </item>
+        </add>
+        
+        <edit url="http/ipower/task/edit.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <task_site_code/>
+            
+            <task_site_task/>
+            <task_site_site/>
+
+            <task_site_credentials/>
+            <task_site_status/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ipower/task/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <task_site_code/>
+            
+            <task_site_task/>
+            <task_site_site/>
+
+            <task_site_credentials/>
+            <task_site_status/>
+            
+            <createTime/>
+            <createIp/>
+          </item>
+        </read>
+        
+        <list url="http/ipower/task/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <task_site_code/>
+            
+            <task_site_task/>
+            <task_site_site/>
+
+            <task_site_credentials/>
+            <task_site_status/>
+            
+            <createTime/>
+            <createIp/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+
+            <task_site_task/>
+            <task_site_site/>
+            <task_site_credentials/>
+            
+          </item>
+        </search>
+        
+        <remove url="http/ipower/task/remove.html">
+          <parameter>
+        
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <task_site_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <task_site_code variable="string" maxlength="32" notnull="true"/>
+        
+        <!-- 被执行的任务 -->
+        <task_site_task variable="long" parse="object:HostTask" notnull="true"/>
+        <!-- 执行的目标主机 -->
+        <task_site_site variable="long" parse="object:HostSite" notnull="true"/>
+        <!-- 执行任务凭证 -->
+        <task_site_credentials variable="long" parse="object:ServiceCredentials" notnull="true"/>
+        
+        <!-- 有效状态 -->
+        <task_site_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <wait value="0"/>    <!-- 暂停 -->
+          <apply value="-1"/>    <!-- 永久停止 -->
+          <valid value="1"/>    <!-- 有效 -->
+        </task_site_status>
+        
+
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </TaskSite>
+  </object>
+</tekinfo>

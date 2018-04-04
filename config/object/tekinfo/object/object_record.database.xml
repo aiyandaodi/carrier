@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统用户 -->
+<tekinfo>
+  <database>
+    <table>
+      <object_record>
+        <item>
+          <!-- 标识 -->
+          <record_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <record_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名字 -->
+          <record_name value="VARCHAR(128) NOT NULL"/>
+          <!-- 记录信息 -->
+          <record_remark value="MEMO NOT NULL"/>
+          <!-- 操作者 -->
+          <record_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 操作者名字 -->
+          <record_userdisplay value="VARCHAR(255) NOT NULL"/>
+          <!-- 应用设备 -->
+          <record_device value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 客户端 -->
+          <record_client value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 操作的设备使用的操作系统 -->
+          <record_os value="VARCHAR(255)"/>
+          <!-- 操作者IP -->
+          <record_ip value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 操作时间 -->
+          <record_time value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 操作者位置经度 -->
+          <record_longitude value="DOUBLE DEFAULT '0' NOT NULL"/>
+          <!-- 操作者位置纬度 -->
+          <record_latitude value="DOUBLE DEFAULT '0' NOT NULL"/>
+          <!-- 操作者位置高度 -->
+          <record_height value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 位置 -->
+          <record_location value="VARCHAR(128)"/>
+          <!-- 操作的目标对象类型名 -->
+          <record_object value="VARCHAR(255) NOT NULL"/>
+          <!-- 操作的目标对象标识 -->
+          <record_objectid value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 操作命令 -->
+          <record_command value="VARCHAR(128) NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+	      </item>
+      </object_record>
+    </table>
+  </database>
+</tekinfo>

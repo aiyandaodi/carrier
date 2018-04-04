@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 区/镇 -->
+<tekinfo>
+  <object>
+    <District ResourceBundle="com.takall.object.state.District"
+        Structure="com.takall.state.District"
+        ObjectRm="com.takall.remoting.state.DistrictRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <district_id base="identity"/>
+        <district_code base="" step="1" digit="4" tree="default"/>
+      </autovalue>
+      <nosamevalue>
+        <district_code/>
+      </nosamevalue>
+
+      <table nameIdentity="district_name" codeIdentity="district_code" ownerIdentity="district_locale">
+        <district identity="district_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <district_state forbidEdit="true"/>
+            <district_name/>
+            <district_fullname/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <district_state forbidEdit="true"/>
+            <district_code rightrole="auditor"/>
+            <district_name/>
+            <district_fullname/>
+            <district_valid/>
+          </item>
+        </edit>
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <district_code/>
+            <district_name/>
+            <district_fullname/>
+            <district_state/>
+            <district_locale/>
+            <district_valid rightrole="auditor;customerService"/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <district_code/>
+            <district_name/>
+            <district_fullname/>
+            <district_state/>
+            <district_locale/>
+            <district_valid rightrole="auditor;customerService"/>
+          </item>
+        </read>
+        
+        <search>
+          <item>
+            <district_name/>
+            <district_fullname/>
+            <district_locale/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <district_name/>
+            <district_fullname/>
+            <district_locale/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <district_id variable="long" notnull="true"/>
+        <!-- 编码 -->
+        <district_code variable="string" maxlength="14" notnull="true"/>
+        <!-- 简称 -->
+        <district_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 全称 -->
+        <district_fullname variable="string" maxlength="64" notnull="true"/>
+        <!-- 所属市/县 -->
+        <district_state variable="string" parse="object:State" format="option" maxlength="10" notnull="true"/>
+        <!-- 区域 -->
+        <district_locale variable="string" maxlength="10" notnull="true"/>
+        <!-- 是否有效 -->
+        <district_valid variable="int" parse="boolean" default="1"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </District>
+  </object>
+</tekinfo>

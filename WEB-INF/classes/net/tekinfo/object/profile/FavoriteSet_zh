@@ -1,0 +1,17 @@
+#FavoriteSet
+name=收藏分组
+
+#property
+property.set_id=标识
+property.set_code=编码
+property.set_name=名字
+property.set_owner=所有者
+
+#menu
+menu.read.addSame=新建同级
+menu.read.addSub=新建下级
+menu.read.edit=重命名
+menu.read.remove=删除
+
+#message
+mesage.error.moveFavorite=移动失败!

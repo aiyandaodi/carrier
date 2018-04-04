@@ -1,0 +1,377 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+
+  <!-- TemplateBeginEditable name="Title" -->
+  <!-- 自定义Title -->
+  <title>企业商信-登录</title>
+  <!-- TemplateEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="企业商信 品牌 认证 学习 商业信用 专家 商业信誉  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action certify labor cost reputation budget floating value art office automation study alliance Examination Authenticate credit"/>
+  <meta name="description" content="企业商信 品牌 认证 学习 商业信用 专家 商业信誉  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action certify labor cost reputation budget floating value art office automation study alliance Examination Authenticate credit"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../favicon.ico"/>
+  <link rel="Bookmark" href="../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../http/tekinfo/css/tekinfo.css"/>
+  <!-- imark CSS -->
+  <link rel="stylesheet" href="../http/imark/css/imark.css"/>
+  
+  <!-- TemplateBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- TemplateEndEditable -->
+  
+  <script type="text/javascript" src="../http/common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/login.js"></script>
+  <script type="text/javascript" src="../http/common/tek/js/mac-common.js"></script>
+  <!-- tekinfo JS --> 
+  <script type="text/javascript" src="../http/tekinfo/js/tekinfo.js"></script> 
+ 
+  <!-- TemplateBeginEditable name="MyJS" -->
+  <!-- 自定义JS -->
+  <script type="text/javascript" src="../http/imark/login/login.js"></script>
+  <!-- TemplateEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="matter">
+	<div class="container vcdiv">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- .widget worange starts -->
+				<div class="widget worange" id="login_show">
+					<div class="widget-content">
+						<!--<div class="padd">-->
+						<img id="slider-img" src="" width="800" height="450" class="carousel-inner img-responsive img-rounded" alt="企业商信 WWW.IMARK.VIP"/>
+
+						<div class="label-info center" style="color:white; font-weight:bold; line-height: 50px">
+							<a href="http://imark.vip" target="_blank">
+								<img src="../http/imark/logo/imark-banner-256.png" height="28" alt="企业商信" style="margin-bottom:10px; margin-top:10px;"/>
+							</a>
+							&nbsp;&nbsp;
+							<span id="slider-msg" style="margin-bottom:10px; margin-top:10px;"></span>
+						</div>
+						<!-- </div>end .padd -->
+					</div>
+					<!-- end .widget-content -->
+
+				</div>
+				<!-- end. widget worange -->
+			</div><!--end .col-md-12 -->
+
+			<!-- TemplateBeginEditable name="MAINCONTENT" -->
+			<!-- MAINCONTENT -->
+			<div class="col-md-6">
+				<!-- .widget worange starts -->
+				<div class="widget worange" id="login_div">
+					<!-- Widget head -->
+					<div class="widget-head">
+						<i class="fa fa-unlock"></i> 登录
+					</div>
+					<!-- end .widget-head -->
+
+					<div class="widget-content">
+						<div class="padd">
+							<!-- Login form -->
+							<form class="form-horizontal" id="login_form" name="login_form" method="post" action="javascript:login()">
+								<!-- Email -->
+								<div class="form-group">
+									<label class="control-label col-md-3 col-lg-3" for="userlogin">用户名</label>
+
+									<div class="col-md-9 col-lg-9" style="overflow:hidden;">
+										<input type="text" name="userlogin" class="form-control" id="userlogin" value="" placeholder="登录名/电子邮件/手机/身份证"/>
+									</div>
+								</div>
+
+								<!-- Password -->
+								<div class="form-group">
+									<label class="control-label col-md-3 col-lg-3" for="inputPassword">保密字</label>
+
+									<div class="col-md-9 col-lg-9" style="overflow:hidden;">
+										<input name="password" type="password" class="form-control" id="inputPassword" placeholder="保密字"/>
+									</div>
+								</div>
+								<!--自动登录选项-->
+								<div class="form-group" align="center">
+									<label class="control-label col-xs-4 col-md-3 col-lg-3">自动登录</label>
+
+									<div id="autoLoginDiv" class="col-xs-8 col-md-9 col-lg-9">
+										<div class="col-md-4 col-lg-4">
+											<input id="notLogin" name="term" type="radio" value="0" checked="checked"/><label for="notLogin" style=" ">从不</label>
+										</div>
+										<div class="col-md-4 col-lg-4">
+											<input id="loginOne" name="term" type="radio" value="2592000000"/><label for="loginOne" style=" ">1个月</label>
+										</div>
+										<div class="col-md-4 col-lg-4">
+											<input id="loginThree" name="term" type="radio" value="7776000000"/><label for="loginThree" style=" ">3个月</label>
+										</div>
+									</div>
+								</div>
+
+								<!--显示提示信息-->
+								<div class="center" id="message" name="message" style="color:red"></div>
+
+								<!-- 操作按钮 -->
+								<div id="btn" class="form-group center">
+									<button name="login" type="submit" class="btn btn-danger">登录</button>
+									<button name="register" type="button" class="btn btn-success" onclick="goRegister();">注册</button>
+									<br/>
+								</div>
+							</form>
+						</div>
+						<!-- end .padd -->
+					</div>
+					<!-- end .widget-content -->
+
+					<div class="widget-foot">
+						<div style="font-size: 0.8em;">
+							Powered by
+							<a href="http://www.tekinfo.net" target="_blank">
+								<img src="../http/tekinfo/logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo"/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- end. widget worange -->
+			</div><!--end .col-md-6 -->
+
+			<div id="show_div" class="col-md-6" style="display:none;">
+				<!-- User widget -->
+				<div class="widget">
+					<div class="widget-head">
+						<div class="pull-left">登录成功</div>
+						<div class="clearfix"></div>
+					</div>
+					<!-- end .widget-head-->
+					<div class="widget-content">
+						<div class="padd">
+							<div class="user row">
+								<div class="user-pic col-xs-5 col-sm-4 center" id="user_photo" style="float:left; display:inline; padding:0">
+									<!-- User pic widget-foot -->
+									<a href="javascript:;">
+										<img id="my_icon" alt="" width="64"/>
+									</a>
+								</div>
+								<div class="user-details col-xs-7 col-sm-8" style="float:left; margin-left:1px; padding:0; overflow:hidden; display:inline;">
+									<h6 style=" display:block">欢迎 &quot;<span id='user_name'> </span>&quot; 回来。</h6>
+
+									<p>
+										<span style="display: inline-block;">登录时间：</span><span id="user_lastestTime" style="display:inline-block;"></span>
+									</p>
+									<!-- <p> <span style=" white-space:nowrap;">最近登录时间：</span><span id="user_lastestTime" style="white-space:pre-wrap;"></span></p> -->
+									<!--<p class="row"> <span class="col-xs-12 col-sm-5 col-md-4 col-lg-4" style=" white-space:nowrap;margin-left:-15px;">登录时间：</span><span id="user_lastestTime" style="white-space:pre-wrap;"></span></p> -->
+									<p style="white-space:nowrap;"> 登录IP：<span id="user_lastestIp"></span></p>
+								</div>
+								<!-- end .user-details-->
+							</div>
+							<!-- end .user -->
+						</div>
+						<!-- end .padd-->
+					</div>
+					<!-- end .widget-content-->
+					<div id="goBack" class="widget-foot hidden" align="center">
+						没有自动跳转? <a href="javascript:goBack();">立即跳转</a>
+					</div>
+					<div id="gotosafepwd" class="widget-foot hidden" align="center">
+						没有自动跳转? <a href="javascript:goToSafepwd();">立即跳转</a>
+					</div>
+				</div>
+				<!-- end .widget-->
+				<div class="col-md-6" align="center">
+					<span id="timer-msg" style="text-align:center"></span>
+				</div>
+			</div><!-- end .col-md-6 -->
+			<!-- TemplateEndEditable -->
+
+		</div><!--end .row -->
+	</div><!--end .containe -->
+</div><!--end .matter -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<script type="text/javascript" src="../http/style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CL Editor -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- Slim Scroll -->
+<script type="text/javascript" src="../http/style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script type="text/javascript" src="../http/style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script type="text/javascript" src="../http/style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script type="text/javascript" src="../http/style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script type="text/javascript" src="../http/imark/js/imark.js"></script>
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	
+	randomSlider();
+	
+	if(typeof init == "function")
+		init();
+		
+		
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+}
+
+/**
+ * 显示随机图片
+ */
+function randomSlider() {
+	var imgdiv=document.getElementById("slider-img");
+	if(imgdiv){
+		imgdiv.onload = vcdiv;
+  		
+		var i=Math.ceil(Math.random()*14);
+		var src=tek.common.getRootPath()+"http/imark/images/sliders/s"
+			+((i<10) ? "0" + i : i)+".jpg";
+  		
+  		$("#slider-img").attr("src", src);
+  
+		var msg=new Array(
+	  		"企业商信，企业的价值维度 &nbsp; ...",
+	  		"企业商信，用数字评级企业商业信用 &nbsp; ...",
+	  		"企业商信，用科学展现企业商业信用 &nbsp; ...",
+	  		"企业商信，企业百年测评 &nbsp; ...",
+	  		
+	  		"企业商信，让你科学进取 &nbsp; ...",
+
+	  		"企业商信,企业信用评测平台。"
+		);
+	  
+		var j=Math.ceil(Math.random()*msg.length);
+			
+		$("#slider-msg").html(msg[j]);
+	}
+}
+
+function showMessage(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p>"+msg+"</p>");
+    obj.innerHTML="<p>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+function showError(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p style='color:red'>"+msg+"</p>");
+    obj.innerHTML="<p style='color:red'>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+$(window).resize(function(){ 
+    vcdiv();
+})
+
+function vcdiv(){
+  $(".vcdiv").css({ 
+      position: "absolute",
+      left: ($(window).width() - $(".vcdiv").outerWidth())/2,
+      top: ($(window).height() - $(".vcdiv").outerHeight())/2-20
+  });
+}
+</script>
+
+<!-- TemplateBeginEditable name="MyJavascript" -->
+<script type="text/javascript">
+function init() {
+	if(parent && parent!=self){
+		$("#outter").attr("class","matter");
+	} else {
+		$("#outter").attr("class","admin-form");
+	}
+
+	if(tek.common.isLoggedIn())
+		goBack();
+	else
+		showMessage("请用户登录，没有帐号的用户请选择注册。");
+
+	$("#userlogin").focus();
+}
+</script>
+<!-- TemplateEndEditable --> 
+
+</body>
+</html>

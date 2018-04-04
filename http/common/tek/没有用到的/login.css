@@ -1,0 +1,30 @@
+
+#loginMsg {
+	color:#C00;
+	text-align:right;
+	padding-right:10px;
+}
+
+#userInfo ul
+{
+	text-decoration: none;
+	list-style-type:none;
+}
+
+#userInfo ul .userTitle
+{
+	line-height:30px;
+	text-align:left;
+	float:left;
+	width:70px;
+	height:20px;
+}
+
+#userInfo ul .userValue
+{
+	line-height:30px;
+	text-align:center;
+	float:left;
+	width:60px;
+	height:20px;
+}

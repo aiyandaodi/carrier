@@ -1,0 +1,12 @@
+th{text-align: center;}
+td{text-align: center;}
+
+h2 > i.fa{
+    display: inline-block;
+    width:38px;
+    height:38px;
+    line-height: 38px;
+    border-radius: 28px;
+    background: #eee;
+    text-align: center;
+}

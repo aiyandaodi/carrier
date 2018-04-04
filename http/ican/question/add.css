@@ -1,0 +1,115 @@
+/* 日历样式 */
+.bold {font-weight:bold;}
+.pointer {cursor:pointer;}
+.attbg {background:#ececec;}
+.tabtitle td.selected,.colorpanel,.bd,.tpinfo {border:1px solid #bfbfbf;}
+.calendar { width:100%;}
+.calendar td { font-family:Tahoma,Arial,Verdana;border-collapse:collapse;text-align:right;}
+.calendar .title_year { padding:4px 0;width:100%;text-align:center;border-width:0 0 1px 0;font-size:12px;}
+.calendar .selecter {margin:0 10px 0 8px;}
+.calendar .selecter  img { cursor:pointer;margin:0 2px; } 
+.calendar .datelist { background:#fff; }
+.calendar .day { font:normal 11px Tahoma;border:1px solid #f2f4f6;border-width:0 1px 1px 0;padding:2px 4px 2px;background-repeat:no-repeat;background-position:right top; }
+.calendar .week_title{ background:; border-width:0 0 1px 0;pointer:default;text-align:center;padding:4px 2px 2px;}
+.calendar .hover { border-color:#ccc;padding:1px 3px 3px 1px; }
+.calendar .normalday { cursor:pointer; }
+.calendar .today { background-color:#727272;color:#fff;}
+.calendar .invalidateday { color:#e0e0e0; }
+.calendar .remind { background-image:url(../../common/calendar/bg_remind_enable.gif); }
+.calendar .remind_expired { background-image:url(../../common/calendar/bg_remind_disable.gif); }
+.toolheight {*height:23px;}
+.toolheight .right, .toolheight .qm_right {margin:4px 0 0 0;}
+li.fs a.fn_list,li.fs a.fn_list:link,li.fs a.fn_list:visited {color:#fff;}
+li.fs_userlist {padding-left:0;}
+.toolbg,.toolbg1{font-size:12px;background:#d5d5d5;}
+
+.admin-form {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 0px 10px;
+}
+
+
+.question-head {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #337ab7;
+}
+
+.form-group label{
+	font-size: 1.0em;
+	line-height: 1.4em;
+	font-weight: 400;
+	padding-top:5px;
+}
+
+.question-info-div{
+	font-size: 0.9em;
+	background: #fff;
+}
+
+.question-info-div .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.answer-head {
+    text-align: center;
+    font-size: 1.0em;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #337ab7;
+}
+
+.new-answer {
+	font-size:0.9em;
+    padding: 0px 20px;
+    background-color: rgba(255, 255, 255, 0.1);/*rgba(203, 203, 203, 0.1);*/
+    border: 1px solid #dce2e3;
+    border-radius: 5px;
+    /*display: none;*/
+}
+
+#answer-btn > button {
+    margin :5px;
+}
+
+.form-group  button {
+    margin :5px;
+}
+
+/*标签*/
+#exams_question_tags{
+  padding: 0;
+}
+
+#custom-personal-tag-link{
+	display:none;
+}
+
+#lib-common-tags-ul{
+	list-style: none;
+    padding: 0;
+}
+
+#lib-common-tags-ul li{
+	float: left;
+	margin-right: 10px;
+}
+
+
+.tags{
+	border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 0.9em;
+    font-weight: 400;
+    padding: 5px 8px;
+	margin-left: 10px;
+}
+
+
+

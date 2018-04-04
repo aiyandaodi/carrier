@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 服务连接进程  -->
+<tekinfo>
+  <object>
+    <ServiceSession ResourceBundle="com.takall.service.ServiceSession"
+        Structure="com.takall.service.ServiceSession"
+        ObjectRm="com.takall.remoting.service.ServiceSessionRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <service_session_id base="identity"/>
+        <service_session_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+      </autovalue>
+      <nosamevalue>
+        <service_session_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="service_session_name" codeIdentity="null" ownerIdentity="null">
+        <service_session identity="service_session_id"/>
+      </table>
+
+      <command>
+        <add url="http/ipower/servicesession/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <service_session_code/>
+            <service_session_name/>
+            
+            <service_session_username/>
+            <service_session_sitename/>
+            <service_session_servicename/>
+
+            <service_session_credentials/>
+
+            <service_session_start/>
+            <service_session_end/>
+          </item>
+        </add>
+        
+        <edit url="http/ipower/servicesession/edit.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <service_session_code/>
+            <service_session_name/>
+            
+            <service_session_username/>
+            <service_session_sitename/>
+            <service_session_servicename/>
+
+            <service_session_credentials/>
+
+            <service_session_start/>
+            <service_session_end/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ipower/servicesession/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <service_session_code/>
+            <service_session_name/>
+            
+            <service_session_username/>
+            <service_session_sitename/>
+            <service_session_servicename/>
+
+            <service_session_credentials/>
+
+            <service_session_start/>
+            <service_session_end/>
+          </item>
+        </read>
+        
+        <list url="http/ipower/servicesession/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <service_session_code/>
+            <service_session_name/>
+            
+            <service_session_username/>
+            <service_session_sitename/>
+            <service_session_servicename/>
+
+            <service_session_credentials/>
+
+            <service_session_start/>
+            <service_session_end/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <service_session_name/>
+            <service_session_sitename/>
+            <service_session_servicename/>
+            <service_session_username/>
+          </item>
+        </search>
+        
+        <remove url="http/ipower/servicesession/remove.html">
+          <parameter>
+        
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <service_session_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <service_session_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 进程名称 -->
+        <service_session_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 进程用户显示名 -->
+        <service_session_username  variable="string" maxlength="255"/>
+        <!-- 连接的主机名 -->
+        <service_session_sitename  variable="string" maxlength="255"/>
+        <!-- 连接的服务显示名 -->
+        <service_session_servicename  variable="string" maxlength="255"/>
+        <!-- 进程凭证 -->
+        <service_session_credentials variable="long" parse="object:ServiceCredentials" notnull="true"/>
+
+        <!-- 连接开始时间 -->
+        <service_session_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+        <!-- 连接结束时间 -->
+        <service_session_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+
+        
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </ServiceSession>
+  </object>
+</tekinfo>

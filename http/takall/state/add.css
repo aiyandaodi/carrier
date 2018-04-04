@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#add_a_state{
+  line-height: 50px;
+  font-size: 18px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 15px;
+}
+
+#state_form>div>label{
+  text-align: right;
+}
+
+/*#state_btn{
+  text-align: right;
+}*/
+
+#state_btn button{
+  margin: 5px;
+}
+
+@media (max-width: 400px){
+	.ui-105 {
+		 margin: 40px auto; 
+	}
+	.row h5 {
+		display: none;
+	}
+}
+	

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构工商注册对象 -->
+<tekinfo>
+  <database>
+    <table>
+    	<!-- 数据库表名 -->
+      <organization_taxregister>
+        <item>
+          <!-- 标识 -->
+          <taxregister_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 工商注册号 -->
+          <taxregister_code value="VARCHAR(32) NOT NULL"/>
+		  <!-- 税前登记账号 -->
+          <taxregister_account value="VARCHAR(32) NOT NULL"/>
+          <!-- 企业名称 -->
+          <taxregister_name value="VARCHAR(128) NOT NULL"/> 
+		  <!-- 住所 -->
+          <taxregister_residence value="VARCHAR(255) NOT NULL"/>
+		  
+		  
+          <!-- 法人代表 -->
+          <taxregister_hoster value="VARCHAR(128) NOT NULL"/>
+          <!-- 税前登记类型 -->
+          <taxregister_taxtype value="VARCHAR(128) NOT NULL"/> 
+		   <!-- 登记受理类型 -->
+          <taxregister_accepttype value="VARCHAR(128) NOT NULL"/>
+		  <!-- 组织机构代码 -->
+          <taxregister_registercode value="VARCHAR(32) NOT NULL"/>
+		  <!-- 联系电话 -->
+          <taxregister_phone value="VARCHAR(32) NOT NULL"/>
+		  
+		  
+		  <!-- 邮政编码 -->
+          <taxregister_postcode value="VARCHAR(32) NOT NULL"/>
+		  <!-- 企业网址 -->
+          <taxregister_url value="VARCHAR(128) NOT NULL"/>
+		  <!-- 所属街乡 -->
+          <taxregister_street value="VARCHAR(255) NOT NULL"/>
+		  <!-- 国地税共管户标识 -->
+          <taxregister_condominium value="VARCHAR(128) NOT NULL"/>
+		   <!-- 登记注册类型 -->
+          <taxregister_registertype value="VARCHAR(128) NOT NULL"/>
+		  
+		  
+		   <!-- 隶属关系 -->
+          <taxregister_membership value="VARCHAR(255) NOT NULL"/>
+		    <!-- 国家标准行业 -->
+          <taxregister_standard value="VARCHAR(255) NOT NULL"/>
+		    <!-- 税务登记日期 -->
+          <taxregister_date value="BIGINT DEFAULT '0' NOT NULL"/>
+		    <!-- 主管税务机关 -->
+          <taxregister_authority value="VARCHAR(255) NOT NULL"/>
+		    <!-- 纳税人状态 -->
+          <taxregister_status value="VARCHAR(128) NOT NULL"/>	
+		  
+		  	  
+          <!-- 所属机构 -->
+          <taxregister_organization value="BIGINT NOT NULL"/>
+		  
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </organization_taxregister>
+    </table>
+  </database>
+</tekinfo>

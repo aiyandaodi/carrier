@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 系统对象配置 -->
+<tekinfo>
+  <object>
+    <ObjectOption ResourceBundle="net.tekinfo.object.object.ObjectOption"
+        Structure="net.tekinfo.object.ObjectOption"
+        ObjectRm="net.tekinfo.remoting.object.ObjectOptionRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <option_id base="identity"/>
+        <option_code base="yyyyMMdd" step="1" digit="4" tree="default"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="option_name" codeIdentity="option_code" ownerIdentity="option_owner">
+        <object_option identity="option_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <option_code/>
+            <option_name/>
+            <option_objectName/>
+            <option_objectId/>
+            <option_owner/>
+            <option_value/>
+          </item>
+        </list>
+        
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <option_code/>
+            <option_name/>
+            <option_objectName/>
+            <option_objectId/>
+            <option_owner/>
+            <option_value/>
+          </item>
+        </add>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <option_code/>
+            <option_name/>
+            <option_objectName/>
+            <option_objectId/>
+            <option_owner/>
+            <option_value/>
+            
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+          </item>
+        </read>
+
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>       
+            <option_name/>
+            <option_objectName/>
+            <option_objectId/>
+            <option_owner/>
+            <option_value/>
+          </item>
+        </edit>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <option_code/>
+            <option_name/>
+            <option_objectName/>
+            <option_value/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <option_code/>
+            <option_name/>
+            <option_objectName/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="false"/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <option_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <option_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 配置名 -->
+        <option_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 所属对象名 -->
+        <option_objectName variable="string" parse="objectName" maxlength="128" notnull="true"/>
+        <!-- 所属对象标识 -->
+        <option_objectId variable="long" parse="object:this.option_objectName" default="0" notnull="true"/>
+        <!-- 所属用户 -->
+        <option_owner variable="long" parse="object:User" forbidEdit="true" default="0" notnull="true"/>
+        <!-- 配置参数（形如： 参数名=参数值;参数名=参数值;...） -->
+        <option_value variable="string" parse="string" maxlength="1024" format="textarea:4"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectOption>
+  </object>
+</tekinfo>

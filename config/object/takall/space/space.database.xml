@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 空间 -->
+<tekinfo>
+  <database>
+    <table>
+      <uni_space>
+        <item>
+          <!-- 标识 -->
+          <space_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <space_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <space_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 状态 -->
+          <space_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 类型 -->
+          <space_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <space_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 空间备注-->
+          <space_remark value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 空间最近文章更新时间 -->
+          <space_latestTime value="BIGINT DEFAULT '0'"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </uni_space>
+    </table>
+  </database>
+</tekinfo>

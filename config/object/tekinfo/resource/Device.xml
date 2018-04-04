@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 端口设备  -->
+<tekinfo>
+  <object>
+    <Device ResourceBundle="net.tekinfo.object.resource.Device"
+        Structure="net.tekinfo.object.resource.Device"
+        ObjectRm="net.tekinfo.remoting.resource.DeviceRm">
+      <autovalue>
+        <device_id base="identity"/>
+        <device_code base="yyyyMM" step="1" digit="14"/>
+      </autovalue>
+      <nosamevalue>
+      	<device_name/>
+      	<device_address/>
+      </nosamevalue>
+      
+      <table nameIdentity="device_name" codeIdentity="null" ownerIdentity="null">
+        <device identity="device_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+            <list_pages/>
+          </parameter>
+
+          <item>
+            <device_name/>
+            <device_type/>
+            <device_address/>
+            <device_ini/>
+            <device_status/>
+          </item>
+        </list>
+
+        <read>
+          <item>
+            <device_name/>
+            <device_type/>
+            <device_address/>
+            <device_ini/>
+            <device_status/>
+            <device_creator/>
+
+            <device_baudrate/>
+            <device_databits/>
+            <device_flowcontrol/>
+            <device_parity/>
+            <device_stopbits/>
+            <device_sendspeed/>
+            <device_parameter rightrole="auditor"/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <!-- 中控H1系列考勤机windows控件名称 -->      	    
+            <ZKH1 value="activeX=zkemkeeper.ZKEM"/>
+          </parameter>
+          <item>
+            <device_name/>
+            <device_type/>
+            <device_ini/>
+            <device_address/>
+
+            <device_baudrate/>
+            <device_databits/>
+            <device_flowcontrol/>
+            <device_parity/>
+            <device_stopbits/>
+            <device_sendspeed/>
+          </item>
+        </add>
+
+        <edit>
+          <item>
+            <device_name/>
+            <device_type/>
+            <device_ini/>
+            <device_address/>
+            <device_status rightrole="customerService,auditor"/>
+
+            <device_baudrate/>
+            <device_databits/>
+            <device_flowcontrol/>
+            <device_parity/>
+            <device_stopbits/>
+            <device_sendspeed/>
+          </item>
+        </edit>
+
+        <search>
+          <item> 
+            <device_name/>
+            <device_type/>
+            <device_ini/>
+            <device_address/>
+            <device_status/>
+            <device_creator/>
+          </item>
+        </search>
+
+        <!-- 测试设备 -->
+        <test>
+          <parameter>
+            <width value="600"/>
+            <height value="400"/>
+            <x_diff value="100"/>
+            <y_diff value="100"/>
+            
+            <type_0 value="testCom"/>
+            <type_1 value="testCom"/>
+            <type_16 value="testGateway"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+        </test>
+
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <device_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <device_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 名称 -->
+        <device_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 端口类型 -->
+        <device_type variable="int" parse="enum" format="option" default="1" notnull="true">
+          <com value="0x01"/>    <!-- 串口 -->
+          <tcp value="0x11"/>    <!-- TCP端口 -->
+        </device_type>
+        <!-- 端口地址
+             串口：COM+端口号
+             TCP/UDP端口：IP地址+“:”+端口号
+        -->
+        <device_address variable="string" maxlength="255" notnull="true"/>
+        <!-- 端口参数 -->
+        <device_parameter variable="string" maxlength="1024"/>
+        <!-- 设备类型
+             MSG：信息
+             SMS：手机短信
+             OPEN：用户可创建
+             CARD：读卡器
+             PAY：支付
+             QRCODE：二维码 -->
+        <device_ini variable="string" maxlength="64" parse="enum" format="option" notnull="true">
+          <at value="MSG_SMS_AT"/>                      <!-- AT手机 -->
+          <chuanglan value="MSG_SMS_CL"/>               <!-- 创蓝 -->
+          <smtp value="MSG_SMTP_OPEN"/>                 <!-- SMTP -->
+          <smtp_virtual value="MSG_SMTP_VIRTUAL"/>      <!-- 虚拟SMTP -->
+          <pop3 value="MSG_POP3_OPEN"/>                 <!-- POP3 -->
+          <imap value="MSG_IMAP_OPEN"/>                 <!-- IMAP -->
+          <weixin value="MSG_WEIXIN"/>                  <!-- 微信消息 -->
+
+          <weixin_qrcode value="PAY_WEIXIN_QRCODE"/>    <!-- 微信二维码支付 -->
+        </device_ini>
+        <!-- 创建者 -->
+        <device_creator variable="long" parse="object:User" notnull="true"/>
+        <!-- 状态 -->
+        <device_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="-1"/>    <!-- 停用 -->
+          <apply value="0"/>    <!-- 未审核（只能创建者使用） -->
+          <normal value="1"/>    <!-- 正常 -->
+        </device_status>
+        
+        <!-- 虚拟域：每秒位数 -->
+        <device_baudrate variable="long" parse="enum" format="option">
+          <b110 value="110"/>
+          <b300 value="300"/>
+          <b1200 value="1200"/>
+          <b2400 value="2400"/>
+          <b4800 value="4800"/>
+          <b9600 value="9600"/>
+          <b19200 value="19200"/>
+          <b38400 value="38400"/>
+          <b57600 value="57600"/>
+          <b115200 value="115200"/>
+          <b230400 value="230400"/>
+          <b460800 value="460800"/>
+          <b921600 value="921600"/>
+        </device_baudrate>
+        <!-- 虚拟域：数据位 -->
+        <device_databits variable="int" parse="enum" format="option" default="8">
+          <d5 value="5"/>
+          <d6 value="6"/>
+          <d7 value="7"/>
+          <d8 value="8"/>
+        </device_databits>
+        <!-- 虚拟域：流控制 -->
+        <device_flowcontrol variable="int" parse="enum" format="option" default="0">
+          <none value="0"/>
+          <rtsctsin value="1"/>
+          <rtsctsout value="2"/>
+          <xonxoffin value="4"/>
+          <xonxoffout value="8"/>
+        </device_flowcontrol>
+        <!-- 虚拟域：校验方式 -->
+        <device_parity variable="int" parse="enum" format="option" default="0">
+          <none value="0"/>
+          <odd value="1"/>
+          <even value="2"/>
+          <mark value="3"/>
+          <space value="4"/>
+        </device_parity>
+        <!-- 虚拟域：停止位 -->
+        <device_stopbits variable="int" parse="enum" format="option" default="1">
+          <s1 value="1"/>
+          <s1_5 value="3"/>
+          <s2 value="2"/>
+        </device_stopbits>
+        <!-- 虚拟域：短信发送速率 -->
+        <device_sendspeed variable="int" default="20"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Device>
+  </object>
+</tekinfo>

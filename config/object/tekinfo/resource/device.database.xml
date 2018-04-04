@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 端口设备 -->
+<tekinfo>
+  <database>
+    <table>
+      <device>
+        <item>
+          <!-- 标识 -->
+          <device_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <device_code value="VARCHAR(20) NOT NULL"/>
+          <!-- 名称 -->
+          <device_name value="VARCHAR(255) NOT NULL"/>
+
+          <!-- 端口类型 -->
+          <device_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 端口地址 -->
+          <device_address value="VARCHAR(255) NOT NULL"/>
+          <!-- 端口参数 -->
+          <device_parameter value="VARCHAR(1024)"/>
+          <!-- 设备类型 -->
+          <device_ini value="VARCHAR(64) NOT NULL"/>
+          <!-- 创建者 -->
+          <device_creator value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <device_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </device>
+    </table>
+  </database>
+</tekinfo>

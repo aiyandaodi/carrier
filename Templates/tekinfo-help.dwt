@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+功能：帮助
+参数：
+    
+-->
+<html>
+
+<head>
+  <meta name="robots" content="noindex"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  
+  <!-- Title and other stuffs -->
+  <!-- TemplateBeginEditable name="doctitle" -->
+  <title>Tekinfo 帮助</title>
+  <!-- TemplateEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment" />
+  <meta name="description" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment"  />
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../favicon.ico"/>
+  <link rel="Bookmark" href="../favicon.ico"/>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../http/style/macadmin/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="../http/style/macadmin/css/style.css"/>
+  <link rel="stylesheet" href="../http/style/macadmin/css/widgets.css"/>
+  
+  <!-- TemplateBeginEditable name="MyCSS" -->
+  <!-- MyCSS -->
+  <!-- TemplateEndEditable -->
+
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+  
+  <!-- TemplateBeginEditable name="MyHead" -->
+  <!-- 自定义我的头文件 -->
+  <!-- TemplateEndEditable -->
+  
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="conjtainer">
+    <!-- Menu button for smallar screens -->
+    <div class="navbar-header">
+      <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+		<span><img src="../http/images/blue-list.png" width="28"  alt=""/></span>	  
+      </button>
+      
+      <!-- Site name for smallar screens -->
+      <a href="../http/help/index/index.html" class="navbar-brand hidden-lg"><img src="../http/tekinfo/logo/tekinfo-128.png"  height="28" alt="Tekinfo 统一资源平台" longdesc="http://www.tekinfo.net"></a>
+	</div><!-- end .navbar-header -->
+    
+    <!-- Navigation starts -->
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+      <ul class="nav navbar-nav">  
+        
+        <li class="dropdown dropdown-big">
+          <a href="../http/tekinfo/help/index.html">
+            <span class="label label-primary"><i class="fa fa-archive"></i></span>统一资源平台
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../http/help/index/index.html" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="label label-success"><i class="fa fa-info"></i></span>安装和部署
+          </a>
+          
+          <!-- Dropdown -->
+          <ul class="dropdown-menu">
+            <li>
+              <p>
+                  <a href="../http/tekinfo/help/setup.html">
+                    <span class="label label-info"><i class="fa fa-building"></i></span>
+                    安装
+                  </a>
+                </p>
+                <hr />
+                <p>
+                  <a href="../http/tekinfo/object/help.html">
+                    <span class="label label-danger"><i class="fa fa-archive"></i></span>
+                    对象说明
+                  </a>
+                </p>
+              
+            
+
+                <!-- Dropdown menu footer 
+                <div class="drop-foot">
+                  <a href="../http/tekinfo/help/setup.html">全部查看</a>
+                </div>
+-->
+				
+            </li>
+          </ul><!-- end .dropdown-menu-->
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../http/tekinfo/help/contact.html">
+            <span class="label label-warning"><i class="fa fa-archive"></i></span>寻求支持
+          </a>
+        </li>
+        
+      </ul><!-- end .navbar-nav-->
+      
+      
+
+        <!-- Search form
+        <form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form> -->
+        <!-- Links 
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-user"></i> Admin <b class="caret"></b>              
+            </a>-->
+            
+            <!-- Dropdown menu 
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+              <li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+              <li><a href="../http/user/login/login.html"><i class="icon-off"></i> Logout</a></li>
+            </ul>
+          </li>
+          
+        </ul>-->
+    </nav>
+
+  </div>
+</div>
+
+
+<header>
+  <div class="container">
+    <div class="row">
+      <!-- Logo section -->
+      <div class="col-md-4">
+        <!-- Logo. -->
+        <div class="logo">
+          <h2>
+              <a href="http://www.tekinfo.net">
+                <img src="../http/tekinfo/logo/tekinfo-128.png" height="36" alt="Tekinfo" longdesc="http://www.tekinfo.net" >
+              </a>
+              <a href="../http/tekinfo/help/index.html"><span class="bold">统一资源平台</span></a>
+          </h2>
+            
+        </div><!-- end .logo-->
+        <!-- Logo ends -->
+      </div><!--  end .col-md-4 -->
+
+      <!-- Button section -->
+      <div class="col-md-4">
+           
+      </div>
+
+      <!-- Data section -->
+      <div class="col-md-4">
+        <div class="header-data">
+	
+		    <!-- TemplateBeginEditable name="HelpSection" -->
+            <h3 id="help_section">
+              概述
+            </h3>
+		    <!-- TemplateEndEditable -->
+
+        </div>
+      </div>
+
+    </div><!-- end .row-->
+  </div><!-- end .container-->
+</header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+  
+  
+  <!-- Matter -->   
+  <div class="matter">
+    <div class="container">
+	<!-- TemplateBeginEditable name="MainContent" -->
+      MainContent
+	  
+	<!-- TemplateEndEditable -->   
+    </div><!-- end .container -->
+  </div><!-- Matter ends -->
+
+    
+  <div class="clearfix"></div>
+  
+</div><!-- end .content-->
+<!-- Content ends -->
+
+
+<!-- Footer starts -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+            <!-- Copyright info -->
+            <p class="copy">
+              <a href="http://www.tekinfo.net" target="_blank">
+            <img src="../http/tekinfo/logo/tekinfo-color-tradmark-88.png" height="22" alt="Tekinfo 统一资源平台" longdesc="http://www.tekinfo.net"/></a>
+          Copyright &copy; 2000 <a href="http://www.tekinfo.net">Tekinfo Communication Co., Ltd.</a> 
+          |
+          <!-- tekinfo.net cnzz 站长统计-->
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_3661086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D3661086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          
+          
+
+            </p>
+      </div>
+    </div>
+  </div>
+</footer> 	
+
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- JS -->
+<script src="../http/style/macadmin/js/jquery.js"></script> <!-- jQuery -->
+<script src="../http/style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../http/style/macadmin/js/jquery-ui-1.9.2.custom.min.js"></script> <!-- jQuery UI -->
+<!--
+<script src="../http/style/macadmin/js/fullcalendar.min.js"></script>  Full Google Calendar - Calendar -->
+<!--
+<script src="../http/style/macadmin/js/jquery.rateit.min.js"></script>  RateIt - Star rating -->
+<!--
+<script src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script>  prettyPhoto -->
+
+<!-- jQuery Flot 
+<script src="../http/style/macadmin/js/excanvas.min.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.stack.js"></script>
+-->
+<!-- jQuery Notification - Noty -->
+
+<!--
+<script src="../http/style/macadmin/js/jquery.noty.js"></script>  jQuery Notify -->
+<!--
+<script src="../http/style/macadmin/js/themes/default.js"></script>  jQuery Notify -->
+
+<!--
+<script src="../http/style/macadmin/js/layouts/bottom.js"></script>  jQuery Notify -->
+
+ <!--
+<script src="../http/style/macadmin/js/layouts/topRight.js"></script> jQuery Notify -->
+
+<!--
+<script src="../http/style/macadmin/js/layouts/top.js"></script>  jQuery Notify -->
+<!-- jQuery Notification ends -->
+<!-- 
+<script src="../http/style/macadmin/js/sparklines.js"></script> Sparklines -->
+
+ <!--
+<script src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> CLEditor -->
+
+<!--
+<script src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script>  Date picker -->
+<!-- 
+<script src="../http/style/macadmin/js/bootstrap-switch.min.js"></script> Bootstrap Toggle -->
+
+<!-- 
+<script src="../http/style/macadmin/js/filter.js"></script> Filter for support page -->
+<script src="../http/style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<!-- 
+<script src="../http/style/macadmin/js/charts.js"></script> Charts & Graphs -->
+
+<!-- Script for this page -->
+<script type="text/javascript">
+$(function () {
+
+    /* Bar Chart starts */
+
+    var d1 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d1.push([i, parseInt(Math.random() * 30)]);
+
+    var d2 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d2.push([i, parseInt(Math.random() * 30)]);
+
+
+    var stack = 0, bars = true, lines = false, steps = false;
+    
+    function plotWithOptions() {
+        $.plot($("#bar-chart"), [ d1, d2 ], {
+            series: {
+                stack: stack,
+                lines: { show: lines, fill: true, steps: steps },
+                bars: { show: bars, barWidth: 0.8 }
+            },
+            grid: {
+                borderWidth: 0, hoverable: true, color: "#777"
+            },
+            colors: ["#ff6c24", "#ff2424"],
+            bars: {
+                  show: true,
+                  lineWidth: 0,
+                  fill: true,
+                  fillColor: { colors: [ { opacity: 0.9 }, { opacity: 0.8 } ] }
+            }
+        });
+    }
+
+    plotWithOptions();
+    
+    $(".stackControls input").click(function (e) {
+        e.preventDefault();
+        stack = $(this).val() == "With stacking" ? true : null;
+        plotWithOptions();
+    });
+    $(".graphControls input").click(function (e) {
+        e.preventDefault();
+        bars = $(this).val().indexOf("Bars") != -1;
+        lines = $(this).val().indexOf("Lines") != -1;
+        steps = $(this).val().indexOf("steps") != -1;
+        plotWithOptions();
+    });
+
+    /* Bar chart ends */
+
+});
+
+
+/* Curve chart starts */
+
+$(function () {
+    var sin = [], cos = [];
+    for (var i = 0; i < 14; i += 0.5) {
+        sin.push([i, Math.sin(i)]);
+        cos.push([i, Math.cos(i)]);
+    }
+
+    var plot = $.plot($("#curve-chart"),
+           [ { data: sin, label: "sin(x)"}, { data: cos, label: "cos(x)" } ], {
+               series: {
+                   lines: { show: true, fill: true},
+                   points: { show: true }
+               },
+               grid: { hoverable: true, clickable: true, borderWidth:0 },
+               yaxis: { min: -1.2, max: 1.2 },
+               colors: ["#1eafed", "#1eafed"]
+             });
+
+    function showTooltip(x, y, contents) {
+        $('<div id="tooltip">' + contents + '</div>').css( {
+            position: 'absolute',
+            display: 'none',
+            top: y + 5,
+            left: x + 5,
+            border: '1px solid #000',
+            padding: '2px 8px',
+            color: '#ccc',
+            'background-color': '#000',
+            opacity: 0.9
+        }).appendTo("body").fadeIn(200);
+    }
+
+    var previousPoint = null;
+    $("#curve-chart").bind("plothover", function (event, pos, item) {
+        $("#x").text(pos.x.toFixed(2));
+        $("#y").text(pos.y.toFixed(2));
+
+        if ($("#enableTooltip:checked").length > 0) {
+            if (item) {
+                if (previousPoint != item.dataIndex) {
+                    previousPoint = item.dataIndex;
+                    
+                    $("#tooltip").remove();
+                    var x = item.datapoint[0].toFixed(2),
+                        y = item.datapoint[1].toFixed(2);
+                    
+                    showTooltip(item.pageX, item.pageY, 
+                                item.series.label + " of " + x + " = " + y);
+                }
+            }
+            else {
+                $("#tooltip").remove();
+                previousPoint = null;            
+            }
+        }
+    }); 
+
+    $("#curve-chart").bind("plotclick", function (event, pos, item) {
+        if (item) {
+            $("#clickdata").text("You clicked point " + item.dataIndex + " in " + item.series.label + ".");
+            plot.highlight(item.series, item.datapoint);
+        }
+    });
+
+});
+
+/* Curve chart ends */
+</script>
+
+<!-- tekinfo.net 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?a2a4b893edc16a6352cef4363a94c7bd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  </body>
+</html>

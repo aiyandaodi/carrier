@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+/* UI - X */
+.ui-x{
+	margin: 0 auto;
+}
+
+/* Item */
+.ui-x .ui-item{
+	max-width: 700px;
+	margin: 20px auto;
+}
+/* User Image */
+.ui-x .ui-item img{
+	display: block;
+	max-width: 240px;
+	max-height: 320px;
+	object-fit: cover;
+	margin-right: 10px;
+	float: left;
+}
+
+.ui-x .ui-item  .ui-social img{
+	max-height: 48px !important;
+	max-width: 48px !important;
+}
+
+@media(max-width: 534px){
+	.ui-x .ui-item img{
+		float: none;
+		margin: 20px auto;
+		object-fit: cover;
+	}
+}
+/* Content */
+.ui-x .ui-item .ui-content{
+	margin: 0px 0px 20px 240px; 
+}
+@media(max-width: 534px){
+	.ui-x .ui-item .ui-content{
+		margin-left: 0px;
+		text-align: center;
+	}
+}
+/* Heading */
+.ui-x .ui-item .ui-content h3{
+	font-size: 1.2em;
+	line-height: 30px;
+	font-weight:400;
+}
+
+.ui-x .ui-item .ui-content h3 span{
+	font-size:0.8em;
+	color:rgba(3,83,100,1.00);
+}
+
+/* Skills */
+.ui-x .ui-item .ui-content .ui-skills{
+	margin: 5px 0px;
+}
+.ui-x .ui-item .ui-content .ui-skills span{
+	display: inline-block;
+	margin:5px 0px;
+	margin-right:5px;
+	font-size:0.8em;
+	background:#f8f8f8;
+	padding:2px 7px;
+	text-transform:uppercase;
+}
+/* Paragraph */
+.ui-x .ui-item .ui-content p{
+	font-size: 1.0em;
+	line-height: 28px;
+	color: rgba(105,168,178,1.00);
+}
+/* Details */
+.ui-x .ui-item .ui-content h4{
+	font-size: 1em;
+	line-height: 24px;
+	font-weight: 400;
+	margin:8px 0px;
+}
+.ui-x .ui-item .ui-content h4 > i{
+	width: 30px;
+}
+/* Social Media */
+.ui-x .ui-item .ui-content .ui-social a > i{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	margin: 5px 2px 0px 0px;
+}
+

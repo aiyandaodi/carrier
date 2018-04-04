@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 解答对象 -->
+<tekinfo>
+  <object>
+    <TransDo ResourceBundle="net.tekinfo.object.transaction.TransDo"
+        Structure="net.tekinfo.transaction.TransDo"
+        ObjectRm="net.tekinfo.remoting.transaction.TransDoRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <trans_do_id base="identity"/>
+        <trans_do_code base="yyyyMMdd" step="1" digit="4" tree="default"/>
+        <trans_do_user base="userid"/>
+      </autovalue>
+      
+      <table nameIdentity="trans_do_name" codeIdentity="trans_do_code" ownerIdentity="trans_do_user">
+        <trans_do identity="trans_do_id"/>
+        <trans_do_blob identity="trans_do_id"/>
+      </table>
+      
+      <blob table="trans_do_blob"
+          urlField="trans_do_path"
+          blobField="trans_do_blob"
+          mimeField="trans_do_mime"
+          lengthField="trans_do_length"
+          timeField="modifyTime"
+          mimeType="text/plain"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <uri-path value="/http/tekinfo/transaction/read.html"/>
+          </parameter>
+          <item>
+            <trans_do_name/>
+            <trans_do_content/>
+            <trans_do_transaction/>
+            <trans_do_type/>
+            <trans_do_objectName/>
+            <trans_do_objectId/>
+            <trans_do_time/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <trans_do_code/>
+            <trans_do_name/>
+            <trans_do_summary/>
+            <trans_do_transaction/>
+            <trans_do_type/>
+            <trans_do_objectName/>
+            <trans_do_objectId/>
+            <trans_do_time/>
+            <trans_do_status/>
+          </item>
+        </edit>
+
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <trans_do_code/>
+            <trans_do_name/>
+            <trans_do_summary/>
+            <trans_do_length/>
+            <trans_do_mime/>
+            <trans_do_path/>
+            <trans_do_transaction/>
+            <trans_do_user/>
+            <trans_do_type/>
+            <trans_do_objectName/>
+            <trans_do_objectId/>
+            <trans_do_time/>
+            <trans_do_status/>
+            
+            <trans_do_support/>
+            <trans_do_anti/>
+            
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <trans_do_code/>
+            <trans_do_name/>
+            <trans_do_summary/>
+            <trans_do_length/>
+            <trans_do_mime/>
+            <trans_do_path/>
+            <trans_do_transaction/>
+            <trans_do_user/>
+            <trans_do_type/>
+            <trans_do_objectName/>
+            <trans_do_objectId/>
+            <trans_do_time/>
+            <trans_do_status/>
+            
+            <trans_do_support/>
+            <trans_do_anti/>
+            
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <trans_do_code/>
+            <trans_do_name/>
+            <trans_do_summary/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <!-- <upload></upload> -->
+
+        <download>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </download>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <trans_do_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <trans_do_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 解答标题 -->
+        <trans_do_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 解答内容 -->
+        <trans_do_summary variable="string" format="textarea:4" maxlength="1024"/>
+        
+        <!-- 解答内容大小 -->
+        <trans_do_length variable="long" parse="long" default="0" notnull="true"/>
+        <!-- 解答内容MIME格式 -->
+        <trans_do_mime variable="string" maxlength="255"/>
+        <!-- 解答内容本地存放路径 -->
+        <trans_do_path variable="string" maxlength="1024"/>
+        <!-- 二进制文件存放域 -->
+        <trans_do_blob variable="blob" parse="blob" format="download"/>
+        
+        <!-- 所属问题对象 -->
+        <trans_do_transaction variable="long" parse="object:Transaction"/>
+
+        <!-- 解答类型 -->
+        <trans_do_type variable="int" parse="enum" format="single" notnull="true">
+          <finish value="0x00"/>    <!-- 结束 -->
+          <emend value="0x01"/>    <!-- 修订 -->
+          <augment value="0x10"/>    <!-- 补充 -->
+          <answer value="0x20"/>    <!-- 回答 -->
+          <request value="0x21"/>    <!-- 请求补充 -->
+          <transfer value="0x80"/>    <!-- 转处理 -->
+          <correct value="0x0800"/>    <!-- 正确答案 -->
+        </trans_do_type>
+        
+        <!-- 转处理对象类型 -->
+        <trans_do_objectName variable="string" maxlength="255"/>
+        <!-- 转处理对象标识 -->
+        <trans_do_objectId variable="long" parse="object:this.trans_do_objectName"/>
+        <!-- 转处理期望应答时间（分钟） -->
+        <trans_do_time variable="int" default="1200"/>
+        
+        <!-- 解答人 -->
+        <trans_do_user variable="long" parse="object:User"/>
+        
+        <!-- 状态 -->
+        <trans_do_status variable="int" parse="enum" format="option" default="1" notnull="true">
+          <stop value="-1"/>    <!-- 禁止 -->
+          <apply value="0"/>    <!-- 申请 -->
+          <release value="1"/>    <!-- 发布 -->
+        </trans_do_status>
+        
+        <!-- 对该处理点赞 -->
+        <trans_do_support variable="int" default="0"/>
+        <!-- 对该处理反对 -->
+        <trans_do_anti variable="int" default="0"/>
+        
+        <!-- 虚拟域：内容（用于新建时，将内容拆分成summary和blob） -->
+        <trans_do_content variable="string"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </TransDo>
+  </object>
+</tekinfo>

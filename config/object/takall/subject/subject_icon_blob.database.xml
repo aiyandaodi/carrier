@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主题头像BLOB记录表 -->
+<tekinfo>
+  <database>
+    <table>
+      <subject_icon_blob>
+        <item>
+          <!-- 主题标识 -->
+          <subject_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件存放域 -->
+          <icon_blob value="BLOB"/>
+        </item>
+      </subject_icon_blob>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,17 @@
+name=增票资质
+
+#property
+property.vat_qualification_id=标识
+property.vat_qualification_code=编码
+property.vat_qualification_name=公司名称
+property.vat_qualification_number=纳税人识别码
+property.vat_qualification_addr=注册地址
+property.vat_qualification_phone=注册电话
+property.vat_qualification_bank=开户银行
+property.vat_qualification_account=银行账户
+property.vat_qualification_status=状态
+property.vat_qualification_status.invalid=作废
+property.vat_qualification_status.apply=待审核
+property.vat_qualification_status.valid=通过
+property.vat_qualification_owner=所有者
+property.vat_qualification_organization=审核机构

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试卷 -->
+
+<tekinfo>
+  <object>
+    <ExamsPaper ResourceBundle="com.takall.exams.ExamsPaper"
+        Structure="com.takall.exams.ExamsPaper"
+        ObjectRm="com.takall.remoting.exams.ExamsPaperRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_paper_id base="identity"/>
+        <exams_paper_code base="" step="1" digit="4"/>
+        <exams_paper_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="exams_paper_name" codeIdentity="exams_paper_code" ownerIdentity="exams_paper_owner">
+        <exams_paper identity="exams_paper_id"/>
+      </table>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_paper_name/>
+            <exams_paper_start/>
+            <exams_paper_end/>
+            <exams_paper_status/>
+            <exams_paper_score/>
+            <exams_paper_test/>
+            <exams_paper_owner/>
+            <exams_paper_auditor/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_paper_status/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_paper_name/>
+            <exams_paper_start/>
+            <exams_paper_end/>
+            <exams_paper_status/>
+            <exams_paper_score/>
+            <exams_paper_test rightuser="supervisor"/>
+            <exams_paper_owner/>
+            <exams_paper_auditor/>
+            <exams_paper_result/>
+          </item>
+        </read>
+        
+        <!-- 考试 -->
+        <exam>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+          <item>
+            <exams_paper_name/>
+            <exams_paper_start/>
+            <exams_paper_end/>
+            <exams_paper_status/>
+          </item>
+        </exam>
+
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_paper_code/>
+            <exams_paper_name/>
+            <exams_paper_start/>
+            <exams_paper_end/>
+            <exams_paper_status/>
+            <exams_paper_score/>
+            <exams_paper_test/>
+            <exams_paper_owner/>
+            <exams_paper_auditor/>
+            <exams_paper_result/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 删除附件对象名。格式：对象名=字段名,对象名=字段名 -->
+            <remove_attach value="ExamsReply=exams_reply_paper"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_paper_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_paper_code variable="string" notnull="true"/>
+        <!-- 试卷名称 -->
+        <exams_paper_name variable="string" notnull="true"/>
+
+        <!-- 答题开始时间 -->
+        <exams_paper_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now"/>
+        <!-- 答题结束时间 -->
+        <exams_paper_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"/>
+        <!-- 提交时间 -->
+        <exams_paper_submit variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"/>
+        <!-- 答卷状态 -->
+        <exams_paper_status variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <forbid value="-1"/>     <!-- 禁止（由于错误，手动或系统自动禁止） -->
+          <building value="0"/>       <!-- 生成试卷（试卷未准备好，不可以答题） -->
+          <ready value="1"/>       <!-- 准备答题（试卷生成完毕，可以开始答题） -->
+          <examing value="4"/>     <!-- 正在考试 -->
+          <submit value="5"/>      <!-- 已交卷 -->
+          <!-- <autoupgrade value="0x04"/>     自动进阶 -->
+          <finish value="10"/>       <!-- 完成 -->
+        </exams_paper_status>
+        <!-- 得分 -->
+        <exams_paper_score variable="int" parse="int" default="0"/>
+        
+        <!-- 结果 -->
+        <exams_paper_result variable="int" parse="enum" default="1">
+          <fine value="4"/>    <!-- 优秀 -->
+          <good value="3"/>    <!-- 良好 -->
+          <pass value="2"/>    <!-- 及格（通过）-->
+          <fail value="1"/>    <!-- 不及格（未通过）-->
+        </exams_paper_result>
+        
+        <!-- 人工审核 -->
+        <exams_paper_booking variable="int" parse="boolean" default="0"/>	
+         
+        <!-- 所属试卷定义 -->
+        <exams_paper_test variable="long" parse="object:ExamsTest" notnull="true"/>
+        <!-- 答题人 -->
+        <exams_paper_owner variable="long" parse="object:User" notnull="false"/>
+        <!-- 判卷人：0-系统自动 -->
+        <exams_paper_auditor variable="long" parse="object:User" notnull="false"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ExamsPaper>
+  </object>
+</tekinfo>

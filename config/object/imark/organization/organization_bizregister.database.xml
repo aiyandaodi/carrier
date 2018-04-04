@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构工商注册对象 -->
+<tekinfo>
+  <database>
+    <table>
+    	<!-- 数据库表名 -->
+      <organization_bizregister>
+        <item>
+          <!-- 标识 -->
+          <bizregister_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 工商注册号 -->
+          <bizregister_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 企业名称 -->
+          <bizregister_name value="VARCHAR(128) NOT NULL"/>
+          
+		  <!-- 住所 -->
+          <bizregister_residence value="VARCHAR(128) NOT NULL"/>
+          <!-- 法人 -->
+          <bizregister_hoster value="VARCHAR(32) NOT NULL"/>
+          <!-- 企业类型 -->
+		  
+          <bizregister_type value="VARCHAR(255) NOT NULL"/>
+          <!-- 许可经营项目 -->
+          <bizregister_license value="VARCHAR(255)"/>
+          <!-- 一般经营项目 -->
+          <bizregister_scope value="VARCHAR(255)"/>
+          
+          <!-- 成立日期 -->
+          <bizregister_setup value="CHAR(10) NOT NULL"/>
+          
+          <!-- 注册日期 -->
+          <bizregister_start value="CHAR(10) NOT NULL"/>
+          <!-- 截止日期 -->
+          <bizregister_end value="CHAR(10) NOT NULL"/>
+          
+          <!-- 登记机关 -->
+          <bizregister_gov value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 所属机构 -->
+          <bizregister_organization value="BIGINT NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </organization_bizregister>
+    </table>
+  </database>
+</tekinfo>

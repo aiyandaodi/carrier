@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用户对象 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <uni_user>
+        <item>
+          <!-- 标识 -->
+          <user_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <user_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 名字 -->
+          <user_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 性别 -->
+          <user_sex value="SMALLINT DEFAULT '0'"/>
+          <!-- 出生日期 -->
+          <user_birthday value="BIGINT DEFAULT '0'"/>
+          <!-- 在线状态 -->
+          <user_online value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 安全等级 -->
+          <user_security value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 角色 -->
+          <user_role value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 用户状态 -->
+          <user_status value="SMALLINT DEFAULT '1' NOT NULL"/>
+          <!-- 用户有效期起始 -->
+          <user_start value="BIGINT DEFAULT '0'"/>
+          <!-- 用户有效期结束 -->
+          <user_end value="BIGINT DEFAULT '0'"/>
+          <!-- 说明 -->
+          <user_remark value="VARCHAR(128)"/>
+
+          <!-- 系统用户使用语言 -->
+          <user_language value="VARCHAR(32)"/>
+          <!-- 本次在线时间（秒） -->
+          <user_onlineTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 上次登录时间 -->
+          <user_latestTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 上次登录IP地址 -->
+          <user_latestIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 个人目录路径 -->
+          <user_file value="VARCHAR(255)"/>
+
+          <!-- 所属客户端 -->
+          <user_client value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 授权码 -->
+          <user_token value="VARCHAR(512) NOT NULL"/>
+          <!-- 授权码密钥 -->
+          <user_tokenSecret value="VARCHAR(512)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </uni_user>
+    </table>
+  </database>
+</tekinfo>

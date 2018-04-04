@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+    width: 53px;
+    height: 53px;
+    line-height: 46px;
+    border-radius: 100% !important;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+
+}
+.popmenu .ui-list{
+    bottom:120px;
+}
+#question-type {
+    font-size: 1.6em;
+}
+.ui-2 .ui-item{
+    border:1px solid #ddd;
+    padding:25px 30px;
+    box-shadow: 3px 3px 0px 1px rgba(0,0,0,0.08) !important;
+    max-width: 1000px;
+    margin:50px auto;
+    background:#fff;
+    border-radius:4px !important;
+}
+/* Ui-head */
+/* heading */
+.ui-2 .ui-item .ui-head div{
+    float:left;
+    font-size:22px;
+    font-weight:normal;
+}
+@media (max-width:1000px){
+    .ui-2 .ui-item .ui-head  div{
+        float:none;
+    }
+}
+/* Button */
+.ui-2 .ui-item .ui-head a.btn{
+    float:right;
+    border:0px;
+    margin-top:6px;
+}
+
+@media (max-width:1000px){
+    .ui-2 .ui-item .ui-head  a.btn{
+        float:none;
+        margin-top:20px;
+    }
+}
+
+/* Br-yellow */
+.ui-2 .ui-item .br-red{
+    border-top:5px solid #f75353;
+}
+/* Br-blue */
+.ui-2 .ui-item .br-lblue{
+    border-top:5px solid #32c8de !important;
+}
+/* Br-green */
+.ui-2 .ui-item .br-green{
+    border-top:5px solid #51d466 !important;
+}
+/* ui-tag */
+.ui-2 .ui-item .ui-tag{
+    margin:20px auto;
+}
+/* List */
+.ui-2 .ui-item .ui-tag ul li {
+    font-size: 1.1em;
+	line-height: 30px;
+    margin-left:10px;
+    color:#888;
+}
+.ui-2 .ui-item .ui-tag ul li.active{
+	background:#600;
+	border:1px solid #333;
+}
+.ui-2 .ui-item .ui-tag ul li.active a.tagValue{
+	color:#fff;
+}
+.ui-2 .ui-item .ui-tag .tag{
+	margin-left:-50px;
+}
+.ui-2 .ui-item .ui-tag .tag .remove-tag{
+	border-radius:100% !important;
+	margin-bottom: 2px;
+}
+.ui-2 .ui-item .ui-tag a.btn-addinput{
+	margin:6px;
+}

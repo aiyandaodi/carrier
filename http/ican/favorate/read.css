@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+	
+}
+.table-responsive{
+	margin-top:10px;
+}
+.table td{ 
+	padding:10px;
+}
+.table tr td:nth-child(1) a,
+.table tr td:nth-child(2) a{
+	color:#222;
+}
+.table tr td:nth-child(1) a:hover,
+.table tr td:nth-child(2) a:hover{
+	color:#F00;
+}
+.table tbody tr:nth-child(odd) td:nth-child(1),
+.table tbody tr:nth-child(odd) td:nth-child(2){
+	line-height:2.2;
+}
+.table tbody tr:nth-child(even){
+	display:none;
+}
+.ui-list form{
+	position:absolute;
+	right:50px;
+	top:60px;
+	display:none;
+}
+.ui-list .input-group input{
+	padding:0 5px;
+	border:1px solid #ccc;
+	height:37.65px;
+}
+.ui-list .input-group span{
+	border:1px solid #ccc;
+}

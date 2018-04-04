@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.main{
+	margin:30px auto;
+}
+.main form{
+	max-width: 400px;
+}
+/* UI - X */
+.ui-273 {
+	background:#fff;
+	margin: 30px auto;
+}
+@media (max-width:500px){
+	.ui-273{
+		margin:30px 10px;
+	}
+}
+/* Table */
+.ui-273 .table{
+	margin:0px;
+}
+.ui-273 .table-responsive{
+	margin:20px auto;
+}
+.ui-273 .table tr{
+	color:#666;
+}
+.ui-273 .table tbody tr:first-child{
+	background:#337ab7 !important;
+}
+.ui-273 .table tr th a{
+	color:#fff;
+	font-weight:600;
+}
+.ui-273 .table tr th:hover a{
+	color:#600;
+}
+.main .col-sm-8 .input-group input{
+	height:36px;
+}
+.main .col-sm-8 .input-group-btn a.btn{
+	border:1px solid #ccc !important;
+}
+.ui-list form{
+	position:absolute;
+	right:50px;
+	top:60px;
+	display:none;
+}
+.ui-list .input-group input{
+	padding:0 5px;
+	border:1px solid #ccc;
+	height:37.65px;
+}
+.ui-list .input-group span{
+	border:1px solid #ccc;
+}

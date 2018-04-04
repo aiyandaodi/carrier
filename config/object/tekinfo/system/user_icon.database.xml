@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用户头像附件定义 -->
+<tekinfo>
+  <database>
+    <table>
+      <user_icon>
+        <item>
+          <!-- 用户标识 -->
+          <user_id value="BIGINT NOT NULL PRIMARY KEY"/>
+
+          <!-- 图标长度 -->
+          <icon_length value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 图标MIME格式 -->
+          <icon_mime value="VARCHAR(64) NOT NULL"/>
+          <!-- 图标修改时间 -->
+          <icon_time value="BIGINT DEFAULT '0' NOT NULL"/>
+        </item>
+      </user_icon>
+    </table>
+  </database>	
+</tekinfo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- object:收藏 -->
+
+<tekinfo>
+  <object>
+    <Favorite ResourceBundle="com.takall.profile.Favorite"
+        Structure="com.takall.profile.Favorite"
+        ObjectRm="com.takall.remoting.profile.FavoriteRm"
+         version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <favorite_id base="identity"/>
+        <favorite_code base="yyyy" step="1" digit="10"/>
+        <favorite_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="favorite_name" codeIdentity="null">
+        <favorite identity="favorite_id"/>
+      </table>
+      
+      <index maxIcon="object/profile/Favorite-48.gif"
+          minIcon="object/profile/Favorite.gif"/>
+            
+      <command>
+      	<read url="http/takall/favorite/read.html">
+			<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x10"/>
+          	</parameter>
+          <item>
+          	<favorite_code/>
+            <favorite_name/>
+            <favorite_linkName/>
+            <favorite_linkId/>
+            <favorite_url/>
+            <favorite_tag/>
+            <favorite_color/>
+          </item>
+        </read>
+        
+        <add url="http/takall/favorite/add.html">
+        	<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x80"/>
+          	</parameter>
+          <item>
+            <favorite_code/>
+            <favorite_name/>
+            <favorite_linkName/>
+            <favorite_linkId/>
+            <favorite_url/>
+            <favorite_tag/>
+            <favorite_color/>
+          </item>
+        </add>
+        
+        <edit url="http/takall/favorite/edit.html">
+        	<parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <favorite_code/>
+            <favorite_name/>
+            
+            <favorite_tag/>
+            <favorite_color/>
+          </item>
+        </edit>
+
+        <list  url="http/takall/favorite/index.html">
+          <parameter>
+		 	 <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x01"/>
+            <list_counts value="10"/>
+      	  </parameter>
+          <item>
+            <favorite_code/>
+            <favorite_name/>
+            <favorite_linkName/>
+            <favorite_linkId/>
+            <favorite_url/>
+            <favorite_tag/>
+            <favorite_color/>
+          </item>
+        </list>
+        
+        <remove url="http/takall/favorite/remove.html">
+          <parameter>
+            <remove_sub value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <favorite_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <favorite_code variable="string" maxlength="128" notnull="true"/>
+        <!-- 名称 -->
+        <favorite_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 收藏的对象类型名 -->
+        <favorite_linkName variable="string"  notnull="true"/>
+        <!-- 收藏的对象标识 -->
+        <favorite_linkId variable="long" default="0" notnull="true"/>
+        
+        
+        <!-- 收藏的网址 -->
+        <favorite_url variable="string" maxlength="255"/>
+        
+        <!-- 标签 -->
+        <favorite_tag variable="string" maxlength="255"/>
+        
+        <!-- 所属收藏分组 -->
+        <favorite_color variable="string" />
+        
+        <!-- 所有者 -->
+        <favorite_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        
+        <!-- 所属收藏集 -->
+        <favorite_set variable="long" parse="object:FavoriteSet" default="0" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Favorite>
+  </object>
+</tekinfo>

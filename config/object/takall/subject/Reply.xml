@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 回复  -->
+<tekinfo>
+  <object>
+    <Reply ResourceBundle="com.takall.subject.Reply"
+        Structure="com.takall.subject.Reply"
+        ObjectRm="com.takall.remoting.subject.ReplyRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <!-- <reply_id base="time"/>-->
+        <reply_id base="identity"/>
+        <reply_code base="yyMMdd" step="1" digit="8" tree="false"/>
+        <reply_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="reply_name" codeIdentity="null">
+        <reply identity="reply_id"/>
+      </table>
+      
+      <command>
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <reply_id/>
+            <reply_name/>
+            <reply_summary/>
+            <reply_remark/>
+            <reply_status/>
+            <reply_owner/>
+            <reply_subject/>
+            <reply_document/>
+            <modifyTime/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <reply_summary/> -->
+            <reply_remark/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          </parameter>
+          <item>
+            <!-- <reply_summary/> -->
+            <reply_status/>
+            <reply_remark/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <reply_subject/>
+            <reply_document/>
+            <!-- <reply_name/> -->
+            <reply_owner/>
+            <!-- <createTime/> -->
+            <reply_remark/>
+            <reply_status/>
+            <modifyTime/>
+          </item>
+        </list>
+
+        <applyList>
+          <parameter>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <reply_id/>
+            <reply_remark/>
+            <reply_owner/>
+            <reply_status/>
+            <modifyTime/>
+          </item>
+        </applyList>
+                
+        <search>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <reply_summary/>
+            <reply_remark/>
+            <reply_status/>
+            <reply_owner/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <reply_id variable="long" notnull="true" forbidEdit="true" default="now"/>
+        <!-- 编码 -->
+        <reply_code variable="string" maxlength="18" notnull="true"/>
+        <!-- 记录名 -->
+        <reply_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 概要 -->
+        <reply_summary variable="string" format="textarea:2" maxlength="255"/>
+        <!-- 备注 -->
+        <reply_remark variable="string" format="textarea:4" notnull="true"/>
+        <!-- 状态 -->
+        <reply_status variable="int" parse="enum" format="single" default="1" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>    <!-- 禁止 -->
+        </reply_status>
+        <!-- 所有者 -->
+        <reply_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 所属主题 -->
+        <reply_subject variable="long" parse="object:Subject" default="0" notnull="true"/>
+        <!-- 所属文档 -->
+        <reply_document variable="long" parse="object:Document" default="0" notnull="true"/>
+
+        <!-- 虚拟域：态度 -->
+        <reply_attitude variable="int" parse="enum" format="single" default="0">
+          <recommended value="1"/>    <!-- 支持 -->
+          <anti value="-1"/>    <!-- 反对 -->
+        </reply_attitude>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Reply>
+  </object>
+</tekinfo>

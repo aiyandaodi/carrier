@@ -1,0 +1,56 @@
+.append-no-line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.append-title {
+    float: left;
+    margin-top: -1em;
+    margin-left: 1em;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 0px 10px;
+    border-radius: 15px;
+}
+
+.append-title:hover {
+	cursor:pointer;
+}
+
+.field-content {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.field-condition {
+	margin:5px auto;
+}
+
+.append-action {
+    float: right;
+    margin-top: -1em;
+    padding-top: 0px;
+    margin-right: 1em;
+    border-radius: 15px;
+    border: 1px solid #d43f3a;
+    padding: 0px 10px;
+    color: #ffffff;
+    background-color: #d9534f;
+}
+
+.append-action:hover {
+	cursor:pointer;
+}
+
+.append-action a{
+    cursor: pointer;
+    color: #fff;
+}
+
+.fa-ban, .fa-arrow-circle-o-down, .fa-arrow-circle-o-up {
+	cursor:pointer;
+}

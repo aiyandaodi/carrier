@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 固定考题 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_topic>
+        <item>
+          <!-- 标识 -->
+          <exams_topic_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_topic_code value="VARCHAR(16) NOT NULL"/>
+          <!-- 考题名称 -->
+          <exams_topic_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 考题分数 -->
+          <exams_topic_score value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 考题 -->
+          <exams_topic_question value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属考卷 -->
+          <exams_topic_test value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_topic>
+    </table>
+  </database>
+</tekinfo>

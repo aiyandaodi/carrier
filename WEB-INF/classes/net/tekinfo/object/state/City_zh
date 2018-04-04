@@ -1,0 +1,17 @@
+#City_zh
+#
+name=市(县)
+
+#property
+property.city_id=标识
+property.city_code=编码
+property.city_name=名字
+property.city_shortname=简称
+property.city_state=省(州)
+
+#read
+command.read.menu.file=市(县)
+command.read.menu.file.hint=市(县)的管理
+
+#message
+message.error.stateNotExist=省（州）不存在!

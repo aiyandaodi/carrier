@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/hdw-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- 自定义head -->
+  <title>读书</title>
+  <!-- InstanceEndEditable -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href= "../../../../favicon.ico"/>
+  <link rel="Bookmark" href= "../../../../favicon.ico"/>
+
+  <!-- Styles -->
+  <!-- Bootstrap CSS -->
+  <link href="../../../style/brave/css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Font awesome CSS -->
+  <link href="../../../style/brave/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Magnific Popup -->
+  <link href="../../../style/brave/css/magnific-popup.css" rel="stylesheet">
+  <!-- Owl carousel -->
+  <link href="../../../style/brave/css/owl.carousel.css" rel="stylesheet">
+  
+  <!-- CSS for this page -->
+  <!-- Base style -->
+  <link href="../../../style/brave/css/styles/style.css" rel="stylesheet">
+  <!-- Skin CSS -->
+  <link href="../../../style/brave/css/styles/skin-red.css" rel="stylesheet" id="color_theme">
+
+  <!-- Custom CSS. Type your CSS code in custom.css file -->
+  <link href="../../../style/brave/css/custom.css" rel="stylesheet">
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../css/tekinfo.css"/>
+  <!-- hongde CSS -->
+  <link rel="stylesheet" href="../../../hdw.top/css/hdw-style.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/mac-common.js"></script>
+        
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../../js/tekinfo.js"></script>
+  <!-- hdw JS -->
+  <script type="text/javascript" src="../../../hdw.top/js/hdw.js"></script>
+
+  <!-- InstanceBeginEditable name="MyJS" -->
+  <link href="../../../common/tek/css/mac-edit.css" rel="stylesheet">
+
+  <link href="add.css" rel="stylesheet">
+
+  <script type="text/javascript" language="JavaScript" src="../../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../../common/tek/js/common.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../../common/js/normal.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" language="javascript" src="../../../common/calendar/all.js"></script> 
+  <script type="text/javascript" language="javascript" src="../../../common/calendar/qmcalendar.js"></script> 
+  <script type="text/javascript" language="javascript" src="../../../common/calendar/qmlunar.js"></script>
+  <script type="text/javascript" language="JavaScript" src="../../../common/tek/js/mac-edit.old.js"></script>
+
+  <script type="text/javascript" language="JavaScript" src="add.js"></script>
+  
+  <title>手机账号 - 新建</title>
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+<main>
+	<!-- InstanceBeginEditable name="MAINCONTENT" -->
+<!-- Form area -->
+<div class="admin-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- .widget worange starts -->
+        <div class="widget worange" id="login_div">
+          <!-- Widget head -->
+          <div class="widget-head">
+            <i class="fa fa-lock"></i> 新建手机账号 
+          </div><!-- end .widget-head -->
+
+          <div class="widget-content">
+            <div class="padd">
+              <!--新建内容-->
+              <form class="form-horizontal" id="add_form" name="add_form" method="post" action="javascript:addNewInfo()">
+                <!-- Registration form starts -->
+                <div id="add-info">
+                </div>
+                                          
+			    <!-- Accept box and button s-->
+                <br/>
+                <div class="form-group">
+                  <!-- 操作按钮 -->
+                  <div id="btn" class="col-lg-12 col-lg-offset-4"></div>
+                </div>
+              </form>
+			</div><!-- end .padd -->
+          </div><!-- end .widget-content -->
+              
+          <div class="widget-foot" align="center">
+          </div>
+        </div>  <!-- end. widget worange -->   
+      </div> <!--end .col-md-12 -->
+    </div><!--end .row -->
+  </div><!--end .containe -->
+</div><!--end .admin-form -->
+
+<!-- 日历div -->
+<div id="calendar_div" class="bd" style="margin: 20px 5px 6px 0px; border:double 2px solid; width: 180px; position:absolute; display:none;z-index:10;" onblur="$(this).hide();" tabindex=2></div>
+<!-- InstanceEndEditable -->
+</main>
+
+<!-- Footer Starts -->
+<footer>
+	<div class="container">
+		<!-- Footer Content -->
+		<p class="pull-left">
+			Copyright &copy; 2016 - <a href="http://www.tekinfo.net"><img src="../../logo/tekinfo-white-128.png" height="22" title="tekinfo" longdesc="http://www.tekinfo.net"/></a>&nbsp;|&nbsp;
+			
+			<!-- 友盟统计：hdw.top-->
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_1260062528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260062528%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</p>
+		<ul class="list-inline pull-right">
+			<!-- List -->
+			<li><a href="hongde-help.html" target="_blank">帮助</a></li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</footer>
+<!-- Footer Ends -->
+            
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-angle-up bg-color"></i></a></span>
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<!-- Login Modal starts -->
+<div id="login" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:clickCheckUser();">×</button>
+      <h3>&nbsp;</h3>
+      </div>
+      <div id="show_div" class="modal-body">
+        <iframe id="show_frame" name="show_name" src="" allowtransparency="true" width="100%" height="100%" scrolling="auto" frameborder="0" ></iframe>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div>
+<!-- Login modal ends -->
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end message-modal-dialog-->
+
+<!-- Bootstrap JS -->
+<script src="../../../style/brave/js/bootstrap.js"></script>
+<!-- Placeholders JS -->
+<script src="../../../style/brave/js/placeholders.js"></script>
+<!-- Magnific Popup -->
+<script src="../../../style/brave/js/jquery.magnific-popup.min.js"></script>
+<!-- Owl carousel -->
+<script src="../../../style/brave/js/owl.carousel.min.js"></script>
+<!-- Respond JS for IE8 -->
+<script src="../../../style/brave/js/respond.min.js"></script>
+<!-- HTML5 Support for IE -->
+<script src="../../../style/brave/js/html5shiv.js"></script>
+<!-- Main JS -->
+<script src="../../../style/brave/js/main.js"></script>
+<!-- Custom JS. Type your JS code in custom.js file -->
+<script src="../../../style/brave/js/custom.js"></script>
+
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	/*
+	if (tek.common.isLoggedIn()) {
+		if (tek.user.isNormalUser(mySecurity)) {
+			showUserInfo();
+		} else {
+			goBack();
+		}
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	*/
+	if (typeof init == "function")
+		init();
+	
+	var error = request["error"];
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	
+	
+	<!-- 百度统计代码 hdw.top -->
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?9591e9948bc859b87d2d503643188da7";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<script type="text/javascript" language="JavaScript">
+  var showClose;    // 是否关闭
+  var callbackURL;    // 回调地址
+  var updateOpener;    //是否刷新父页面
+
+  /**
+   * 初始化
+   */
+  function init(){
+    showClose=request["show-close"];
+    if(showClose
+	    && (showClose==1 || showClose==true))
+      showClose=1;
+	else
+	  showClose=0;
+
+    callbackURL=request["callback-url"];
+    if(callbackURL)
+      callbackURL=decodeURIComponent(callbackURL);
+	
+	updateOpener=request["refresh-opener"];
+	if(updateOpener
+	    && (updateOpener==1 || updateOpener==true))
+	  updateOpener=1;
+	else
+	  updateOpener=0;
+	
+    initialButton("btn");
+	
+    addNew();
+  
+    //日历初始化
+    initNoteCalender( {
+	    type: "note",
+   	    daydatalist: "6,13,14,15,22,26|4,7,21,24,26|1,11,17,22,24,25,28,31|1,6,8,11,14,16,23|5,10,24|25|5,6,31",
+	    datestr: "",
+    	begin: "2010,1"
+    });
+  }
+</script>
+
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

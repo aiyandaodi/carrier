@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<tekinfo ResourceBundle="net.tekinfo.tekinfo" version="1.0" resourceVersion="1.0">
+  <locale>
+    <!-- Define language,country,characterEncoding etc  -->
+    <language value="zh">
+      <zh/>
+      <en/>
+      <!-- <de/> -->
+    </language>
+    <country value="CN">
+      <CN/>
+      <UK/>
+      <US/>
+    </country>
+    <characterEncoding value="UTF-8" >
+      <gb2312/>
+      <GBK/>
+      <big5/>
+      <KOI8-R/>
+      <Shift-JIS/>
+      <US-ASCII/>
+      <ISO-8859-1/>
+      <ISO-8859-2/>
+      <ISO-8859-3/>
+      <ISO-8859-4/>
+      <ISO-8859-5/>
+      <ISO-8859-6/>
+      <ISO-8859-7/>
+      <ISO-8859-8/>
+      <ISO-8859-9/>
+      <ISO-8859-15/>
+      <UTF-7/>
+      <UTF-8/>
+      <UTF-16/>
+      <Unicode/>
+      <UnicodeBig/>
+    </characterEncoding>
+    <date format="yyyy-MM-dd HH:mm:ss" briefFormat="yy-MM-dd HH:mm"/>
+    <log>
+      <debug value="1"/>
+      <!-- 日志目录路径 -->
+      <file path="%path.root.path%/logs/"/>
+    </log>
+    
+    <!-- for http -->
+    <interface default="standard">
+      <standard url="%path.interface.url%/standard/index.jsp?open=1"/>
+    </interface>
+    
+    <icon default="standard">
+      <standard path="%path.icon.path%/standard" 
+          url="%path.icon.url%/standard"/>
+    </icon>
+  </locale>
+  
+  <!-- Define program parameter. When you use this parameter,
+    you must defined the "path.root.path".
+    the "path" segment define the system work path on the server.
+    the "http" segment define the user interface which the user visit the
+    http page from remote
+  -->
+  <path>
+    <home path="/home" url="/home"/>
+    <temp path="/temp" />
+    <!--
+    <home path="%path.root.path%/home"/>
+    <temp path="%path.root.path%/temp" />
+    -->
+    <backup path="%path.root.path%/backup"/> <!-- 备份目录 -->
+    <config path="%path.root.path%/config" />
+    <program path="%path.root.path%/program" />
+    
+    <database path="%path.root.path%/database" />
+    <data path="%path.root.path%/data" />
+    
+    <classes path="%path.root.path%/WEB-INF/classes"/>
+    <resource path="%path.root.path%/WEB-INF/classes"/>
+    <lib path="%path.root.path%/WEB-INF/lib"/>
+    
+    <suffix2mime path="%path.program.path%/suffix2mime.conf" />
+    <chinesepy path="%path.program.path%/chinesepy.conf" />
+    
+    <http path="%path.root.path%/http"
+        url="%http.root.url%" />
+    
+    <cash path="%path.home.path%/cash"
+        url="%path.home.url%/cash"/>
+    <icon path="%path.root.path%/icon" 
+        url="%http.root.url%/icon"/>
+    
+    <help path="%path.root.path%/http/help"
+        url="%http.root.url%/help"/>
+    
+    <interface path="%path.root.path%/http/interface"
+        url="%http.root.url%/interface"/>
+    <templet path="%path.root.path%/transfer/templet"/>
+  </path>
+  
+  <system>
+    <!-- MyInfo类路径 -->
+    <myInfo class="net.tekinfo.remoting.MyInfo"/>
+
+    <!-- MaxInactiveInterval 最长允许不活动时间，超时自动注销用户。分钟-->
+    <MaxInactiveInterval value="30"/>
+
+    <login>
+
+      <!-- 系统默认帐号
+           user - 系统默认登录名
+           password - 系统默认登录口令
+           clientTokenCode - 系统默认客户端授权码
+           clientTokenSecret - 系统默认客户端授权码密钥
+           systemTokenCode - 系统授权码
+           systemTokenSecret - 系统授权码密钥 -->
+      <initial user="fY69HNczEvZjdFEE44ZZ95VQ66" password="84sLcX96jUowPZcQJlxJ91ZS76" 
+          clientTokenCode="439:73EtZEmU828566JuZaVK69" clientTokenSecret="IZE4xedRYS40LyyEfZ4hvpSIxy"
+          systemTokenCode=":98Qq829575B3899z::9y8VJ:9" systemTokenSecret="75IvYb873pBNOHFutece55ZS76"/>
+      
+      <!-- 统一认证服务器配置
+          authorizeLogin - 统一认证授权登录地址（统一认证系统的配置）
+          authorizeOperate - 统一认证授权操作地址（统一认证系统的配置） -->
+      <auth>
+        <!-- 服务器1配置
+             root - 统一认证系统根路径
+             tokenCode - 本系统在统一认证系统中的授权码
+             callbackURL - 回调地址
+             ssl - 如果是安全连接，定义SSL类型 -->
+        <server1 root="http://10.128.0.210" tokenCode="BguePDBFKC5wRx4uKUpJ" callbackURL="http://10.128.0.84:8080/ipower-controller/servlet/login">
+          <!-- 服务器URL定义
+               login - 统一认证系统登录的Servlet路径
+               tobject - 统一认证系统通用对象操作的Servlet路径
+               account - 统一认证系统用户操作的Servlet路径
+               authorize - 统一认证系统授权登录页面
+               register - 统一认证系统注册页面 -->
+          <url login="/servlet/login"
+              tobject="/servlet/tobject"
+              account="/servlet/account"
+              authorize="/servlet/authorize"
+              register="/http/ipass/login/register.html"/>
+        </server1>
+
+          
+          
+        <!-- <server1 root="https://ipass.takall.com" tokenCode="HhY4OAilOCr7D48WgWNJ" callbackURL="https://ican.takall.com/servlet/login"> -->
+          <!-- 服务器URL定义
+               login - 统一认证系统登录的Servlet路径
+               tobject - 统一认证系统通用对象操作的Servlet路径
+               account - 统一认证系统用户操作的Servlet路径
+               authorize - 统一认证系统授权登录页面
+               register - 统一认证系统注册页面
+          <url login="/servlet/login"
+              tobject="/servlet/tobject"
+              account="/servlet/account"
+              authorize="/servlet/authorize"
+              register="/http/ipass/login/register.html"/>
+        </server1> -->
+      </auth>
+      
+      <!-- 是否允许同一个用户多点登录 -->
+      <multiUserAtOneTime value="true"/>
+      <!-- 是否允许同一个用户在同一个IP地址下多点登录（当multiUserAtOneTime=true时有效）-->
+      <multiUserAtSameIp value="true"/>
+      <register value="false"/>
+      <!-- 错误登录次数超过后，禁止该IP登录 -->
+      <retryIpTimes value="10"/>
+      <!-- 错误登录次数超过后，禁止该IP登录的时间（分钟） -->
+      <retryIpDelay value="30"/>
+      <!-- 错误登录次数超过后，禁止该用户登录 -->
+      <retryUserTimes value="0"/>
+      <!-- 错误登录次数超过后，禁止该用户登录的时间（分钟） -->
+      <retryUserDelay value="1440"/>
+      
+      <!-- checkTemplate如果 true，每次用户登录都检查和模板的一致性。
+      如果为false，只有第一次新建个人目录时才匹配模板-->
+      <checkTemplate value="false"/>
+      <!-- nodemo=true 则不允许测试运行！nodemo=false 允许没有许可证的测试运行-->
+      <nodemo value="false"/>
+      <!--
+      When user login or logout, call the define class.login or class.logout
+      
+      <call>
+        <WorkCheck class="com.takall.UniHumanResource.WorkCheck"/>
+      </call>
+      -->
+    </login>
+    <sysmail>
+      <!-- 系统邮件设置，使用该地址发送系统信息
+           email - 发送者邮箱
+           host - 发送服务器地址
+           port - 发送服务器端口号
+           user - 发送邮箱登录名
+           password - 发送邮箱登录密码 -->
+      <smtp email="service@hdw.top" host="smtp.mxhichina.com" port="25" user="service@hdw.top" password="46TuEfIn"/>
+
+      <!-- 发送者的名字和http地址
+      <sender name="弘德网(HDW)" email="info@hdw.top" url="http://www.hdw.top"/> -->
+    </sysmail>
+
+    <!-- 手机短信 -->
+    <sms>
+      <!-- 创建 -->
+      <chuanglan name="测试(Test)" account="x01vF::xnym52G06489ga3iX7H" password="DwOM2x3jkY88nR99550175MAYLVytvQSUPWOAk6cD8oxy4hISPfE" url="http://222.73.117.156/msg/HttpBatchSendSM"/>
+    </sms>
+    
+    <!-- 定义网络校准时间服务器。程序启动后，将自动连接有效服务器，取得正确的服务器时间。避免本地用户设定时间不准。timeOffset=定义一个修正时间，单位：小时，可以使用"-"-->
+    <ntphosts timeOffset="0">
+      <time.windows.com/>
+      <time.nist.gov/>
+      <chime.utoronto.ca/>
+      <ntp.pipex.net/>
+      <fartein.ifi.uio.no/>
+      <stdtime.gov.hk/>
+    </ntphosts>
+    <!-- 对指定操作系统的单独校准，这个校准量是在ntphosts.timeOffset进行的再校准 -->
+    <adjustOsOffset>
+      <windows7 os="Windows NT" osversion="6.1" offset="8"/>
+      <windowsXP os="Windows XP" osversion="5.1" offset="0"/>
+    </adjustOsOffset>
+    <!-- 是否检测加密狗。如果不检测，只支持对硬盘加密。 -->
+    <checkDog value="false"/>
+    
+    <!-- LDAP用户信息同步
+        address：LDAP服务器域名或IP地址
+        port：LDAP服务器端口号
+        user：LDAP服务器登录用户名
+        password：LDAP服务器登录密码 -->
+    <ldap address="localhost" port="10389" user="uid=admin,ou=system" password="secret">
+      <!-- 用户对象与LDAP服务器用户Entry的关联关系
+          parent：当前Entry的上级DN
+          rdn：当前Entry的RDN关键字
+          defaultDomain: 默认邮箱域名 -->
+      <user parent="ou=users,o=tekinfo" rdn="uid" defaultDomain="tekinfo.net">
+        <!-- Entry属性定义。
+            “<>”：表示LDAP属性名；
+            “algorithm”属性：LDAP属性值使用的加密方法；
+            “value”：表示对应User对象信息值，大括号括起来表示取指定字段的值，否则为描述的字符串值 -->
+        <objectclass value="pilotPerson"/>
+        <sn value="{account_login}"/>
+        <cn value="{account_name}"/>
+        <uid value="{account_login}"/>
+        <userPassword algorithm="SHA" value="{account_password}"/>
+        <organizationalStatus value="{user_security}"/>
+        <mail value="{account_email}"/>
+        <!-- <mobile value="{account_mobile}"/> -->
+      </user>
+    </ldap>
+    
+    <service>
+      <max value="20"/>
+    </service>
+    
+    <!-- 定位 -->
+    <location>
+      <!-- IP地址定位 -->
+      <ip>
+        <baidu url="http://api.map.baidu.com/location/ip" ak="gWIpmOcHtjoCgg1irg4E0eVp"/>
+      </ip>
+      <coordinate>
+        <baidu url="http://api.map.baidu.com/geocoder/v2/?output=json" ak="gWIpmOcHtjoCgg1irg4E0eVp"/>
+      </coordinate>
+    </location>
+
+    <!-- 支付 -->
+    <pay>
+      <!-- 微信支付 -->
+      <weixin>
+        <appid value="3lYB91wrUEUf5fTHGWYC9:gUtPTyHWRBJ49zBbpJ7e7182K1OI5i"/>
+        <mchid value="U56evqNMPNEVISOKxoQI4gMCPM"/>
+        <key value="x5iSWuu9jWRWRUW0w1wCgyZN0yzuww7eAibQ2212XQTO9k2qMAfGz4xl0ImFSI3taT3pyuCXHaOGKf"/>
+        <!-- 支付方式 -->
+        <limitPay value=""/>
+
+        <!-- 生成二维码URL -->
+        <qrcodeURL value="https://api.mch.weixin.qq.com/pay/unifiedorder"/>
+        <!-- 通知URL -->
+        <notifyURL value="http://www.hdw.top/servlet/pay/weixinNotify"/>
+      </weixin>
+    </pay>
+    
+    <!-- 属于文本文件的后缀名（以“;”分割） -->
+    <textSuffix value="txt;html;htm;jsp;asp;php;js;css;java;properties;bat;ini;conf;xml;log;"/>
+
+    <!-- 非法的SQL字符（空格以“_”代替） -->
+    <illegalSQL>
+      <INSERT_INTO/>
+      <UPDATE/>
+      <DELETE/>
+      <CHANGE/>
+      <CREATE_TABLE/>
+      <CREATE_VIEW/>
+      <CREATE_INDEX/>
+      <ALERT_TABLE/>
+      <DROP_TABLE/>
+      <TRUNCATE_TABLE/>
+    </illegalSQL>
+  </system>
+  
+  <database>
+    <default driver="mariadb"/>
+    <!--
+    <default driver="postgresql"/>
+    <default driver="mssql"/>
+    <default driver="mysql"/>
+    <default driver="embedded"/>
+    <default driver="oracle"/>
+    -->
+  </database>
+  
+  <!-- 加密算法及密钥 -->
+  <algorithm>
+    <!-- webservice登录 -->
+    <webservice name="AES" cipher="6MGvROC3lYKoLCQv"/>    <!-- 密钥的16进制字符串：364d4776524f43336c594b6f4c435176 -->
+    <!-- cookie值 -->
+    <cookie name="AES" cipher="mTPLyL1HHFaN2hV4"/>
+    <!-- 隐私信息 -->
+    <privacy name="AES" cipher="jJgjOTDm19CfBCbS"/>
+  </algorithm>
+  <!-- 主机定义：
+                maxLoginCounts：允许的最大登录数 -->
+  <host maxLoginCounts="100">
+    <!-- 设置系统初始登录时，显示的用户可选主机 -->
+    <!-- type:主机类型
+         File="0x00";FTP="0x01";Tekinfo="0x10";TekinfoServer="0x11";TekinfoPackage="0x20";WebService="0x40"-->
+    <!-- <TekInfoServer>
+      <id value="TekInfo"/>
+      <name value="TekInfoServer"/> 
+      <type value="0x11"/>
+      <location value="localServer"/>
+      <port value="0"/>
+    </TekInfoServer> -->
+    <WebService>
+      <id value="Ipsay"/>
+      <name value="WebService"/>
+      <type value="0x40"/>
+      <location value="localServer"/>
+      <port value="0"/>
+    </WebService>
+    
+    <!-- <TekInfoClient>
+        <id value="TekInfo"/>
+        <name value="TekInfoClient"/>
+        <type value="0x10"/>
+        <location value="10.128.0.1"/>
+        <port value="2080"/>
+    </TekInfoClient> -->
+    <!-- <edecClient>
+        <id value="TekInfo"/>
+        <name value="edecClient"/>
+        <type value="0x10"/>
+        <location value="10.128.0.11"/>
+        <port value="2080"/>
+    </edecClient> -->
+  </host>
+  
+  <!-- 缓存 -->
+  <cache>
+    <!-- 名称缓存 -->
+    <nameCache>
+      <!-- 指定对象存储名称最大值（格式：<对象名 value=“最大值”/>） -->
+      <User value="100"/>
+      <Client value="100"/>
+      <Organization value="5000"/>
+      <Expert value="5000"/>
+    </nameCache>
+  </cache>
+</tekinfo>

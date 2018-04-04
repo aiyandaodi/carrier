@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 服务连接进程 -->
+<tekinfo>
+  <database>
+    <table>
+      <service_session>
+        <item>
+          <!-- 标识 -->
+          <service_session_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <service_session_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 进程名称 -->
+          <service_session_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 进程用户显示名 -->
+          <service_session_username value="VARCHAR(255)"/>
+          <!-- 连接的主机名 -->
+          <service_session_sitename value="VARCHAR(255)"/>
+          <!-- 连接的服务显示名 -->
+          <service_session_servicename value="VARCHAR(255)"/>
+          <!-- 进程凭证 -->
+          <service_session_credentials value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 连接开始时间 -->
+          <service_session_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 连接结束时间 -->
+          <service_session_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </service_session>
+    </table>
+  </database>
+</tekinfo>

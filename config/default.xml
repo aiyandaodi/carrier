@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象定义 -->
+<tekinfo>
+  <!-- 定义对象 -->
+  <object>
+    <!-- 定义一个默认对象:
+        ResourceBundle - 资源路径
+        Structure - 对象结构类的路径 -->
+    <default ResourceBundle="net.tekinfo.object.default" version="1.0" resourceVersion="1.0">
+      <!-- 定义默认对象使用的数据库表： （使用"null"可以设置该字段不存在）
+           nameIdentity-该对象名字字段名;
+           codeIdentity-该对象编码字段名;
+           timeIdentity-该对象最近修改时间字段名
+           ownerIdentity-该对象的所有者 -->
+      <table nameIdentity="name" codeIdentity="code" timeIdentity="modifyTime" ownerIdentity="null">
+        <!-- 定义对象的数据库表。identity表主键 -->
+        <tableName identity="id"/>
+      </table>
+      <!-- 定义对象的自动赋值字段以及自动赋值规则 -->
+      <autovalue>
+        <!-- base:
+                 null : 数据库自动设定;
+                 time : 按照当前时间的毫秒数设定, 同时可以使用 y-年;M-月;dd-日;H-小时;m-分钟;s-秒
+             digit: 赋值长度;
+             stpe: 步长;
+             tree: 编码方式 : default（默认）,dewey（杜威编码） -->
+      </autovalue>
+      <!-- 定义对象的不可同值字段 -->
+      <nosamevalue>
+      </nosamevalue>
+      
+      <!-- 权限设置：userRight - 登录用户的默认权限，anonymousRight - 匿名用户的默认权限
+           create="0x01"
+           read="0x02"
+           write="0x04"
+           delete="0x08"
+           admin="0x10" -->
+      <right userRight="0" anonymousRight="0"/>
+      
+      <!-- BLOB设置：
+           blobObject - 多BLOB对象的BLOB对象名
+           table - 单BLOB的BLOB表名
+           urlField - 单BLOB存储url的字段名
+           blobField - 单BLOB存储BLOB信息的字段名
+           mimeField - 单BLOB存储MIME信息的字段名
+           lengthField - 单BLOB存储BLOB信息长度的字段名
+           timeField - 单BLOB存储BLOB修改日期的字段名
+           mimeType - 单BLOB默认MIME类型 -->
+      <blob blobObject="null"
+          table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType="text/plain"/>
+
+      <!-- 头像设置：
+           table - 存储头像基本信息的表名
+           blobTable - 存储头像BLOB信息的表名
+           urlField - 存储头像URL的字段名
+           blobField - 存储头像BLOB信息的字段名
+           mimeField - 存储头像MIME信息的字段名
+           lengthField - 存储头像BLOB信息长度的字段名
+           timeField - 存储头像BLOB修改日期的字段名
+           supportSuffix - 支持的文件后缀名（以“,”分割）
+           maxLength - 允许的文件最大长度（MB）
+           minWidth - 图片最小宽度
+           maxWidth - 图片最大宽度
+           minHeight - 图片最小高度
+           maxHeight - 图片最大高度
+           minScale - 图片最小宽高比（小于0.1表示无限制）
+           maxScale - 图片最大宽高比（小于0.1表示无限制） -->
+      <icon table="null"
+          blobTable="null"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          supportSuffix="png,jpg,jpeg,gif"
+          maxLength="1"
+          minWidth="200"
+          maxWidthe="0"
+          minHeight="200"
+          maxHeight="0"
+          minScale="0.6"
+          maxScale="1.8"/>
+      
+      <!-- 该对象的所有可执行命令 -->
+      <command>
+        <!-- 新建 -->
+        <add>
+          <!-- 命令初始参数 -->
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+            <!-- 显示域。
+                     type：0x00不显示，0x01显示但不可编辑，0x02显示且可编辑
+                     right: create创建权限有效，read读取权限有效，write编辑权限有效，admin管理权限有效，
+                            delete删除权限有效
+                     rightuser：register高于等于注册用户时有效，normal高于等于普通用户时有效，
+                                auditor高于等于审核员时有效，admin高于等于系统管理员时有效，
+                                supervisor等于超级管理员时有效
+                     loginClient：1表示允许第三方系统操作 -->
+          </item>
+        </add>
+
+        <!-- 同级新建 -->
+        <addSame>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="true"/>
+            <!-- 新建类型：
+                 0x00：不使用编码
+                 0x01：同级新建
+                 0x02：下级新建
+                 0x04：插入新建 -->
+            <add_type value="0x01"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+          </item>
+        </addSame>
+
+        <!-- 下级新建 -->
+        <addSub>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="true"/>
+            <!-- 新建类型：
+                 0x00：不使用编码
+                 0x01：同级新建
+                 0x02：下级新建
+                 0x04：插入新建 -->
+            <add_type value="0x02"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+          </item>
+        </addSub>
+
+        <!-- 插入新建 -->
+        <addInsert>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="true"/>
+            <!-- 新建类型：
+                 0x00：不使用编码
+                 0x01：同级新建
+                 0x02：下级新建
+                 0x04：插入新建 -->
+            <add_type value="0x04"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+          </item>
+        </addInsert>
+
+        <!-- 编辑 -->
+        <edit>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+          </item>
+        </edit>
+        
+        <!-- 读取 -->
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+          <item>
+            <createIp/>
+            <createTime/>
+            <modifyIp/>
+            <modifyTime/>
+            <accessIp/>
+            <accessTime/>
+            <accessCount/>
+          </item>
+        </read>
+        
+        <!-- 列表 -->
+        <list>
+          <parameter>
+            <!-- 一次取得的记录最大值 -->
+            <list_counts value="50"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x00"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+          <item>
+          </item>
+        </list>
+        
+        <!-- 组合查询 -->
+        <search>
+          <parameter>
+            <!-- 一次取得的记录最大值 -->
+            <list_counts value="50"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+          <item>
+          </item>
+        </search>
+        
+        <!-- 删除 -->
+        <remove>
+          <parameter>
+            <!-- 是否删除下级编码信息 -->
+            <remove_sub value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="remove"/>
+          </parameter>
+        </remove>
+        
+        <!-- 上传文件数据到BLOB -->
+        <upload>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+            <!-- 支持的文件后缀名（以“,”分割）-->
+            <support-suffix value=""/>
+            <!-- 允许的文件最大长度(MB)。(-1表示无限制） -->
+            <max-length value="50"/>
+
+            <!-- 是否是图片文件 -->
+            <image-file value="false"/>
+            <!-- 图片最小宽度 -->
+            <min-imageWidth value="0"/>
+            <!-- 图片最大宽度 -->
+            <max-imageWidth value="0"/>
+            <!-- 图片最小高度 -->
+            <min-imageHeight value="0"/>
+            <!-- 图片最大高度 -->
+            <max-imageHeight value="0"/>
+            <!-- 图片最小宽高比（小于0.1表示无限制） -->
+            <min-imageScale value="0.6"/>
+            <!-- 图片最大宽高比（小于0.1表示无限制） -->
+            <max-imageScale value="1.8"/>
+          </parameter>
+        </upload>
+        
+        <!-- 下载文件 -->
+        <download>
+          <parameter>
+            <download_counts value="20"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="read"/>
+          </parameter>
+        </download>
+
+        <export>
+          <parameter>
+            <format value="tekinfo"/>
+            <!-- 默认是否包括BLOB数据 -->
+            <withLocalFile value="true"/>
+            <!-- 默认是否强制设置源对象的存档标志 -->
+            <booking value="false"/>
+            <!-- 强制booking按照booking的参数设置，不需要用户选择 -->
+            <forbidBooking value="false"/>
+            <!-- location: top/middle/bottom/left/center/right -->
+            <location value="center|middle"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="admin"/>
+          </parameter>
+        </export>
+        
+        <import>
+          <parameter>
+            <!-- location: top/middle/bottom/left/center/right -->
+            <location value="center|middle"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="admin"/>
+          </parameter>
+        </import>
+      </command>
+      
+      <!-- 对象属性 -->
+      <property> 
+        <!-- variable: int,long,double,float
+             parse：
+                 enum：枚举类型
+                     format：选项类型
+                             single - 单选
+                             multiple - 多选
+                             option - 单选下拉框
+                 datetime：日期时间
+                     format：日期格式
+                             yyyy - 年
+                             yyyy-MM - 年月
+                             yyyy-MM-dd - 年月日
+                             yyyy-MM-dd HH:mm:ss - 年月日时分秒
+                 object: 对象域
+                         object:对象名 - 记录指定对象的标识值
+                         object:this.字段名 - 记录字段名记录对象的标识值
+                 money：资金
+                     format：资金格式
+                             0.00 - 保留两位小数
+                 tag：标签
+                 dictionary：字典
+                             dictionary:对象名 - 记录指定对象名的字典值
+                             dictionary:this.字段名 - 记录字段名记录对象的字典值
+                 catalog：目录树
+                          catalog:对象名 - 记录指定对象名的目录树编码
+                          catalog:this.字段名 - 记录字段名记录对象的目录树编码
+                 objectName：对象名
+             format:
+                 format="*" : 任意;
+                 format="#" :数字;
+                 format= "?" :字母;
+                 format= "A" :字母和数字;
+                 format="U" : 字母，小写字符映射到与它们等效的大写字符上;
+                 format="L" : 字母，大写字符映射到与它们等效的小写字符上;
+                 format= "H" : 十六进制数字（A-F、a-f、0-9）;
+                 format= "D" :double型; -->
+        <createIp variable="long" parse="inetaddress" forbidEdit="true" default="0" notnull="true"/>
+        <createTime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"
+            maxlength="19" forbidEdit="true" default="0" notnull="true"/>
+        <modifyIp variable="long" parse="inetaddress" forbidEdit="true" default="0" notnull="true"/>
+        <modifyTime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"
+            maxlength="19" forbidEdit="true" default="0" notnull="true"/>
+        <accessIp variable="long" parse="inetaddress" forbidEdit="true" default="0" notnull="true"/>
+        <accessTime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm"
+            maxlength="19" forbidEdit="true" default="0" notnull="true"/>
+        <accessCount variable="int" forbidEdit="true" default="0" notnull="true"/>
+      </property>
+      
+      <!-- 附件信息：
+          name：附件名称（自定义）
+          object：附件对象名
+          column：附件对象记录当前对象值的字段名
+          remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除）
+      <attachment>
+        <name object="ObjectName" column="field_name" remove="0"/>
+      </attachment>
+      -->
+    </default>
+  </object>
+</tekinfo>

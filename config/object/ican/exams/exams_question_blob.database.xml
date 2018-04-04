@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象文件BLOB记录表  -->
+<tekinfo>
+  <database>
+    <table>
+      <exams_question_blob>
+        <item>
+          <!-- 标识 -->
+          <exams_question_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件存放域 -->
+          <exams_question_blob value="BLOB"/>
+        </item>
+      </exams_question_blob>
+    </table>
+  </database>
+</tekinfo>

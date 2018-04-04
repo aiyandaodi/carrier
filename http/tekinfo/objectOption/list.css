@@ -1,0 +1,9 @@
+/* CSS Document */
+
+/************** list-top **************/
+#list-top > .pull-left{ margin:5px 15px 5px 5px; }
+#list-top > .btn-group{ margin-left:5px; }
+
+#table-infos > tr > .column-option_objectName{ text-align:center; }
+#table-infos > tr > .column-option_objectId{ text-align:center; }
+#table-infos > tr > .column-option_owner{ text-align:center; }

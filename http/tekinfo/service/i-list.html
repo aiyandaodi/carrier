@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/i-audit.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <!-- 自定义Title -->
+  <title>后台管理</title>
+  <!-- InstanceEndEditable -->
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="客服 服务 支持 后台 管理 通用 统一 平台 统一资源平台 协作 社交 合作 办公 tekinfo takall admin administrator uniform realoffice client support customer service"/>
+  <meta name="description" content="客服 服务 支持 后台 管理 通用 统一 平台 统一资源平台 协作 社交 合作 办公 tekinfo takall admin administrator uniform realoffice client support customer service"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../common/tek/css/mac-list.css">
+  <link rel="stylesheet" href="../css/tekinfo.css"/>
+  <link rel="stylesheet" href="../../takall/css/takall.css"/>
+  <link rel="stylesheet" href="../admin/index.css"/> 
+  
+  <!-- InstanceBeginEditable name="head-css" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+<!--  <script type="text/javascript" src="../http/common/jquery/2.1.4/jquery.min.js"></script>-->
+<!--  <script type="text/javascript" src="../http/style/macadmin/js/bootstrap.min.js"></script>-->
+  
+  <!-- InstanceBeginEditable name="head-js" -->
+  <!-- 自定义JS -->
+  <script type="text/javascript" src="../service_provider/static.js"></script>
+  <!-- InstanceEndEditable -->
+  
+  <!-- InstanceBeginEditable name="head" -->
+  <!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+	<!-- Main content starts 
+	<div class="content">-->
+	
+		<!-- Main bar 
+		<div class="mainbar">--
+
+			<!-- Matter -->
+			<div class="matter">
+				<div class="container">
+				
+					<!-- InstanceBeginEditable name="Matter" -->
+					<!-- 当前页面主要内容 -->
+					<div class="row">
+                    	<div class="col-md-12">
+                        	<div class="widget">
+                            	<div id="list-top" class="widget-head">
+                                	<div class="pull-left">系统服务</div>
+                                	<div class="btn-group">
+										<button class="btn btn-success" onclick="createNew()">新建</button>
+									</div>
+									<div class="btn-group">
+										<button class="btn btn-danger" style="color:#fff;margin-left: 10px;" target="_blank" onclick="removeList()">删除</button>
+									</div>
+									<div class="btn-group">
+										<button class="btn btn-info" style="color:#fff;" target="_blank" onclick="customRefresh()">刷新</button>
+									</div>
+
+									<div class="input-group pull-right" id="quickSearchDiv" style="max-width: 240px;">
+										<input type="text" id="quickSearchKey" name="quickSearchKey" placeholder="快速查询" onkeydown="tek.macList.quickSearchEnter(event)" onfocus="this.select();" style="width: 100%;">
+										
+										<span class="input-group-addon">
+											<button class="btn btn-color" id="quickSearchSubmit" type="submit" title="查询" onclick="tek.macList.quickSearch($('#quickSearchKey').val())"><i class="fa fa-search"></i></button>
+										</span>
+									</div>
+                                	<div class="clearfix"></div>
+                            	</div>
+
+                            	<div class="widget-content">
+
+
+									<table class="table table-striped table-bordered table-hover" id="list-table"  name="list-table">
+										<thead>
+										<!-- 列表头 -->
+										<tr id="table-columns" style="min-width:20px"></tr>
+										</thead>
+										<!-- 列表信息 -->
+										<tbody id="table-infos" name="table-infos"></tbody>
+                                	</table>
+                                	<div id="table-msg"></div>
+                                	<div class="clearfix"></div>
+                           	 	</div>
+								<div class="widget-foot">
+									<ul class="pagination pull-right" id="page" name="page"></ul>
+									<div class="clearfix"></div>
+								</div>
+                        	</div>
+                    	</div>
+                	</div>
+					<!-- InstanceEndEditable -->
+
+					<!-- 显示操作信息 -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget">
+								<div class="widget-head">
+									<div class="pull-left">系统信息</div>
+									<!-- InstanceBeginEditable name="InfoMenu" -->
+									<!-- InfoMenu -->
+									<!-- InstanceEndEditable -->
+									<div class="widget-icons pull-right"></div>
+									<div class="clearfix"></div>
+								</div><!--end .widget-head-->
+
+								<div id="history-message" class="widget-content" style="margin:5px 10px;">
+									<p>管理后台是客服人员进行日常维护和管理的系统。所有操作都请谨慎进行，避免对数据不必要的修改和破坏。</p>
+								</div><!-- end.widget-content -->
+
+							</div><!-- end .widget-->
+						</div><!-- end.col-md-->
+					</div><!-- end.row -->
+				</div><!-- end.container-->
+			</div>
+			<!-- Matter Ends -->
+		<!-- </div>
+		Mainbar Ends -->
+	<!--</div>
+ 	Content Ends -->
+
+
+	<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+	<!-- Scroll to top -->
+	<span class="totop"><a href="javascript:;"><i class="fa fa-chevron-up"></i></a></span> 
+
+	<!-- 等待图层 -->
+	<!--<div class="modal fade" id="waiting-modal-dialog">
+  		<div class="modal-dialog"> 
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      			</div>
+			  	<div class="modal-body center">
+					<p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+					<div id="waiting-modal-dialog-timer"></div>
+			  	</div>
+    		</div>
+  		</div>
+	</div>--><!-- end .modal-->
+
+	<!-- 提示信息代码 -->
+	<!--<div id="message-modal-dialog" class="modal fade">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+				<div class="modal-header">
+					<button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+					<h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+				</div>
+				<div class="modal-body">
+					<div id="message"></div>
+				</div>
+    		</div>
+  		</div>
+	</div>--><!-- end message-modal-dialog-->
+
+	<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/serverTimer.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/mac-list.js"></script>
+  	<script type="text/javascript" src="../../common/tek/js/turn-page.js"></script>
+  
+  	<!-- tekinfo JS -->
+  	<script type="text/javascript" src="../js/tekinfo.js"></script>
+  	<!-- takall JS -->
+  	<script type="text/javascript" src="../../takall/js/takall.js"></script> 
+  
+<!--  	<script type="text/javascript" src="../http/takall/audit/control.js"></script>-->
+  	<!-- Script for this page -->
+
+ 	<!-- InstanceBeginEditable name="MyJavaScript" -->
+	<!-- 自定义JavaScript函数 -->
+
+	<!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

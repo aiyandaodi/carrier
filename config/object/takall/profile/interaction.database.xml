@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 交流 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <interaction>
+        <item>
+          <!-- 标识 -->
+          <interaction_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <interaction_code value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 标题 -->
+          <interaction_name value="VARCHAR(255) "/>
+          
+          <!-- 推荐网址 -->
+          <interaction_url value="VARCHAR(255) "/>
+		  
+		  <!-- 推荐对象类型名 -->
+          <interaction_linkName value="VARCHAR(128) "/>
+		  <!-- 推荐对象标识 -->
+          <interaction_linkId value="BIGINT DEFAULT '0' "/>
+		  
+	        <!-- 所有者 -->
+          <interaction_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 颜色 -->
+	      <interaction_color value="VARCHAR(10) DEFAULT '03f' "/>
+          
+          <!-- 读取权限 -->
+          <interaction_read value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 状态 -->
+          <interaction_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 类型 -->
+          <interaction_type value="SMALLINT DEFAULT '0' "/>
+          
+          <!-- 备注 -->
+          <interaction_remark value="MEMO"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </interaction>
+    </table>
+  </database>
+</tekinfo>

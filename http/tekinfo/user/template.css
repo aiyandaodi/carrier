@@ -1,0 +1,45 @@
+body {
+    font-size: 1.6em;
+    line-height: 2em;
+    border-top: 3px solid #eee;
+    background: #fff;
+    padding-top: 37px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.personsal-outer {
+    max-width: 1050px;
+    margin: 10px auto;
+    padding: 0px 10px;
+}
+
+.header-title {
+    color: #666;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    max-width: 700px;
+    font-size: 27px;
+    line-height: 40px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/**开始菜单 start **/
+.ui-tooltip {
+    padding: 10px;
+    position: static;
+	z-index: 9999;
+    max-width: 300px;
+    -webkit-box-shadow: none;
+}
+
+.ui-icon {
+    display: block;
+    text-indent: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+/**开始菜单 end   **/

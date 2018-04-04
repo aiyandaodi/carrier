@@ -1,0 +1,10 @@
+name=网址
+
+#property
+property.hosturl_id=标识
+property.hosturl_code=编码
+property.hosturl_name=名称
+property.hosturl_address=网址
+property.hosturl_contact=联系人
+
+#hosturl

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 收藏 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <favorite>
+        <item>
+          <!-- 标识 -->
+          <favorite_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <favorite_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <favorite_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 收藏对象类型名 -->
+          <favorite_linkName value="VARCHAR(255) NOT NULL"/>
+          <!-- 收藏对象标识 -->
+          <favorite_linkId value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 收藏的网址 -->
+          <favorite_url value="VARCHAR(255)"/>
+          
+          <!-- 颜色 -->
+	        <favorite_color value="VARCHAR(10) DEFAULT '03f' NOT NULL"/>
+	        <!-- 标签 -->
+	        <favorite_tag value="VARCHAR(128)"/>
+	        
+	        <!-- 所属收藏集 -->
+          <favorite_set value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 所有者 -->
+          <favorite_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </favorite>
+    </table>
+  </database>
+</tekinfo>

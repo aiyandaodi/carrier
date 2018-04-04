@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 信息收发账号 -->
+<tekinfo>
+  <database>
+    <table>
+      <message_account>
+        <item>
+          <!-- 标识 -->
+          <message_account_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <message_account_code value="VARCHAR(20) NOT NULL"/>
+          <!-- 名称 -->
+          <message_account_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 类型 -->
+          <message_account_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <message_account_status value= "SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 用户名 -->
+          <message_account_login value="VARCHAR(512) NOT NULL"/>
+          <!-- 密码 -->
+          <message_account_pass value="VARCHAR(512)"/>
+          <!-- 其他参数 -->
+          <message_account_params value="VARCHAR(1024)"/>
+          <!--·每日最大发送数 -->
+          <message_account_dayMax value="INT DEFAULT '0' NOT NULL"/>
+          <!--·每月最大发送数 -->
+          <message_account_monthMax value="INT DEFAULT '0' NOT NULL"/>
+          <!--·所属用户 -->
+          <message_account_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!--·所属设备 -->
+          <message_account_device value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </message_account>
+    </table>
+  </database>
+</tekinfo>

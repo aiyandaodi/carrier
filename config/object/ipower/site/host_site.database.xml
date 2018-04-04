@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主机对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_site>
+        <item>
+          <!-- 标识 -->
+          <host_site_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_site_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 主机名称 -->
+          <host_site_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 管理台主机标识 -->
+          <host_host_id value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 目录分组 -->
+          <host_site_catalog value="VARCHAR(128)"/>
+          <!-- 所属管理组 -->
+          <host_site_group value="BIGINT DEFAULT '0'"/>
+          <!-- 标识 -->
+          <host_site_tags value="VARCHAR(255)"/>
+          <!-- 主机备注 -->
+          <host_site_remark value="MEMO"/>
+          <!-- 主机状态 --> 
+          <host_site_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 主机运行状态 --> 
+          <host_site_runstatus value="SMALLINT DEFAULT '0'"/>
+          <!-- 主机类型 --> 
+          <host_site_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 主机MAC地址 -->
+          <host_site_mac value="VARCHAR(250) DEFAULT '0'"/>
+          <!-- 主机IP地址 -->
+          <host_site_ip value="VARCHAR(250) DEFAULT '0'"/>
+          <!-- 主机IP类型 --> 
+          <host_site_iptype value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 主机采购时间 -->
+          <host_site_buytime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 主机停用时间 -->
+          <host_site_stoptime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 主机使用者 -->
+          <host_site_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 供货商 -->
+          <host_site_supplier value="VARCHAR(250) NOT NULL"/>
+          <!-- 主机联络人 -->
+          <host_site_contact value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_site>
+    </table>
+  </database>
+</tekinfo>

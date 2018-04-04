@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 检验鉴定服务目录附加信息 -->
+<tekinfo>
+  <object>
+    <AppraisalCatalog ResourceBundle="com.takall.object.organization.AppraisalCatalog"
+        Structure="com.takall.organization.AppraisalCatalog"
+        ObjectRm="com.takall.remoting.organization.AppraisalCatalogRm">
+      <autovalue>
+        <appraisal_catalog_id base="identity"/>
+        <appraisal_catalog_code base="" step="1" digit="10"/>
+      </autovalue>
+      
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="appraisal_catalog_name" codeIdentity="null" ownerIdentity="null">
+        <appraisal_catalog identity="appraisal_catalog_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <appraisal_catalog_name forbidEdit="true"/>
+            <appraisal_catalog_unit/>
+            <appraisal_catalog_min/>
+            <appraisal_catalog_max/>
+            <appraisal_catalog_remark/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <appraisal_catalog_name forbidEdit="true"/>
+            <appraisal_catalog_unit/>
+            <appraisal_catalog_min/>
+            <appraisal_catalog_max/>
+            <appraisal_catalog_remark/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x00"/>
+          </parameter>
+          <item>
+            <appraisal_catalog_name forbidEdit="true"/>
+            <appraisal_catalog_unit/>
+            <appraisal_catalog_min/>
+            <appraisal_catalog_max/>
+            <appraisal_catalog_catalog/>
+            <appraisal_catalog_remark/>
+           </item>
+        </read>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <appraisal_catalog_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <appraisal_catalog_code variable="string" maxlength="10" notnull="true" forbitEdit="false"/>
+        <!-- 名称 -->
+        <appraisal_catalog_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 单位 -->
+        <appraisal_catalog_unit variable="string" maxlength="10" default="例" notnull="true"/>
+        <!-- 最低基准价 -->
+        <appraisal_catalog_min variable="long" parse="money" format="0.00" notnull="true"/>
+        <!-- 最高基准价 -->
+        <appraisal_catalog_max variable="long" parse="money" format="0.00" notnull="true"/>
+        <!-- 说明 -->
+        <appraisal_catalog_remark variable="string" maxlength="1024"/>
+        <!-- 所属目录 -->
+        <appraisal_catalog_catalog variable="string" maxlength="128" parse="catalog:OrganizationService1" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </AppraisalCatalog>
+  </object>
+</tekinfo>

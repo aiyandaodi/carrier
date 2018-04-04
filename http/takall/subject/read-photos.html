@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh"><!-- InstanceBegin template="/Templates/i-read.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- InstanceBeginEditable name="doctitle" -->
+        <title>影集读取</title>
+        <!-- InstanceEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+        <link rel="Bookmark" href="../../../favicon.ico"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<!-- Stylesheets -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  		<!-- Font awesome icon -->
+ 		<link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  		<!-- jQuery UI -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  		<!-- Calendar -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  		<!-- prettyPhoto -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  		<!-- Star rating -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>		
+        <!-- owl css -->
+        <link href="../../style/extend/css/owl.carousel.css" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        
+        <link href="../../tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../../tekinfo/css/tekinfo-dialog.css" rel="stylesheet">
+        
+        <link href="../../vip/css/i.css" rel="stylesheet">
+        <link href="../../vip/css/i-dialog.css" rel="stylesheet">
+        
+        <!-- InstanceBeginEditable name="head-css" -->
+        <!-- my css in head -->
+        <link href="read.css" rel="stylesheet">
+        <link href="read-photos.css" rel="stylesheet">
+		<!-- InstanceEndEditable -->
+        
+        <script src="../../common/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../../style/macadmin/js/respond.min.js"></script>
+         
+        <!-- InstanceBeginEditable name="head-js" -->
+        <!-- my head js-->
+		<!-- InstanceEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				initial();
+			});
+  		</script>
+        <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+	</head>
+	
+<body>
+<div id="index_banner" class="index-banner">
+	
+</div><!-- end .index-banner -->
+<!-- tekinfo_main 配合 tekinfo_footer 根据高度设置位置--->
+<div id="tekinfo_main" class="main">
+<!-- InstanceBeginEditable name="main content" -->
+<!-- main content -->
+
+  <div class="container">
+  	<input id="attitude" class="hidden" value="0"/>
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+      	<br/>
+        <div class="hero-title">
+        	<h3 class="text-center" id="subject_name"></h3>
+            <div class="show-brief">
+            	<h5 class="pull-left" id="subject_author"></h5>
+                <ul class="pull-right">
+                	<li><i class="fa fa-calendar"></i><span id="subject_date"></span></li>
+                    <li><i class="fa fa-eye"></i><span id="subject_access_count_em"></span></li>
+                    <li onclick="thumbsUp(1);"><a href="javascript:;"><i class="fa fa-thumbs-up"></i><span id="subject_recommended_em"> </span></a></li>
+                    <li onclick="thumbsUp(-1);"><a href="javascript:;"><i class="fa fa-thumbs-down"></i><span id="subject_anti_em"> </span></a></li>
+                </ul>
+            </div><!-- end .show-brief -->
+            
+            <div class="show-classification clearfix text-left">
+            	<!-- <ul class="catalog text-left">
+                                <li><a href="javascript:catalogRoot();"><i class="fa fa-folder lblue"></i></a></li>
+                                  <li><a href="javascript:;">- 800 摄影</a></li>
+                                  <li><a href="javascript:;">- 810 艺术</a></li>
+                                  <li><a href="javascript:;">- 811 写真</a></li>
+                              </ul>
+                              <br/> -->
+                <ul class="tag text-left">
+                	<!-- <li class="flag"><a href="javascript:;"><i class="fa fa-tags lblue"></i></a></li> -->
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div><!-- end .hero-title-->
+          
+		<div id="subject_content" class="widget-content subject_content show-content col-md-12">
+			<!-- Carousel -->
+			<div id="bs-carousel-1" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+				<ol class="carousel-indicators" id="carousel-indicators">
+				</ol>
+				<div class="carousel-inner" id="carousel-inner">
+				</div>
+				<a class="left carousel-control" href="#bs-carousel-1" role="button" data-slide="prev">
+					<span class="fa fa-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#bs-carousel-1" role="button" data-slide="next">
+					<span class="fa fa-chevron-right"></span>
+				</a>
+				
+				<div class="blog-author col-md-12 text-center">
+					
+					<ul class="pagination pagination-sm" id="photos" name="photos"></ul>
+				</div>
+			</div><!-- end .Carousel -->
+			
+			<div class="blog-author well">
+
+					<div class="blog-author-content">
+						<!-- <h5>长泽写真一</span></a></h5> -->
+						<p id="subject_summary"></p>
+					</div>
+					<div class="clearfix"></div>
+			</div>
+		</div><!-- end #subject_content -->
+        <div class="clearfix"></div>
+          
+		  
+		<div id="text-content">
+		  	<div class="widget-content" id="widget-content" >
+				  
+			</div>
+		</div>
+		
+		  
+			
+      </div><!-- end .col -->
+      
+      	<div class="col-md-4 col-sm-12">
+			<div class="sidebar">
+
+				<!-- 发布者 -->
+				<div class="s-widget">
+					<div class="row">
+						<div class="col-md-4 pull-left">
+							<a href="blog-author-img" style="display:inline-block; width: 100px;height: 100px">
+								<img src="../../ican/person/images/penson.jpg" alt="作者名" class="img-responsive img-thumbnail reply_icon">
+							</a>
+						  	
+						</div>
+						<div class="col-md-8" id="profile-info">
+							<p id="profile_describe"> </p>
+							<div id="is_friend"></div> 
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="hr-color bg-main"></div>
+
+				<!-- 附件文档 -->
+				<div class="s-widget" id="fileDocument">
+					<div class="">
+						<h5 class="text-left"><i class="fa fa-bookmark lblue"></i> <span id="documents_counts">0</span> 个相关主题 </h5>
+						
+						<div class="clearfix"></div>
+					</div>
+
+					
+					<div id="same-subject">
+					</div>
+					
+				</div>
+				<div class="hr-color bg-main"></div>
+
+				<!-- 回复 -->
+				<div class="s-widget reply-content">
+					<h5><i class="fa fa-comments lblue"></i>&nbsp; <span id="user_name">匿名</span>评论</h5>
+
+					<form class="reply-form" role="form" name="reply-form" id="reply-form" action="javascript:addReply();">
+						<div class="form-group">
+							<textarea name="reply_content" id="reply_content" placeholder="在此输入你的评论..."></textarea>
+						</div>
+						<div  class="text-right">
+							<button class="btn btn-primary" type="submit" style="border-radius: 5px;">确定</button>
+						</div>
+					</form>
+				</div><!-- end .s-widget-->
+
+				<div class="s-widget">
+					<div class="blog-comments">
+						<h5><i class="fa fa-comments color"></i>&nbsp; <span id="reply_counts"></span> 条评论</h5>
+						<hr />
+						<div id="reply-div-ul">
+							
+						</div>
+						<!-- <div class="blog-comment-item">
+							<div class="comment-author-image">
+								<a href="#"><img src="images/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+							</div>
+							<div class="comment-details">
+								<h5><a href="#">张三</a> <small>2017-01-10 12:34:21</small></h5>
+								<p>
+								讲的明白，了解了美国宪法和历史。希望多写这样的文章。
+								</p>
+							</div>
+						</div>
+						<div class="blog-comment-item">
+							<div class="comment-author-image">
+								<a href="#"><img src="images/2.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+							</div>
+							<div class="comment-details">
+								<h5><a href="#">Bob Marley</a> <small>08/08/2013</small></h5>
+								<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et m et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+							</div>
+						</div>
+						<div class="blog-comment-item">
+							<div class="comment-author-image">
+								<a href="#"><img src="images/3.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+							</div>
+							<div class="comment-details">
+								<h5><a href="#">James Brown</a> <small>08/08/2013</small></h5>
+								<p>Debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+							</div>
+						</div>
+						<div class="blog-comment-item">
+							<div class="comment-author-image">
+								<a href="#"><img src="images/4.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+							</div>
+							<div class="comment-details">
+								<h5><a href="#">Jockey Rambo</a> <small>08/08/2013</small></h5>
+								<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptatesdiandae sint et molestiae non recusandae.</p>
+							</div>
+						</div> -->													
+					</div>
+					<div class="widget-foot clearfix">
+                        <ul class="pagination pull-right" id="reply-page"></ul>
+                    </div>
+					<!-- <div class="pull-right">
+						<a href="" class="btn btn-success">更多...</a>
+					</div> -->
+					<div class="clearfix"></div>
+				</div><!-- end .s-widget-->
+				<hr/>
+			</div><!-- end .sidebar-->
+		</div>  
+    </div><!-- end .row -->
+  </div><!-- end .container-->
+
+<!-- InstanceEndEditable -->
+</div><!-- end .main-->  
+
+<!-- Footer 自动载入vip/html/i-footer.html 内容-->
+<div id="tekinfo_footer"></div>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class="text-center"></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<!--蒙版-->
+<!--<div id="tekinfo_Layer" onClick="javascript:changeTekinfoLayerColor();"></div>-->
+<!--<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> --> 
+<!-- popmenu -->
+<div id="tekinfo_popmenu"></div>
+		
+<!-- Javascript files -->
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- slimscroll -->
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<script src="../../style/macadmin/js/excanvas.min.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.stack.js"></script>
+
+
+<!-- jQuery Notification - Noty -->
+<script src="../../style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="../../style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<script src="../../style/macadmin/js/charts.js"></script> <!-- Charts & Graphs -->
+
+<!-- Owl carousel -->
+<script src="../../style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../../style/extend/js/placeholder.js"></script>
+
+<!-- Tekinfo JS -->
+<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+<script type="text/javascript" src="../../common/tek/js/user.js"></script>
+<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+<script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+<script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+<script type="text/javascript" src="../../common/touchscreen/touchscreen.js"></script>
+<script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+<script type="text/javascript" src="../../vip/js/i.js"></script>
+<script type="text/javascript" src="../../vip/js/i-dialog.js"></script>
+<script type="text/javascript" src="../../ican/login/index.js"></script> 
+                     
+		<!-- InstanceBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+        <script type="text/javascript" src="../../common/tek/js/turn-page.js"></script>
+        <script type="text/javascript" src="read.js"></script>
+        <script type="text/javascript" src="read-operate.js"></script>
+        <script type="text/javascript" src="read-photos.js"></script>
+        <script type="text/javascript" src="read-reply.js"></script>
+        <script type="text/javascript" src="read-my-turn-page.js"></script>
+        <script type="text/javascript" src="autosize.js"></script>
+		<!-- InstanceEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+function initial(){
+	/** 载入页面顶部信息 **/
+	$("#index_banner").load(tek.common.getRootPath() + "http/vip/html/i-header.html",function(){
+		var cssurl=tek.common.getRootPath()+"http/vip/html/i-header.css";
+			//alert("cssurl="+cssurl);
+			loadCSS(cssurl);
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-header.js",function(){
+			
+			if(typeof initHeader == "function"){
+				initHeader();
+			}
+		});
+		
+		$("#index_banner").css("position","relative");
+		$("#index_banner").show();
+		
+		tek.core.getURLRequest();
+	
+		tek.common.getUser();
+		showUser(); //tekinfo.js
+
+		//tek.serverTimer.show();
+		if (tek.common.isLoggedIn()) {
+			showUserInfo();
+			
+			if (tek.role.isAuditor(myRole)) {
+				$("#user_tekinfo").removeClass("hide"); 
+			} 
+			if(tek.role.isCustomerService(myRole)){
+				$("#user_takall").removeClass("hide");
+				$("#user_ican").removeClass("hide");
+			}
+		} else {
+			/*tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+			tek.macCommon.waitDialogHide(1500, 'goLogin()');*/
+			iLogin();
+		}
+
+		var error = request["error"];
+
+		if (error && error.length > 0)
+			showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+
+		var message = request["message"];
+		if (message && message.length > 0)
+			showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+		
+		if (typeof init == "function") 
+			init();
+	});
+	
+	
+	/** 载入页面底部信息 **/
+	$("#tekinfo_footer").load(tek.common.getRootPath() + "http/vip/html/i-footer.html",function(){
+		//alert("111 js="+tek.common.getRootPath() + "http/vip/html/i-footer.js");
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-footer.js",function(){
+			//alert("111 initFooter="+(typeof initFooter));
+			if(typeof initFooter == "function"){
+				initFooter();
+			}
+		});
+	});
+	
+	
+	/** 载入弹出菜单 **/
+	$("#tekinfo_popmenu").load(tek.common.getRootPath() + "http/vip/html/i-readmenu.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-readmenu.js",function(){
+			//alert("initReadmenu="+(typeof initReadmenu));
+			if(typeof initReadmenu == "function"){
+				initReadmenu();
+			}
+		});
+	});
+	
+	
+	
+	
+	
+	/**
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		scrollPage();
+	}
+	
+	
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+	//alert("ok");
+}
+</script>
+
+	</body>	
+<!-- InstanceEnd --></html>

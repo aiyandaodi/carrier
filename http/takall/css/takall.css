@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* CSS Document takall.css*/
+
+
+h4{
+	font-size:1.2em;
+	font-weight:300;
+}
+
+.hero .hero-title {
+    font-size: 1.4em;
+    line-height: 1.8em;
+	color:#666;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+
+form * {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em !important;
+}
+
+a {
+    color: rgba(15,81,89,1.00);
+}
+
+.ul-circle{
+	list-style:circle;
+}
+
+
+
+@media(max-width: 460px){
+	.foot_menu{
+		clear:both;
+		float:none !important;
+		text-align:left;
+	}
+}
+
+@media(max-width: 768px){
+	.foot_menu {
+		clear:both;
+		float:none !important;
+		text-align:left;
+	}
+}
+

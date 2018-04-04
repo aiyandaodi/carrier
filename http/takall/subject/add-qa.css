@@ -1,0 +1,36 @@
+/* CSS Document */
+.ui-301, .ui-301 .row, .ui-105-content {
+	width: 90%;
+	margin: auto;
+}
+.ui-301 {
+	margin-top: 50px;
+}
+.isHide {
+	display: none;
+}
+.radio-checkbox-ul , .right-radio-ul {
+	list-style: none ;
+}
+.radio-checkbox-ul li {
+	float: left;
+	margin-right: 10px;
+}
+@media screen and (max-width: 750px) {
+    .ui-301, .ui-301 .row, .ui-105-content {
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+	}
+	/*.ui-301 {
+		margin-top: 30px;
+	}*/
+	.ui-105-content {
+		border: none;
+		padding: 0;
+	}
+}
+.form-group .btn{
+	margin:0;
+	padding:0;
+}

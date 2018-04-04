@@ -1,0 +1,16 @@
+﻿name=资质
+
+#property
+property.trademark_id=品牌:标识
+property.trademark_code=品牌:编码
+property.trademark_name=品牌:名称
+property.trademark_authorizer=品牌:所有者名字
+property.trademark_tag=品牌:标签分类
+property.trademark_catalog=品牌:目录分类
+property.trademark_status=品牌:状态
+property.trademark_status.apply=申请中
+property.trademark_status.normal=正常
+property.trademark_status.stop=停止
+property.trademark_start=品牌:注册日期
+property.trademark_country=品牌:注册国家
+property.trademark_organization=品牌:所属机构

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+
+<!--
+功能：帮助
+参数：
+    
+-->
+
+
+<html><!-- InstanceBegin template="/Templates/tekinfo-help.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="Title" -->
+  <title>系统安装</title>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment" />
+  <meta name="description" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment"  />
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../logo/tekinfo-64.ico"/>
+  <link rel="Bookmark" href="../logo/tekinfo-64.ico"/>
+  
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <link rel="stylesheet" href="../css/tekinfo.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- MyCSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/serverTimer.js"></script>
+
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../js/tekinfo.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+	  initial();
+    });
+  </script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="conjtainer">
+    <!-- Menu button for smallar screens -->
+    <div class="navbar-header">
+      <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+		<span><img src="../../images/blue-list.png" width="28"  alt=""/></span>	  
+      </button>
+      
+      <!-- Site name for smallar screens -->
+      <a href="../../help/index/index.html" class="navbar-brand hidden-lg"><img src="../logo/tekinfo-128.png"  height="28" alt="Tekinfo 统一资源平台" longdesc="http://www.tekinfo.net"></a>
+	</div><!-- end .navbar-header -->
+    
+    <!-- Navigation starts -->
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+      <ul class="nav navbar-nav">  
+        
+        <li class="dropdown dropdown-big">
+          <a href="index.html">
+            <span class="label label-primary"><i class="fa fa-compass"></i></span>统一资源平台
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="setup.html">
+            <span class="label label-success"><i class="fa fa-square"></i></span>系统安装
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../object/help.html">
+            <span class="label label-primary"><i class="fa fa-archive"></i></span>对象说明
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="contact.html">
+            <span class="label label-warning"><i class="fa fa-map-marker"></i></span>寻求支持
+          </a>
+        </li>
+        
+      </ul><!-- end .navbar-nav-->
+      
+      
+
+        <!-- Search form
+        <form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form> -->
+        <!-- Links 
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-user"></i> Admin <b class="caret"></b>              
+            </a>-->
+            
+            <!-- Dropdown menu 
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+              <li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+              <li><a href="../http/user/login/login.html"><i class="icon-off"></i> Logout</a></li>
+            </ul>
+          </li>
+          
+        </ul>-->
+    </nav>
+
+  </div>
+</div>
+
+
+<header>
+  <div class="container">
+    <div class="row">
+      <!-- Logo section -->
+      <div class="col-md-4">
+        <!-- Logo. -->
+        <div class="logo">
+          <h2>
+              <a href="http://www.tekinfo.net">
+                <img src="../logo/tekinfo-128.png" height="36" alt="Tekinfo" longdesc="http://www.tekinfo.net" >
+              </a>
+              <!--<a href="../http/tekinfo/help/index.html"><span class="bold">统一资源平台</span></a>-->
+          </h2>
+        </div><!-- end .logo-->
+        <!-- Logo ends -->
+      </div><!--  end .col-md-4 -->
+
+      <!-- Button section -->
+      <div class="col-md-4">
+           
+      </div>
+
+      <!-- Data section -->
+      <div class="col-md-4">
+        <div class="header-data">
+	
+		    <!-- InstanceBeginEditable name="HelpSection" -->
+            <h3 id="help_section">系统安装</h3>
+		    <!-- InstanceEndEditable -->
+
+        </div>
+      </div>
+
+    </div><!-- end .row-->
+  </div><!-- end .container-->
+</header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+  
+  
+  <!-- Matter -->   
+  <div class="matter">
+    <div class="container">
+	<!-- InstanceBeginEditable name="MainContent" -->
+    
+      <div class="row">
+        <!-- 系统环境 -->
+        <div class="col-md-6">
+          <div id="buy" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+              <div class="pull-left">
+              
+                <a href="#buy">购买</a></div>
+              <div class="widget-icons pull-right">
+                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+              </div>  
+              <div class="clearfix"></div>
+            </div><!-- end .widget-head -->
+            
+            <div class="widget-content">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                您可以直接和<a href="contact.html">我们联系</a>,或者选择我们合法授权的经销商购买
+                <a href="http://www.tekinfo.net">
+                  <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                </a>
+                的许可。
+              </p>
+              <!-- Widget content -->
+              <ul class="file-upload">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#">单一应用许可</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      使用或者基于Tekinfo统一资源平台开发的应用系统，只能部署在一个安装应用。
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">机构多应用许可 </a></strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      在一个机构中，可以部署在多个安装应用。
+                    </p>
+                  </div>
+                </li>            
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">扩展许可</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      在一个机构中，可以部署在多个安装应用。同时允许改机构发布包含
+                      <a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a>
+                      的扩展应用。但不允许直接发布tekinfo 统一资源平台本身。<br/>
+                      本应用主要支持第三方开发者，基于
+                      <a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a>
+                      开发用户实际应用系统并发布。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                     <a href="#">J2EE Servlet</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      根据您部署的业务环境，选择您的Servlet容器。一个推荐的低成本选择是下载<a href="http://tomcat.apache.org" target="_blank">Tomcat</a> 免费开源的Servlet容器。
+                    </p>
+                  </div>
+                </li>                                                                                                                      
+              </ul>
+              
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                请参考：
+                  <a href="license.html">
+                    <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                  </a>
+                 的许可声明。
+              </p>
+
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+        
+        
+        <!-- 系统环境 -->
+        <div class="col-md-6">
+          <div id="ready" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+              <div class="pull-left">
+              
+                <a href="#ready">准备</a></div>
+              <div class="widget-icons pull-right">
+                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+              </div>  
+              <div class="clearfix"></div>
+            </div><!-- end .widget-head -->
+            
+            <div class="widget-content">
+              <!-- Widget content -->
+              <ul class="file-upload">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#buy">购买许可</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      请购买
+                      <a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a> 
+                      的合法授权版本。同时检查该授权的使用是否在合法范围内。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#">操作系统</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a> 
+                      支持Windows (建议采用服务器版本)及Unix/Linux等系统。在准备安装和部署 
+                      <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      前，请确定你将要使用的操作系统以及相关配置的硬件。
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">数据库 </a></strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      请选定您要使用的数据库，并且提前安装好数据库系统。检查 <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台 的config/database/driver 下是否有该数据库的驱动定义以及定义中的jdbc库文件。如果缺失，请像您的经销商索取。
+                    </p>
+                  </div>
+                </li>            
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">JDK</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      通过<a href="http://java.sun.com" target="_blank">JAVA官方网站</a>获取可靠的JDK版本下载。下载前请确认您购买的<img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台 版本所需要支持的JDK版本。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                     <a href="#">J2EE Servlet</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      根据您部署的业务环境，选择您的Servlet容器。一个推荐的低成本选择是下载<a href="http://tomcat.apache.org" target="_blank">Tomcat</a> 免费开源的Servlet容器。
+                    </p>
+                  </div>
+                </li>                                                                                                                      
+              </ul>
+
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+            
+        <!-- 协同 -->
+        <div class="col-md-6">
+          
+        </div><!--end.col-md-6-->
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div id="install" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+               <div class="pull-left">
+                 <a href="#install">安装</a>
+               </div>
+               <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+               </div>  
+               <div class="clearfix"></div>
+            </div>
+
+            <div class="widget-content">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://www.tekinfo.net">
+                  <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                </a>
+                安装非常简单，只要把程序包拷贝到您配置好的Servlet容器中完成。下面以windows下安装Tomcat中的统一资源平台为例说明：
+              </p>
+              <!-- Widget content -->
+              <ol id="slist">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#install">环境变量</a> 
+                  </strong>
+                  <div class="file-meta">在操作系统中成功安装所需JDK后，设置“环境变量”（在Windows系统中，右键点击“我的电脑”->"属性"->"高级系统设置"->"环境变量",在系统变量中添加）：<br/>
+                  JAVA_HOME=  &lt;jdk实际安装路径&gt;;<br/>
+                  PATH=&lt;补充jdk实际安装路径/bin&gt;;</div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">Tomcat</a>
+                  </strong>
+                  <div class="file-meta">下载并安装Tomcat。根据需要，在Tomcat安装路径的conf目录下，配置启动端口。（建议使用SSL端口，提高安全性）</div>
+                </li>
+                
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">复制Tekinfo </a>
+                  </strong>
+                  <div class="file-meta">将Tekinfo程序包复制到tomcat项目路径下，可以使用webapps/tekinfo目录，也可以直接覆盖webapps/ROOT。具体参看tomcat文档。</div>
+                </li>
+                 
+                 <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">配置数据库 </a>
+                  </strong>
+                  <div class="file-meta">在Tekinfo程序包目录下，找到：<br>
+                  config/database/driver <br/>
+                  下，使用的数据库配置文件，例如:config/database/driver/mysql/mysql.xml。使用文本编辑软件编辑：<br/>
+                  &lt;url value=&quot;jdbc:mysql://localhost:3306/&lt;您创建的数据库名&gt;&quot; /&gt;<br/>
+                  &lt;user value=&quot;&lt;数据库连接用户名&gt;&quot; /&gt;<br/>
+                  &lt;password value=&quot;数据库连接用户保密字&quot; /&gt; </div>
+                </li>
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">启动 </a>
+                  </strong>
+                  <div class="file-meta">
+                    配置完成，启动tomcat即可。
+                  
+                  </div>
+                </li>
+                                                                                                                               
+              </ol>
+
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+        
+        <div class="col-md-6">
+          <div id="initial" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+               <div class="pull-left">
+                 <a href="#initial">初始化</a>
+               </div>
+               <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+               </div>  
+               <div class="clearfix"></div>
+            </div>
+
+            <div class="widget-content">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://www.tekinfo.net">
+                  <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                </a>
+                安装完成后，需要对数据库进行初始化。步骤如下：
+              </p>
+              <!-- Widget content -->
+              <ol id="slist">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#install">运行</a> 
+                  </strong>
+                  <div class="file-meta">首先运行安装有统一资源平台的Servlet容器。成功运行后，使用浏览器（推荐Firefox/Chrome）访问相应的端口和你配置的tekinfo路径。例如：<br/>
+                  http://localhost:8080/tekinfo<br/>
+                  或者<br/>
+                  http://localhost:8080/<br/>
+                  </div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">管理员控制台</a>
+                  </strong>
+                  <div class="file-meta">
+                    登录后访问管理员控制台，或者直接访问控制台按照提示登录。初始安装后：<br/>
+                    用户名：admin<br/>
+                    保密字：tekinfo<br/>
+                    对于使用 <a href="http://ipass.space" target="_blank"><img src="../logo/ipass-banner.png" height="22" alt="ipass"/>统一认证 作为登录系统的用户，相关配置请访问您购买的ipass系统或者访问<a href="http://ipass.space" target="_blank">http://ipass.space</a>寻求帮助。
+                    
+                  </div>
+                </li>
+                
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">初始化数据库</a>
+                  </strong>
+                  <div class="file-meta">在管理员控制面板，选择“初始化数据库”选项，对数据库系统进行初始化。数据库初始化主要是创建相关数据库表。</div>
+                </li>
+                 
+                 <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">初始化对象 </a>
+                  </strong>
+                  <div class="file-meta">在管理员控制面板，选择“初始化对象”，点击运行，系统将把运行所需要的初始对象导入到数据库表中。
+                </li>
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">重新启动 </a>
+                  </strong>
+                  <div class="file-meta">
+                    设置完成后，重新启动系统即可。
+                  
+                  </div>
+                </li>
+                                                                                                                               
+              </ol>
+
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+            
+          
+      </div> <!-- end .row -->
+	  
+	<!-- InstanceEndEditable -->   
+    </div><!-- end .container -->
+  </div><!-- Matter ends -->
+
+    
+  <div class="clearfix"></div>
+  
+</div><!-- end .content-->
+<!-- Content ends -->
+
+<!-- Footer starts -->
+<footer>
+    <!-- 正常宽屏幕显示--> 
+    <div class="row show_wide">
+      <div class="col-xs-12">
+        <div class="col-left">
+          <!-- Copyright info -->
+          <p class="copy" style="margin-top:4px;">
+            Copyright &copy; 1999 <a href="http://www.tekinfo.net"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt=""/></a>&nbsp;|&nbsp;京ICP备05051218号&nbsp;|&nbsp;
+            
+            <!-- 友盟统计 tekinfo.net -->
+            <script type="text/javascript">
+			  var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			  document.write(unescape("%3Cspan id='cnzz_stat_icon_3661086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D3661086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+          </p>
+        </div>
+        <div class="col-right">
+          <p class="pull-right">
+            Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>&nbsp;|&nbsp;
+            Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-left">
+          <p class="pull-left">
+            服务器时间:<span id="serverTime" class="text-left"></span> &nbsp;&nbsp;
+            客户端时间:<span id="clientTime" class="text-left"></span>
+          </p>
+        </div>
+        <div class="col-right">
+          <p class="pull-right">
+            <a href="../transaction/add.html">建议和意见</a>:
+            <a style="word-wrap:break-word;" href="mailto:service@takall.com">service@takall.com</a>
+            &nbsp;&nbsp;
+            <a href="../transaction/add.html">支持和帮助</a>:
+            <a style="word-wrap:break-word;" href="mailto:support@takall.com">support@takall.com</a>
+          </p>
+        </div>
+      </div>
+    </div><!--  end 正常宽屏幕显示-->
+    
+    <!-- 窄宽屏幕显示-->
+    <div class="row show_narrow">
+      <div class="col-xs-12">
+        <!-- Copyright info -->
+        <p class="copy" style="margin-top:4px;">
+          Copyright &copy; 1999 <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a> 
+        </p>
+      </div>
+      <div class="col-xs-12">
+        <p class="pull-left">
+          Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>&nbsp;|&nbsp;
+          Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a>
+        </p>
+      </div>
+    </div><!-- end 窄宽屏幕显示-->
+
+</footer>
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span>
+
+<!-- JS -->
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script type="text/javascript" src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- jQuery Slim Scroll -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/excanvas.min.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.resize.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.pie.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<!--<script type="text/javascript" src="../http/style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<!--<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script type="text/javascript">
+function initial(){
+	tek.serverTimer.show();
+	
+	// 百度统计代码 readbook.com
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?703b98aa2c2b5b023c1f9db31d4e2511";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script>
+
+</body>
+<!-- InstanceEnd --></html>

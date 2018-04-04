@@ -1,0 +1,282 @@
+body {
+	text-align:center;
+	margin:0px;	
+}
+ 
+#main { 
+	width: 960px; 
+	height: auto;
+	margin: 25px auto 0 auto; 
+}
+
+
+.inputBox
+{
+	float:left;
+	width:200px;
+	margin-top:5px;
+	color:#aaa;
+}
+
+input,select,textarea
+{
+  width:200px;
+  font-size: small;
+}
+
+.search
+{
+    width:auto;
+	height:30px;
+	float:left;
+    margin-top:10px;
+}
+
+#go {
+	width:auto;
+}
+
+#searchBtn,#searchBtn:active
+{
+	width:55px;
+	height:30px;
+	background:url(images/search.png) no-repeat top center;
+	border:none;
+	cursor:pointer;
+	float:left;
+}
+
+
+#left li
+{
+    width:150px;
+    height:50px;
+}
+
+#left a,#left a:link,#left a:visited, #left a:hover
+{
+	color: #303030; 
+	text-decoration: none; 	
+	font-size:13px;
+	line-height:50px;
+    text-align :center; 
+}
+
+#list
+{
+    width:200px;
+	min-height:500px;
+	height:680px;
+ 	float:left;
+	padding:15px 0px 10px 0px;
+	display: inline;
+}
+
+#right
+{
+	display: inline;
+ 	text-align:left;
+	height:auto;
+	min-height:500px;
+	width:auto;
+ 	float:right;
+}
+
+.content
+{
+    padding:15px 0px 10px 0px;
+    position:relative;
+   
+}
+
+.content li
+{
+    padding:15px 0px 15px 0px;
+    position:relative;
+    border-bottom:1px solid #dddddd;
+}
+
+#column
+{
+	padding:15px 0px 15px 0px;
+	list-style: none;
+}
+	#column li
+	{
+		width:220px;
+		list-style: none;
+		padding:1px 2px 1px 2px;
+		float:left;
+	}
+	
+.menu { 
+	font-size: small;
+	float: right; 
+	color: #808080; 
+	padding: 18px 1px 5px 0px; 
+	margin: 0; 
+}
+.menu li { 
+	padding: 1px 18px 1px 18px
+	color: #444; 
+	display: inline;
+}	
+.menu li.active { 
+	background: #fff; 
+	color: #8D9CAF; 
+	font-weight: bold; 
+	padding: 1px 18px 1px 18px; 
+	margin: 0 1px 0 0; 
+}
+.menu li a { 
+	background: #f8f8f8; 
+	color: #808080; 
+	text-decoration: none; 
+} 	
+.menu li a:hover { 
+	color: #000; 
+	background: #f8f8f8; 
+} 
+.menu li select {
+	width:auto;
+}
+.menu li img {
+	height:auto;
+	vertical-align:middle;	
+}
+
+#info ul {
+	margin: 0;
+	padding: 21px 0 0 30px;
+	list-style: none;
+	line-height: normal;
+}
+
+#info li {
+	width:200px;
+	font-size:small;
+	float: left;
+	padding: 0 20px 0 22px;
+}
+
+#info li.first {
+	background: none;
+}
+
+.field{
+	clear:both;
+	min-width:260px
+	margin:1px;
+	padding:1px,2px,1px,2px;
+	font-size:small;
+	list-style: none;
+}
+
+.field li{
+	float:left;
+	text-align:left;
+}
+
+.field li.title{
+	text-align:left;
+	width:100px;
+}
+
+.field li.value{
+	text-align:right;
+	width:auto;
+}
+
+.field li.value input {
+	width:auto;
+}
+
+.button {
+	clear:both;
+	margin:1px;
+	padding:1px,2px,1px,2px;
+	font-size:small;
+	list-style: none;
+}
+.button input {
+	float:left;
+	width:auto;
+	text-align:center;
+}
+
+.msg {
+	text-align:center;
+	float:left;
+}
+
+<!-- ±êÇ© -->
+.nTab{
+	font-size:small;
+	float: left;
+	width:100%;
+	min-width: 542px;
+	margin: 0 auto;
+	border-bottom:1px #C7C7CD solid;
+	background:#d5d5d5;
+	background-position:left;
+	background-repeat:repeat-y;
+	margin-bottom:2px;
+}
+
+.nTab .TabTitle{
+	clear: both;
+	font-size:small;
+	height: 25px;
+	overflow: hidden;
+}
+
+.nTab .TabTitle ul{
+	margin:0;
+	padding:0;
+}
+
+.nTab .TabTitle #tab li{
+	float: left;
+	width: 60px;
+	height: 25px;
+	cursor: pointer;
+	padding-top: 6px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 7px;
+	list-style-type: none;
+	text-align:center;
+}
+
+.nTab .TabTitle .active{
+	background:url(images/table.gif) left -25px no-repeat;
+	border-left:1px  #C7C7CD solid;
+	border-top:1px  #C7C7CD solid;
+	border-right:1px  #C7C7CD solid;
+	border-bottom:1px #fff solid;
+}
+	
+.nTab .TabTitle .normal{ 
+	background: #FFF left -25px no-repeat;
+	border-left:1px  #C7C7CD solid;
+	border-top:1px  #C7C7CD solid;
+	border-right:1px  #C7C7CD solid;
+}
+	
+.nTab .TabContent{
+	width:100%;
+	height:100%;
+}
+
+.nTab .TabContent #content {
+	width:100%;
+	height:100%;
+	min-height:500px;
+	background:#fff;
+	margin: 0px auto;
+	padding:10px 0 0 0;
+	border-top:1px #C7C7CD solid;
+	border-bottom:1px #C7C7CD solid;
+	border-left:1px #C7C7CD solid;
+	border-right:1px #C7C7CD solid;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 应用程序管理 -->
+<tekinfo>
+  <database>
+    <table>
+      <application>
+        <item>
+          <!-- 标识 -->
+          <application_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <application_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名字 -->
+          <application_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 标识名字 -->
+          <application_idname value="VARCHAR(255)"/>
+          
+          <!-- 版本号 -->
+          <application_version value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 应用程序分类 -->
+          <application_tags value="VARCHAR(512) NOT NULL"/>
+          <!-- 应用程序大小 -->
+          <application_size value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 发布时间 -->
+          <application_time value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 操作系统 -->
+          <application_os value="VARCHAR(255) NOT NULL"/>
+          <!-- 支持最低版本 -->
+          <application_mini value="VARCHAR(255) NOT NULL"/>
+          <!-- 概要 -->
+          <application_summary value="VARCHAR(128) NOT NULL"/>
+          <!-- 说明 -->
+          <application_remark value="MEMO NOT NULL"/>
+          
+          <!-- 所属单位 -->
+          <application_org value="VARCHAR(255) NOT NULL"/>
+          <!-- 下载路径 -->
+          <application_url value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 应用程序状态 -->
+          <application_status value="INT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 应用安装次数 -->
+          <application_install value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 应用卸载次数 -->
+          <application_uninstall value="INT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 应用程序所有者 -->
+          <application_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- MIME类型 -->
+          <application_mime value="VARCHAR(255)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </application>
+    </table>
+  </database>
+</tekinfo>

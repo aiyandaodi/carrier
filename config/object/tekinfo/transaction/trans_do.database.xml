@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 问题解答对象  -->
+<tekinfo>
+  <database>
+    <table>
+      <trans_do>
+        <item>
+          <!-- 标识 -->
+          <trans_do_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <trans_do_code  value="VARCHAR(128) NOT NULL"/>
+          <!-- 解答标题 -->
+          <trans_do_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 解答内容摘要 -->
+          <trans_do_summary value="VARCHAR(1024)"/>
+          
+          <!-- 解答内容长度 -->
+          <trans_do_length value="BIGINT DEFAULT '0'"/>
+          <!-- 解答内容MIME格式 -->
+          <trans_do_mime value="VARCHAR(255)"/>
+          <!-- 解答内容本地存放路径 -->
+          <trans_do_path value="VARCHAR(1024)"/>
+
+          <!-- 所属问题对象 -->
+          <trans_do_transaction value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 解答类型（-1-停止；0-已经结束；0x10-提问；0x20-应答；0x40-转处理） -->
+          <trans_do_type value="INT DEFAULT '0'"/>
+          <!-- 状态 -->
+          <trans_do_status value="TINYINT DEFAULT '0'"/>
+
+          <!-- 转处理对象类型名 -->
+          <trans_do_objectName value="VARCHAR(255)"/>
+          <!-- 转处理对象标识 -->
+          <trans_do_objectId value="BIGINT DEFAULT '0'"/>
+          <!-- 转处理期望应答时间（分钟） -->
+          <trans_do_time value="INT DEFAULT '1200'"/>
+
+          <!-- 本次解答人 -->
+          <trans_do_user value="BIGINT DEFAULT '0'"/>
+
+          <!-- 对该处理点赞 -->
+          <trans_do_support value="INT DEFAULT '0'"/>
+          <!-- 对该处理反对 -->
+          <trans_do_anti value="INT DEFAULT '0'"/>
+
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </trans_do>
+    </table>
+  </database>
+</tekinfo>

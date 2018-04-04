@@ -1,0 +1,36 @@
+.info-buttons .col-md-12{
+	padding: 15px 5px;
+}
+
+.info-buttons button{
+	margin-right: 5px;
+}
+
+.heading-date input {
+    position: relative;
+    top: 0px;
+    margin-right: 8px;
+    line-height: normal;
+	max-width:25px;
+}
+
+.pagination li {
+    padding:0px;
+}
+
+#waiting-modal-dialog{
+	z-index: 1060;
+}
+
+.pagination-sm>li>a, .pagination-sm>li>span {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 2em;
+}
+
+.left{
+	text-align:left;
+}
+#tekinfo_main {
+    padding-bottom: 15px;
+}

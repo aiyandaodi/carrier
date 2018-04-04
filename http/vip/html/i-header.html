@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<body>
+    <div id="navbar" class="navbar navbar-fixed-top bs-docs-nav" >
+    <!-- Navigation starts -->
+        <nav>
+
+            <!--<div class=" pull-left">
+            <a href="javascript:tek.core.goHome();" class="dropdown-toggle" title="能力维度">
+            <img src="../../ican/logo/ican-banner-128.png" alt="ICAN.VIP" title="能力维度" longdesc="http://www.ican.vip" /> 
+            </a>
+            </div>-->
+            <ul class="nav navbar-nav pull-left">
+                <!--主页--> 
+                <li class="dropdown dropdown-big">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"><i class="fa fa-cloud-upload"></i></span>返回</a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:tek.core.goBack();"><span class="label label-info"><i class="fa fa-cloud"></i></span>返回前页</a>
+                            
+                            <a href="javascript:tek.core.goHome();"><span class="label label-warning"><i class="fa fa-cloud"></i></span>返回系统</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--Help -->
+                <!-- <li class="dropdown dropdown-big">
+                <a href="help.html" target="_blank"><span class="label label-info"><i class="fa fa-book"></i></span>帮助</a>
+                </li> -->
+            </ul>
+            <ul class="nav navbar-nav pull-right infoUl">
+                <li id="label_register" class="pull-right">
+                    <a href="javascript:goRegister();">
+                    <i class="fa fa-info"></i>
+                    <span id="user-register">注册</span>
+                    </a>
+                </li>
+
+                <li id="label_login" class="pull-right">
+                    <a href="javascript:iLogin();">
+                    <i class="fa fa-sign-in"></i>
+                    <span id="user-login">登录</span>
+                    </a>
+                </li>
+
+                <li id="label_user" class="dropdown pull-right" style="display:none;">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="fa fa-user"></i>
+                        <span id="user-name">用户名</span>
+                        <b class="caret"></b>
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu">
+                        <li id="user_account">
+                            <a href="javascript:myUser();">
+
+                                <span class="label label-primary"><i class="fa fa-user-secret"></i></span> 我的账户
+                            </a>
+                        </li>
+                        <li id="user_ican" class="hide">
+                            <a href="javascript:goIcanAudit();">
+                            <!--							<i class="fa fa-tasks"></i>-->
+                                <span class="label label-success"><i class="fa fa-tasks"></i></span> 后台管理
+                            </a>
+                        </li>
+                        <li id="user_takall" class="hide">
+                            <a href="javascript:goTakallAudit();">
+                                <!--							<i class="fa fa-tasks"></i>-->
+                                <span class="label label-danger"><i class="fa fa-check-square"></i></span> 审计后台
+                            </a>
+                        </li>
+
+                        <li id="user_tekinfo" class="hide">
+                            <a href="javascript:goTekinfoAudit();">
+                            <!--							<i class="fa fa-tasks"></i>-->
+                            <span class="label label-warning"><i class="fa fa-desktop"></i></span> 系统管理
+                            </a>
+                        </li>
+
+                        <li id="user_profile">
+                        <a href="javascript:goLogout();">
+                        <!--                			<i class="fa fa-sign-out"></i>-->
+                        <span class="label label-info"><i class="fa fa-sign-out"></i></span> 退出系统
+                        </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    <!-- </div>end.conjtainer -->
+    </div>
+
+</body>	
+</html>

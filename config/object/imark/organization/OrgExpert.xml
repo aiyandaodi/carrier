@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 专家照片  -->
+<tekinfo>
+  <object>
+    <OrgExpert ResourceBundle="com.takall.object.organization.OrgExpert"
+        Structure="com.takall.organization.OrgExpert"
+        ObjectRm="com.takall.remoting.organization.OrgExpertRm">
+      <autovalue>
+        <org_expert_id base="identity"/>
+        <org_expert_code base="" step="1" digit="10"/>
+      </autovalue>
+      
+      <nosamevalue>
+        <org_expert_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="org_expert_name" codeIdentity="null" ownerIdentity="null">
+        <org_expert identity="org_expert_id"/>
+        <org_expert_icon identity="org_expert_id"/>
+        <org_expert_icon_blob identity="org_expert_id"/>
+      </table>
+      
+      <icon table="org_expert_icon"
+          blobTable="org_expert_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <org_expert_name/>
+            <org_expert_title/>
+            <org_expert_remark/>
+            <org_expert_type/>
+            <!-- <org_expert_expert/> -->
+            <org_expert_employ/>
+            <org_expert_introduction/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <org_expert_code rightrole="audit"/>
+            <org_expert_name/>
+            <org_expert_title/>
+            <org_expert_remark/>
+            <org_expert_type/>
+            <!-- <org_expert_expert/> -->
+            <org_expert_employ/>
+            <org_expert_introduction/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <org_expert_code rightrole="audit"/>
+            <org_expert_name/>
+            <org_expert_title/>
+            <org_expert_remark/>
+            <org_expert_type/>
+            <!-- <org_expert_expert/> -->
+            <org_expert_organization/>
+            <org_expert_employ/>
+            <org_expert_introduction/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <org_expert_name/>
+            <org_expert_title/>
+            <org_expert_remark/>
+            <org_expert_type/>
+            <!-- <org_expert_expert/> -->
+            <org_expert_organization/>
+            <org_expert_employ/>
+            <org_expert_introduction/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <org_expert_name/>
+            <org_expert_title/>
+            <org_expert_remark/>
+            <org_expert_type/>
+            <!-- <org_expert_expert/> -->
+            <org_expert_employ/>
+            <org_expert_introduction/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x0"/>
+          </parameter>
+          <item>
+          </item>
+        </textSearch>
+        
+        <upload>
+          <parameter>
+            <!-- 支持的文件后缀名（以“,”分割）-->
+            <support_suffix value="png,jpg,bmp"/>
+            <!-- 是否是图片文件 -->
+            <icon_file value="true"/>
+            <!-- 允许的文件最大长度 -->
+            <max_length value="5MB"/>
+            
+            <!-- 图片最小宽度 -->
+            <min_width value="300"/>
+            <!-- 图片最大宽度 -->
+            <max_width value="400"/>
+            <!-- 图片最小高度 -->
+            <min_height value="0"/>
+            <!-- 图片最大高度 -->
+            <max_height value="0"/>
+          </parameter>
+        </upload>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <org_expert_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <org_expert_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 专家姓名 -->
+        <org_expert_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 职称 -->
+        <org_expert_title variable="string" maxlength="128"/>
+        <!-- 专家说明 -->
+        <org_expert_remark variable="string" format="textarea:4"/>
+        <!-- 类型 -->
+        <org_expert_type variable="int" parse="dictionary:OrgExpert" format="single" notnull="true"/>
+        <!-- 是否是专家辅助人 -->
+        <org_expert_expert variable="long" parse="object:Expert"/>
+        <!-- 所属机构 -->
+        <org_expert_organization variable="long" parse="object:Organization" notnull="true"/>
+        <!-- 职务 -->
+        <org_expert_employ variable="string" maxlength="128"/>
+        <!-- 特别介绍 -->
+        <org_expert_introduction variable="string" maxlength="255"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </OrgExpert>
+  </object>
+</tekinfo>

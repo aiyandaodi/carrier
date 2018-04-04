@@ -1,0 +1,17 @@
+#Favorite
+name=收藏
+
+#property
+property.favorite_id=标识
+property.favorite_code=编码
+property.favorite_name=名字
+property.favorite_linkName=收藏对象类型名
+property.favorite_linkId=收藏对象标识
+property.favorite_url=收藏的网址
+property.favorite_color=颜色
+property.favorite_tag=标签
+property.favorite_set=所属收藏集
+property.favorite_owner=所有者
+
+#message
+message.error.invalidFavoriteSet=无效的收藏集!

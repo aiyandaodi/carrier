@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#add_a_city{
+  line-height: 50px;
+  font-size: 18px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 15px;
+}
+
+#city_form>div>label{
+  text-align: right;
+}
+
+#city_btn{
+  text-align: right;
+}
+
+#city_btn button{
+  margin: 5px;
+}
+.experience_work {
+	display: none;
+}
+.ui-105-content .dropdown-menu {
+	padding: 0px 10px 5px;
+	margin-left: 18px;
+}
+.ui-105-content .dropdown-menu li {
+	cursor: pointer;
+	padding: 0;
+}
+.ui-105-content .dropdown-menu li span{
+	width: 15px;
+	height: 15px;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 15px 5px 0 0;
+}
+.ui-105-content .dropdown-menu li strong {
+	font-weight: normal;
+}
+.ui-105-content .dropdown-menu li:first-child span{
+	background: #49BA17;
+}
+.ui-105-content .dropdown-menu li:nth-child(2) span{
+	background: #E33A0C;
+}
+.ui-105-content .dropdown-menu li:last-child span{
+	background: #3B3B3B;
+}

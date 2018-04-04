@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 任务执行  -->
+<tekinfo>
+  <object>
+    <HostWork ResourceBundle="com.takall.work.HostWork"
+        Structure="com.takall.work.HostWork"
+        ObjectRm="com.takall.remoting.work.HostWorkRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <host_work_id base="identity"/>
+        <host_work_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+      </autovalue>
+      <nosamevalue>
+        <host_work_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="host_work_name" codeIdentity="null" ownerIdentity="null">
+        <host_work identity="host_work_id"/>
+      </table>
+
+      <command>
+        <add url="http/ipower/work/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_work_code/>
+            <host_work_name/>
+            
+            <host_work_type/>
+            <host_work_owner/>
+            
+            <host_work_task/>
+            <host_work_status/>
+            <host_work_error/>
+
+            <host_work_start/>
+            <host_work_end/>
+          </item>
+        </add>
+        
+        <edit url="http/ipower/work/edit.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_work_code/>
+            <host_work_name/>
+            
+            <host_work_type/>
+            <host_work_owner/>
+            
+            <host_work_task/>
+            <host_work_status/>
+            <host_work_error/>
+
+            <host_work_start/>
+            <host_work_end/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ipower/work/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <host_work_code/>
+            <host_work_name/>
+            
+            <host_work_type/>
+            <host_work_owner/>
+            
+            <host_work_task/>
+            <host_work_status/>
+            <host_work_error/>
+
+            <host_work_start/>
+            <host_work_end/>
+            
+            <createTime/>
+          </item>
+        </read>
+        
+        <list url="http/ipower/work/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_work_code/>
+            <host_work_name/>
+            
+            <host_work_type/>
+            <host_work_owner/>
+            
+            <host_work_task/>
+            <host_work_status/>
+            <host_work_error/>
+
+            <host_work_start/>
+            <host_work_end/>
+
+            <createTime/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_work_name/>
+            <host_work_status/>
+          </item>
+        </search>
+        
+        <remove url="http/ipower/work/remove.html">
+          <parameter>
+        
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <host_work_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <host_work_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 工作名称 -->
+        <host_work_name variable="string" maxlength="255" notnull="true"/>
+
+        <!-- 工作类型 -->
+        <host_work_type variable="int" parse="enum" format="single" default="0" notnull="true">
+          <auto value="0"/>    <!-- 自动 -->
+          <notauto value="1"/>    <!-- 错误 -->
+        </host_work_type>
+
+        <!-- 工作所有者 -->
+        <host_work_owner variable="long" parse="object:User" notnull="true" default="0"/>
+        <!-- 任务标识 -->
+        <host_work_task variable="long" parse="object:HostTask" notnull="true"/>
+        
+        <!-- 工作进行的状态值 -->
+        <host_work_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="0"/>    <!-- 执行完毕 -->
+          <error value="-1"/>    <!-- 错误 -->
+          <valid value="1"/>    <!-- 正常运行 -->
+        </host_work_status>
+
+        <!-- 执行的错误数 -->
+        <host_work_error  variable="string" maxlength="255"/>
+
+        <!-- 有效开始时间 -->
+        <host_work_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+        <!-- 有效结束时间 -->
+        <host_work_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+
+
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </HostWork>
+  </object>
+</tekinfo>

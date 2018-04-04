@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+.ui-list > a, .ui-list > a:hover,.ui-list >  a:focus {
+	text-decoration: none !important;
+}
+.menu-body{
+	position: absolute;
+	bottom: 25px;
+	right: 30px;
+	height: 0px;
+	opacity: 0;
+	font-size: 1em;
+	
+}
+a.popmenu-btn{
+	width: 53px;
+	height: 53px;
+	z-index: 10880;
+	position: absolute;
+	bottom:2px !important;
+	right:-5px !important;
+	line-height: 60px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 52px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+	
+} 
+@media (max-width:450px) {
+	a.popmenu-btn{
+		padding-top: 2px;
+
+	}
+}

@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+    width: 53px;
+    height: 53px;
+    line-height: 46px;
+    border-radius: 100% !important;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+/* UI X */
+/* Login-Register */
+.login-reg{
+	max-width:600px;
+	margin:100px auto;
+	padding:30px;
+	background:#fff;
+	box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+	border-radius:5px !important;
+}
+@media (max-width:450px){
+	.login-reg{
+		margin:50px 20px;
+	}
+}
+.login-reg h4{
+	text-align:center;
+}
+.login-reg .s-media{
+	text-align:center;
+}
+.login-reg .s-media a.btn{
+	margin:2px 5px;
+}
+/* Inside login and register form */
+.login-reg-form form{
+	max-width:500px;
+}
+@media (max-width:991px){
+	.login-reg-form{
+		max-width:500px;
+	}
+}
+.login-reg-form form .form-control{
+	padding:3px 12px;
+}
+.radio-checkbox-ul {
+	list-style: none;
+}
+.row {
+	padding-left: 0;
+	padding-right: 0;
+}
+ .dropdown-menu {
+    padding: 0px 10px 5px;
+    margin-left: 18px;
+}
+.dropdown-menu li {
+    cursor: pointer;
+    padding: 0;
+}
+.dropdown-menu li span{
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 15px 5px 0 0;
+}
+.dropdown-menu li strong {
+    font-weight: normal;
+}
+ .dropdown-menu li:first-child span{
+    background: #49BA17;
+}
+.dropdown-menu li:nth-child(2) span{
+    background: #E33A0C;
+}
+.dropdown-menu li:last-child span{
+    background: #3B3B3B;
+}
+
+
+.form-group label {
+    text-align: right;
+}
+@media (max-width: 460px) {
+    label.col-xs-3 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+input[type="radio"] {
+    margin-top: 9px;
+}
+ label.col-xs-11 {
+    padding-left: 0;
+    padding-right: 0;
+}
+textarea {
+    resize: vertical;
+}
+@media (max-width:450px){
+    .login-reg{
+        margin:20px 20px;
+    }
+    .login-reg{
+        box-shadow: none !important;
+        padding:30px 15px;
+    }
+}

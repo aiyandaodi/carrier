@@ -1,0 +1,12 @@
+name=电子邮件
+
+#property
+property.email_id=标识
+property.email_code=编码
+property.email_name=名称
+property.email_box=电子邮箱
+property.email_contact=所属联系人
+property.email_address=邮件地址
+
+#email
+message.name.email=电子邮箱

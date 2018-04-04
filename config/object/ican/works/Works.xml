@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 人生经历  -->
+<tekinfo>
+  <object>
+    <Works ResourceBundle="com.takall.works.Works"
+        Structure="com.takall.works.Works"
+        ObjectRm="com.takall.remoting.works.WorksRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <works_id base="identity"/>
+        <works_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <works_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <works_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="works_name" codeIdentity="null" ownerIdentity="null">
+        <works identity="works_id"/>
+      </table>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <works_name/>
+            <works_counts/>
+            
+            <works_tag/>
+            
+            <works_owner/>
+            <works_orgname/>
+            
+            <works_property/>
+            <works_type/>
+            <works_status/>
+            
+            <works_start/>
+            <works_end/>
+            <works_color/>
+            <works_url/>
+            <works_remark/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <works_name/>
+            <works_counts/>
+            
+            <works_tag/>
+            
+            <works_owner/>
+            <works_orgname/>
+            
+            
+            <works_type/>
+            <works_status/>
+            
+            <works_start/>
+            <works_end/>
+            <works_color/>
+            <works_url/>
+            <works_remark/>
+            
+          </item>
+        </edit>
+
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <works_name/>
+            <works_counts/>
+            
+            <works_tag/>
+            
+            <works_owner/>
+            <works_orgname/>
+            
+            
+            <works_type/>
+            <works_status/>
+            
+            <works_start/>
+            <works_end/>
+            <works_color/>
+            <works_url/>
+            <works_remark/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <works_name/>
+            <works_counts/>
+            
+            <works_tag/>
+            
+            <works_owner/>
+            <works_orgname/>
+            
+            
+            <works_type/>
+            <works_status/>
+            
+            <works_start/>
+            <works_end/>
+            <works_color/>
+            <works_url/>
+            <works_remark/>
+            
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <works_name/>
+            
+            <works_type/>
+            <works_tag/>
+            <works_catalog/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <works_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <works_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 人生经历名称 -->
+        <works_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 人生经历人数 -->
+        <works_counts variable="int" default="0" notnull="true"/>
+        <!-- 所属组织 -->
+        <works_orgname variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 人生经历类型 -->
+        <works_type variable="int" parse="dictionary:Works" default="4096" format="option" notnull="true">
+        </works_type>
+        
+        <!-- 读取权限 -->
+        <works_property variable="int" parse="enum" default="1" format="single" notnull="true">
+          <anonymous value="0"/>    <!-- 匿名 -->
+          <exeryone value="0x01"/>    <!-- 系统用户 -->
+          <follow value="0x02"/>    <!-- 关注者 -->
+          <friend value="0x04"/>    <!-- 好友 -->
+          <group value="0x08"/>    <!-- 同组 -->
+          <pay value="0x8000"/>    <!-- 付费 -->
+        </works_property>
+        
+        <!-- 标签 -->
+        <works_tag  variable="string" parse="tag" maxlength="256"/>
+        <!-- 颜色 -->
+        <works_color  variable="string" />
+        
+        <!-- 人生经历网址 -->
+        <works_url  variable="string"  maxlength="256"/>
+
+        
+        <!-- 状态 -->
+        <works_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="-1"/>    <!-- 停止 -->
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+        </works_status>
+        <works_role variable="int" default="0" notnull="true" />
+        <!-- 所有者 -->
+        <works_owner variable="long" parse="object:User" notnull="true"/>
+       
+        <!-- 人生经历开始时间 -->
+        <works_start variable="string" parse="date" format="yyyy-MM-dd" notnull="true"/>
+        <!-- 人生经历结束时间 -->
+        <works_end variable="string" parse="date" format="yyyy-MM-dd" notnull="true"/>
+        
+        
+        <!-- 人生经历说明 -->
+        <works_remark variable="string" format="textarea:4"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </Works>
+  </object>
+</tekinfo>

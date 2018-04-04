@@ -1,0 +1,16 @@
+#UniCity_zh
+#
+name=区
+
+#property
+property.region_id=标识
+property.region_code=编码
+property.region_name=名字
+property.region_city=市(县)
+
+#read
+command.read.menu.file=市(县)
+command.read.menu.file.hint=市(县)的管理
+
+#message
+message.error.cityNotExist=市（县）不存在!

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 对象类型字典 -->
+<tekinfo>
+  <object>
+    <ObjectDictionary ResourceBundle="net.tekinfo.object.object.ObjectDictionary"
+        Structure="net.tekinfo.object.ObjectDictionary"
+        ObjectRm="net.tekinfo.remoting.object.ObjectDictionaryRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <dictionary_id base="identity"/>
+        <dictionary_code base="yyyyMM" step="1" digit="4" tree="default"/>
+      </autovalue>
+       
+      <table nameIdentity="dictionary_name" codeIdentity="dictionary_code">
+        <object_dictionary identity="dictionary_id"/>
+      </table>
+
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+            <dictionary_language/>
+            
+            <dictionary_targetObject/>
+            <dictionary_targetFields/>
+            <dictionary_property/>
+          </item>
+        </list>
+
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+            <dictionary_language/>
+            
+            <dictionary_targetObject/>
+            <dictionary_targetFields/>
+            <dictionary_property/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+            <dictionary_language/>
+            
+            <dictionary_targetObject/>
+            <dictionary_targetFields/>
+            <dictionary_property/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+            <dictionary_language/>
+            
+            <dictionary_targetObject/>
+            <dictionary_targetFields/>
+            <dictionary_property/>
+            
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+          </item>
+        </read>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户最近一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <dictionary_code/>
+            <dictionary_name/>
+            <dictionary_original/>
+            <dictionary_targetObject/>
+            <dictionary_targetFields/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <dictionary_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <dictionary_code variable="string" maxlength="20" notnull="true"/>
+        <!-- 定义的目标对象原文翻译 -->
+        <dictionary_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 定义的目标对象原文 -->
+        <dictionary_original variable="string" parse="string" maxlength="255" notnull="true"/>
+        <!-- 翻译成的语言（例如：原文original='苹果',目标对象翻译name='apple',翻译语言language='en_US'） -->
+        <dictionary_language variable="string" parse="enum" format="option" maxlength="5" notnull="true"/>
+        
+        <!-- 定义的目标对象类型名（如Transaction、Group、Subject等） -->
+        <dictionary_targetObject variable="string" parse="objectName" maxlength="255" notnull="true"/>
+        <!-- 定义的目标对象字段名 -->
+        <dictionary_targetFields variable="string" parse="string" maxlength="255" notnull="true"/>
+
+        <!-- 该词字典属性 -->
+        <dictionary_property variable="string" parse="string" maxlength="1024"/>
+       
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectDictionary>
+  </object>
+</tekinfo>

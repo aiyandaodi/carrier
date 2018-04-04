@@ -1,0 +1,15 @@
+name=专家照片
+
+#property
+property.org_expert_id=标识
+property.org_expert_code=编码
+property.org_expert_name=专家姓名
+property.org_expert_title=专家职称
+property.org_expert_remark=简介
+property.org_expert_type=专家类型
+property.org_expert_expert=是否是专家辅助人
+property.org_expert_employ=专家职务
+property.org_expert_introduction=特别介绍
+property.org_expert_organization=所属机构
+
+#message

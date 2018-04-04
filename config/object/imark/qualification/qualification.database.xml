@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 资质对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <qualification>
+        <item>
+          <!-- 标识 -->
+          <qualification_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <qualification_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 资质名称 -->
+          <qualification_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 颁发机构 -->
+          <qualification_authorizer value="VARCHAR(255)"/>
+          
+          <!-- 资质等级 -->
+          <qualification_grade value="VARCHAR(20) NOT NULL"/>
+          
+          <!-- 目录分类 -->
+          <qualification_catalog value="VARCHAR(128)"/>
+          <!-- 标签分类 -->
+          <qualification_tag value="VARCHAR(200)"/>
+          
+          <!-- 资质类型 --> 
+          <qualification_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 资质状态 --> 
+          <qualification_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <qualification_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属机构 -->
+          <qualification_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 备注说明 -->
+          <qualification_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </qualification>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 分类目录 -->
+<tekinfo>
+  <object>
+    <OrganizationBizregister 
+    	ResourceBundle="com.takall.object.organization.OrganizationBizregister"
+        Structure="com.takall.organization.OrganizationBizregister"
+        ObjectRm="com.takall.remoting.organization.OrganizationBizregisterRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <bizregister_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+        <!--<bizregister_code/>-->
+      </nosamevalue>
+      
+      <table nameIdentity="bizregister_name" codeIdentity="bizregister_code">
+      	<organization_bizregister identity="bizregister_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <bizregister_code/>
+            <bizregister_name/>
+            <bizregister_residence/>
+            <bizregister_type/>
+            <bizregister_hoster/>
+            <bizregister_license/>
+			<bizregister_scope/>
+			<bizregister_setup/>
+			<bizregister_start/>
+			<bizregister_end/>
+			<bizregister_gov/>
+			<bizregister_organization/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          	<bizregister_code/>
+            <bizregister_name/>
+            <bizregister_residence/>
+            <bizregister_type/>
+            <bizregister_hoster/>
+            <bizregister_license/>
+			<bizregister_scope/>
+			<bizregister_setup/>
+			<bizregister_start/>
+			<bizregister_end/>
+			<bizregister_gov/>
+			<bizregister_organization/>
+          </item>
+        </edit>
+        
+        <read>
+          <item>
+            <bizregister_code/>
+            <bizregister_name/>
+            <bizregister_residence/>
+            <bizregister_type/>
+            <bizregister_hoster/>
+            <bizregister_license/>
+			<bizregister_scope/>
+			<bizregister_setup/>
+			<bizregister_start/>
+			<bizregister_end/>
+			<bizregister_gov/>
+			<bizregister_organization/>
+          </item>
+        </read>
+        
+        <list>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+          	<bizregister_id/>
+            <bizregister_code/>
+            <bizregister_name/>
+            <bizregister_residence/>
+            <bizregister_type/>
+            <bizregister_hoster/>
+            <bizregister_license/>
+			<bizregister_scope/>
+			<bizregister_setup/>
+			<bizregister_start/>
+			<bizregister_end/>
+			<bizregister_gov/>
+			<bizregister_organization/>
+          </item>
+      	</list>
+
+        <search>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <bizregister_code/>
+            <bizregister_name/>
+          </item>
+      	</search>
+      	        
+        <remove>
+        	<parameter>
+        		<remove_sub value="true"/>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <bizregister_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 工商注册号 -->
+        <bizregister_code variable="string" maxlength="64" notnull="true" right="admin"/>
+        <!-- 名字 -->
+        <bizregister_name variable="string" maxlength="128" notnull="true"/>
+         <!-- 住所 -->
+        <bizregister_residence variable="string" maxlength="128" notnull="true"/>
+        <!-- 分类 -->
+        <bizregister_type variable="string" maxlength="255" notnull="true"/>
+        <!-- 法人代表 -->
+        <bizregister_hoster variable="string" maxlength="128" notnull="true"/>
+        <!-- 许可经营项目 -->
+        <bizregister_license variable="string" format="textarea:4" notnull="false"/>
+        <!-- 一般经营项目 -->
+        <bizregister_scope variable="string" format="textarea:4" notnull="false"/>
+        <!-- 成立日期 -->
+        <bizregister_setup variable="string" maxlength="10" parse="date" format="yyyy-MM-dd" default="now"/>
+        
+        <!-- 注册日期 -->
+        <bizregister_start variable="string" maxlength="10" parse="date" format="yyyy-MM-dd" default="now"/>
+        <!-- 截止日期 -->
+        <bizregister_end variable="string" maxlength="10" parse="date" format="yyyy-MM-dd" default="now"/>
+        
+        
+        <!-- 登记机关 -->
+        <bizregister_gov variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 所属机构 -->
+        <bizregister_organization variable="long" parse="object:Organization" default="0"/>
+        
+      	<createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </OrganizationBizregister>
+  </object>
+</tekinfo>

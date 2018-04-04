@@ -1,0 +1,123 @@
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.popmenu .ui-list{
+	bottom:-120px;
+}
+.ui-68{
+	max-width:1000px;
+	margin:10px auto;
+	padding:40px 20px;
+	/*border:1px solid #ddd;
+	border-radius: 5px !important;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;*/
+}
+.ui-68 .ui-content{
+	/*border:1px solid #ddd;*/
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+/* Form control */
+.ui-68 .form-control{
+	border:0px;
+	color:#999;
+	box-shadow:none;
+	padding:18px;
+	border-radius:0px;
+}
+.ui-68 .form-control:focus{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+}
+/* Button and Icon */
+.ui-68 .ui-buttons{
+	/*border-top:1px solid #ddd;
+	background:#f6f6f6;*/
+	border-bottom-left-radius:5px !important;
+	border-bottom-right-radius:5px !important;
+}
+@media(max-width: 500px){
+	.ui-68 .ui-buttons{
+		text-align:center;
+	}
+}
+.ui-68 .ui-buttons span{
+	font-size:1.2em;
+	color:#222;
+}
+/* Icon */
+.ui-68 .ui-buttons .ui-icon{
+	float:left;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons .ui-icon{
+		float:none;
+		margin-bottom:10px;
+	}
+}
+.ui-68 .ui-buttons .ui-icon a i{
+	font-size:15px;
+	line-height:20px;
+	margin:5px 10px;
+	color:#999;
+}
+/* Button */
+.ui-68 .ui-buttons a.btn{
+	float:right;
+	border:0px;
+}
+@media(max-width: 360px){
+	.ui-68 .ui-buttons a.btn{
+		float:none;
+		margin-bottom:10px;
+	}
+}
+@media(max-width: 500px){
+   /* #summernote_pc{
+       display: none;
+   } */
+}
+@media(max-width: 500px){
+  /*   #summernote_phone{
+      display: block;
+  } */
+}
+.ui-content .note-editable{
+	overflow-y:hidden;
+}
+.resume-control {
+	border: none;
+    /*border-bottom: 1px solid #ddd;*/
+    display: block;
+    width: 80%;
+    font-size: 1.8em !important;
+}
+.note-placeholder: {
+	color: #aaa !important;
+}
+h5 {
+	border-bottom: 1px solid #ddd;
+}
+#tijiaoanniu {
+	margin-top: 15px;
+}
+.note-editor {
+	min-height: 400px;
+}

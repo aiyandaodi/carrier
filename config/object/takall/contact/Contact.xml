@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息 -->
+<tekinfo>
+  <object>
+    <!-- 对象。
+         属性定义：ResourceBundle - 资源文件路径
+             Structure - 对象结构类路径
+             version - 对象定义版本号
+             resourceVersion - 资源文件版本号 -->
+    <Contact ResourceBundle="com.takall.contact.Contact"
+        Structure="com.takall.contact.Contact"
+        ObjectRm="com.takall.remoting.contact.ContactRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <contact_id base="identity"/>
+        <contact_code base="" step="1" digit="8"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="contact_name" codeIdentity="null">
+        <contact identity="contact_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+            <!-- 支持小组属性的链接对象（以“,”分割） -->
+            <group_support value=""/>
+            <!-- 支持对象的链接对象（以“,”分割） -->
+            <link_support value="User"/>
+            <!-- 支持对象标识的链接对象（以“,”分割） -->
+            <linkid_support value="User,Organization"/>
+            <!-- 支持公共的链接对象（以“,”分割） -->
+            <public_support value="User,Organization"/>
+            <!-- 支持个人的链接对象（以“,”分割） -->
+            <private_support value="User"/>
+          </parameter>
+          <item>
+            <contact_name/>
+            <contact_catalog/>
+            <contact_tags/>
+            <contact_color/>
+            <contact_owner/>
+            <contact_property/>
+            <contact_remark/>
+            <contact_default/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+            <!-- 支持小组属性的链接对象（以“,”分割） -->
+            <group_support value=""/>
+          </parameter>
+          <item>
+            <contact_name/>
+            <contact_catalog/>
+            <contact_tags/>
+            <contact_color/>
+            <contact_property/>
+            <contact_remark/>
+            <contact_default/>
+          </item>
+        </edit>
+
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <contact_name/>
+            <contact_owner/>
+            <contact_objectId/>
+            <contact_catalog/>
+            <contact_tags/>
+            <contact_color/>
+            <contact_property/>
+            <contact_remark/>
+            <!-- <contact_default/> -->
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <contact_name/>
+            <contact_owner/>
+            <contact_objectId/>
+            <contact_catalog/>
+            <contact_tags/>
+            <contact_color/>
+            <contact_property/>
+            <contact_remark/>
+          </item>
+        </list>
+        
+        <textSearch>
+          <item>
+            <contact_name/>
+            <contact_property/>
+            <contact_catalog/>
+            <contact_tags/>
+            <contact_color/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <!-- 消息应答 -->
+        <answer class="com.takall.contact.ContactAnswer"/>
+        
+        <!-- EXCEL导入联系信息 -->
+        <excelImport>
+          <parameter>
+          </parameter>
+        </excelImport>
+        
+        <export/>
+        <import/>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <contact_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <contact_code variable="string" maxlength="64"/>
+        <!-- 名称 -->
+        <contact_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 备注 -->
+        <contact_remark variable="string" format="textarea:4"/>
+        
+        <!-- 所属用户 -->
+        <contact_owner variable="long" parse="object:User" forbidEdit="true"/> 
+        <!-- 链接对象：对象类型名 -->
+        <contact_objectName variable="String" maxlength="64" parse="enum" format="option" forbidEdit="true">
+          <organization value="Organization"/>    <!-- 机构联系信息 -->
+          <user value="User"/>                    <!-- 通讯录 -->
+        </contact_objectName>
+        
+        <!-- 链接对象：对象标识 -->
+        <contact_objectId variable="long" parse="object:this.contact_objectName" forbidEdit="true"/>
+        
+        <!-- 目录分类 -->
+        <contact_catalog variable="string" maxlength="128"/>
+        <!-- 类型分类 -->
+        <contact_tags variable="string" maxlength="255" parse="tag"/>
+        <!-- 颜色分类 -->
+        <contact_color  variable="string" />
+        
+        <!-- 属性：阅读权限 -->
+        <contact_property variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <private value="0x00"/>            <!-- 只允许自己阅读 -->
+          <customerService value="0x01"/>    <!-- 客服人员可以阅读 -->
+          <admin value="0x02"/>              <!-- 群组有审核权的组员可以阅读 -->
+          <member value="0x04"/>             <!-- 组员可以阅读 -->
+          <user value="0x10"/>               <!-- 系统用户可以阅读 -->
+          <anonymous value="0x40"/>          <!-- 匿名者可以阅读 -->
+        </contact_property>
+        
+        <!-- 属性：是否是默认联系信息 -->
+        <contact_default variable="int" parse="boolean" default="0" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+
+      <!-- 附件信息：
+          name：附件名称（自定义）
+          object：附件对象名
+          column：附件对象记录当前对象值的字段名
+          remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+      <attachment>
+        <address object="ContactAddress" column="address_contact" remove="0"/>
+        <telephone object="ContactTelephone" column="telephone_contact" remove="0"/>
+        <email object="ContactEmail" column="email_contact" remove="0"/>
+        <instance object="ContactInstance" column="instance_contact" remove="0"/>
+        <url object="ContactUrl" column="contact_url_contact" remove="0"/>
+        <profile object="ContactProfile" column="contact_profile_contact" remove="0"/>
+      </attachment>
+    </Contact>
+  </object>
+</tekinfo>

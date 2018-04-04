@@ -1,0 +1,17 @@
+#City_zh
+#
+name=市(县)
+
+#property
+property.city_id=标识
+property.city_code=编码
+property.city_name=简称
+property.city_fullname=全称
+property.city_state=所属省(州)
+property.city_locale=区域
+property.city_search=检索字符
+property.city_valid=是否有效
+
+#message
+message.error.stateNotExist=省（州）不存在!
+message.error.mustContainCountryCode=必须包含国家编码

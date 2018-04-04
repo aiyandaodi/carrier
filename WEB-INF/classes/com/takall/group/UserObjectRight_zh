@@ -1,0 +1,15 @@
+name=用户对对象权限
+
+#property
+property.user_object_right_id=标识
+property.user_system_user=系统用户
+property.user_system_username=用户名
+property.user_object_group=对象所属组
+property.user_object_name=对象类型名
+property.user_object_id=对象标识
+property.user_object_right=操作权限
+property.user_object_right.list=列表
+property.user_object_right.read=读取
+property.user_object_right.create=创建
+property.user_object_right.write=修改
+property.user_object_right.admin=管理

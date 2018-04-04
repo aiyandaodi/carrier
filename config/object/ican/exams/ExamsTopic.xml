@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 固定考题 -->
+
+<tekinfo>
+  <object>
+    <ExamsTopic ResourceBundle="com.takall.exams.ExamsTopic"
+        Structure="com.takall.exams.ExamsTopic"
+        ObjectRm="com.takall.remoting.exams.ExamsTopicRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_topic_id base="identity"/>
+        <exams_topic_code base="yyyy" step="1" digit="10"/>
+        <exams_topic_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="exams_topic_name" codeIdentity="null" ownerIdentity="exams_topic_owner">
+        <exams_topic identity="exams_topic_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_topic_name/>
+            <exams_topic_score/>
+            <exams_topic_question/>
+            <exams_topic_test/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_topic_name/>
+            <exams_topic_score/>
+            <exams_topic_question/>
+            <exams_topic_test/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_topic_name/>
+            <exams_topic_score/>
+            <exams_topic_question/>
+            <exams_topic_test/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_topic_name/>
+            <exams_topic_score/>
+            <exams_topic_question/>
+            <exams_topic_test/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 删除附件对象名。格式：对象名=字段名,对象名=字段名 -->
+            <remove_attach value=""/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_topic_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_topic_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 考题名称 -->
+        <exams_topic_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 考题分数 -->
+        <exams_topic_score variable="int" default="0" notnull="true"/>
+        <!-- 所属试题 -->
+        <exams_topic_question variable="long" parse="object:ExamsQuestion" notnull="true"/>
+        <!-- 所属考卷 -->
+        <exams_topic_test variable="long" parse="object:ExamsTest" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ExamsTopic>
+  </object>
+</tekinfo>

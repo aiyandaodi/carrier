@@ -1,0 +1,9 @@
+name=试题选项
+
+#property
+property.exams_answer_id=标识
+property.exams_answer_code=编码
+property.exams_answer_name=选项内容
+property.exams_answer_correct=是否正确答案
+property.exams_answer_examsquestion=所属试题
+property.exams_answer_owner=创建者

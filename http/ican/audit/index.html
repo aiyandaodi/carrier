@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="content-language" contect="zh_CN"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="keywords" content="后台 管理 通用 统一 平台 tekinfo takall admin administrator uniform realoffice"/>
+	<meta name="description" content="后台 管理 通用 统一 平台 tekinfo takall admin administrator uniform realoffice"/>
+	<meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+
+	<title>审核管理</title>
+
+	<link rel="Shortcut Icon" href="../../../favicon.ico"/>
+	<link rel="Bookmark" href="../../../favicon.ico"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="../../style/macadmin/css/bootstrap.css">
+	<!-- Font awesome icon -->
+	<link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css">
+	<!-- jQuery UI -->
+	<link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css">
+	<!-- Bootstrap toggle -->
+	<link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css">
+	<!-- Main stylesheet -->
+	<link rel="stylesheet" href="../../style/macadmin/css/style.css">
+    
+    <link rel="stylesheet" href="../../tekinfo/css/tekinfo.css">
+    
+    <link rel="stylesheet" href="index.css">
+
+	<script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+	<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+	<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+	<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			window.setTimeout("initial()", 2000);
+		});
+	</script>
+
+	<!--  Custom codes -->
+	<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script>
+</head>
+
+<body class="login-layout">
+<div align="center">
+	<p>Loading...</p>
+
+	<div class="progress progress-animated progress-striped active" style="max-width:700px">
+		<div class="progress-bar progress-bar-info" data-percentage="100">
+			<span class="sr-only">100% Complete</span>
+		</div>
+	</div>
+</div>
+
+<div class="matter">
+	<div class="container">
+		<!-- 显示操作信息 -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="widget">
+					<div class="widget-head">
+						<div class="pull-left">系统信息</div>
+
+						<div class="clearfix"></div>
+					</div>
+					<!--end .widget-head-->
+					<div class="widget-content">
+						<div id="message" style="margin-left:20px; margin-right:20px;">
+                        	<p>请稍后...</p>
+                        </div>
+					</div>
+				</div>
+				<!-- end .widget-->
+			</div>
+			<!-- end.col-md-->
+		</div>
+		<!-- end.row -->
+	</div>
+	<!-- end.container-->
+</div>
+<!--end matter-->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+<script type="text/javascript">
+	function initial() {
+		tek.core.getURLRequest();
+
+		tek.common.getUser();
+
+		if (tek.common.isLoggedIn()) {
+			showMessage("系统进入后台管理界面...");
+			setTimeout(function () {
+				tek.common.callPage("control.html", callbackURL);
+			}, 2000);
+		} else {
+			showMessage("系统要求您登录...");
+			setTimeout("goLogin()", 2000);
+		}
+	}
+
+	function showMessage(msg) {
+		var obj = document.getElementById("message");
+		if (obj)
+			obj.insertAdjacentHTML('BeforeEnd', "<p>" + msg + "</p>");
+		else
+			alert(msg);
+	}
+
+	function showError(msg) {
+		var obj = document.getElementById("message");
+		if (obj)
+			obj.insertAdjacentHTML('BeforeEnd', "<p style='color:red'>" + msg + "</p>");
+		else
+			alert(msg);
+	}
+</script>
+
+</body>
+</html>

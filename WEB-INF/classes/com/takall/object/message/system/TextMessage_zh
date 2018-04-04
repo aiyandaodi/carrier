@@ -1,0 +1,12 @@
+name=系统短信
+
+#property
+property.textmsg_id=标识
+
+property.textmsg_name=标题
+property.textmsg_content=内容
+property.textmsg_receiver=接收者名字
+property.textmsg_receivername=接收人
+property.textmsg_sender=发送人
+property.textmsg_sendername=发送者名字
+property.textmsg_read=读取时间

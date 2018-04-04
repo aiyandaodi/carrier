@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.ui-43 {
+	max-width: 600px;
+	margin: 100px auto;
+	margin-top:10px;
+	border: 1px solid #ddd;
+	border-radius: 4px !important;
+	background:#fff;
+	box-shadow:2px 2px 0px 1px rgba(0,0,0,0.07) !important;
+}
+@media (max-width:600px){
+	.ui-43{
+		margin:50px 10px;
+	}
+}
+.ui-43 .update-list {
+	padding: 20px 60px;
+}
+.ui-43 form{
+	max-width:460px;
+	font-family: "Open Sans", sans-serif;
+    font-size: 1em !important;
+	background:white;
+}
+
+.ui-43 form .control-label{
+	font-size: 1.2em !important;
+}
+
+.ui-43 .form-control{
+	background:white;
+	border: 1px solid #ccc;
+	border-radius: 6px !important;
+	font-size: 1.1em !important;
+}
+
+.ui-43 input,.ui-43 button,.ui-43 select{
+	font-size: 1.1em !important;
+	margin-right:10px;
+}
+
+.ui-43 .update-list h4 {
+	padding-bottom: 5px;
+	margin-bottom:25px;
+	border-bottom: 1px dashed #ddd;
+	font-size:13px;
+}
+
+.ui-43 .update-list .label {
+	display: inline-block;
+	margin-right: 10px;
+	padding: 3px 0;
+	width: 80px;
+	border-radius: 2px;
+}
+.ui-43 .update-list .btns{
+	margin-top:30px;
+	text-align:center;
+}
+.ui-43 .update-list .btns button{
+	width:100px;
+	font-weight:bold;
+}
+.up_btns{
+	max-width: 600px;
+	margin: 0px auto;
+	margin-top:80px;
+	background:#fff;
+}
+.form-group .control-label {
+	padding-top: 0;
+}
+
+input[type="radio"] {
+	margin-left: 10px;
+	margin-right: 0;
+}
+.col-sm-3 {
+	padding-right: 0;
+}

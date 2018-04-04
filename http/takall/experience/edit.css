@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+    width: 53px;
+    height: 53px;
+    line-height: 46px;
+    border-radius: 100% !important;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+
+}
+.popmenu .ui-list{
+    bottom:120px;
+}
+
+.login-reg{
+    max-width:1000px;
+    margin:100px auto;
+    /*margin-top:100px;*/
+    padding:30px;
+    background:#FFF;
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+    border-radius:10px !important;
+}
+@media (max-width:450px){
+    .login-reg{
+        margin:50px 20px;
+    }
+}
+.login-reg h4{
+    text-align:center;
+}
+.login-reg .s-media{
+    text-align:center;
+}
+.login-reg .s-media a.btn{
+    margin:2px 5px;
+}
+/* Inside login and register form */
+.login-reg-form form{
+    max-width:800px;
+}
+@media (max-width:991px){
+    .login-reg-form{
+        max-width:500px;
+    }
+}
+
+.formDatetimepicker .input-group-addon{
+    width: 30px;
+    height: 32px;
+    float: left;
+    padding: 0;
+}
+
+.formDatetimepicker .input-group-addon i{
+    width: 26px;
+    height: 26px;
+    float: left;
+    padding: 0;
+    line-height: 26px;
+    margin: 2px 2px;
+    display: block;
+}
+
+.formDatetimepicker .form-control{
+    width: 80%;
+    float: left;
+}

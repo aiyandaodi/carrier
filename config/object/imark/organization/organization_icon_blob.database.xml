@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构头像支持  -->
+<tekinfo>
+  <database>
+    <table>
+      <organization_icon_blob>
+        <item>
+          <!-- 标识 -->
+          <organization_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <icon_blob value="BLOB"/>
+        </item>
+      </organization_icon_blob>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 证书文件 -->
+<tekinfo> 
+	<object> 
+		<CertificatesFile ResourceBundle="com.takall.object.organization.CertificatesFile"> 
+			<autovalue> 
+				<object_file_id base="identity"/> 
+			</autovalue>
+
+			<nosamevalue></nosamevalue>  
+			
+			<table nameIdentity="object_file_name" codeIdentity="object_file_objectId" ownerIdentity="null"> 
+				<certificates_file identity="object_file_id"/>  
+				<certificates_file_blob identity="object_file_id"/> 
+			</table>
+
+			<blob table="certificates_file_blob" 
+				urlField="object_file_path" 
+				blobField="object_file_blob" 
+				mimeField="object_file_mime" 
+				lengthField="object_file_length" 
+				timeField="modifyTime" 
+				mimeType="null"/>  
+
+			<command> 
+				<!-- 新建 -->  
+				<add> 
+					<item> 
+						<object_file_objectId/>  
+						<object_file_name/> 
+					</item> 
+				</add>  
+
+				<!-- 编辑 -->  
+				<edit> 
+					<item>
+						<object_file_name/> 
+					</item> 
+				</edit>  
+				
+				<!-- 列表 -->  
+				<list> 
+					<item> 
+						<object_file_objectId/>  
+						<object_file_name/> 
+					</item> 
+				</list>
+
+				<textSearch> 
+					<item> 
+						<object_file_objectId/>  
+						<object_file_name/> 
+					</item> 
+				</textSearch>  
+
+				<!-- 删除 -->  
+				<remove/> 
+			</command>
+
+			<property> 
+				<!-- 标识 -->  
+				<object_file_id variable="long" forbidEdit="true" notnull="true"/>  
+				<!-- 所属对象标识 -->  
+				<object_file_objectId variable="long" parse="object:Certificates" notnull="true"/>  
+				<!-- 名称 -->  
+				<object_file_name variable="string" maxlength="32" notnull="true"/>  
+				<!-- 文件长度 -->  
+				<object_file_length variable="long" notnull="true" default="0"/>  
+				<!-- 文件MIME类型 -->  
+				<object_file_mime variable="string" maxlength="255"/>  
+				<!-- 文件路径 -->  
+				<object_file_url variable="string" maxlength="255"/>  
+				<modifyTime/> 
+			</property>
+		</CertificatesFile>
+	</object> 
+</tekinfo>

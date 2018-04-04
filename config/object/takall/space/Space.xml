@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 空间  -->
+<tekinfo>
+  <object>
+    <!-- 对象。
+         属性定义：ResourceBundle - 资源文件路径
+             Structure - 对象结构类路径
+             version - 对象定义版本号
+             resourceVersion - 资源文件版本号 -->
+    <Space ResourceBundle="com.takall.object.space.Space"
+        Structure="com.takall.space.Space"
+        ObjectRm="com.takall.remoting.space.SpaceRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <space_id base="identity"/>
+        <space_code base="yyyyMM" step="1" digit="6"/>
+        <space_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <space_code/>
+        
+      </nosamevalue>
+      
+      <table nameIdentity="space_name" codeIdentity="space_code">
+      	<uni_space identity="space_id"/>
+      </table>
+      
+      <blob table="uni_space"
+       	  timeField="modifyTime"/>
+            
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          	<space_code/>
+            <space_name/>
+            <space_status/>
+            <space_type/>
+            <space_remark/>
+            
+          </item>
+        </add>
+        
+        <edit>
+        	<parameter>
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          	<space_code/>
+            <space_name/>
+            <space_type/>
+            <space_status/>
+            <space_remark/>
+            
+          </item>
+        </edit>
+
+        <read>
+        	
+          <item>
+          	
+            <space_code/>
+            <space_name/>
+            <space_status/>
+            <space_type/>
+            <createTime/>
+            
+            <space_owner/>
+            <accessTime/>
+            <space_remark/>
+            
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+          	<space_code/>
+            <space_name/>
+            <space_status/>
+            <space_type/>
+            <createTime/>
+            
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <space_name/>
+            <space_code/>
+            <space_remark/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <space_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <space_code variable="string" maxlength="10" forbidEdit="true" notnull="true"/>
+        <!-- 名称 -->
+        <space_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 状态 -->
+        <space_status variable="int" parse="enum" format="option" default="1" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>    <!-- 失效 -->
+        </space_status>
+        
+        <!-- 类型 -->
+        <space_type variable="int" parse="enum" format="option" default="1" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>    <!-- 失效 -->
+        </space_type>
+        
+        <!-- 备注 -->
+        <space_remark variable="string" parse="string" format="textarea:4"/>
+        
+        <!-- 所有者 -->
+        <space_owner variable="long" parse="object:User" notnull="true"/>
+        
+      	<createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      
+      <attachment>
+        <partner object="Partner" column="partner_space"/>
+        
+      </attachment>
+    </Space>
+  </object>
+</tekinfo>

@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+
+<!--
+功能：控制台
+参数：
+-->
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+
+  <title>后台管理-控制台</title>
+  
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="客服 服务 支持 后台 管理 通用 统一 平台 统一资源平台 协作 社交 合作 办公 tekinfo takall admin administrator uniform realoffice client support customer service"/>
+  <meta name="description" content="客服 服务 支持 后台 管理 通用 统一 平台 统一资源平台 协作 社交 合作 办公 tekinfo takall admin administrator uniform realoffice client support customer service"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../common/css/mac-list.css">
+  <link rel="stylesheet" href="../../tekinfo/css/tekinfo.css"/>
+  <link rel="stylesheet" href="../../takall/css/takall.css"/>
+  <link rel="stylesheet" href="control.css"/>
+  
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+<!--  index-banner -->
+<div id="index_banner" class="index-banner"></div>
+<div id="tekinfo_main" class="main">
+<!-- Header starts -->
+<header>
+	<div class="container">
+		<div class="row">
+			<!-- Logo section -->
+			<div class="col-md-4">
+				<!-- Logo. -->
+				<div class="logo">
+					<h1><a href="javascript:tek.core.goHome();"><img src="../../takall/logo/takall-128.png" height="36" alt="TAKALL" title="TAKALL.COM" longdesc="http://www.takall.com"/></a></h1>
+					<p class="meta">TAKALL 后台管理</p>
+				</div>
+				<!-- Logo ends -->
+			</div>
+			
+			<!-- Button section -->
+			<div class="col-md-4">
+				<!-- Buttons -->
+				<ul class="nav nav-pills">
+					<!-- 主题 -->
+					<li class="dropdown dropdown-big">
+						<a class="dropdown-toggle" href="../../tekinfo/transaction/list.html">
+							<i class="fa fa-archive"></i> 事务处理 <span class="label label-info" id="apply-appraisal-total">0</span>
+						</a>
+					</li>
+					
+					<!-- 主题 -->
+					<li class="dropdown dropdown-big">
+						<a class="dropdown-toggle" href="../../takall/subject/list.html">
+							<i class="fa fa-ticket"></i> 待审主题 <span class="label label-info" id="apply-cooperation-total">0</span>
+						</a>
+					</li>
+					
+					<!-- Message button with number of latest messages count-->
+					<li class="dropdown dropdown-big">
+						<a class="dropdown-toggle" href="../../takall/interaction/list.html">
+							<i class="fa fa-flask"></i> 新增交流 <span class="label label-primary" id="apply-expert-total">0</span>
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+			
+			<!-- Data section -->
+			<div class="col-md-4">
+				<div class="header-data">
+					<!-- Traffic data -->
+					<div class="hdata">
+						<div class="mcol-left">
+							<!-- Icon with red background -->
+							<i class="fa fa-building bred"></i>
+						</div>
+						<div class="mcol-right">
+							<!-- Number of visitors -->
+							<p><a id="organization-total" href="#">0</a><em>组</em></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+					<!-- revenue data -->
+					<div class="hdata">
+						<div class="mcol-left">
+							<!-- Icon with green background -->
+							<i class="fa fa-user bgreen"></i>
+						</div>
+						<div class="mcol-right">
+							<!-- Number of visitors -->
+							<p><a id="expert-total" href="#">0</a><em>好友</em></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+					<!-- Members data -->
+					<div class="hdata">
+						<div class="mcol-left">
+							<!-- Icon with blue background -->
+							<i class="fa fa-list bblue"></i>
+						</div>
+						<div class="mcol-right">
+							<!-- Number of visitors -->
+							<p><a id="user-total">0</a> <em>交流</em></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					
+				</div><!-- end .header-data -->
+			</div>
+		</div><!-- end .row -->
+	</div>
+</header>
+<!-- Header ends -->
+
+<!-- Main content starts -->
+<div class="content">
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-dropdown"><a href="#">导航</a></div>
+		<!-- Sidebar navigation -->
+		<!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+		<ul id="nav">
+			<!-- Main menu with font awesome icon -->
+			<li><a href="control.html" id="control"><i class="fa fa-desktop"></i> 控制台</a>
+			</li>
+            <li id="group_space" class="has_sub"><a href="#"><i class="fa fa-group"></i> 组织管理  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+				<ul>
+					<li id="group"><a href="../group/list.html">组</a></li>
+					<li id="member"><a href="../member/list.html">组员</a></li>
+                    <li id="space"><a href="../space/list.html">空间</a></li>
+					<li id="crowd"><a href="../crowd/list.html">空间成员</a></li>
+                    
+				</ul>
+			</li>
+
+			<li id="social" class="has_sub"><a href="#"><i class="fa fa-comments"></i> 社交 <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+				<ul>
+					<li id="friends"><a href="../friend/list.html">好友关注</a></li>
+                    <li id="relation"><a href="../relation/list.html">关系人</a></li>
+				</ul>
+			</li>
+          
+			<li id="address_book" class="has_sub"><a href="#"><i class="fa fa-phone"></i> 通讯录  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+				<ul>
+					<li id="contacts"><a href="../contact/list.html">通讯录</a></li>
+					<li id="telphone"><a href="../contactTelephone/list.html">电话</a></li>
+                    <li id="email"><a href="../contactEmail/list.html">电子邮件</a></li>
+                    <li id="instance"><a href="../contactInstance/list.html">即时通</a></li>
+                    <li id="address"><a href="../contactAddress/list.html">地址</a></li>
+                    <li id="url"><a href="../contactUrl/list.html">网址</a></li>
+                    <li id="profile"><a href="../contactProfile/list.html">联系人</a></li>
+				</ul>
+			</li>
+
+			<li id="zone" class="has_sub"><a href="#"><i class="fa fa-globe"></i> 区域设置  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+				<ul>
+					<li id="country"><a href="../country/list.html">国家和地区</a></li>
+					<li id="state">
+                    	<a href="javascript:callSubServicePage('http/takall/state/');">省/州</a></li>
+					<li id="city">
+                    	<a href="javascript:callSubServicePage('http/takall/city/');">市/县</a>
+                    </li>
+				</ul>
+			</li>
+            
+			<li id="classification" class="has_sub"><a href="#"><i class="fa fa-tree"></i> 对象分类  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+            	<ul>
+            		<li id="object_catalog"><a href="../../tekinfo/objectCatalog/list.html">目录分类</a></li>
+            		<li id="object_tag"><a href="../../tekinfo/objectTag/list.html">标签分类</a></li>
+            		<li id="object_color"><a href="../../tekinfo/objectColor/list.html">颜色分类</a></li>
+          		</ul>
+        	</li>
+		</ul>
+	</div>
+	<!-- Sidebar ends -->
+	<!-- Main bar -->
+	<div id="service_page" class="mainbar">
+		<!-- Page heading -->
+		<div class="page-head">
+			<div class="pull-left">
+				<h2><a href="javascript:goClientService();"><i class="fa fa-desktop"></i> 客服后台 </a></h2>
+				
+			</div>
+
+			<!-- Breadcrumb -->
+			<div class="bread-crumb pull-right">
+				<a href="control.html"><i class="fa fa-desktop"></i>协同管理 </a>
+				<!-- Divider -->
+				<span class="divider">/</span>
+				  <a href="#" class="bread-current">后台管理</a>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+		<!-- Page heading ends -->
+
+		<!-- Matter -->
+		<div class="matter">
+			<div class="container">
+				
+				
+          <div class="row">
+          	<div class="col-md-6">
+            	<div class="widget">
+                	<div class="widget-head">
+                    	<div class="pull-left">协同交流</div>
+                        <div class="widget-icons pull-right">
+                        	<a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                            <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="widget-content">
+                    	<ul class="file-upload">
+                        	<li>
+                            	<strong>
+                                	<span class="label label-danger"><i class="fa fa-times-rectangle "></i></span>
+                        			<a href="../../tekinfo/transaction/list.html">事务处理</a>
+                                </strong>
+                                <div class="file-meta">用户在线提出的建议、疑问、投诉等解答。</div>
+                            </li>
+                            <li>
+                            	<strong>
+                                	<span class="label label-info"><i class="fa fa-book"></i></span>
+                                    <a href="../subject/list.html">主题</a>
+                                    &nbsp;&nbsp;
+                                    <span class="label label-success"><i class="fa fa-file"></i></span>
+                                    <a href="../document/list.html">文档</a>
+                                    &nbsp;&nbsp;
+                                    <span class="label label-warning"><i class="fa fa-reply"></i></span>
+                                    <a href="../reply/list.html">回复</a>
+                                </strong>
+                                <div class="file-meta">主题管理，包括主题附件文档以及主题回复等。</div>
+                            </li>
+                            <li>
+                            	<strong>
+                                	<span class="label label-primary"><i class="fa fa-exchange"></i></span>
+                                    <a href="../interaction/list.html">交流</a>
+                                </strong>
+                                <div class="file-meta">协同沟通，社交交流的发言和内容管理。</div>
+                            </li>
+                            <li>
+                            	<strong>
+                                	<span class="label label-question"><i class="fa fa-question"></i></span>
+                                    <a href="../question/list.html">问答</a>
+                                </strong>
+                                <div class="file-meta">提问与回答。</div>
+                            </li>
+                        </ul>
+                    </div><!-- end.widget-content-->
+              	</div><!-- end.widget-->
+            </div><!--end.col-md-6-->
+            <div class="col-md-6">
+              	<div class="widget wred">
+                	<div class="widget-head">
+                    	<div class="pull-left">对象分类</div>
+                        <div class="widget-icons pull-right">
+                        	<a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                            <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!--end.widget-head-->
+                    <div class="widget-content">
+                    	<div class="padd">
+                    		<div class="alert alert-info">
+                        		<a href="../../tekinfo/objectCatalog/list.html">目录分类</a>
+                            	对象目录树分类。该分类方法支持多级目录和多目录所属结构。<br/>
+                            </div>
+                        	<div class="alert alert-success">
+                        		<a href="../../tekinfo/objectTag/list.html">标签分类</a>
+                            	对象标签分类，包括公共和私有标签分类管理。<br/>
+                        	</div>
+                            <div class="alert alert-warning">
+                        		<a href="../../tekinfo/objectColor/list.html">颜色分类</a>
+                            	对象演示分类，定义对象颜色。<br/>
+                        	</div>
+                     	</div><!--end.padd-->
+            	    </div><!--end.widget-content-->
+                    <div class="widget-foot">
+                      <p><i class="fa fa-warning"></i>&nbsp;良好的分类结构，可以帮助用户快速定位所需内容，因此后台管理务必仔细设定分类内容。</p>
+                    </div>
+                </div>
+            </div><!--end.col-md-6-->
+            <div class="col-md-6">
+              <div class="widget">
+              	<div class="widget-head">
+                	<div class="pull-left">组织和关系</div>
+                    <div class="widget-icons pull-right">
+                    	<a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                        <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                    </div>  
+                    <div class="clearfix"></div>
+                </div><!--end.widget-head-->
+                
+                <div class="widget-content referrer">
+                	<ul class="file-upload">
+                    	<li>
+                        	<strong>
+                            	<span class="label label-main"><i class="fa fa-group"></i></span>
+                                <a href="../group/list.html">小组</a>
+                                &nbsp;&nbsp;
+                                <span class="label label-info"><i class="fa fa-user-o"></i></span>
+                                <a href="../member/list.html">组员</a>
+                            </strong>
+                            <div class="file-meta">小组及其组员管理。</div>
+                        </li>
+                        <li>
+                        	<strong>
+                            	<span class="label label-space"><i class="fa fa-meetup"></i></span>
+                                <a href="../space/list.html">空间</a>
+                                &nbsp;&nbsp;
+                                <span class="label label-live"><i class="fa fa-user-md"></i></span>
+                                <a href="../crowd/list.html">成员</a>
+                            </strong>
+                            <div class="file-meta">空间及其成员管理。</div>
+                        </li>
+                    </ul>
+                    <hr/>
+                    <ul class="activity">
+                    	<li>
+                            	<i class="fa fa-feed"></i>社交关系<br>
+                                <strong>
+                                	<a href="../friend/list.html">好友关注</a>
+                                </strong>
+                                ，
+                                <strong><a href="../relation/list.html">社会关系</a></strong>
+                                。
+                        </li>
+                        <li>
+                            	<i class="fa fa-address-book"></i>通讯录<br>
+                                <strong><a href="../contact/list.html">联系方式</a></strong>
+                                ，
+                                <strong><a href="../contactProfile/list.html">联系人</a></strong>
+                                ，
+                                <strong><a href="../contactTelephone/list.html">电话</a></strong>
+                                ，
+                                <strong><a href="../contactEmail/list.html">电子邮件</a></strong>
+                                ，
+                                <strong><a href="../contactAddress/list.html">地址</a></strong> 
+                                ，
+                                <strong><a href="../contactInstance/list.html">即时通</a></strong>
+                                ，
+                                <strong><a href="../contactUrl/list.html">网址</a></strong>
+                                。 
+                        </li>
+                    </ul>
+                </div><!--end.widget-content referrer-->
+              </div><!-- end.widget-->
+            </div><!--end.col-md-6-->
+            <div class="col-md-6">
+              	<div class="widget">
+                	<div class="widget-head">
+                    	<div class="pull-left">区域设置</div>
+                        <div class="widget-icons pull-right">
+                            <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                            <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="widget-content">
+                    	<ul class="file-upload">
+                        	<li>
+                                <strong>
+                                    <i class="fa fa-globe"></i> 
+                                    <a href="../country/list.html">国家/地区</a>
+                                </strong>
+                                <div class="file-meta">世界各国或地区设置。</div>
+                            </li>
+                            <li>
+                                <strong>
+                                    <i class="fa fa-flag"></i> 
+                                    <a href="../state/list.html">省/直辖市/州</a>
+                                </strong>
+                                <div class="file-meta">国家/地区下属二级行政区。</div>
+                            </li>
+                            <li>
+                                <strong>
+                                    <i class="fa fa-area-chart"></i> 
+                                    <a href="../city/list.html">市/县/区</a>
+                                </strong>
+                                <div class="file-meta">三级行政区。</div>
+                            </li>
+                        </ul>
+                    </div><!-- end.widget-content-->
+                    <div class="widget-foot">
+                      <p><i class="fa fa-warning"></i>&nbsp;区域设置按照国家行政区划设定，方便其他需要使用地址信息的对象录入。</p>
+                    </div>
+                </div><!-- end.widget-->
+            </div> <!--end.col-md-6--> 
+		  </div><!--end.row-->
+      <!-- Matter ends -->
+	
+
+				<!-- 显示操作信息 -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							<div class="widget-head">
+								<div class="pull-left">系统信息</div>
+								
+								<div class="widget-icons pull-right">
+								</div>
+								<div class="clearfix"></div>
+							</div><!--end .widget-head-->
+
+							<div id="history-message" class="widget-content" style="margin:5px 10px;">
+								<p>管理后台是客服人员进行日常维护和管理的系统。所有操作都请谨慎进行，避免对数据不必要的修改和破坏。</p>
+							</div><!-- end.widget-content -->
+
+						</div><!-- end .widget-->
+					</div><!-- end.col-md-->
+				</div><!-- end.row -->
+			</div><!-- end.container-->
+		</div>
+		<!-- Matter Ends -->
+	</div>
+	<!-- Mainbar Ends -->
+</div>
+<!-- Content Ends -->
+</div>
+
+<div id="tekinfo_footer">
+<!-- 自动载入vip/html/i-tekinfo_footer.html 内容 -->
+</div>
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="javascript:;"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end message-modal-dialog-->
+
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-list.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/turn-page.js"></script>
+  
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+  <!-- takall JS -->
+  <script type="text/javascript" src="../js/takall.js"></script>
+  <!-- ican JS -->
+  <script type="text/javascript" src="../js/i.js"></script>
+  
+  <script type="text/javascript" src="control.js"></script>
+  
+
+<script language="javascript" type="text/javascript">
+function initial(){
+	
+	/** 载入页面顶部信息 **/
+	$("#index_banner").load(tek.common.getRootPath() + "http/vip/html/i-header.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-header.js",function(){
+			if(typeof initHeader == "function"){
+				initHeader();
+			}
+		});
+		
+		$("#index_banner").css("position","relative");
+		$("#index_banner").show();
+	});
+	
+	
+	/** 载入页面底部信息 **/
+	$("#tekinfo_footer").load(tek.common.getRootPath() + "http/vip/html/i-footer.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-footer.js",function(){
+			if(typeof initFooter == "function"){
+				initFooter();
+			}
+		});
+	});
+	
+	/**
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	
+	if (tek.common.isLoggedIn()) {
+		showUserInfo();
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	
+	var error = request["error"];
+	
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+
+	/** 初试化导航 
+	if(typeof initNavbar == "function"){
+		initNavbar();
+	}**/
+	/** 初试化侧栏 
+	if(typeof initSidebar == "function"){
+		initSidebar();
+	}**/
+
+	/**
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		//alert("000");
+		scrollPage();
+		//alert("111");
+	}
+	
+	/**
+	* 执行当前页面程序
+	**/
+	if (typeof init == "function")
+		init();
+		
+	/** 友盟统计 - 永远放在最后 **/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后 **/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,902 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/readbook.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- InstanceBeginEditable name="Declare" -->
+<!--
+页面名称：读书首页
+调用参数：
+  appcall - 如果＝1，则本页面属于被框架调用页面，响应菜单等需要符合被调用内嵌页面的状态。 
+
+-->
+<!-- InstanceEndEditable -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <!-- Title and other stuffs -->
+  <title>读书 READBOOK</title>
+  
+  <!-- Title and other stuffs -->
+  <title>用户信息 - 读取</title>
+  
+  <link rel="stylesheet" href="read-old.css">
+
+  <script type="text/javascript" src="../../common/tek/js/turn-page.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-list.js"></script>
+  <script type="text/javascript" language="javascript" src="read-old.js"></script>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="知维 读书官网 问答  知识 知行合一 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin official website question answer Knowledge and action network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="知维 读书官网 问答  知识 知行合一 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin official website question answer Knowledge and action network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+  
+  <!--
+  <meta name="google-site-verification" content="mkFmCzir2BcROHRUfmpJSicbh8DGszvqmpn0VsI0tM4" />-->
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  <!-- Fonts stylesheet 
+  <link rel="stylesheet" href="../http/common/css/tfonts.css"/>-->
+
+  <!-- 一键菜单 -->
+  <link rel="stylesheet" href="../../common/onestart/css/startMenu.css"/>
+  <link rel="stylesheet" href="../../common/onestart/css/startButton.css"/>
+
+  <!-- ipassin CSS 特有-->
+  <link rel="stylesheet" href="../../ipassin/css/ipassin-style.css"/>
+  
+  <!-- 开始按钮 CSS -->
+  <link rel="stylesheet" href="../../ipassin/css/startBox.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- MyCSS -->
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/serverTimer.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+
+
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../js/tekinfo.js"></script>
+
+  <!-- IPASSIN JS -->
+  <script type="text/javascript" src="../../ipassin/js/ipassin.js"></script>
+
+  <!-- 开始按钮 JS -->
+  <script type="text/javascript" src="../../ipassin/js/startBox.js"></script>
+
+  <!-- InstanceBeginEditable name="HeadScript" -->
+  <!-- HeadJavaScript -->
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+	  initial();
+    });
+  </script>
+  
+  <!-- 百度 TAKALL 统计代码 readbook.com -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?71434dd33d1ce60141d0a145285870b8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body Top" -->
+
+<!-- InstanceEndEditable -->
+
+<div class="navbar navbar-fixed-top bs-docs-nav appcall" role="banner">
+   <!--<div class="container">-->
+    <!-- Menu button for smallar screens -->
+    <div class="navbar-header">
+      <!--<button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+      <img src="../http/images/menu.png" width="38" alt="菜单" /></button>-->
+      
+	  <!-- Site name for smallar screens -->
+      <!--<a href="../index.html" class="navbar-brand hidden-lg">
+        <img id="logo_banner" src="../http/ipassin/logo/ipassin-banner-white-128.png" height="36" alt="IPASSIN" longdesc="http://www.ipassin.com">
+        
+      </a>-->
+      <div class="navbar-toggle"  data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="blog-title"><img src="../../images/blue-list.png" alt="菜单" title="菜单"/></span>
+      </div>
+	</div><!-- end .navbar-header -->
+        
+    <!-- Navigation starts -->
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            
+      <ul class="nav navbar-nav">
+        <li id="subject" class="dropdown">
+          <a href="../../takall/subject/index.html" title="主题">
+            <img src="../../ipassin/images/menu/subject-line-128.png" /> 主题
+          </a>
+        </li>
+        
+        <li class="dropdown appcall">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="组织">
+            <img src="../../ipassin/images/menu/group-line-128.png" /> 组织
+          </a>
+          <ul class="dropdown-menu">
+            <!-- li 列表由ajax生成-->
+            <li id="group-list-li-more">
+              <a class="text-left alert" onclick="readGroup();" title="所有小组">
+                <img src="../../ipassin/images/menu/more-64.png" /> 所有小组
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+        <li id="exam" class="dropdown">
+          <a href="../../ipassin/test/index.html" title="考试">
+            <img src="../../ipassin/images/menu/exam-line-128.png" /> 考试
+          </a>
+        </li>
+        
+        <li id="audit" class="dropdown" style="display: none;">
+          <a href="../../takall/qualification/index.html" title="资质">
+            <img src="../../ipassin/images/menu/audit-line-128.png" /> 资质
+          </a>
+        </li>
+        
+        <!-- 如果参数appcall=1,则有class="appcall"的菜单项，不再显示 -->
+        <li id="transaction" class="dropdown appcall">
+          <a href="../transaction/index.html" title="问答">
+            <img src="../../ipassin/images/menu/transaction-line-128.png" /> 问答
+          </a>
+        </li>
+        <!-- InstanceBeginEditable name="SubMenu" -->
+ 
+	<!-- InstanceEndEditable -->
+        <li class="dropdown hide">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../../ipassin/images/menu/help-64.png" /> 帮助
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a id="system_help" href="../../ipassin/help/index.html" target="_blank">
+                  <img src="../../ipassin/images/menu/help-tekinfo-128.png" /> 系统帮助
+              </a>
+            </li>
+            <hr/>
+            <li>
+                <a href="javascript:$('#share-modal-dialog').modal('show',null,0);" onmouseover="showQrCode();" onmouseout="javascript:$('.favorite').hide();">
+                  <img src="../../ipassin/images/menu/share-128.png" /> 分享
+                </a>
+            </li>
+            <hr/>
+            <li class="appcall">
+                <a rel="sidebar" href="#" title="IPASSIN" onclick="addFavorite('IPASSIN', 'http://www.ipassin.com');">
+                  <img src="../../ipassin/images/menu/favorite-128.png" /> 收藏本站
+                </a>
+            </li>
+              
+          </ul>
+        </li>
+      </ul>
+      <!-- end menu -->
+
+	  <!-- InstanceBeginEditable name="SearchRegion" -->
+      <!-- Search form
+      <form id="searchForm" name="searchForm" class="navbar-form navbar-left" role="search" action="javascript:quickSearchFormSubmit();">
+        <div class="form-group">
+          <input id="searchText" name="searchText" type="text" class="form-control" onclick="this.select();" placeholder="检索小组">
+        </div>
+        <div class="form-group">
+          <button type="submit" style="border:none;background:none;">
+            <img src="../../images/search-32.png" width="32" height="32" alt="搜索" longdesc="http://www.tekinfo.net" />
+          </button>
+        </div>
+      </form> -->
+	  <!-- InstanceEndEditable -->
+    
+      <!-- Links -->
+      <ul class="nav navbar-nav pull-right">
+        <li id="label_register" class="pull-right">
+          <a href="javascript:goRegister();">
+            <i class="fa fa-info"></i>
+            <span id="user-register">注册</span>
+          </a>
+        </li>
+        
+        <li id="label_login" class="pull-right">
+          <a href="javascript:goLogin();">
+            <i class="fa fa-sign-in"></i>
+            <span id="user-login">登录</span>
+          </a>
+        </li>
+        
+        <li id="label_user" class="dropdown pull-right" style="display:none;">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <i class="fa fa-user"></i>
+            <span id="user-name">用户名</span>
+            <b class="caret"></b>
+          </a>
+          
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li id="user_account">
+              <a href="javascript:myUser();">
+                <i class="fa fa-user-secret"></i>
+                <span>我的账户</span>
+              </a>
+            </li>
+            <li id="user_profile">
+              <a href="javascript:goLogout();">
+                <i class="fa fa-sign-out"></i>
+                <span>退出系统</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  <!-- </div>end.conjtainer -->
+</div>
+
+<div class="content">
+
+  <!-- InstanceBeginEditable name="MAINCONTENT" -->
+<!-- Form area -->
+<div class="matter">
+  <div class="container">
+  	
+    <div class="row" id="show_div">
+      <div class="col-md-12">
+        <!-- User widget -->
+        <div class="widget">
+          <div class="widget-head">
+            <div id="current_user" class="pull-left">当前用户名</div>
+            <div class="clearfix"></div>
+          </div><!-- end .widget-head-->
+          
+          <div class="widget-content">
+              <div class="padd">
+                <div class="user">
+                  <div id="user_photo" class="user-pic col-xs-3 col-sm-2 col-md-1">
+                    <img id="my_icon" src="" alt="用户头像" width="64" height="64" onclick="iconEdit()" style="cursor:pointer;"/>
+                    <span onclick="">更改头像</span>
+                  </div>
+                  
+                  <div class="col-xs-9 col-sm-10 col-md-10">
+                    <p> 最近登录时间：<span id="user_latestTime"></span></p>
+                    <p> 最近登录IP：<span id="user_latestIp"></span></p>
+                    <p id="currentTime"> 当前登录时间：<span id="user_currentTime"></span></p>
+                    <p id="currentIp"> 当前登录IP：<span id="user_currentIp"></span></p>  
+                  </div><!-- end .user-details-->
+                </div><!-- end .user -->
+                
+                <div class="clearfix"></div>
+              </div><!-- end .padd-->
+          </div>  <!-- end .widget-content-->
+        </div><!-- end .widget-->
+      </div><!-- end .col-md -->
+    </div><!-- end .row -->
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="widget">
+          <!-- Widget title -->
+          <div class="widget-head">
+            <div class="pull-left">基本信息</div>
+            <div style="float:left" id="editBut">
+            </div>
+            <div class="clearfix"></div>
+          </div><!--end.widget-head-->
+          
+          <!-- Widget content -->
+          <div class="widget-content referrer">
+            <div class="padd form-horizontal" id="user_basic_info">
+            <!-- ajax读取 -->
+            </div><!-- end .padd-->
+          </div><!--end.widget-content referrer-->
+          
+          <!-- Widget footer -->
+          <div class="widget-foot">
+          	&nbsp;
+          </div>
+        </div><!-- end.widget-->
+      </div><!-- end.col-md- -->
+     
+      <div class="col-md-6">
+        <!-- 主题管理 -->
+        <div class="widget">
+          <!-- Widget title -->
+          <div class="widget-head">
+            <div class="pull-left">操作记录</div>
+            <div id="more" class="pull-right hide"><a href="#" target="_blank">更多</a></div>
+            
+            <div class="clearfix"></div>
+          </div><!--end.widget-head-->
+          
+          <!-- Widget content -->
+          <div class="widget-content referrer" id="subject-">
+            <div class="padd">
+              <table border="0" width="100%">
+              	<thead>
+                  <tr><td width="33%"></td><td width="33%"></td><td width="34%"></td>
+                </thead>
+                <tbody id="record">
+                  <!-- ajax读取 -->
+                </tbody>
+              </table> 
+            </div>
+          </div><!--end.widget-content referrer-->
+          
+          <!-- Widget footer -->
+          <div class="widget-foot">
+            &nbsp;
+            <div class="clearfix"></div> 
+          </div>
+        </div><!-- end.widget-->
+      </div><!-- end.col-md -->
+      
+	  <div class="col-md-6">
+        <!-- Widget -->
+		<div class="widget">
+          <!-- Widget title -->
+          <div class="widget-head">
+            <div id="user_group" class="pull-left">加入的小组</div> 
+            <div class="clearfix"></div>
+          </div>
+          
+          <!-- Widget content -->
+          <div class="widget-content referrer" id="group-">
+            <div class="padd">
+              <div class="support-faq">
+              	<div class="clearfix"></div>
+                <!-- Lists -->
+              	<ol id="group"></ol>
+              </div>
+            </div><!-- end .padd-->
+          </div><!-- end .widget-content-->
+          
+          <!-- Widget footer -->
+          <div class="widget-foot">
+            <p class="pull-left" style="padding-top:10px"><i class="fa fa-user alert-danger"></i>管理的小组；<i class="fa fa-user alert-link"></i>参加的小组</p>
+            <ul class="pagination pull-right" id="group-page" name="group-page" style="margin:5px 0 0 0;"></ul>
+            <div class="clearfix"></div> 
+          </div><!-- end .widget-foot-->
+		</div><!-- end.widget-->
+      </div><!-- end.col-md- -->
+        
+      <div class="col-md-6">
+        <!-- 主题管理 -->
+        <div class="widget">
+          <!-- Widget title -->
+          <div class="widget-head">
+            <div class="pull-left">发布的主题</div>
+            <div class="clearfix"></div>
+          </div><!--end.widget-head-->
+          
+          <!-- Widget content -->
+          <div class="widget-content referrer" id="subject-">
+            <div class="padd">
+              <ul id="subject-list" class="latest-news">
+                  <!-- ajax读取 -->
+              </ul> 
+            </div>
+          </div><!--end.widget-content referrer-->
+          
+          <!-- Widget footer -->
+          <div class="widget-foot">
+            <ul class="pagination pull-right" id="subject-page" name="subject-page" style="margin:5px 0 0 0;"></ul>
+            <div class="clearfix"></div> 
+          </div>
+        </div><!-- end.widget-->
+      </div><!-- end.col-md- -->
+	</div><!--end.row-->
+  </div><!--end .container -->
+</div><!--end .matter -->
+<!-- InstanceEndEditable -->
+  
+  
+  		    <!-- InstanceBeginEditable name="InfoMenu" -->
+                  <!-- InfoMenu -->
+				  <!-- InstanceEndEditable -->
+    
+</div><!-- end .content -->
+
+<!-- InstanceBeginEditable name="Attachment" -->
+<!-- Attachment -->
+<!-- InstanceEndEditable -->
+
+<!-- Footer starts -->
+<footer style="display:none;">
+  <div class="container">
+    <!-- 正常宽屏幕显示--> 
+    <div class="row show_wide">
+      <div class="col-left col-md-6">
+        <!-- Copyright info -->
+        <p class="copy" style="margin-top:4px;">
+          Copyright &copy; 1999 <a href="http://www.ipassin.com">知维</a> 
+         
+          |
+           
+          京ICP备05051218号 
+          
+          <!-- 友盟统计 readbook.com -->
+          <script type="text/javascript">
+		    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_2447799'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/stat.php%3Fid%3D2447799%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          <!--
+          |
+           百度 OLD 统计代码 readbook.com 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbdc498404707ddef5aca424933f984d9' type='text/javascript'%3E%3C/script%3E"));
+</script>-->
+			
+        </p>
+      </div>
+      <div class="col-right col-md-6">
+          <p class="pull-right">Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>
+            ｜ Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a></p>
+      </div>
+      
+    </div><!--  end 正常宽屏幕显示-->
+    <div class="row show_wide" style="display:none;">
+    
+      <div class="col-left col-md-6">
+        <p class="pull-left">
+          服务器时间:<span id="serverTime" class="text-left"></span> &nbsp;&nbsp;
+          客户端时间:<span id="clientTime" class="text-left"></span>
+        </p>
+      </div>
+      
+      <div class="col-right col-md-6">
+        <p class="pull-right">
+          <a href="../transaction/add.html">建议和意见</a>:
+          <a style="word-wrap:break-word;" href="mailto:service@takall.com">service@takall.com</a>
+          &nbsp;&nbsp;
+          <a href="../transaction/add.html">支持和帮助</a>:
+          <a style="word-wrap:break-word;" href="mailto:support@takall.com">support@takall.com</a>
+        </p>
+      </div>
+      
+    </div>
+    
+    <!-- 窄宽屏幕显示-->
+    <div class="show_narrow" style="display:none;">
+      <div class="row">
+        <div class="col-left col-md-10">
+        <!-- Copyright info -->
+          <p class="copy" style="margin-top:4px;">
+            Copyright &copy; 2016 <a href="http://www.ipassin.com">IPASSIN.COM</a> 
+         
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-left col-md-10">
+          <p class="pull-left">Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>
+            ｜ Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a></p>
+        </div>
+      </div>
+    </div><!-- end 窄宽屏幕显示-->
+    
+    
+  </div><!-- end .container-->
+</footer>
+<!-- Footer ends -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top
+<span class="favorite" onclick="addFavorite('Readbook', 'http://www.tekinfo.net');" onmouseover="javascript:$('.favorite').show();" onmouseout="javascript:$('.favorite').hide();">
+  <img src="../http/readbook/logo/readbook-qr-green-256.png" alt="IPASSIN.COM" longdesc="http://www.tekinfo.net" />
+</span>-->
+<!--
+<span class="toshare" onclick="javascript:$('#share-modal-dialog').modal('show',null,0);" onmouseover="showQrCode();" onmouseout="javascript:$('.favorite').hide();">
+  <a href="javascript:;"><i class="fa fa-share"></i></a>
+</span>
+
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span>-->
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class="text-center"></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end waiting-modal-dialog-->
+
+<!-- start按钮 -->
+<div id="start_box" class="start-box appcall">
+	<div class="cell-1">
+		<form id="searchForm" name="searchForm" class="start-search" role="search" action="javascript:quickSearchFormSubmit(2);">
+			<div style="padding-right: 50px;position: relative;">
+				<input id="searchText" name="searchText" type="text" class="form-control" onclick="this.select();" placeholder="检索问答">
+				<div style="position: absolute;right: 0;top: 0;">
+					<button type="submit" style="border:none;background:none;"><img src="../../images/search-32.png" alt="搜索" height="32"></button>
+           			<button type="button" class="btn btn-default hide" onclick="searchAskQuestion()" style="padding-left: 8px;padding-right: 8px;">提问</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="cell-2">
+		<button class="start-btn"><img src="../../ipassin/logo/ipassin-icon%20for%20app%20store%20watch-60%402x.png" width="32px"></button>
+	</div>
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title">提示信息：</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end message-modal-dialog-->
+
+<!-- 分享代码 -->
+<div id="share-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="share-modal-dialog-title" class="">一键分享:</h3>
+      </div>
+      <div id="share-modal-dialog-body" class="modal-body">
+        <div class="subject-share" id="subject-share">
+          <!-- JiaThis Button BEGIN -->
+          <label class="col-lg-2" style="width:auto; padding-top:8px;">分享到：</label>
+          <div class="col-lg-10">
+            <div class="jiathis_style_32x32">
+              <a class="jiathis_button_qzone"></a>
+              <a class="jiathis_button_tsina"></a>
+              <a class="jiathis_button_tqq"></a>
+              <a class="jiathis_button_weixin"></a>
+              <a class="jiathis_button_renren"></a>
+              <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+              <a class="jiathis_counter_style"></a>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2100703" charset="utf-8"></script>
+        </div><!--end.subject-share-->
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!--  Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script>  <!--Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+
+<script src="../../readbook/js/share.js" language="javascript" type="text/javascript"></script> <!-- 分享代码 -->
+
+<script language="javascript" type="text/javascript">
+
+function showMessage(msg){
+	var obj = document.getElementById("history-message");
+	if(obj)
+	  obj.insertAdjacentHTML('BeforeEnd', "<p>"+msg+"</p>");
+	  
+	var msgdiv= document.getElementById("message");
+	//alert(msgdiv);
+	if(msgdiv){
+		msgdiv.innerHTML=msg;
+		//alert(msgdiv.innerHTML);
+		$("#message-modal-dialog-title").html("提示信息：");
+		
+		$('#message-modal-dialog').modal('show',null,0);
+	}
+	else
+	  alert(msg);
+}
+
+function showError(msg){
+	showMessage("<p style='color:red'>"+msg+"</p>");
+	$("#message-modal-dialog-title").html("错误信息：");
+}
+
+function initial(){
+  tek.core.getURLRequest();
+  tek.common.getUser();
+
+  showUser(); //tekinfo.js
+  tek.serverTimer.showTime();
+	
+	//navbar显示审计与否
+	if(tek.common.isLoggedIn() && tek.user.isNormal(mySecurity) && tek.role.isAuditor(myRole))
+	  $("#audit").show(0);
+	
+	//初始化start按钮
+	startBtn.init("start_box");
+	
+	//绑定拖拽手势
+	bindDragGesture();
+	
+	//获取当前用户参加的小组
+	getAllGroup(10);
+	
+	if(typeof initialShare == "function"){
+		initialShare();
+	}
+	if(typeof init == "function"){
+		init();
+	}
+	if(typeof onestart == "function"){
+		onestart();
+	}
+	
+	var appcall = request["appcall"];
+	if(appcall==1){
+		$(".appcall").css("display","none");
+	}else{
+		$(".appcall").css("display","block");
+	}
+}
+
+//绑定拖拽手势
+var _navbarSkip = [
+	"/http/tekinfo/transaction/index.html", //问答
+	"/http/takall/subject/index.html", //主题
+	"/http/exam/paper/index.html", //考试
+	"/http/takall/qualification/index.html", //资质
+	"/http/takall/group/index.html" //小组
+];
+function bindDragGesture() {
+	if (_gesture) {
+		_gesture.bind({distance:100, callback:function (dir) {
+			var uri = location.pathname;
+			var skipUri;
+			for (var i = 0, len = _navbarSkip.length; i < len; i++) {
+				if ((_navbarSkip[i].length > 5) && (uri.search(_navbarSkip[i]) != -1)) {
+					if (dir == 'right' && i > 0) {
+						skipUri = _navbarSkip[i-1].substring(1);
+					} else if (dir == 'left' && i < len - 1) {
+						skipUri = _navbarSkip[i+1].substring(1);
+					}
+					if (skipUri)
+						break;
+				}
+			}// ens for()
+			if (skipUri)
+				self.location = tek.common.getRootPath() + skipUri;
+		}});
+	}
+}
+
+// navbar导航栏高度发生变化，自适应body的padding-top
+var _navbar_height_old_ = 0;
+window.setInterval(function() {
+		var $navbar = $("body > .navbar");
+		if ($navbar[0] && $navbar.is(":visible")) {
+			var newHeight = $navbar[0].offsetHeight;
+			if (newHeight && newHeight > 37 && newHeight != _navbar_height_old_) {
+				document.body.style["padding-top"] = newHeight + "px";
+				_navbar_height_old_ = newHeight;
+			}
+		} else {
+			document.body.style["padding-top"] = "";
+		}
+	}, 100);
+
+/**
+function getShareTitle(title){
+	
+}
+
+/**
+ * 插入具体的对象帮助。
+ * name -- 对象帮助的显示名字
+ * url -- 对象帮助的链接
+
+function addObjectHelp(name,url){
+	var obj=document.getElementById("help_div");
+	if(obj){
+		var sb=new StringBuffer();
+		sb.append("<a href='");
+		sb.append(url);
+		sb.append("' target='_blank'>");
+		sb.append("<span class='label label-success'><i class='fa fa-bookmark'></i></span>");
+		sb.append(name);
+		sb.append("</a>");
+		
+		var newNode = document.createElement("p");
+		newNode.innerHTML=sb.toString();
+		var reforeNode = document.getElementById("system_help");
+		if(reforeNode)
+			obj.insertBefore(newNode,reforeNode.previousSibling);
+		else
+			obj.appendChild(newNode);
+	}
+} **/
+</script>
+<script src="../../common/onestart/js/startMenu.js"></script> <!-- 开始按钮js -->
+<script language="javascript" type="text/javascript">
+	var oneMenu=[
+			{
+				name:"读书",
+				icon:readBookImgBase64,
+				clickF:function(){
+					window.location.href="./index.html";
+				},
+				addition:''
+			},
+			{
+				name:"主题",
+				icon:buildingImgBase64,
+				clickF:function(){
+					window.location.href="./http/takall/subject/index/index.html";
+				}
+			},
+			{
+				name:"问答",
+				icon:archiveImgBase64,
+				clickF:function(){
+					window.location.href="./http/takall/transaction/index.html";
+				}
+			},
+			{
+				name:"组织",
+				icon:groupImgBase64,
+				clickF:function(){
+					window.location.href="./http/takall/group/index.html";
+				}
+			},
+			{
+				name:"帮助/登录",
+				icon:adjustImgBase64,
+				clickF:function(){
+					oneStartMenuLis.css("margin-top","-260px");
+				}
+			},
+			{
+				name:"返回",
+				icon:backImgBase64,
+				clickF:function(){
+					oneStartMenuLis.css("margin-top","0px");
+				}
+			},
+			{
+				name:"系统帮助",
+				icon:helpImgBase64,
+				clickF:function(){
+					window.location.href="./http/readbook/help/index.html";
+				}
+			},
+			{
+				name:"分享",
+				icon:shareImgBase64,
+				clickF:function(){
+					$('#share-modal-dialog').modal('show',null,0);
+				}
+			},
+			{
+				name:"收藏本站",
+				icon:starImgBase64,
+				clickF:function(){
+					addFavorite('Readbook', 'http://www.tekinfo.net');
+				}
+			},
+			{
+				name:"检索",
+				icon:readBookImgBase64,
+				clickF:function(){
+					goLogin();
+				}
+			}
+		];
+</script>
+<!-- InstanceBeginEditable name="oneMenu" -->
+
+<!-- InstanceEndEditable -->
+<script language="javascript" type="text/javascript">
+	function startMenu(){
+		//alert("onemenu="+oneMenu);
+		if(oneMenu){
+			if(typeof oneStart == "function"){
+				oneStart(oneMenu);
+			}
+		}
+	};
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<script type="text/javascript" language="javascript">	
+var userId;
+
+function init(){
+	if(myId && myId >0){
+		if(request)
+			userId=request["user_id"];
+			
+		if(!userId || userId==0)
+			userId=myId;
+		
+		//获取用户
+		readUser();
+		//获取记录
+		listRecord();
+		//获取小组
+		listGroup();
+		//获取主题
+		listSubject();
+	}else{
+		login(); //未登录则返回登陆界面
+	}
+}
+</script>
+<!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

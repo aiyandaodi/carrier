@@ -1,0 +1,144 @@
+body {
+	text-align:center;
+	margin:0px;
+	font-size:13px;
+}
+
+#main { 
+	width: 720px; 
+	height: auto;
+	margin: 25px auto 0 auto; 
+	padding:15px 10px 10px 10px;
+}
+
+li {
+	list-style:none;
+}
+
+/* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
+a:link {
+	color:#414958;
+	text-decoration: none; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: none;
+}
+
+#menu{
+	background:url(../../../images/grey_menu_back.png) no-repeat;
+	height:36px;
+	width:720px;
+	text-align: left;
+	text-decoration: none;
+	list-style-type:none;
+	margin:0px;
+}
+
+#menu li{
+	float:left;
+	width:84px;
+	height:36px;
+	font-family:"微软雅黑";
+	font-size:small;
+	text-align:center;
+	line-height:38px;
+	text-decoration: none;
+	list-style-type:none;
+}
+
+#menu .menu1 {
+	float:right;
+}
+
+#menu .title{
+	margin:auto, 0px, auto, 0px;
+	padding-left:20px;
+	float:left;
+	width:auto;
+	height:36px;
+	font-family:"微软雅黑";
+	font-size:small;
+	text-align:left;
+	line-height:38px;
+	text-decoration: none;
+	list-style-type:none;
+}
+
+#menu .menuover{
+	text-decoration: none;
+	background:url(../../../images/menuon.png);
+	color: #FBFEE0;	
+	cursor:pointer;
+}
+
+#menu  .menuout{
+	text-decoration: none;
+	color:#505050;
+}
+
+#info
+{
+    margin-top: 5px;
+	margin-right:auto;
+	margin-bottom:5px;
+	margin-left:auto;
+	font-size:small;
+	text-decoration:none;
+	max-width:660px;
+	min-width:600px;
+	height:auto;
+	background-color: #F9F9F9; 
+	border:1px solid #b9cff6;
+}
+
+#info ul
+{
+    text-align: left;
+	margin-bottom:0px;
+	padding-top:2px;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-bottom:2px;
+    width:auto;
+	height:auto;
+	list-style:none;
+	text-decoration: none; 
+	display:block;
+	font-size:13px;
+}
+
+#info .button {
+	width:auto;
+	text-align:center;
+}
+
+#info .field
+{
+    text-align: left;
+	margin-bottom:0px;
+	padding-top:2px;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-bottom:2px;
+    width:auto;
+	height:auto;
+	list-style:none;
+	text-decoration: none; 
+	display:block;
+	font-size:13px;
+}
+
+textarea {
+	font-family:"微软雅黑";
+	font-size:small;	
+}
+
+.button {
+	width:auto;
+}
+
+.msg {
+	width:auto;
+	text-align:left;	
+}

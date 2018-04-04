@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="Shortcut Icon" href= "../../../favicon.ico"/>
+<link rel="Bookmark" href= "../../../favicon.ico"/>
+<link href="index.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="fisheye.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../../interface/default/calendar/style1.css" type="text/css" rel="stylesheet"/>
+
+<title>TekInfo TAKALL - System</title>
+</head>
+
+<body>
+<div id="main">
+  <div id="banner">
+    <div id="logo">
+      <a href="javascript:openMenu(0);">
+    <img src="../../readbook/default/images/tekinfo.png" width="97" height="39" alt="南水北调"/><br/>
+        <div align="center" style="text-align:center"></div>
+      </a>   
+    <!-- end.logo-->
+    </div>
+ 
+    <div class="expand-down">
+      <ul>
+    <li><a href="javascript:openMenu(1);">
+    <img src="images/user-manage.png"/><br/>
+    <span>用户管理</span></a></li>
+    
+    <li><a href="javascript:openMenu(2);">
+    <img src="images/group-manage.png"/><br/>
+    <span>小组管理</span></a></li>
+    
+    <li><a href="javascript:openMenu(3);">
+    <img src="images/file-manage.png" /><br/>
+    <span>文件管理</span></a></li>
+<!--    
+    <li><a href="javascript:openMenu(4);">
+    <img src="images/content-catalog.png" /><br/>
+    <span>内容分类</span></a></li>
+    
+    <li><a href="javascript:openMenu(5);">
+    <img src="images/form-catalog.png" /><br/>
+    <span>形式分类</span></a></li>
+-->    
+    <li><a href="javascript:openMenu(6);">
+    <img src="images/mobile-device.png" /><br/>
+    <span>端口设备</span></a></li>
+
+    <li><a href="javascript:openMenu(7);">
+    <img src="images/mobile.png" /><br/>
+    <span>手机</span></a></li>
+
+    <li><a href="javascript:openMenu(10);">
+    <img src="images/service.png" /><br/>
+    <span>服务</span></a></li>
+    
+    <li><a href= "javascript:openMenu(11);">
+    <img src="images/initial.png" /><br/>
+    <span>初始化</span></a></li>
+    
+    <li><a href= "javascript:openMenu(12);">
+    <img src="images/database.png" /><br/>
+    <span>数据库管理</span></a></li>
+  </ul>
+  <!-- end.expand-down>--> </div>
+  <!--end.banner--></div>
+<!-- end.main--></div>
+<hr />
+
+
+
+<div id="maindiv" class="maindiv">
+
+        <iframe id="maincontent" frameborde="false" name="maincontent" src="warn.jsp"  width="100%" height="100%" SCROLLING="no" frameborder="0" 
+onload="jscript:if(navigator.userAgent.indexOf('MSIE')<=0) {iniIFrame();}" onreadystatechange ="jscript:iniIFrame();">
+		</iframe>  
+ <script language="javascript">
+		var  divobj=document.getElementById( "maindiv");
+		var myframe=document.getElementById("maincontent");
+		
+		//设置页面高度
+  		function iniIFrame(){
+			
+			var isgo=false;
+			if(navigator.userAgent.indexOf("MSIE")>0){
+	  			if ((myframe.readyState == "complete")|| (myframe.readyState == "loaded") )
+					isgo=true;
+			}else		
+	  			isgo=true;
+
+			
+			if(isgo){
+				var dHeight ;
+        		var height ;
+			
+					  
+				   // if(navigator.userAgent.indexOf("MSIE")>0) { 
+				   //  bHeight = myframe.document.body.scrollHeight;
+                   //  dHeight = myframe.document.documentElement.scrollHeight;
+				   // }
+				   // else
+				  // {
+				bHeight = myframe.contentWindow.document.body.scrollHeight;
+        		dHeight = myframe.contentWindow.document.documentElement.scrollHeight;
+				   //}
+				
+				var height = Math.max(bHeight, dHeight);
+				//alert(height);
+				if(height<500)
+					height=500;
+				
+		    	//alert(myframe.document.body.scrollHeight);
+			
+				try{
+          			myframe.height = height;
+					divobj.style.height=heigh+"px";
+        		}catch (ex){}
+			
+			} //end if(isgo)
+  		}
+	
+	
+		<!-- 菜单的调用程序-->
+		 
+		 var mynumber;
+			
+		 function openMenu(number){
+			
+		 	if(number>=0 && number<=20 && number!=mynumber){
+			//	myhtmls[mynumber]=myframe.contentWindow.document.body.innerHTML;
+			//	mynumber=number;
+			//	myframe.contentWindow.document.body.innerHTML="";
+				
+				
+			//	if( myhtmls[number]){
+			//		myframe.contentWindow.document.body.innerHTML= myhtmls[number];
+					//alert( myframe.contentWindow.document.body.scrollHeight);
+
+			//	}
+			//	else{ 
+					var srcname;
+					
+					switch (number){
+						case 1:	srcname="../user/list.jsp";
+									break;
+						case 2:	srcname="../group/list.jsp";
+									break;
+						case 3:	srcname="../ftpserver/list.jsp";
+									break;
+						case 4:	srcname="../content";
+									break;
+						case 5:	srcname="../form";
+									break;
+						case 6: srcname="../resource/device/list.jsp";
+									break;
+						case 7: srcname="mobile.html";
+									break;
+						case 10: srcname="service.jsp";
+									break;
+						case 11: srcname="initial.html";
+									break
+						case 12: srcname="/DBExplorer";
+									break
+						default:	srcname="warn.jsp";
+							
+					} // end switch (number)
+					
+						
+					myframe.src=srcname;
+					
+			//	} //end if( myhtmls[number]) else
+				
+				try{
+          			myframe.height = null;
+					divobj.style.height=null;
+        		}catch (ex){}
+				iniIFrame();
+			} //end if(number>=0 && number<=7)
+		 }
+		  
+		</script>
+  <!-- end .maindiv --></div>
+
+<div id="footer">
+  <p class="legal">Copyright (c) 2000-2012 TekInfo TAKALL. All rights reserved.</p>
+	<p class="credit">Designed by <a href="http://www.nodethirtythree.com/">北京易商迅达科技有限公司</a><a href=</p>
+<!-- end."footer"--></div>
+
+
+</body>
+</html>

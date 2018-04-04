@@ -1,0 +1,6 @@
+name=内容分类
+
+#property
+property.class_id=标识
+property.class_code=编码
+property.class_name=分类名称

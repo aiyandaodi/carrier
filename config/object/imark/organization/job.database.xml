@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 职位对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <job>
+        <item>
+          <!-- 标识 -->
+          <job_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <job_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 职位名称 -->
+          <job_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目录分类 -->
+          <job_catalog value="VARCHAR(200)"/>
+          <!-- 标签分类 -->
+          <job_tag value="VARCHAR(200)"/>
+          
+          <!-- 职位类型:实习、兼职、全职 --> 
+          <job_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 职位状态 --> 
+          <job_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属机构 -->
+          <job_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+           <!-- 所属部门 -->
+          <job_department value="VARCHAR(200)"/>
+          
+          <!-- 所有者 -->
+          <job_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <!-- 职位网址-->
+          <job_url value="VARCHAR(255)  NOT NULL"/>
+          
+          <!-- 职位等级-->
+          <job_grade value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 编制人数-->
+          <job_counts value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所需认证数-->
+          <job_certificates value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 工作地：国家/地区-->
+          <job_country value="VARCHAR(255) NOT NULL"/>
+          <!-- 工作地：省/州／直辖市-->
+          <job_state value="VARCHAR(255) NOT NULL"/>
+          <!-- 工作地：县/市／区-->
+          <job_city value="VARCHAR(255) NOT NULL"/>
+          <!-- 工作地：地址-->
+          <job_street value="VARCHAR(255) NOT NULL"/>
+         
+          
+          <!-- 职位说明 -->
+          <job_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </job>
+    </table>
+  </database>
+</tekinfo>

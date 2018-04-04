@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+/** UI 62 **/
+.ui-62{
+	border:1px solid #eee;
+	max-width:800px;
+	margin:40px auto;
+	background:#fcfcfc url("../resume/http/images/background/paper.png") repeat;
+	position:relative;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.1);
+}
+.ui-62 .ui-bor{
+	width:70px;
+	position:absolute;
+	height:100%;
+	border-right:double #ff7c7c;
+}
+.ui-62 .ui-main{
+	margin-left:75px;
+	padding:25px;
+}
+.ui-62 .ui-main h2{
+	font-weight:normal;
+	font-size:25px;
+	line-height:30px;
+	color:#888;	
+}
+.ui-62 .ui-main p{
+	line-height:2.2;
+}

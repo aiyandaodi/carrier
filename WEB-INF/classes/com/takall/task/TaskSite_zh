@@ -1,0 +1,12 @@
+name=执行任务主机
+
+#property
+property.task_site_id=标识
+property.task_site_code=编码
+property.task_site_task=被执行的任务
+property.task_site_site=执行的目标主机
+property.task_site_credentials=执行任务凭证
+property.task_site_status=有效状态
+property.task_site_status.wait=暂停
+property.task_site_status.apply=永久停止
+property.task_site_status.valid=有效

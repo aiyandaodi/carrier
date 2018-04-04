@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object:收藏集 -->
+
+<tekinfo>
+  <object>
+    <FavoriteSet ResourceBundle="com.takall.profile.FavoriteSet"
+        Structure="com.takall.profile.FavoriteSet"
+        ObjectRm="com.takall.remoting.profile.FavoriteSetRm"
+         version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <favorite_set_id base="identity"/>
+        <favorite_set_code base="" step="1" digit="4"/>
+        <favorite_set_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="favorite_set_name" codeIdentity="favorite_set_code">
+        <favorite_set identity="favorite_set_id"/>
+      </table>
+
+      <index maxIcon="object/profile/FavoriteSet-48.gif"
+          minIcon="object/profile/FavoriteSet.gif"/>
+      
+      <command>
+      	<read url="http/takall/favoriteSet/read.html">
+			<parameter>
+            	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            	<record value="0x10"/>
+          	</parameter>
+          	<item>
+          		<favorite_set_id/>
+            	<favorite_set_code/>
+            	<favorite_set_name/>
+            	<favorite_set_tag/>
+				<favorite_set_color/>
+				<favorite_set_status/>
+				<favorite_set_remark/>
+          	</item>
+        </read>
+        
+        <add url="http/takall/favoriteSet/add.html">
+        	<parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <favorite_set_id/>
+            <favorite_set_code/>
+            <favorite_set_name/>
+            <favorite_set_tag/>
+            <favorite_set_color/>
+            <favorite_set_status/>
+            <favorite_set_remark/>
+          </item>
+        </add>
+        
+        <edit url="http/takall/favoriteSet/edit.html">
+        	<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x80"/>
+         	</parameter>
+          <item>
+            <favorite_set_id/>
+            <favorite_set_code/>
+            <favorite_set_name/>
+            <favorite_set_tag/>
+            <favorite_set_color/>
+            <favorite_set_status/>
+            <favorite_set_remark/>
+          </item>
+        </edit>
+
+        <list url="http/takall/favoriteSet/index.html">
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts value="10"/>
+      	  </parameter>
+          <item>
+            <favorite_set_id/>
+            <favorite_set_code/>
+            <favorite_set_name/>
+            <favorite_set_tag/>
+            <favorite_set_color/>
+            <favorite_set_status/>
+            <favorite_set_owner/>
+            <favorite_set_remark/>
+          </item>
+        </list>
+        
+        <remove url="http/takall/favoriteSet/remove.html">
+          <parameter>
+		  	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+            <!-- 是否删除下级编码信息 -->
+            <remove_sub value="true"/>
+            <!-- 删除附件（对象名=字段名） -->
+            <remove_attach value="Favorite=favorite_set"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <favorite_set_id variable="long" notnull="true" forbidEdit="true"/>
+        <favorite_set_code variable="string" notnull="true"/>
+        <favorite_set_name variable="string" notnull="true"/>
+        <favorite_set_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        
+        <!-- 标签 -->
+        <favorite_set_tag variable="string" parse="tag" maxlength="255" notnull="true"/>
+        
+        <!-- 所属收藏分组 -->
+        <favorite_set_color variable="string" default="ff0000" notnull="true"/>
+        
+        <!-- 状态 -->
+        <favorite_set_status variable="int" parse="enum" default="0" notnull="true">
+        	<private value="-1"/>    <!-- 私有：自己可见 -->
+        	<friend value="0"/>    <!-- 好友：关注者可见 -->
+        	<public value="1"/>    <!-- 公开：所有人可见 -->
+        </favorite_set_status>
+        
+        <!-- 说明 -->
+        <favorite_set_remark variable="string" format="textarea:4"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </FavoriteSet>
+  </object>
+</tekinfo>

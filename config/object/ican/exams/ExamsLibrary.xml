@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 题库-->
+
+<tekinfo>
+  <object>
+    <ExamsLibrary ResourceBundle="com.takall.exams.ExamsLibrary"
+        Structure="com.takall.exams.ExamsLibrary"
+        ObjectRm="com.takall.remoting.exams.ExamsLibraryRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_library_id base="identity"/>
+        <exams_library_code base="" step="1" digit="4"/>
+        <exams_library_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="exams_library_name" codeIdentity="null" ownerIdentity="null">
+        <exams_library identity="exams_library_id"/>
+      </table>
+      
+      <index maxIcon="object/exams/ExamsLibrary-48.gif"
+          minIcon="object/exams/ExamsLibrary.gif"/>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+          </parameter>
+          <item>
+            <exams_library_name/>
+            <exams_library_catalog/>
+            <exams_library_tags/>
+            <exams_library_grade/>
+            <exams_library_read/>
+            <exams_library_write/>
+            <exams_library_end/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+          </parameter>
+          <item>
+            <exams_library_code rightrole="auditor"/>
+            <exams_library_name/>
+            <exams_library_catalog/>
+            <exams_library_tags/>
+            <exams_library_grade/>
+            <exams_library_read/>
+            <exams_library_write/>
+            <exams_library_end/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_library_code rightrole="auditor"/>
+            <exams_library_name/>
+            <exams_library_catalog/>
+            <exams_library_tags/>
+            <exams_library_grade/>
+            <exams_library_read/>
+            <exams_library_write/>
+            <exams_library_owner/>
+            <exams_library_group/>
+            <exams_library_end/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_library_code rightrole="auditor"/>
+            <exams_library_name/>
+            <exams_library_catalog/>
+            <exams_library_tags/>
+            <exams_library_grade/>
+            <exams_library_group/>
+            <exams_library_owner/>
+            <exams_library_end/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 删除附件对象名。格式：对象名=字段名,对象名=字段名 -->
+            <remove_attach value="ExamsQuestion=exams_question_library"/>
+          </parameter>
+        </remove>
+        
+        <import>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+            <exams_library_catalog/>
+            <exams_library_tags/>
+            <exams_library_grade/>
+            <exams_library_read/>
+            <exams_library_write/>
+            <exams_library_group/>
+            <exams_library_end/>
+          </item>
+        </import>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_library_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 题库编码 -->
+        <exams_library_code variable="string" maxlength="16" notnull="true"/>
+        <!-- 题库名称 -->
+        <exams_library_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 目录分类 -->
+        <exams_library_catalog variable="string" parse="catalog:ExamsLibrary" maxlength="32"/>
+        <!-- 标签 -->
+        <exams_library_tags variable="string" parse="tag" maxlength="512" notnull="false"/>
+        <!-- 级别 -->
+        <exams_library_grade variable="int" parse="int" default="1" notnull="true"/>
+        
+        <!-- 阅读权限 -->
+        <exams_library_read variable="int" parse="enum" format="single" default="0x10" notnull="true">
+          <admin value="0x01"/>        <!-- 题库管理者可以阅读 -->
+          <member value="0x04"/>       <!-- 组员可以阅读 -->
+          <user value="0x10"/>         <!-- 系统用户可以阅读 -->
+          <anonymous value="0x40"/>    <!-- 匿名者可以阅读 -->
+        </exams_library_read>
+        <!-- 题库增、删改试题的权限。题库本身只能创建者或组管理员修改-->
+        <exams_library_write variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <admin value="0x01"/>      <!-- 题库管理者可以增、删、改试题 -->
+          <member value="0x04"/>     <!-- 组员可以增、删、改试题 -->
+          <user value="0x08"/>       <!-- 系统用户可以增、删、改试题 -->
+        </exams_library_write>
+        
+        <!-- 题库所属组 -->
+        <exams_library_group variable="long" parse="object:Group" default="0" notnull="true"/>
+        <!-- 题库创建者 -->
+        <exams_library_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 停用日期 -->
+        <exams_library_end variable="long" parse="date" format="yyyy-MM-dd"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件信息：
+          name：附件名称（自定义）
+          object：附件对象名
+          column：附件对象记录当前对象值的字段名
+          remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+      <attachment>
+        <question object="ExamsQuestion" column="exams_question_library" remove="2"/>
+      </attachment>
+    </ExamsLibrary>
+  </object>
+</tekinfo>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 社交账号地址 -->
+<tekinfo>
+  <object>
+
+    <ContactSocial ResourceBundle="com.takall.contact.ContactSocial"
+        Structure="com.takall.contact.ContactSocial"
+        ObjectRm="com.takall.remoting.contact.ContactSocialRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <social_id base="identity"/>
+        <social_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="social_name" codeIdentity="null">
+        <contact_social identity="social_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <social_code/> -->
+            <social_name/>
+            <social_account/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <social_code/> -->
+            <social_name/>
+            <social_account/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <social_code/>
+            <social_name/>
+            <social_account/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <social_code/>
+            <social_name/>
+            <social_account/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <social_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <social_code variable="string" maxlength="10"/>
+        <!-- 名字 -->
+        <social_name variable="string" maxlength="32" notnull="true"/>
+        
+        <!-- URL地址 -->
+        <social_url variable="string" maxlength="255" parse="email" notnull="true"/>
+        <!-- 个人账号 -->
+        <social_account variable="string" maxlength="255" parse="email" notnull="true"/>
+        
+        <!-- 所属个人 -->
+        <social_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 所属机构 -->
+        <social_organization variable="long" parse="object:Organization" default="0" notnull="true"/>
+
+        <!-- 所属联系信息 -->
+        <social_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactSocial>
+  </object>
+</tekinfo>

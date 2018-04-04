@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 岗位对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <job_position>
+        <item>
+          <!-- 标识 -->
+          <job_position_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <job_position_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 岗位名称 -->
+          <job_position_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 岗位类型:实习、兼职、全职 --> 
+          <job_position_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+		  
+		  <!-- 岗位类型:所需职位数量 --> 
+          <job_position_counts value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 岗位状态 --> 
+          <job_position_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属职位 -->
+          <job_position_job value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <job_position_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+         
+          
+          <!-- 雇主 -->
+          <job_position_employer value="VARCHAR(255) NOT NULL"/>
+		  <!-- 上岗说明 -->
+          <job_position_remark value="MEMO"/>
+		  
+		  <!-- 工作地：国家/地区-->
+          <job_position_country value="VARCHAR(255) NOT NULL"/>
+          <!-- 工作地：省/州／直辖市-->
+          <job_position_state value="VARCHAR(255) NOT NULL"/>
+          <!-- 工作地：县/市／区-->
+          <job_position_city value="VARCHAR(255) NOT NULL"/>
+		  <!-- 工作地：地址-->
+          <job_position_street value="VARCHAR(255) NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </job_position>
+    </table>
+  </database>
+</tekinfo>

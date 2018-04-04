@@ -1,0 +1,35 @@
+#listorder .user_code, .item1 .user_code, .item2 .user_code {width:10%; display:none;}
+#listorder .user_name, .item1 .user_name, .item2 .user_name {width:10%;}
+#listorder .user_login, .item1 .user_login, .item2 .user_login {width:12%;}
+#listorder .user_status, .item1 .user_status, .item2 .user_status {width:9%;}
+#listorder .user_online, .item1 .user_online, .item2 .user_online {width:9%;}
+#listorder .user_status, .item1 .user_status, .item2 .user_status {width:10%;}
+#listorder .user_auth, .item1 .user_auth, .item2 .user_auth {width:16%;}
+#listorder .user_latestedTime, .item1 .user_latestedTime, .item2 .user_latestedTime {width:19%;}
+#listorder .user_latestedIp, .item1 .user_latestedIp, .item2 .user_latestedIp {width:14%}
+
+.item1 .user_name, .item2 .user_name {text-align:left;}
+.item1 .user_login， .item2 .user_login {text-align:center;}
+.item1 .user_security， .item2 .user_security {text-align:center;}
+
+.submenu {
+	position:absolute;
+	float:left;
+	width:75px;
+	height:auto;
+	font-family:"微软雅黑";
+	font-size:small;
+	text-align:center;
+	text-decoration: none;
+	list-style-type:none;
+	padding: 8px 0px 8px 0px;
+	display:none;
+}
+
+.submenuout{
+	background-repeat:no-repeat;
+	background-position:top;
+	background-color:#0CF;
+	text-decoration: none;
+	color:#505050;
+}

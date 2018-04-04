@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 评价对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <evaluation>
+        <item>
+          <!-- 标识 -->
+          <evaluation_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <evaluation_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 评价名称 -->
+          <evaluation_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目录分类 -->
+          <evaluation_catalog value="VARCHAR(128)"/>
+          <!-- 标签分类 -->
+          <evaluation_tag value="VARCHAR(200)"/>
+          
+          <!-- 评价类型 --> 
+          <evaluation_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 评价状态 --> 
+          <evaluation_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 评价目标用户 -->
+          <evaluation_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 评价创建者 -->
+          <evaluation_creator value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 评价机构 -->
+          <evaluation_organization value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 评价分数 -->
+          <evaluation_score value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 评价年度 -->
+          <evaluation_year value="CHAR(4)"/>
+          
+          <!-- 评价说明 -->
+          <evaluation_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </evaluation>
+    </table>
+  </database>
+</tekinfo>

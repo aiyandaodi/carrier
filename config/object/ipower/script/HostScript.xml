@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 脚本  -->
+<tekinfo>
+  <object>
+    <HostScript ResourceBundle="com.takall.script.HostScript"
+        Structure="com.takall.script.HostScript"
+        ObjectRm="com.takall.remoting.script.HostScriptRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <host_script_id base="identity"/>
+        <host_script_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <host_script_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <host_script_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="host_script_name" codeIdentity="null" ownerIdentity="null">
+        <host_script identity="host_script_id"/>
+        <host_script_blob identity="host_script_id"/>
+      </table>
+
+
+
+      <blob blobObject="null"
+          table="host_script_blob"
+          urlField="null"
+          blobField="host_script_blob"
+          mimeField="host_script_mime"
+          lengthField="host_script_length"
+          timeField="modifyTime"
+          mimeType="text/plain"/>
+
+      <command>
+        <add url="http/ipower/script/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_script_code/>
+            <host_script_name/>
+            
+            <host_script_group/>
+            <host_script_tag/>
+            <host_script_color/>
+
+            <host_script_services/>
+            <host_script_status/>
+
+            <host_script_blob/>
+            <host_script_remark/>
+            <host_script_owner/>
+
+          </item>
+        </add>
+        
+        <edit url="http/ipower/script/edit.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_script_code/>
+            <host_script_name/>
+            
+            <host_script_group/>
+            <host_script_tag/>
+            <host_script_color/>
+
+            <host_script_services/>
+            <host_script_status/>
+
+            <host_script_blob/>
+            <host_script_remark/>
+            <host_script_owner/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ipower/script/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <host_script_code/>
+            <host_script_name/>
+            
+            <host_script_group/>
+            <host_script_tag/>
+            <host_script_color/>
+
+            <host_script_services/>
+            <host_script_status/>
+
+            <host_script_blob/>
+            <host_script_remark/>
+            <host_script_owner/>
+            
+            <createTime/>
+            <createIp/>
+          </item>
+        </read>
+        
+        <list url="http/ipower/script/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_script_code/>
+            <host_script_name/>
+            
+            <host_script_group/>
+            <host_script_tag/>
+            <host_script_color/>
+
+            <host_script_services/>
+            <host_script_status/>
+
+            <host_script_blob/>
+            <host_script_remark/>
+            <host_script_owner/>
+            
+            <createTime/>
+            <createIp/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_script_name/>
+            <host_script_tag/>
+            <host_script_services/>
+            <host_script_group/>
+          </item>
+        </search>
+        
+        <remove url="http/ipower/script/remove.html">
+          <parameter>
+        
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <host_script_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <host_script_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 脚本名称 -->
+        <host_script_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 所属管理组 -->
+        <host_script_group variable="long" parse="object:Group" notnull="true"/>
+        <!-- 脚本标签 -->
+        <host_script_tag variable="string" maxlength="255"/>
+        <!-- 脚本颜色 -->
+        <host_script_color variable="string" maxlength="255"/>
+        <!-- 脚本适用的服务 -->
+        <host_script_services variable="string" maxlength="255"/>
+        <!-- 脚本状态 -->
+        <host_script_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="0"/>    <!-- 停止 -->
+          <apply value="-1"/>    <!-- 不可用 -->
+          <valid value="1"/>    <!-- 可用 -->
+        </host_script_status>
+        <!-- 脚本备注 -->
+        <host_script_remark variable="string" format="textarea:4"/>
+        <!-- 脚本所有者 -->
+        <host_script_owner variable="long" parse="object:User" notnull="true" default="0"/>
+        
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </HostScript>
+  </object>
+</tekinfo>

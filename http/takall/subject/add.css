@@ -1,0 +1,108 @@
+/* CSS Document */
+.ui-301, .ui-301 .row, .ui-105-content {
+	width: 90%;
+	margin: auto;
+}
+.ui-301 {
+	margin-top: 50px;
+}
+.radio-checkbox-ul,.right-radio-ul{
+	list-style:none;
+}
+.radio-checkbox-ul li {
+	float: left;
+	margin-right: 10px;
+}
+.form-group .btn{
+	margin:0;
+	padding:0;
+}
+
+.color-option{
+	width:36px;
+	height:36px;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+.color_red{
+	background-color: #f00;
+}
+
+.color_orange{
+	background-color: #f90;
+}
+
+.color_yellow{
+	background-color: #ff0;
+}
+
+.color_green{
+	background-color: #090;
+}
+
+.color_darkblue{
+	background-color: #39c;
+}
+
+.color_blue{
+	background-color: #03f;
+}
+
+.color_purple{
+	background-color: #900;
+}
+
+.color_pink{
+	background-color: #f3f;
+}
+
+.color_none{
+	background-color: #fff;
+}
+
+
+.div-right {
+	padding-left: 0;
+	margin-top: 6px;
+}
+
+.right-type-ul {
+	list-style: none;
+}
+
+ul.right-type-ul li a {
+	display: inline-block;
+	padding: 2px 12px;
+	background-color: #32c8de;
+	color: #fff;
+	border-style: none;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+
+
+ul.right-type-ul li:hover a {
+	background-color: #32c8de !important;
+	border:none !important;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

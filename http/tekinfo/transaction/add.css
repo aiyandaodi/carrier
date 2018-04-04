@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+.error-content {
+	height: 240px;
+	padding-top: 100px;
+}
+
+/*没有相关对象，事务居中*/
+#transaction_object_item.horizontal-center {
+    float: none !important;
+    width: 100% !important;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.tranasction-type {
+	font-size: 1.4em;
+}
+
+#transaction_object_item .widget-foot .buttons button {
+	margin: 0 0 0 15px;
+}
+
+#transaction_object_item .widget-foot .buttons button:first-child {
+	margin-left: 0;
+}
+
+.transaction-title {
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 2px 0px;
+    padding: 0px;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(3,67,107,0.93);
+    color: rgba(3,67,107,0.93);
+}
+
+.transaction-title > input {
+    border-width: 0;
+    width: 100%;
+}
+
+.transaction-title > input[placeholder] {
+	color: rgba(3,67,107,0.8);
+} 
+.transaction-title > input:-moz-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.transaction-title > input::-moz-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.transaction-title > input::-webkit-input-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.transaction-title > input:-ms-input-placeholder {
+	color: rgba(3,67,107,0.8);
+}

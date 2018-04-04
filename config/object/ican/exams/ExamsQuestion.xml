@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试题 -->
+
+<tekinfo>
+  <object>
+    <ExamsQuestion ResourceBundle="com.takall.exams.ExamsQuestion"
+        Structure="com.takall.exams.ExamsQuestion"
+        ObjectRm="com.takall.remoting.exams.ExamsQuestionRm">
+      <autovalue>
+        <exams_question_id base="identity"/>
+        <exams_question_code base="yyyy" step="1" digit="12"/>
+        <exams_question_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="exams_question_name" codeIdentity="null" ownerIdentity="exams_question_owner">
+        <exams_question identity="exams_question_id"/>
+        <exams_question_blob identity="exams_question_id"/>
+      </table>
+      
+      <blob table="exams_question_blob"
+          urlField="null"
+          blobField="exams_question_blob"
+          mimeField="exams_question_mime"
+          lengthField="exams_question_length" 
+          timeField="modifyTime"
+          mimeType="null"/>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_question_name/>
+            <exams_question_type/>
+            <exams_question_tags/>
+            <exams_question_end/>
+            <exams_question_remark/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_question_code rightrole="auditor"/>
+            <exams_question_name/>
+            <exams_question_type/>
+            <exams_question_tags/>
+            <exams_question_end/>
+            <exams_question_remark/>
+          </item>
+        </edit>
+
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_question_code rightrole="auditor"/>
+            <exams_question_name/>
+            <exams_question_type/>
+            <exams_question_tags/>
+            <exams_question_library/>
+            <exams_question_owner/>
+            <exams_question_end/>
+            <exams_question_mime rightuser="auditor"/>
+            <exams_question_length rightuser="auditor"/>
+            <exams_question_remark/>
+          </item>
+        </read>
+
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_question_name/>
+            <exams_question_type/>
+            <exams_question_tags/>
+            <exams_question_library/>
+            <exams_question_owner/>
+            <exams_question_end/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 删除附件对象名。格式：对象名=字段名,对象名=字段名 -->
+            <remove_attach value="ExamsAnswer=exams_answer_question"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_question_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_question_code variable="string" maxlength="16" notnull="true"/>
+        <!-- 试题题目 -->
+        <exams_question_name variable="string" maxlength="255"/>
+        <!-- 标签 -->
+        <exams_question_tags variable="string" maxlength="512" parse="tag"/>
+        <!-- 试题类型 -->
+        <exams_question_type variable="int" parse="enum" format="single" default="0x02" notnull="true">
+          <single value="0x02"/>         <!-- 单选题 -->
+          <multiple value="0x04"/>       <!-- 多选题 -->
+          <fillblanks value="0x08"/>     <!-- 填空题 -->
+          <!-- <judge value="0x10"/>          对错判断 -->
+          <!-- <composition value="0x20"/>    问答题 -->
+        </exams_question_type>
+        <!-- 所属试题集 -->
+        <exams_question_library variable="long" parse="object:ExamsLibrary" default="0" notnull="true"/>
+        <!-- 创建者 -->
+        <exams_question_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 停用日期 -->
+        <exams_question_end variable="long" parse="date" format="yyyy-MM-dd"/>
+        <!-- 文件长度 -->
+        <exams_question_length variable="long" notnull="true" default="0"/>
+        <!-- 文件MIME类型 -->
+        <exams_question_mime variable="string" maxlength="255"/>
+        <!-- 备注 -->
+        <exams_question_remark variable="string" maxlength="2048"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件信息：
+          name：附件名称（自定义）
+          object：附件对象名
+          column：附件对象记录当前对象值的字段名
+          remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+      <attachment>
+        <answer object="ExamsAnswer" column="exams_answer_question" remove="0"/>
+        <topic object="ExamsTopic" column="exams_topic_question" remove="2"/>
+      </attachment>
+    </ExamsQuestion>
+  </object>
+</tekinfo>

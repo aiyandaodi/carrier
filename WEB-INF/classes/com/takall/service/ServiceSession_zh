@@ -1,0 +1,12 @@
+name=服务连接进程
+
+#property
+property.service_session_id=标识
+property.service_session_code=编码
+property.service_session_name=进程名称
+property.service_session_username=进程用户显示名
+property.service_session_sitename=连接的主机名
+property.service_session_servicename=连接的服务显示名
+property.service_session_credentials=进程凭证
+property.service_session_start=连接开始时间
+property.service_session_end=连接结束时间

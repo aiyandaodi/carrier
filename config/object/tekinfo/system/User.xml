@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统用户对象 -->
+
+<tekinfo>
+  <object>
+    <User ResourceBundle="net.tekinfo.object.system.User"
+        Structure="net.tekinfo.system.User"
+        ObjectRm="net.tekinfo.remoting.user.UserRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <user_id base="identity"/>
+        <user_code base="" step="1" digit="10"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="user_name" codeIdentity="null">
+        <uni_user identity="user_id"/>
+        <user_icon identity="user_id"/>
+        <user_icon_blob identity="user_id"/>
+      </table>
+      
+
+      <!-- 对象图标存储定义
+          table - 对象图标信息存储表名称
+          blobTable - 对象图标BLOB数据存储表名称
+          blobField - 对象图标BLOB数据存储字段
+          mimeField - 对象图标MIME信息存储字段
+          lengthField - 对象图标BLOB数据长度存储字段
+          timeField - 对象图标BLOB数据更新时间存储字段
+          mimeType - 对象图标默认MIME 
+       -->
+      <icon table="user_icon"
+          blobTable="user_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+
+          <item>
+            <user_sex/>
+            <user_birthday/>
+            <user_security rightrole="userManager"/>
+            <user_remark/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <user_code rightrole="userManager"/>
+            <user_name/>
+            <user_sex/>
+            <user_birthday/>
+            
+            <user_security rightrole="userManager"/>
+            <user_role rightrole="userManager"/>
+            <user_status rightrole="userManager"/>
+            <user_start rightrole="userManager"/>
+            <user_end rightrole="userManager"/>
+            
+            <user_file rightuser="admin"/>
+            <user_remark/>
+            <user_mobile rightrole="userManager"/>
+            <user_email rightrole="userManager"/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          
+          <item>
+            <user_code rightuser="apply"/>
+            <user_name loginClient="1"/>
+            <user_sex rightuser="apply" loginClient="1"/>
+            <user_birthday rightuser="apply" loginClient="1"/>
+            <user_online/>
+            <user_security rightuser="apply"/>
+            <user_role rightuser="apply"/>
+            <user_status/>
+            <user_start rightuser="apply"/>
+            <user_end rightuser="apply"/>
+
+            <user_onlineTime rightuser="apply"/>
+            <user_latestTime rightuser="apply"/>
+            <user_latestIp rightuser="apply"/>
+            <user_file rightuser="apply"/>
+            <user_remark rightuser="apply"/>
+
+            <createTime rightuser="apply"/>
+            <createIp rightuser="apply"/>
+            <modifyTime rightuser="apply"/>
+            <modifyIp rightuser="apply"/>
+            <user_client rightuser="apply"/>
+            <user_mobile rightrole="userManager"/>
+            <user_email rightrole="userManager"/>
+          </item>
+        </read>
+
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          
+          <item>
+            <user_code rightuser="apply"/>
+            <user_login rightrole="userManager"/>
+            <user_name/>
+            <user_sex rightuser="apply"/>
+            <user_birthday rightuser="apply"/>
+            <user_online/>
+            <user_email rightrole="userManager"/>
+            <user_mobile rightrole="userManager"/>
+            <user_security rightuser="apply"/>
+            <user_role rightrole="userManager"/>
+            <user_auth rightrole="userManager"/>
+            <user_status/>
+            <user_start rightuser="apply"/>
+            <user_end rightuser="apply"/>
+            <user_onlineTime rightuser="apply"/>
+            <user_latestTime rightuser="apply"/>
+            <user_latestIp rightuser="apply"/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <user_name/>
+            <user_sex/>
+            <user_online/>
+            <user_security/>
+            <user_onlineTime/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <remove_sub value="false"/>
+          </parameter>
+        </remove>
+        
+        <upload>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <!-- 支持的文件后缀名（以“,”分割）-->
+            <support_suffix value="gif,png,jpg,bmp"/>
+            <!-- 是否是图片文件 -->
+            <icon_file value="true"/>
+            <!-- 允许的文件最大长度 -->
+            <max_length value="5000000"/>
+            
+            <!-- 图片最小宽度 -->
+            <min_width value="0"/>
+            <!-- 图片最大宽度 -->
+            <max_width value="0"/>
+            <!-- 图片最小高度 -->
+            <min_height value="0"/>
+            <!-- 图片最大高度 -->
+            <max_height value="0"/>
+          </parameter>
+        </upload>
+        
+        <download/>
+
+        <import/>
+        <export/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <user_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <user_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 姓名 -->
+        <user_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 性别 -->
+        <user_sex variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <none value="0x00"/>    <!-- 未知 -->
+          <male value="0x01"/>    <!-- 男 -->
+          <female value="0x02"/>    <!-- 女 -->
+        </user_sex>
+        <!-- 生日 -->
+        <user_birthday variable="long" parse="datetime" format="yyyy-MM-dd" default="0"/>
+        <!-- 是否在线 -->
+        <user_online variable="int" parse="enum" format="option" default="0x00" notnull="true">
+          <offline value="0x00"/>    <!-- 离线 -->
+          <invisible value="0x10"/>    <!-- 隐身 -->
+          <away value="0x11"/>    <!-- 离开 -->
+          <busy value="0x12"/>    <!-- 忙碌 -->
+          <online value="0x20"/>    <!-- 在线 -->
+        </user_online>
+
+        <!-- 状态 -->
+        <user_status variable="int" parse="enum" format="option" default="0x01" notnull="true">
+          <stop value="-1"/>    <!-- 临时禁止 -->
+          <apply value="0"/>    <!-- 临时有效 -->
+          <valid value="1"/>    <!-- 有效 -->
+        </user_status>
+        <!-- 起始日期（user_status!=1时有效） -->
+        <user_start variable="long" parse="datetime" format="yyyy-MM-dd" default="0"/>
+        <!-- 结束日期（user_status!=1时有效） -->
+        <user_end variable="long" parse="datetime" format="yyyy-MM-dd" default="0"/>
+        
+        <!-- 用户权限 -->
+        <user_security variable="int" parse="enum" format="option" default="0x10" notnull="true">
+          <stop value="-1"/>            <!-- 禁止 -->
+          <apply value="0"/>            <!-- 申请 -->
+          <login value="0x01"/>      <!-- 第三方用户 -->
+          <normal value="0x10"/>        <!-- 普通用户 -->
+          <!-- <auditor value="0x20"/>       审核员 -->
+          <!-- <admin value="0x40"/>         用户管理员 -->
+          <supervisor value="0xF0"/>    <!-- 超级管理员 -->
+        </user_security>
+        <!-- 用户角色 -->
+        <user_role variable="int" parse="enum" format="multiple" default="0x00">
+          <normal value="0x00"/>             <!-- 普通用户 -->
+          <userManager value="0x01"/>        <!-- 用户管理员 -->
+          <rightManager value="0x02"/>       <!-- 权限管理员 -->
+          <comptroller value="0x04"/>        <!-- 审计员 -->
+          <auditor value="0x08"/>            <!-- 审核员 -->
+          <customerService value="0x10"/>    <!-- 客服人员 -->
+          <!-- <developer value="0x100"/>       开发者 -->
+        </user_role>
+        <!-- 说明 -->
+        <user_remark variable="string" format="textarea:4"/>
+
+        <!-- 用户使用的语言 -->
+        <user_language variable="string" parse="language" maxlength="32"/>
+        <!-- 在线时间 -->
+        <user_onlineTime variable="long" parse="time" format="dd HH:mm:ss"/>
+        <!-- 最近一次登录时间 -->
+        <user_latestTime variable="long" parse="datetime" default="0" notnull="true"/>
+        <!-- 最近一次登录IP -->
+        <user_latestIp variable="long" parse="inetaddress" default="0" notnull="true"/>
+        <!-- 个人文件路径 -->
+        <user_file variable="string"/>
+
+        <!-- 所属客户端-->
+        <user_client variable="long" parse="object:Client" notnull="true"/>
+        <!-- 授权码 -->
+        <user_token variable="string" maxlength="512" parse="password" format="privacy" notnull="true"/>
+        <!-- 授权密钥 -->
+        <user_tokenSecret variable="string" maxlength="512" parse="password" format="privacy"/>
+        
+        <!-- 虚拟域：登录名 -->
+        <user_login vairable="string" parse="string"/>
+        <!-- 虚拟域：授权状态 -->
+        <user_auth vairable="string" parse="string"/>
+        <!-- 虚拟域：个人电子邮箱地址 -->
+        <user_email vairable="string" parse="string"/>
+        <!-- 虚拟域：个人手机号码 -->
+        <user_mobile vairable="string" parse="string"/>
+        <!-- 虚拟域：用户类型 -->
+        <user_type variable="int" parse="enum" format="option" default="0">
+          <system value="1"/>    <!-- 本地用户 -->
+          <up value="2"/>        <!-- 同级服务器用户 -->
+          <up value="3"/>        <!-- 上级服务器用户 -->
+          <down value="4"/>      <!-- 下级服务器用户 -->
+          <auth value="11"/>     <!-- 统一认证系统用户 -->
+          <bind value="21"/>     <!-- 第三方登录用户 -->
+        </user_type>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+
+      <attachment>
+        <authority object="Authority" column="authority_user"/>
+      </attachment>
+    </User>
+  </object>
+</tekinfo>

@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.container { font-size: 12px; }
+.content p { line-height: 0px;height: 0px;margin: 6px;color: #bbb }
+
+.detail { margin: 50px auto 80px;width: 700px;border: 1px solid #ccc;background: #efefef; }
+
+.detail .tit { background: #ddd;display: block;height: 50px;cursor: move;padding: 10px;font-size: 19px;font-weight: bold; }
+.detail .tit i { float: right;line-height: 50px;padding: 0 8px;cursor: pointer;font-size: 40px;color: red; }
+
+.detail .content { margin: 20px;height: 333px; }
+
+.detail .choose-file { margin: 40px 20px 10px;overflow: hidden; }
+
+.detail .footer { background: #ddd;display: block;height: 33px;cursor: move;margin-bottom: 0;height: 50px; }
+
+
+.cropped { float: right;width: 200px;border: 1px #ddd solid;height: 400px;padding: 4px;box-shadow: 0px 0px 12px #ddd;text-align: center; }
+
+.imageBox {
+	margin-top: 10px;
+    position: absolute;
+	height: 350px;
+	width: 400px;
+	border: 1px solid #aaa;
+	background: #fff;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	cursor: move;
+	box-shadow: 4px 4px 12px #B0B0B0;
+}
+
+.imageBox .thumbBox {
+	/*如果要把头像做成圆形，将thumbBox和三个预览img都加上border-radius，其值等于格子的width和height*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	box-sizing: border-box;
+	border: 1px solid rgb(102, 102, 102);
+	box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+	background: none repeat scroll 0% 0% transparent;
+}
+
+.imageBox .spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 400px;
+	background: rgba(0, 0, 0, 0.7);
+}

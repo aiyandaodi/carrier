@@ -1,0 +1,12 @@
+name=银行
+
+#property
+property.ibank_bank_id=标识
+property.ibank_bank_code=编码
+property.ibank_bank_name=银行名称
+property.ibank_bank_status=状态
+property.ibank_bank_status.stop=禁用
+property.ibank_bank_status.apply=申请中
+property.ibank_bank_status.valid=有效
+property.ibank_bank_organization=所属机构
+property.ibank_bank_owner=所有者

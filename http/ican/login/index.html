@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+登录界面：
+
+调用方法一：直接调用，
+callback-url -- 登录成功后返回的页面
+callback-params -- 登录成功后返回页面的参数
+本页面可能调用注册页面register.html
+
+调用方法二：在其他页面中载入本页面，该页面需要一些javascript 函数
+showRegister() -- 调用注册页面
+refreshPage() -- 登录成功后，调用的函数
+-->
+
+<html><!-- InstanceBegin template="/Templates/i-login.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- Title and other stuffs -->
+  <title>登录</title>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="能力维度 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 慢生活 浪漫 优雅 探索 不平则鸣 能力维度 network Social photo video art office automation joint alliance Communication Authenticate Payment Discovery Curiosity Where　there　is　injustice；there　will　be　an　outcry"/>
+  <meta name="description" content="能力维度 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 慢生活 浪漫 优雅 探索 解惑 不平则鸣 能力维度 network Social photo video art office automation joint alliance Communication Authenticate Payment Discovery Curiosity Where　there　is　injustice；there　will　be　an　outcry"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../tekinfo/css/tekinfo.css"/>
+  <!-- ican CSS -->
+  <link rel="stylesheet" href="../css/ican.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/login.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+  
+  <!-- tekinfo JS --> 
+  <script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script> 
+  
+  <!-- InstanceBeginEditable name="MyJS" -->
+ 
+  <!-- <link href="../../ipass/login/login.css" rel="stylesheet" /> -->
+  <script language="javascript" type="text/javascript" src="../../hdw.top/login/index.js"></script>
+
+  <title>请登录</title>
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="matter">
+	<div class="container vcdiv">
+		<div class="row">
+
+			<div class="col-md-6">
+				<!-- .widget worange starts -->
+				<div class="widget worange" id="login_show">
+					<div class="widget-content">
+						<!--<div class="padd">-->
+						<img id="slider-img" src="" width="800" height="450" class="carousel-inner img-responsive img-rounded" alt="能力维度 WWW.ICAN.VIP"/>
+
+						<div class="label-info center" style="color:white; font-weight:bold; line-height: 50px">
+							<a href="http://ican.vip" target="_blank">
+								<img src="../logo/ican-banner-256.png" height="28" alt="能力维度" style="margin-bottom:10px; margin-top:10px;"/>
+							</a>
+							&nbsp;&nbsp;
+							<span id="slider-msg" style="margin-bottom:10px; margin-top:10px;"></span>
+						</div>
+						<!-- </div>end .padd -->
+					</div>
+					<!-- end .widget-content -->
+
+				</div>
+				<!-- end. widget worange -->
+			</div><!--end .col-md-12 -->
+
+			<!-- InstanceBeginEditable name="MAINCONTENT" -->
+            <!-- 登录域 -->
+              <div class="col-md-6" id="login_area">
+                <div class="widget worange">
+        
+                  <div class="widget-head">
+                    请授权 <a href="http://ipass.space" target="_blank">
+                    <img src="../../tekinfo/logo/ipass-banner.png" height="28" alt="ipass.space"/>
+                  </a> 登录本网站
+                  </div>
+                  <!-- end .widget-head -->
+        
+                  <div class="widget-content">
+                    <div class="padd">
+                      <div class="hero-content text-center" style="margin-top:10px; margin-bottom:15px;">
+                        <!-- Hero text -->
+                        <div id="slidecaption" class="slide-caption"></div>
+                        <div id="login" class="hero-buttons">
+                          <a href="javascript:;" onclick="promptLogin()" id="btn-about" class="btn btn-success btn-lg"><i class="fa fa-lock"></i>
+                            现在登录</a>
+                          <a href="javascript:;" onclick="promptRegister();" id="btn-contact" class="btn btn-warning btn-lg"><i class="fa fa-pencil-square"></i>
+                            立即注册</a>
+                        </div>
+                      </div>
+        
+                      <hr/>
+                      <!--<h5>使用 ipass 诠证通 可以获得更多权益</h5>-->
+                      <div class="alert alert-success">
+                        <img src="../logo/readbook-banner-128.png" height="22" alt="ipass.space"/>成为读书会员，获取更多权益。
+                      </div>
+                      <div class="alert alert-info">
+                        <a href="http://ipass.space" target="_blank"><img src="../../tekinfo/logo/ipass-banner.png" height="22" alt="ipass.space"/></a>支持在线认证和O2O认证。
+                      </div>
+                    </div><!-- end .padd -->
+                  </div><!-- end .widget-content -->
+        
+                  <div class="widget-foot">
+                    <div class="text-right" style="font-size: 0.8em; ">
+                      Powered by
+                      <a href="http://www.tekinfo.net" target="_blank">
+                        <img src="../../tekinfo/logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo"/>
+                      </a>
+                    </div>
+                  </div>
+        
+                </div><!-- end. widget worange -->
+              </div><!--end .col-md-6 -->
+			<!-- InstanceEndEditable -->
+
+		</div><!--end .row -->
+	</div><!--end .containe -->
+</div><!--end .matter -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script type="text/javascript" src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CL Editor -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- Slim Scroll -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script type="text/javascript" src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script type="text/javascript" src="../js/ican.js"></script>
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	
+	randomSlider();
+	
+	if(typeof init == "function")
+		init();
+		
+		
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+}
+
+/**
+ * 显示随机图片
+ */
+function randomSlider() {
+	var imgdiv=document.getElementById("slider-img");
+	if(imgdiv){
+		imgdiv.onload = vcdiv;
+  		
+		var i=Math.ceil(Math.random()*14);
+		var src=tek.common.getRootPath()+"http/ican/images/sliders/s"
+			+((i<10) ? "0" + i : i)+".jpg";
+  		
+  		$("#slider-img").attr("src", src);
+  
+		var msg=new Array(
+	  		"能力维度，人的价值维度 &nbsp; ...",
+	  		"能力维度，用数字评价你的才华 &nbsp; ...",
+	  		"能力维度，用科学评价你的才华 &nbsp; ...",
+	  		"能力维度，为你一生评测 &nbsp; ...",
+	  		"能力维度，助你年年进步 &nbsp; ...",
+	  		"能力维度，为梦想打分 &nbsp; ...",
+	  		"能力维度，让你科学进取 &nbsp; ...",
+
+	  		"能力维度,人力价值评测平台。"
+		);
+	  
+		var j=Math.ceil(Math.random()*msg.length);
+			
+		$("#slider-msg").html(msg[j]);
+	}
+}
+
+function showMessage(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p>"+msg+"</p>");
+    obj.innerHTML="<p>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+function showError(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p style='color:red'>"+msg+"</p>");
+    obj.innerHTML="<p style='color:red'>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+$(window).resize(function(){ 
+    vcdiv();
+})
+
+function vcdiv(){
+  $(".vcdiv").css({ 
+      position: "absolute",
+      left: ($(window).width() - $(".vcdiv").outerWidth())/2,
+      top: ($(window).height() - $(".vcdiv").outerHeight())/2-20
+  });
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<script language="javascript" type="text/javascript">
+function init(){
+  document.title="登录";
+
+  if(parent && parent!=self){
+    $("#outter").attr("class","matter");
+  } else {
+    $("#outter").attr("class","admin-form");
+  }
+
+  if(myId && myId > 0) {
+    tek.core.goBack();
+  } else {
+    var message=request["message"];
+	if(!tek.dataUtility.isNull(message)) {
+      tek.macCommon.waitingMessage(decodeURIComponent(message));
+      $("#waiting-modal-dialog").modal("show");
+    }
+    //showMessage("请用户登录，没有帐号的用户请选择注册。");
+  }
+  
+  $("#userlogin").focus();
+}
+
+</script>
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

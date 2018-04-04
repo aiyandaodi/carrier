@@ -1,0 +1,17 @@
+name=脚本
+
+#property
+property.host_script_id=标识
+property.host_script_code=编码
+property.host_script_name=脚本名称
+property.host_script_group=所属管理组
+property.host_script_tag=脚本标签
+property.host_script_color=脚本颜色
+property.host_script_services=脚本适用的服务
+property.host_script_status=脚本状态
+property.host_script_status.stop=停止
+property.host_script_status.apply=不可用
+property.host_script_status.valid=可用
+property.host_script_remark=脚本备注
+property.host_script_owner=脚本所有者
+property.host_script_bolb=脚本文件

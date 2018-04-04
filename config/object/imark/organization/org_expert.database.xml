@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 专家照片 -->
+<tekinfo>
+  <database>
+    <table>
+      <org_expert>
+        <item>
+          <!-- 标识 -->
+          <org_expert_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <org_expert_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 专家姓名 -->
+          <org_expert_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 专家职称 -->
+          <org_expert_title value="VARCHAR(128)"/>
+          <!-- 专家介绍 -->
+          <org_expert_remark value="MEMO"/>
+          <!-- 专家类别 -->
+          <org_expert_type value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 是否是专家辅助人 -->
+          <org_expert_expert value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属机构 -->
+          <org_expert_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 专家职务 -->
+          <org_expert_employ value="VARCHAR(128)"/>
+          <!-- 特别介绍 -->
+          <org_expert_introduction value="VARCHAR(255)"/>
+          
+          <createTime value="VARCHAR(255) NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </org_expert>
+    </table>
+  </database>
+</tekinfo>

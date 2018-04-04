@@ -1,0 +1,15 @@
+name=对象权限
+
+#property
+property.group_object_id=标识
+property.group_member_group=组
+property.group_member_groupname=组名
+property.group_object_group=对象所属组
+property.group_object_name=对象类型名
+property.group_object_id=对象标识
+property.group_object_right=操作权限
+property.group_object_right.list=列表
+property.group_object_right.read=读取
+property.group_object_right.create=创建
+property.group_object_right.write=修改
+property.group_object_right.admin=管理

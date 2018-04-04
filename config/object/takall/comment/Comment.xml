@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object:评论 -->
+<tekinfo>
+  <object>
+    <Comment
+    	ResourceBundle="com.takall.object.comment.Comment"
+        Structure="com.takall.comment.Comment"
+        ObjectRm="com.takall.remoting.comment.CommentRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <comment_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+        <comment_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="comment_name" codeIdentity="comment_code">
+      	<comment identity="comment_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+          <comment_id/>
+            <comment_code/>
+            <comment_name/>
+            <comment_content/>
+			<comment_objectId/>
+			<comment_objectName/>
+            <comment_user/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+           <comment_id/>
+            <comment_code/>
+            <comment_name/>
+            <comment_content/>
+          </item>
+        </edit>
+        
+        <read>
+          <item>
+            <comment_id/>
+            <comment_code/>
+            <comment_name/>
+            <comment_content/>
+            <comment_user/>
+          </item>
+        </read>
+        
+        <list>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+          	<comment_id/>
+            <comment_code/>
+            <comment_name/>
+            <comment_content/>
+            <comment_user/>
+          </item>
+      	</list>
+
+        <search>
+      		<parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <comment_code/>
+			<comment_name/>
+          </item>
+      	</search>
+      	        
+        <remove>
+        	<parameter>
+        		<remove_sub value="true"/>
+          	<!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <comment_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <comment_code variable="string" maxlength="32" notnull="true" right="admin"/>
+		<!-- 评论标签关键字名称 -->
+        <comment_name variable="string" maxlength="128" notnull="true"/>
+		
+        <!-- 评论内容 -->
+        <comment_content variable="string" format="textarea:4" notnull="true"/>
+         <!-- 关系程度: 相互独立，解除关系，父子关系，并行关系  -->
+        <comment_rank variable="int" parse="enum" format="single" default="0" notnull="true" right="admin">
+          <bad value="-1"/>    <!-- 差评 -->
+          <normal value="0"/>    <!-- 中评 -->
+          <good value="1"/>    <!-- 好评 -->
+        </comment_rank> 
+        
+          <!-- 评论所属对象：对象类型名 -->
+          <comment_objectName value="VARCHAR(128) NOT NULL"/>
+          <!-- 评论所属对象：对象标识 -->
+          <comment_objectId value="BIGINT NOT NULL"/>
+          
+          <!-- 来源 -->
+          <comment_user value="BIGINT DEFAULT '0'" parse="object:UniUser"/>
+        
+      	<createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Comment>
+  </object>
+</tekinfo>

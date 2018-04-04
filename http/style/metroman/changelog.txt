@@ -1,0 +1,83 @@
+**Changelog:**
+
+**Version 3.2.5:**
+
+- Updated Bootstrap to version 3.3.7 (both css and js file)
+- Updated font awesome icon to version 4.7.0 (font files and css file)
+
+**Version 3.2:**
+
+- Updated bootstrap to latest version.
+- Updated font awesome icon to latest version 4.6.1.
+- Updated isotope to 2.2.2.
+
+**Version 3.1:**
+
+- Updated bootstrap css and js files from 3.3.4 to 3.3.50.
+- Updated jquery from 1.11.2 to 1.11.3.
+- Updated HTML5Shiv from 3.7.2 to 3.7.3.
+- Updated isotope to version 2.2.0.
+- Updated prettyPhoto to 3.1.6. 
+- Updated revolution slider to version 4.6.4. Replaced jquery.themepunch.plugins.min.js with jquery.themepunch.tools.min.js file. (index.html).
+
+**Version 3.0:**
+
+- Updated Bootstrap to version 3.3.2.
+- Updated jQuery to version 1.11.2.
+- Updated HTML5shiv to version 3.7.2.
+- Updated fonts folder to version 4.3.0.
+- Updated Font Awesome CSS to version 4.3.0.
+- Updated jQuery Plugin Isotope to version 2.1.0.
+- Updated jQuery Plugin Modernizr Custom to 2.8.3.
+- Renamed js file modernizr.custom.28468.js to modernizr.custom.69985.js.
+- Udated image in blog single page comment section (blogsingle.html & style.css)
+- Landing page responsive design fix (style.css)
+
+**Version 2.6:**
+
+- Font awesome icon bug fix in index, index-parallax, features1, aboutus html pages.
+- Support page input box padding. (style.css)
+- Login and Register page button fix. (login.html & register.html)
+- Features page image error. (features1.html)
+- Blog page pagination bug fix. (blog1.html & blog2.html)
+- Clients page image bug fix. (style.css)
+- Gallery page image link bug fix. (gallery.html)
+- Landing page image link fix. (landingpage.html)
+- General page font awesome icon fix. (general.html)
+- FAQ page complete update. (faq.html & style.css)
+
+**Version 2.5.1:**
+
+- Logo icon alignment fix. (style.css)
+
+**Version 2.5:**
+
+- Renamed folder "style" to "css".
+- Updated Font awesome icon plugin.
+- Added Respond.min JS plugin.
+- Updated Bootstrap and jQuery.
+- Included minified version of font awesome icon css, bootstrap js and css to all html files. 
+- Removed Google web font code from HTML files and added to style.css.
+- Added Scroll to top in theme. (all .html, style.css, custom.js)
+- Bug fix from footer subscribe form. (all .html files)
+- Bug fix from carousel slider navigation in project page. (style.css)
+- Updated image in projects page. (projects.html)
+- Bug fix from collapse in events page. (events.html, style.html)
+- Added Revolution slider in index.html. (style.css)
+- Moved the parallax slider to index-parallax.html. 
+- Updated Prarallax slider image.
+- Clients section image and image size updated. (style.css)
+- Added dropdown menu to home link. (all html files)
+- Added documentation.
+
+**Version 2.0:**
+
+- Updated to Bootstrap 3.0
+
+**Version 1.1:**
+
+- Twitter Feed Removed because of recent Twitter API Update.
+
+**Version 1.0:**
+
+- Initial Release.

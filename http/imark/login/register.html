@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<!--
+登录界面：
+
+调用方法一：直接调用，
+callback-url -- 登录成功后返回的页面
+callback-params -- 登录成功后返回页面的参数
+本页面可能调用注册页面register.html
+
+调用方法二：在其他页面中载入本页面，该页面需要一些javascript 函数
+showRegister() -- 调用注册页面
+refreshPage() -- 登录成功后，调用的函数
+-->
+
+<html><!-- InstanceBegin template="/Templates/imark-login.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- Title and other stuffs -->
+  <title>用户注册</title>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="企业商信 品牌 认证 学习 商业信用 专家 商业信誉  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action certify labor cost reputation budget floating value art office automation study alliance Examination Authenticate credit"/>
+  <meta name="description" content="企业商信 品牌 认证 学习 商业信用 专家 商业信誉  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action certify labor cost reputation budget floating value art office automation study alliance Examination Authenticate credit"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../tekinfo/css/tekinfo.css"/>
+  <!-- imark CSS -->
+  <link rel="stylesheet" href="../css/imark.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/login.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+  <!-- tekinfo JS --> 
+  <script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script> 
+ 
+  <!-- InstanceBeginEditable name="MyJS" -->
+  <link rel="stylesheet" type="text/css" href="../../hdw.top/login/register.css"/>
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="matter">
+	<div class="container vcdiv">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- .widget worange starts -->
+				<div class="widget worange" id="login_show">
+					<div class="widget-content">
+						<!--<div class="padd">-->
+						<img id="slider-img" src="" width="800" height="450" class="carousel-inner img-responsive img-rounded" alt="企业商信 WWW.IMARK.VIP"/>
+
+						<div class="label-info center" style="color:white; font-weight:bold; line-height: 50px">
+							<a href="http://imark.vip" target="_blank">
+								<img src="../logo/imark-banner-256.png" height="28" alt="企业商信" style="margin-bottom:10px; margin-top:10px;"/>
+							</a>
+							&nbsp;&nbsp;
+							<span id="slider-msg" style="margin-bottom:10px; margin-top:10px;"></span>
+						</div>
+						<!-- </div>end .padd -->
+					</div>
+					<!-- end .widget-content -->
+
+				</div>
+				<!-- end. widget worange -->
+			</div><!--end .col-md-12 -->
+
+			<!-- InstanceBeginEditable name="MAINCONTENT" -->
+      <div class="col-md-6">
+        <!-- .widget worange starts -->
+        <!-- Widget starts -->
+          <div id="register_div" class="widget wred">
+            <div class="widget-head">
+              <i class="icon-lock"></i> 注册 
+            </div>
+            <div class="widget-content">
+              <div class="padd">
+                <form class="form-horizontal" id="register_form" name="register_form" method="post" action="javascript:register()">
+                  <!-- Registration form starts -->
+                  <!-- 你的名字 -->
+                  <div class="form-group">
+                    <label id="test-name" class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="name" >你的名字</label>
+                    <div id="test-name-value" class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="text" maxlength="32" class="form-control" id="name" value="" placeholder="你的真实姓名"  /><!--onblur="verifyName(this);"-->
+                      <!--<span id="name-msg" style="color:red;"></span>-->
+                    </div>
+                  </div>
+
+                  <!-- Username -->
+                  <div class="form-group">
+                    <label id="username-label" class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="username">登录名</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="text" maxlength="32" class="form-control" id="username" value="" placeholder="请输入以字母开头的6-24位字符" onblur="leagalAndExist(this);"/><!--onblur="verifyLogin(this);"-->
+                      <!--<span id="username-msg" style="color:red;"></span>-->
+                    </div>
+                  </div>
+                  
+                  <!-- Password -->
+                  <div class="form-group">
+                    <label class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="password" >设定保密字</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="password" maxlength="255" class="form-control" id="password" value="" placeholder="请输入6~24位以上数字、字母及常用符号"  onkeyup="verifyPasswordStrong(this);" onchange="verifyPasswordStrong(this)"/>  <!--onblur="verifyPassword(this);"-->
+                       
+                      <div>
+                        密码强度&nbsp;
+                        <span id="weak" style="background-color:#dde1df;font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;弱&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span id="normal" style="background-color:#dde1df;font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;中&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span id="strong" style="background-color:#dde1df;font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;强&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                      </div>
+                       
+                      <!--<span id="password-msg" style="color:red;"></span>-->
+                    </div>
+                  </div>
+                  
+                  <!-- Repassword -->
+                  <div class="form-group">
+                    <label class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="repassword">再输保密字</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="password" maxlength="255" class="form-control" id="repassword" value="" placeholder="再次确认你的保密字" />   <!--onblur="verifyPasswordAgain(this);"-->
+                      <!--<span id="repassword-msg" style="color:red;"></span>-->
+                    </div>
+                  </div>
+
+                  <!-- 角色 -->
+                  <div id="role-div" class="form-group hide">
+                    <label class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="">用户角色</label>
+                    <div id="role" class="col-xs-9 col-sm-12 col-md-9">
+						<div class='col-xs-6'>
+							<input class='col-xs-2' id='user_role-normal' name='user_role' value='0' type='checkbox' onclick="tek.macEdit.clickCheckbox(this);" checked='checked'/>&nbsp;&nbsp;
+							<label for='user_role-normal'>普通用户</label>
+						</div>
+						<div class='col-xs-6'>
+							<input class='col-xs-2' id='user_role-userManager' name='user_role' value='1' type='checkbox' onclick="tek.macEdit.clickCheckbox(this);"/>&nbsp;&nbsp;
+							<label for='user_role-userManager'>用户管理</label>
+						</div>
+						<div class='col-xs-6'>
+							<input class='col-xs-2' id='user_role-rightManager' name='user_role' value='2' type='checkbox' onclick="tek.macEdit.clickCheckbox(this);"/>&nbsp;&nbsp;
+							<label for='user_role-rightManager'>权限管理员</label>
+						</div>
+						<div class='col-xs-6'>
+							<input class='col-xs-2' id='user_role-comptroller' name='user_role' value='4' type='checkbox' onclick="tek.macEdit.clickCheckbox(this);"/>&nbsp;&nbsp;
+							<label for='user_role-comptroller'>审计员</label>
+						</div>
+						<div class='col-xs-6'>
+							<input class='col-xs-2' id='user_role-auditor' name='user_role' value='8' type='checkbox' onclick="tek.macEdit.clickCheckbox(this);"/>&nbsp;&nbsp;
+							<label for='user_role-auditor'>审核员</label>
+						</div>
+                    </div>
+                  </div>
+
+                  <!-- 安全认证 --> 
+                  <div id="certificate-div" class="form-group">
+                    <label class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="">安全认证</label>
+                    <div id="certificate" class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                    </div>
+                  </div>
+                                           
+                  <!-- Email -->
+                  <div class="form-group">
+                    <label id="email-label" class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="email">电子邮件</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="text" maxlength="64" class="form-control" id="email"  value="" placeholder="请输入邮箱，用于找回你的帐号" onblur="authorityIsExist(2,this);"/>  <!-- onblur="verifyMail(this);"-->
+                      <!--<span id="email-msg" style="color:red;"></span>-->
+                    </div>
+                  </div>
+                  
+                  <!-- Mobile -->
+                  <div class="form-group" style="margin-bottom:0px;">
+                    <label id="mobile-label" class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="mobile">手机号码</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="text" maxlength="20" class="form-control" id="mobile"  value=""  placeholder="请输入11-20位手机号码" onblur="authorityIsExist(1,this);"/>  <!-- onblur="verifyMobile(this);"-->
+                      <!--<span id="mobile-msg" style="color:red;"></span> -->
+                    </div>
+                  </div>
+                  <div id="active-div" class="form-group" style="margin-bottom:0px;">
+                    <label id="active-label" class="control-label col-xs-3 col-sm-12 col-md-3" style="overflow:hidden;" for="mobile">验证码</label>
+                    <div class="col-xs-9 col-sm-12 col-md-9" style="overflow:hidden;">
+                      <input type="text" maxlength="6" id="active" value=""  placeholder="请输入验证码"/>
+                      <button type="button" id="active-btn" class="btn btn-primary" onClick="sendActive();" disabled="disabled">发送验证码</button>
+                    </div>
+                  </div>
+                                          
+                  <!-- Accept box and button s-->
+                  <div class="form-group center">
+                    <div id="protocol-div" class="center">
+                      <input id="agree" name="agree" type="checkbox" onclick="ennable()"/>
+                      <label id="agree-label" for="agree">同意</label>
+                      <a href="javascript:readProtocol();" >
+                        注册协议
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!--显示提示信息-->
+                  <div class="center" id="registermessage" name="message" style="color:red"></div>
+                  
+                  <div class="form-group center">
+                    <!-- 操作按钮 -->
+                    <div id="btn" class="col-lg-12"></div>
+                  </div>
+                  <br />
+                </form>
+              </div><!--endpadd-->
+            </div><!--widget-content-->
+            
+            <!-- <div id="have-id" class="widget-foot">已经有帐号了? <a href="javascript:showLogin();">登录</a> </div> -->
+          </div> <!--endwidget wred--> 
+      </div> <!--end .col-md-6 -->
+	  <!-- InstanceEndEditable -->
+
+		</div><!--end .row -->
+	</div><!--end .containe -->
+</div><!--end .matter -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script type="text/javascript" src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CL Editor -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- Slim Scroll -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script type="text/javascript" src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script type="text/javascript" src="../js/imark.js"></script>
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	
+	randomSlider();
+	
+	if(typeof init == "function")
+		init();
+		
+		
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+}
+
+/**
+ * 显示随机图片
+ */
+function randomSlider() {
+	var imgdiv=document.getElementById("slider-img");
+	if(imgdiv){
+		imgdiv.onload = vcdiv;
+  		
+		var i=Math.ceil(Math.random()*14);
+		var src=tek.common.getRootPath()+"http/imark/images/sliders/s"
+			+((i<10) ? "0" + i : i)+".jpg";
+  		
+  		$("#slider-img").attr("src", src);
+  
+		var msg=new Array(
+	  		"企业商信，企业的价值维度 &nbsp; ...",
+	  		"企业商信，用数字评级企业商业信用 &nbsp; ...",
+	  		"企业商信，用科学展现企业商业信用 &nbsp; ...",
+	  		"企业商信，企业百年测评 &nbsp; ...",
+	  		
+	  		"企业商信，让你科学进取 &nbsp; ...",
+
+	  		"企业商信,企业信用评测平台。"
+		);
+	  
+		var j=Math.ceil(Math.random()*msg.length);
+			
+		$("#slider-msg").html(msg[j]);
+	}
+}
+
+function showMessage(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p>"+msg+"</p>");
+    obj.innerHTML="<p>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+function showError(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p style='color:red'>"+msg+"</p>");
+    obj.innerHTML="<p style='color:red'>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+$(window).resize(function(){ 
+    vcdiv();
+})
+
+function vcdiv(){
+  $(".vcdiv").css({ 
+      position: "absolute",
+      left: ($(window).width() - $(".vcdiv").outerWidth())/2,
+      top: ($(window).height() - $(".vcdiv").outerHeight())/2-20
+  });
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+
+
+
+<script type="text/javascript" language="JavaScript" src="../../hdw.top/login/register.js"></script>
+<script type="text/javascript" language="JavaScript" src="../../common/tek/js/refresh.js"></script>
+<script type="text/javascript" language="JavaScript">
+function init(){
+	if(parent && parent!=self){
+		$("#outter").attr("class","matter");
+	}
+	else{
+		$("#outter").attr("class","admin-form");
+	}
+	
+	initialButton("btn");
+	
+	$("#certificate-div").css("display","none");
+	$("#submitBtn").attr("disabled","disabled");
+	showAuth();
+
+	$("#name").focus();
+}
+
+function readProtocol() {
+	//window.open(tek.common.getRootPath()+"http/ipass/help/agreement.html","_blank");
+}	
+</script>
+
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style1.css" type="text/css" rel="stylesheet">
+<title>日历 Canlendar</title>
+</head>
+
+<body>
+<script type="text/javascript" language="text/javascript" src="all.js">
+</script> 
+<script type="text/javascript" language="javascript" src="qmcalendar.js"></script> 
+<script type="text/javascript" language="javascript" src="qmlunar.js"></script>
+<div class="container">
+	<div>
+		<input name="inputdate" id="inputdate" type="text" style="margin-left:0;width:165px">
+		<div class="calendar_div_pos">
+			<div id="calendar_div" class="bd" style="margin: 20px 5px 6px 0px; width: 168px">
+				<table class="calendar" valign="top" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="title_year attbg bd"><span class="selecter"><img src="nextfd.gif" id="prevYear_1332906695300" title="前一年"><span style="margin:0 3px;"><span>2012</span>年</span><img src="prefd.gif" id="nextYear_1332906695300" title="下一年"></span><span class="selecter"><img src="nextfd.gif" id="prevMonth_1332906695300" title="前一月"><span style="margin:0 3px;"><span>3</span>月</span><img src="prefd.gif" id="nextMonth_1332906695300" title="下一月"></span></td>
+						</tr>
+						<tr>
+							<td align="center" width="100%"><table id="table_1332906695300" class="datelist" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody>
+										<tr align="center">
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">日</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">一</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">二</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">三</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">四</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">五</td>
+											<td class="day week_title graytext" orgclass="day week_title graytext" day="">六</td>
+										</tr>
+										<tr align="center">
+											<td class="day invalidateday pointer" orgclass="day invalidateday pointer" day="-1">26</td>
+											<td class="day invalidateday pointer" orgclass="day invalidateday pointer" day="-1">27</td>
+											<td class="day invalidateday pointer" orgclass="day invalidateday pointer" day="-1">28</td>
+											<td class="day invalidateday pointer" orgclass="day invalidateday pointer" day="-1">29</td>
+											<td class="day " orgclass="day " day="1">1</td>
+											<td class="day " orgclass="day " day="2">2</td>
+											<td class="day " orgclass="day " day="3">3</td>
+										</tr>
+										<tr align="center">
+											<td class="day " orgclass="day " day="4">4</td>
+											<td class="day " orgclass="day " day="5">5</td>
+											<td class="day " orgclass="day " day="6">6</td>
+											<td class="day " orgclass="day " day="7">7</td>
+											<td class="day " orgclass="day " day="8">8</td>
+											<td class="day " orgclass="day " day="9">9</td>
+											<td class="day " orgclass="day " day="10">10</td>
+										</tr>
+										<tr align="center">
+											<td class="day " orgclass="day " day="11">11</td>
+											<td class="day " orgclass="day " day="12">12</td>
+											<td class="day " orgclass="day " day="13">13</td>
+											<td class="day " orgclass="day " day="14">14</td>
+											<td class="day " orgclass="day " day="15">15</td>
+											<td class="day " orgclass="day " day="16">16</td>
+											<td class="day " orgclass="day " day="17">17</td>
+										</tr>
+										<tr align="center">
+											<td class="day " orgclass="day " day="18">18</td>
+											<td class="day " orgclass="day " day="19">19</td>
+											<td class="day " orgclass="day " day="20">20</td>
+											<td class="day " orgclass="day " day="21">21</td>
+											<td class="day " orgclass="day " day="22">22</td>
+											<td class="day " orgclass="day " day="23">23</td>
+											<td class="day " orgclass="day " day="24">24</td>
+										</tr>
+										<tr align="center">
+											<td class="day " orgclass="day " day="25">25</td>
+											<td class="day " orgclass="day " day="26">26</td>
+											<td class="day " orgclass="day " day="27">27</td>
+											<td class="day  today" orgclass="day  today" day="28">28</td>
+											<td class="day " orgclass="day " day="29">29</td>
+											<td class="day " orgclass="day " day="30">30</td>
+											<td class="day " orgclass="day " day="31">31</td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script language="JavaScript"> 
+initNoteCalender( {
+type: "note",
+daydatalist: "6,13,14,15,22,26|4,7,21,24,26|1,11,17,22,24,25,28,31|1,6,8,11,14,16,23|5,10,24|25|5,6,31",
+datestr: "",
+begin: "2010,1"
+} );
+</script> 
+	</div>
+</div>
+<style id="__huaban_Style">
+#__huaban_Container {font-family: 'helvetica neue', arial, sans-serif; position: absolute; padding-top: 37px; z-index: 100000002; top: 0; left: 0; background-color: transparent; opacity: 1;}#__huaban_Overlay {position: fixed; z-index: 9999; top: 0; right: 0; bottom: 0; left: 0; background-color: #f2f2f2; opacity: .95;}#__huaban_Control {position:relative; z-index: 100000; float: left; background-color: #fcf9f9; border: solid #ccc; border-width: 0 1px 1px 0; height: 200px; width: 200px; opacity: 1;}#__huaban_Control img {position: relative; padding: 0; display: block; margin: 82px auto 0; -ms-interpolation-mode: bicubic;}#__huaban_Control a {position: fixed; z-index: 10001; right: 0; top: 0; left: 0; height: 24px; padding: 12px 0 0; text-align: center; font-size: 14px; line-height: 1em; text-shadow: 0 1px #fff; color: #211922; font-weight: bold; text-decoration: none; background: #fff url(http://huaban.com/img/fullGradient07Normal.png) 0 0 repeat-x; border-bottom: 1px solid #ccc; -mox-box-shadow: 0 0 2px #d7d7d7; -webkit-box-shadow: 0 0 2px #d7d7d7;}#__huaban_Control a:hover {color: #fff; text-decoration: none; background-color: #1389e5; border-color: #1389e5; text-shadow: 0 -1px #46A0E6;}#__huaban_Control a:active {height: 23px; padding-top: 13px; background-color: #211922; border-color: #211922; background-image: url(http://huaban.com/img/fullGradient07Inverted.png); text-shadow: 0 -1px #211922;}.__huabanImagePreview {position: relative; padding: 0; margin: 0; float: left; background-color: #fff; border: solid #e7e7e7; border-width: 0 1px 1px 0; height: 200px; width: 200px; opacity: 1; z-index: 10002; text-align: center;}.__huabanImagePreview .__huabanVideoIcon {position:absolute;display:block;top:0;left:0;width:100%;height:100%;background:url(http://huaban.com/img/media_video.png) center center no-repeat;}.__huabanImagePreview .__huabanImg {border: none; height: 200px; width: 200px; opacity: 1; padding: 0;}.__huabanImagePreview .__huabanImg a {margin: 0; padding: 0; position: absolute; top: 0; bottom: 0; right: 0; left: 0; display: block; text-align: center;  z-index: 1;}.__huabanImagePreview .__huabanImg a:hover {background-color: #fcf9f9; border: none;}.__huabanImagePreview .__huabanImg .ImageToPin {max-height: 200px; max-width: 200px; width: auto !important; height: auto !important;}.__huabanImagePreview img.__huaban_PinIt {border: none; position: absolute; top: 82px; left: 42px; display: none; padding: 0; background-color: transparent; z-index: 100;}.__huabanImagePreview img.__huaban_vidind {border: none; position: absolute; top: 75px; left: 75px; padding: 0; background-color: transparent; z-index: 99;}.__huabanDimensions { color: #000; position: relative; margin-top: 180px; text-align: center; font-size: 10px; z-index:10003; display: inline-block; background: white; border-radius: 4px; padding: 0 2px;}#__huaban_Button { display: block; position: absolute; z-index: 999999999; color: #211922; background: #fff; text-shadow: 0 1px #eaeaea; border-radius: 5px; box-shadow: 0 0 2px #555; font: 12px/1 arial; text-align: center; padding: 5px 8px; cursor: pointer; }#__huaban_Button:hover { background-image: -webkit-linear-gradient(top, #fefeff, #efefef); background-image: -moz-linear-gradient(top, #fefeff, #efefef); }.__huaban_Button_share {background: url(http://huaban.com/img/sharebutton.png) no-repeat !important; text-indent: -9999px; width: 70px;}
+</style>
+</body>
+</html>

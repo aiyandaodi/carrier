@@ -1,0 +1,67 @@
+/* CSS Document */
+
+/********************* common *********************/
+.turn-page-active{ background-color:#EEEEEE !important;border-radius: 0.25em !important;}
+
+/******************** end common ********************/
+
+/******************** 用户头像 ***********************/
+#user_photo span{ display:none; text-decoration:none;}
+#user_photo:hover span{ 
+	display:block;
+	width:64px;
+	text-align:center;	
+	cursor:pointer;
+	color:#FFF;
+	position:absolute;
+	left:15px;
+	top:65%;
+	z-index:10;
+	background:#000;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.5;
+	opacity: 0.5;
+}
+
+/******************** end 用户头像 ***********************/
+
+/******************** 基本信息 ***********************/
+#editBut>a { padding:2px 3px;margin:1px 0 0 26px;font-size: 16px; }
+
+.form-horizontal .control-label {
+	text-align: right;
+	margin-bottom: 0;
+	padding-top: 7px;
+}
+
+/****************** end 基本信息 ***********************/
+
+/******************** 操作记录 ***********************/
+#record tr:hover { background:#f1f1f1; }
+#record td { cursor:pointer; }
+
+/****************** end 操作记录 ***********************/
+
+/******************** 加入的小组 ***********************/
+ol#group{ list-style:none;padding-left:25px;}
+ol#group li{ padding:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;  }
+ol#group li i{ margin-right:10px;}
+
+/****************** end 加入的小组 ***********************/
+
+/******************** 发布的主题 ***********************/
+ul#subject li { position:relative; }
+ul#subject li a { display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:40px; }
+ul#subject li span { position:absolute;right:0px;top:2px; }
+/****************** end 加入的小s组 ***********************/
+
+#user_photo span{ display:none; text-decoration:none;}
+#user_photo:hover span{ display:block;position:absolute; cursor:pointer;left:15px;color:#FFF; width:64px; text-align:center; top:65%;
+z-index:10; background:#000;filter:alpha(opacity=60);-moz-opacity:0.5;opacity: 0.5;}
+
+
+.add-border{border:solid 1px #ddd;border-radius: 5px; margin:15px auto; padding:15px 20px;}
+
+.user img {
+	margin-top: 0;
+}

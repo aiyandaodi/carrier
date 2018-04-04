@@ -1,0 +1,16 @@
+#District
+name=区(镇)
+
+#property
+property.district_id=标识
+property.district_code=编码
+property.district_name=简称
+property.district_fullname=全称
+property.district_city=所属市/县
+property.district_locale=区域
+property.district_search=检索字符
+property.district_valid=是否有效
+
+#message
+message.error.cityNotExist=市（县）不存在!
+message.error.mustContainCityCode=必须包含市（县）编码

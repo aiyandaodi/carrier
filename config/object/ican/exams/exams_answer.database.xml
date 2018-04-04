@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试题选项 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_answer>
+        <item>
+          <!-- 标识 -->
+          <exams_answer_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_answer_code value="VARCHAR(20) NOT NULL"/>
+          <!-- 选项内容 -->
+          <exams_answer_name value="VARCHAR(255)"/>
+          <!-- 是否正确 -->
+          <exams_answer_correct value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属试题 -->
+          <exams_answer_question value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <exams_answer_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_answer>
+    </table>
+  </database>
+</tekinfo>

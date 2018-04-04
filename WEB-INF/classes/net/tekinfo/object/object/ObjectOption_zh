@@ -1,0 +1,13 @@
+name=参数配置
+
+#property
+property.option_id=标识
+property.option_code=编码
+property.option_name=配置名
+property.option_objectName=所属对象类型名
+property.option_objectId=所属对象标识
+property.option_owner=所属用户
+property.option_value=配置参数
+
+#message
+message.error.infoIsExist=记录已经存在

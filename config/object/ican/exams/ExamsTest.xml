@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 考试测验定义 -->
+
+<tekinfo>
+  <object>
+    <ExamsTest ResourceBundle="com.takall.exams.ExamsTest"
+        Structure="com.takall.exams.ExamsTest"
+        ObjectRm="com.takall.remoting.exams.ExamsTestRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_test_id base="identity"/>
+        <exams_test_code base="" step="1" digit="10"/>
+        <exams_test_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="exams_test_name" codeIdentity="exams_test_code" ownerIdentity="exams_test_owner">
+        <exams_test identity="exams_test_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+            <!-- 创建权限：
+                 2：群组管理员可以增、删、改试题
+                 4：组员可以增、删、改试题 -->
+            <create_right value="2"/>
+          </parameter>
+          <item>
+            <exams_test_name/>
+            <exams_test_catalog/>
+            <exams_test_tags/>
+            <exams_test_grade/>
+            <exams_test_score/>
+            <exams_test_read/>
+            <exams_test_write/>
+            <exams_test_exam/>
+            <exams_test_start/>
+            <exams_test_end/>
+            <exams_test_duration/>
+            <exams_test_status/>
+            <exams_test_method/>
+            <exams_test_group/>
+            <exams_test_level/>
+            <exams_test_summary/>
+            <option_library/>
+            <option_type_single/>
+            <option_type_multiple/>
+            <option_type_fillblanks/>
+            <option_type_composition/>
+            <option_type/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+          </parameter>
+          <item>
+            <exams_test_name/>
+            <exams_test_catalog/>
+            <exams_test_tags/>
+            <exams_test_grade/>
+            <exams_test_score/>
+            <exams_test_read/>
+            <exams_test_write/>
+            <exams_test_exam/>
+            <exams_test_start/>
+            <exams_test_end/>
+            <exams_test_duration/>
+            <exams_test_status/>
+            <exams_test_method/>
+            <exams_test_level/>
+            <exams_test_summary/>
+            <option_library/>
+            <option_type_single/>
+            <option_type_multiple/>
+            <option_type_fillblanks/>
+            <option_type_composition/>
+            <option_type/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_test_name/>
+            <exams_test_catalog/>
+            <exams_test_tags/>
+            <exams_test_grade/>
+            <exams_test_score/>
+            <exams_test_read/>
+            <exams_test_exam />
+            <exams_test_summary/>
+            <exams_test_write/>
+            <exams_test_start/>
+            <exams_test_end/>
+            <exams_test_duration/>
+            <exams_test_status/>
+            <exams_test_method/>
+            <exams_test_group/>
+            <exams_test_owner/>
+            <exams_test_level/>
+            <option_library/>
+            <option_type_single/>
+            <option_type_multiple/>
+            <option_type_fillblanks/>
+            <option_type_composition/>
+            <option_type/>
+            <join_status/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          <item>
+            <exams_test_name/>
+            <exams_test_catalog/>
+            <exams_test_tags/>
+            <exams_test_grade/>
+            <exams_test_score/>
+            <exams_test_read/>
+            <exams_test_write/>
+            <exams_test_start/>
+            <exams_test_end/>
+            <exams_test_duration/>
+            <exams_test_status/>
+            <exams_test_method/>
+            <exams_test_group/>
+            <exams_test_summary/>
+            <join_status/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 删除附件对象名。格式：对象名=字段名,对象名=字段名 -->
+            <remove_attach value="ExamsTopic=exams_topic_test"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_test_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_test_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <exams_test_name variable="string" maxlength="64" notnull="true"/>
+        
+        <!-- 目录分类 -->
+        <exams_test_catalog variable="string" maxlength="32"/>
+        <!-- 标签 -->
+        <exams_test_tags variable="string" parse="tag" maxlength="512" notnull="false"/>
+        <!-- 难度等级 -->
+        <exams_test_grade variable="int" parse="int" default="1" notnull="true"/>
+        <!-- 试题总分 -->
+        <exams_test_score variable="int" parse="int" default="100" notnull="true"/>
+        
+        <!-- 概要 -->
+        <exams_test_summary variable="string" format="textarea:2"  maxlength="1024"/>
+        
+        <!-- 级别 -->
+        <exams_test_level variable="string" maxlength="512" notnull="true"/>
+        
+        <!-- 阅读权限 -->
+        <exams_test_read variable="int" parse="enum" format="single" default="0x04" notnull="true">
+          <system value="0x00"/>       <!-- 系统管理员可以阅读 -->
+          <admin value="0x01"/>        <!-- 群组有审核权的组员可以阅读 -->
+           <!-- <publish value="0x02"/>   具有发布权的组员可以阅读 -->
+          <member value="0x04"/>       <!-- 组员可以阅读 -->
+          <user value="0x08"/>         <!-- 系统用户可以阅读 -->
+          <anonymous value="0x10"/>    <!-- 匿名者可以阅读 -->
+        </exams_test_read>
+        
+        <!-- 增、删改试题定义的权限。-->
+        <exams_test_write variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <creator value="0x01"/>    <!-- 创建者可以增、删、改试题 -->
+          <admin value="0x02"/>      <!-- 群组管理员可以增、删、改试题 -->
+          <member value="0x04"/>     <!-- 组员可以增、删、改试题 -->
+        </exams_test_write>
+        
+        <!-- 考试权限-->
+        <exams_test_exam variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <audit value="0x01"/>     <!-- 系统审计员可以参加考试 -->
+          <admin value="0x02"/>     <!-- 群组管理员可以参加考试 -->
+          <member value="0x04"/>    <!-- 组员可以参加考试 -->
+          <user value="0x08"/>      <!-- 系统用户参加考试 -->
+        </exams_test_exam>
+        
+        <!-- 试卷类型 -->
+       <!-- <exams_test_type variable="int" parse="enum" format="single" default="0x01" notnull="true">-->
+        <!--  <manual value="0x01"/>-->    <!--  -->
+        <!--  <auto value="0x02"/>  -->  <!-- 自动生成 -->
+          <!-- <autoupgrade value="0x04"/>     自动进阶 -->
+        <!--</exams_test_type>-->
+        
+        <!-- 试卷方式 -->
+        <exams_test_method variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <once value="0x01"/>         <!-- 允许考一次 -->
+          <lastScore value="0x02"/>    <!-- 多次，取最后一次成绩 -->
+          <highScore value="0x04"/>   <!--  多次，取最高成绩 -->
+        </exams_test_method>
+        
+        <!-- 有效期：开始时间 -->
+        <exams_test_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now" notnull="true"/>
+        <!-- 有效期：结束时间 -->
+        <exams_test_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now" notnull="true"/>
+        <!-- 有效期：考试时长 -->
+        <exams_test_duration variable="long" parse="datetime" default="3600" notnull="true"/>
+        
+        <!-- 状态 -->
+        <exams_test_status variable="int" parse="enum" format="single" default="0">
+          <stop value="-1"/>      <!-- 停用 -->
+          <prepare value="0"/>    <!-- 准备 -->
+          <publish value="1"/>    <!-- 发布 -->
+        </exams_test_status>
+        
+        <!-- 所属组 -->
+        <exams_test_group variable="long" parse="object:Group" default="0" notnull="true"/>
+        <!-- 创建者 -->
+        <exams_test_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        
+        <!-- 虚拟域：随机试题使用的题库 -->
+        <option_library variable="long" parse="object:ExamsLibrary" notnull="true"/>
+        <!-- 虚拟域：随机试题题数 -->
+        <!--<option_count variable="int" default="1"  notnull="true" />-->
+        <!-- 虚拟域：随机试题难度 -->
+        <!-- <option_grade variable="int" default="0"/> -->
+        <!-- 虚拟域：随机试题每题分数 -->
+        <!--<option_score variable="int" default="1" notnull="true"/>-->
+        <!-- 虚拟域：随机试题题目类型 -->
+        <option_type variable="int" parse="enum" format="multiple" default="0x02">-->
+          <single value="0x02"/>        <!-- 单选题 -->
+          <multiple value="0x04"/>       <!-- 多选题 -->
+          <fillblanks value="0x08"/>    <!-- 填空题 -->
+          <!-- <judge value="0x10"/>          对错判断 -->
+          <composition value="0x20"/>    <!-- 问答题 -->
+        </option_type>
+        <!-- 随机单选题 -->
+        <option_type_single variable="string" maxlength="512" notnull="true"/>
+        <!-- 随机多选题 -->
+        <option_type_multiple variable="string" maxlength="512" notnull="true"/>
+        <!-- 随机填空题 -->
+        <option_type_fillblanks variable="string" maxlength="512" notnull="true"/>
+        <!-- 随机问答题 -->
+        <option_type_composition variable="string" maxlength="512" notnull="true"/>
+        
+        <!-- 虚拟域：当前用户参加考试的状态 -->
+        <join_status variable="int" parse="enum" format="multiple" default="0x01">
+          <exam value="0x01"/>       <!-- 开始考试 -->
+          <examing value="0x02"/>    <!-- 正在考试 -->
+          <reexam value="0x04"/>     <!-- 重新考试 -->
+          <examed value="0x08"/>     <!-- 完成考试 -->
+        </join_status>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ExamsTest>
+  </object>
+</tekinfo>

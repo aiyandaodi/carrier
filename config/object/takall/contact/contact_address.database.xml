@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 地址 -->
+<tekinfo>
+  <database>
+    <table>
+      <contact_address>
+        <item>
+          <!-- 标识 -->
+          <address_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <address_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 地址（具体门牌号码） -->
+          <address_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 国家（标准的2字节代码） -->
+          <address_country value="CHAR(2)"/>
+          <!-- 省（州）二级行政单位 -->
+          <address_state value="VARCHAR(250)"/>
+          <!-- 县（市）三级行政单位 -->
+          <address_city value="VARCHAR(250)"/>
+          <!-- 街道 -->
+          <address_street value="VARCHAR(250)"/>
+          <!-- 地标 -->
+          <address_landmark value="VARCHAR(64)"/>
+          <!-- 邮编 -->
+          <address_zip value="VARCHAR(20)"/>
+          
+          <!-- 经度 -->
+          <address_longitude value="BIGINT DEFAULT '0'"/>
+          <!-- 纬度 -->
+          <address_latitude value="BIGINT DEFAULT '0'"/>
+          
+          
+          
+          <!-- 所属联系人 -->
+          <address_contact value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </contact_address>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+/*.progress-bar {
+    font-size: 0.8em !important;
+    line-height: 26px !important;
+	padding-top: 6px;
+}
+
+.progress {
+    height: 30px;
+    border-radius: 12px;
+    line-height: 26px;
+}
+
+.widget .widget-head, .modal-header {
+    font-size: 0.9em;
+	color:rgba(10,96,95,1.00);
+}
+
+.widget p {
+    margin: 3px 6px 5px 6px !important;
+    line-height: 2;
+    font-size: 0.8em;
+	color:rgba(3,108,120,0.84);
+}*/
+body {
+	 background: #343434 url("../../style/macadmin/img/back.png") repeat scroll 0 0;
+    border-top: 3px solid #eee;
+    color: #888;
+    font-size: 1.6em;
+    line-height: 2em;
+    padding-top: 37px;
+}

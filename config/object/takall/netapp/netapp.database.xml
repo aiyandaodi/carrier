@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- netapp 网络应用（app,url） -->
+<tekinfo>
+  <database>
+    <table>
+      <net_app>
+        <item>
+          <!-- 标识 -->
+          <netapp_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <netapp_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 互联网应用 -->
+          <netapp_name value="VARCHAR(255) NOT NULL"/>
+
+          <!-- 应用类型（0-html，1-app） -->
+          <netapp_type value="SMALLINT DEFAULT '0'"/>
+          <!-- 是否支持ipass认证 -->
+          <netapp_ipass value="SMALLINT DEFAULT '0'"/>
+          <!-- 是否响应式设计（APP 不能横屏等也属于不支持响应式设计） -->
+          <netapp_response value="SMALLINT DEFAULT '0'"/>
+
+          <!-- 网址（对于app是下载网址） -->
+          <netapp_url value="VARCHAR(255) NOT NULL"/>
+          
+        
+          <!-- 版本（仅对app有效） -->
+          <netapp_version value="VARCHAR(64) NOT NULL"/>
+          <!-- 操作系统 （仅对app有效） -->
+          <netapp_os value="VARCHAR(255) NOT NULL"/>
+          <!-- 操作系统最低版本 （仅对app有效） -->
+          <netapp_osversion value="VARCHAR(64) NOT NULL"/>
+          
+          
+          <!-- 互联网应用所属机构 -->
+          <netapp_org value="VARCHAR(255) NOT NULL"/>
+          <!-- 互联网应用所属机构的imark编码 -->
+          <netapp_imark value="CHAR(16) NOT NULL"/>
+          
+          <!-- 互联网应用访问次数 -->
+          <netapp_count value="INT DEFAULT '0'"/>
+          <!-- 用户收藏次数 -->
+          <netapp_favcount value="INT DEFAULT '0'"/>
+          
+          <!-- 状态 -->
+          <netapp_status value="INT DEFAULT '0'"/>
+         
+          <!-- 备注 -->
+          <netapp_remark value="MEMO"/>
+
+          <!-- 所属对象的类型名 -->
+          <netapp_objectName value="VARCHAR(64) NOT NULL"/>
+          <!-- 所属对象的标识 -->
+          <netapp_objectId value="BIGINT DEFAULT '0'"/>
+
+          <!-- 所属对象的所有者 -->
+          <netapp_owner value="BIGINT DEFAULT '0'"/>
+                    
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+	      </item>
+      </net_app>
+    </table>
+  </database>
+</tekinfo>

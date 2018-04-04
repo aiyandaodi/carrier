@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* CSS Document */
+.ui-330{
+    margin:50px 0px;
+    padding: 0 50px;
+}
+/*.ui-330 .row > .col-md-2{*/
+    /*width: 12.3%;*/
+/*}*/
+.ui-330 .item{
+    max-width:400px;
+    margin:20px auto;
+    box-shadow:0px 0px 5px rgba(0,0,0,0.2) !important;
+    border-radius:6px !important;
+    border:2px solid #fff;
+}
+.ui-330 .item img{
+    border-top-left-radius:6px !important;
+    border-top-right-radius:6px !important;
+}
+.ui-330 .item .content{
+    margin: 0;
+    background:#fff;
+    padding:15px;
+    padding-top:0px;
+    text-align:center;
+    position:relative;
+}
+.ui-330 .content img{
+    width: 70px;
+    border-radius: 100% !important;
+    border:1px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1) !important;
+    /*display:block;*/
+    /*width:45px;*/
+    /*height:45px;*/
+    /*-ms-transform: rotate(45deg); *//* IE 9 */
+    /*-webkit-transform: rotate(45deg); *//* Chrome, Safari, Opera */
+    /*transform: rotate(45deg);*/
+    /*color:#fff;*/
+    position:absolute;
+    /*line-height:45px;*/
+    top:-35px;
+    left:50%;
+    margin-left:-35px;
+    /*font-size:18px;*/
+}
+.content .ui-tag a.tag-ball{
+    border-radius: 5px !important;
+    border: 1px solid #aaa !important;
+}
+.content .ui-tag{
+    text-align: left;
+    padding: 10px 0;
+}
+.content .ui-tag a:hover{
+    color:#ffffff;
+    background-color: rgba(15,81,89,1.00);
+}
+.ui-330 .content h2{
+    margin-top: 2px;
+    font-size:1.3em;
+    text-align: left;
+    line-height:30px;
+    padding-top:40px;
+    text-transform:uppercase;
+}
+.ui-330 .content p{
+    color:#888;
+    text-align: left;
+    font-size:1.1em;
+    line-height:1.8em;
+}
+.ui-330 .content a.link{
+    color:#609cec;
+    font-size:14px;
+    line-height:28px;
+    font-weight:600;
+    border-bottom:1px dashed #609cec;
+}

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 弘德机构设备 -->
+<tekinfo>
+  <database>
+    <table>
+      <hd_equipment>
+        <item>
+          <!-- 标识 -->
+          <hd_equipment_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 设备编码 -->
+          <hd_equipment_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 设备名称 -->
+          <hd_equipment_name value="VARCHAR(128) NOT NULL"/>
+          <!-- 类型 -->
+          <hd_equipment_type value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 标签分类 -->
+          <hd_equipment_tags value="VARCHAR(255)"/>
+          <!-- 性能参数 -->
+          <hd_equipment_performance value="MEMO"/>
+          <!-- 简介 -->
+          <hd_equipment_remark value="MEMO"/>
+          <!-- 所属机构 -->
+          <hd_equipment_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="VARCHAR(255) NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </hd_equipment>
+    </table>
+  </database>
+</tekinfo>

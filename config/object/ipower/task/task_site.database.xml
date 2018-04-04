@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 执行任务主机 -->
+<tekinfo>
+  <database>
+    <table>
+      <task_site>
+        <item>
+          <!-- 标识 -->
+          <task_site_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <task_site_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 被执行的任务 -->
+          <task_site_task value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 执行的目标主机 -->
+          <task_site_site value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 执行任务凭证 -->
+          <task_site_credentials value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效状态 --> 
+          <task_site_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </task_site>
+    </table>
+  </database>
+</tekinfo>

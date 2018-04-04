@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试卷定义 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_test>
+        <item>
+          <!-- 标识 -->
+          <exams_test_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_test_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 名字 -->
+          <exams_test_name value="VARCHAR(64) NOT NULL"/>
+	      <!-- 概要 -->
+          <exams_test_summary value="VARCHAR(1024)"/>
+          <!-- 目录分类 -->
+          <exams_test_catalog value="VARCHAR(32)"/>
+          <!-- 标签 -->
+          <exams_test_tags value="VARCHAR(512)"/>
+          <!-- 难度等级 -->
+          <exams_test_grade value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 总分 -->
+          <exams_test_score value="SMALLINT DEFAULT '0' NOT NULL"/>
+		  
+		  <!-- 级别 -->
+          <exams_test_level value="VARCHAR(512) NOT NULL" />
+		  
+          <!-- 阅读权限 -->
+          <exams_test_read value="SMALLINT DEFAULT '0'  NOT NULL"/>
+          <!-- 增、删改试题定义的权限 -->
+          <exams_test_write value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 考试权限 -->
+          <exams_test_exam value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <exams_test_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 方式 -->
+          <exams_test_method value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效期：开始时间 -->
+          <exams_test_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效期：结束时间 -->
+          <exams_test_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 考试时长（分钟） -->
+          <exams_test_duration value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 所属组 -->
+          <exams_test_group value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <exams_test_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_test>
+    </table>
+  </database>
+</tekinfo>

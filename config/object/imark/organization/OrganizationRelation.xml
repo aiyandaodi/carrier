@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 关联机构  -->
+<tekinfo>
+  <object>
+    <OrganizationRelatition ResourceBundle="com.takall.object.organization.OrganizationRelatition"
+        Structure="com.takall.organization.OrganizationRelatition"
+        ObjectRm="com.takall.remoting.organization.OrganizationRelatitionRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <relatition_id base="identity"/>
+        
+        <organization_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <organization_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <relatition_id/>
+        <relatition_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="relatition_name" codeIdentity="relatition_code">
+        <organization_relatition identity="relatition_id"/>
+      </table>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <relatition_code/>
+            <relatition_name/>
+            <relatition_source/>
+            <relatition_target/>
+            <relatition_type/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <relatition_code/>
+            <relatition_name/>
+            <relatition_source/>
+            <relatition_target/>
+            <relatition_type/>
+          </item>
+        </edit>
+        
+        <read>
+          <item>
+            <relatition_code/>
+            <relatition_name/>
+            <relatition_source/>
+            <relatition_target/>
+            
+            <relatition_type/>
+            <relatition_status/>
+            
+            <relatition_owner/>
+            <relatition_creatTime/>
+            
+            <relatition_auditor/>
+            <relatition_auditTime/>
+          </item>
+        </read>
+        
+        <list>
+         <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <relatition_code/>
+            <relatition_name/>
+            <relatition_source/>
+            <relatition_target/>
+            
+            <relatition_type/>
+            <relatition_status/>
+            
+            
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <relatition_code/>
+            <relatition_name/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <relatition_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <relatition_code variable="string" maxlength="32" notnull="true" forbitEdit="true"/>
+        <!-- 关系关键字名�?-->
+        <relatition_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 机构1： 父（degree为父子） -->
+        <relatition_source variable="long" parse="object:Organization" notnull="true"/>
+        <!-- 机构2： 子（degree为父子） -->
+        <relatition_target variable="long" parse="object:Organization" notnull="true"/>
+        
+        <!-- 关系程度: 相互独立，解除关系，父子关系，并行关系 -->
+        <relatition_type variable="int" parse="enum" format="single" default="0" notnull="true">
+          <separate value="-1"/>    <!-- 无关机构 -->
+          <remove value="0"/>    <!-- 无相关关系 -->
+          <father value="0x01"/>    <!-- 父关系：源机构是目标机构的上级 -->
+          <son value="0x02"/>    <!-- 子关系：源机构是目标机构的下级 -->
+          <parallel value="0x04"/>    <!-- 相关关系 -->
+        </relatition_type> 
+        
+        <!-- 状态 -->
+        <relatition_status variable="int" parse="enum" format="single" default="0" notnull="true" right="audit">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>    <!-- 停止 -->
+        </relatition_status>
+        
+        <!-- 机构关系创建者 -->
+        <relatition_owner variable="long" parse="object:User" notnull="true"/>
+        <!-- 机构关系审核员 -->
+        <relatition_auditor variable="long" parse="object:User" notnull="true"/>
+        <!-- 机构关系审核日期 -->
+        <relatition_auditorTime  variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </OrganizationRelatition>
+  </object>
+</tekinfo>

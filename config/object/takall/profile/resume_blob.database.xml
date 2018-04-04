@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 文档  -->
+<tekinfo>
+  <database>
+    <table>
+      <resume_blob>
+        <item>
+          <!-- 标识 -->
+          <resume_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <resume_blob value="BLOB"/>
+        </item>
+      </resume_blob>
+    </table>
+  </database>
+</tekinfo>

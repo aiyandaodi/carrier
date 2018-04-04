@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 系统用户 -->
+<tekinfo>
+  <object>
+    <Announcement ResourceBundle="net.tekinfo.object.system.Announcement"
+        Structure="net.tekinfo.system.Announcement"
+        ObjectRm="net.tekinfo.remoting.system.AnnouncementRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <announcement_id base="identity"/>
+        <announcement_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="announcement_name" codeIdentity="null">
+        <announcement identity="announcement_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <announcement_code/>
+            <announcement_name/>
+            <announcement_start/>
+            <announcement_end/>
+            <announcement_source/>
+            <announcement_user/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <announcement_code/>
+            <announcement_name/>
+            <announcement_start/>
+            <announcement_end/>
+            <announcement_source/>
+            <announcement_user/>
+            <announcement_status/>
+            <announcement_url/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <add/>
+            <!-- 无效的登录名字符 -->
+            <invalidLogin value="@"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <announcement_code/>
+            <announcement_name/>
+            <announcement_start/>
+            <announcement_end/>
+            <announcement_source/>
+            <announcement_user/>
+            <announcement_url/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 是否添加联系人 -->
+            <contact value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <announcement_code/>
+            <announcement_name/>
+            <announcement_start/>
+            <announcement_end/>
+            <announcement_source/>
+            <announcement_user/>
+            <announcement_status/>
+            <announcement_url/>
+          </item>
+        </edit>
+        
+        <search>
+          <item>
+            <announcement_start/>
+            <announcement_name/>
+          </item>
+        </search>
+
+        <textSearch>
+          <item>
+            <announcement_start/>
+            <announcement_name/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+       
+        <import/>
+        <export/>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <announcement_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <announcement_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名字 -->
+        <announcement_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 有效起始时间 -->
+        <announcement_start variable="long" parse="datetime" format="yyyy-MM-dd hh:mm:ss" default="now"/>
+        <!-- 有效结束时间 -->
+        <announcement_end variable="long" parse="datetime" format="yyyy-MM-dd hh:mm:ss" default="now+30"/>
+        <!-- 认证状态 -->
+        <announcement_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <!--  <ready value="1"/>    准备 -->
+          <release value="1"/>    <!-- 发布 -->
+          <stop value="-1"/>    <!-- 结束 -->
+        </announcement_status>
+        <!-- 所属用户-->
+        <announcement_user variable="long" parse="object:User" notnull="true"/>
+        <!-- 来源 -->
+        <announcement_source variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- URL -->
+        <announcement_url variable="string" maxlength="256" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Announcement>
+  </object>
+</tekinfo>

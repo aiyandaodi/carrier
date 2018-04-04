@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象回复 -->
+<tekinfo>
+  <object>
+    <ObjectReply ResourceBundle="net.tekinfo.object.object.ObjectReply"
+        Structure="net.tekinfo.object.ObjectReply"
+        ObjectRm="net.tekinfo.remoting.object.ObjectReplyRm">
+      <autovalue>
+        <object_reply_id base="identity"/>
+        <object_reply_code base="yyMMdd" step="1" digit="8" tree="false"/>
+        <object_reply_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="object_reply_name" codeIdentity="null" ownerIdentity="null">
+        <object_reply identity="object_reply_id"/>
+      </table>
+      
+      <command>
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <object_reply_name/>
+            <object_reply_remark/>
+            <object_reply_status/>
+            <object_reply_score/>
+            <object_reply_user/>
+            <object_reply_linkName/>
+            <object_reply_linkId/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <object_reply_name/>
+            <object_reply_remark/>
+            <object_reply_linkName/>
+            <object_reply_linkId/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          </parameter>
+          <item>
+            <object_reply_name/>
+            <object_reply_status/>
+            <object_reply_remark/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <object_reply_name/>
+            <object_reply_remark/>
+            <object_reply_status/>
+            <object_reply_score/>
+            <object_reply_user/>
+            <object_reply_linkName/>
+            <object_reply_linkId/>
+            <modifyTime/>
+          </item>
+        </list>
+        
+        <applyList>
+          <parameter>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <object_reply_id/>
+            <object_reply_remark/>
+            <object_reply_user/>
+            <object_reply_status/>
+            <modifyTime/>
+          </item>
+        </applyList>
+                
+        <search>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <object_reply_remark/>
+            <object_reply_status/>
+            <object_reply_user/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <object_reply_name/>
+            <object_reply_remark/>
+            <object_reply_user/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <object_reply_id variable="long" notnull="true" forbidEdit="true" default="now"/>
+        <!-- 编码 -->
+        <object_reply_code variable="string" maxlength="128" notnull="true"/>
+        <!-- 记录名 -->
+        <object_reply_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 备注 -->
+        <object_reply_remark variable="string" maxlength="2048" format="textarea:4" notnull="true"/>
+        
+        <!-- 状态 -->
+        <object_reply_status variable="int" parse="enum" format="single" default="1" notnull="true">
+          <apply value="0"/>     <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>     <!-- 禁止 -->
+        </object_reply_status>
+        <!-- 评分 -->
+        <object_reply_score variable="int" default="1"/>
+        <!-- 所有者 -->
+        <object_reply_user variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 所属对象类型名 -->
+        <object_reply_linkName variable="string" notnull="true"/>
+        <!-- 所属对象标识 -->
+        <object_reply_linkId variable="long" parse="object:this.object_reply_linkName" notnull="true"/>
+        
+        <!-- 虚拟域：态度 -->
+        <object_reply_attitude variable="int" parse="enum" format="single" default="0">
+          <recommended value="1"/>    <!-- 支持 -->
+          <anti value="-1"/>          <!-- 反对 -->
+        </object_reply_attitude>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectReply>
+  </object>
+</tekinfo>

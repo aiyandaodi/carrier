@@ -1,0 +1,24 @@
+2018-01-27 12:06:34: -- Analysis Started by User
+2018-01-27 12:16:07: /config/database/mariadb.xml: 冲突: 新文件有变化
+2018-01-27 12:16:07: /logs/tekinfo: 冲突：文件两侧都进行了改动
+2018-01-27 12:16:07: 分析完毕并发现冲突情况。如需解决冲突请选择正常的同步方向。
+2018-01-27 12:16:07: Left to Right: Copy File: 1 
+2018-01-27 12:16:07: Right to Left: Copy File: 2 
+2018-01-27 12:16:07: ----- ：分析已结束。 历时 00:09:36， 速度： 186 个文件/秒 -----
+2018-01-27 12:16:07: 
+2018-01-27 12:16:21: === User Changed Action from 'COPY_RIGHT_TO_LEFT' to 'NO_COPY' on item /http/ipower/work/read.html
+2018-01-27 12:16:21: Done.
+2018-01-27 12:16:25: === User Changed Action from 'COPY_LEFT_TO_RIGHT' to 'NO_COPY' on item /icon/User/1116469287472/User.jpg
+2018-01-27 12:16:25: Done.
+2018-01-27 12:16:25: === User Changed Action from 'COPY_LEFT_TO_RIGHT' to 'NO_COPY' on item /icon/User/1116469287472/User.jpg
+2018-01-27 12:16:25: Done.
+2018-01-27 12:16:29: === User Changed Action from 'COPY_RIGHT_TO_LEFT' to 'NO_COPY' on item /http/ipower/control.js
+2018-01-27 12:16:29: Done.
+2018-01-27 12:16:30: === User Reverts Action from 'NO_COPY' to 'COPY_RIGHT_TO_LEFT' on item /http/ipower/control.js
+2018-01-27 12:16:30: Done.
+2018-01-27 12:16:41: == Sync Started by User
+2018-01-27 12:16:42: /config/database/mariadb.xml: unresolved conflict results in No Copy
+2018-01-27 12:16:47: 覆盖复制 'F:/javawork/apache-tomcat-9.0.0/apache-tomcat-9.0.0.M15/webapps/ipower-controller/http/ipower/control.js' -> 'sftp://155.94.140.234/usr/tomcat/controller/webapps/ROOT/http/ipower/control.js'
+2018-01-27 12:16:47: /logs/tekinfo: unresolved conflict results in No Copy
+2018-01-27 12:16:53: ===== ：同步完毕。时间：00:00:16，速度： 13.0 KB/s =====, 项目同步未必： 1，错误： , Conflicts: 2
+2018-01-27 12:16:53: 

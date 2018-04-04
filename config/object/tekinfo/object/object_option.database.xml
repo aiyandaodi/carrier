@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统对象的配置信息 -->
+<tekinfo>
+  <database>
+    <table>
+      <object_option>
+        <item>
+          <!-- 标识 -->
+          <option_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <option_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 配置名 -->
+          <option_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 配置所属对象名称 -->
+          <option_objectName value="VARCHAR(255)"/>
+          <!-- 配置所属对象标识 -->
+          <option_objectId value="BIGINT DEFAULT '0'"/>
+          <!-- 创建该配置的用户 -->
+          <option_owner value="BIGINT DEFAULT '0'"/>
+          <!-- 配置参数 -->
+          <option_value value="VARCHAR(1024)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </object_option>
+    </table>
+  </database>
+</tekinfo>

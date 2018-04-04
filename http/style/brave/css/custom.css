@@ -1,0 +1,24 @@
+/* Your CSS codes here */
+
+.header-2 .top-nav{
+	height: 90px;
+	border-bottom: solid 2px #ccc;
+}
+
+.header-2 .navy > ul > li{
+	margin: 20px 15px 0 15px;
+}
+
+.outer .container, #page_position_show .container{
+	width: 100%;
+    max-width: 1004px;
+}
+
+#page_position_show{
+	height: 62px;
+	line-height: 62px;
+}
+
+#page_position_show .nav-bread span{
+	margin-right: 8px;
+}

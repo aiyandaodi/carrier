@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 信息队列  -->
+<tekinfo>
+  <database>
+    <table>
+      <message_queue>
+        <item>
+          <!-- 标识 -->
+          <message_queue_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <message_queue_code value="VARCHAR(14) NOT NULL"/>
+          <!-- 标题 -->
+          <message_queue_name value="VARCHAR(128) NOT NULL"/>
+
+          <!-- 所属对象名 -->
+          <message_queue_owner value="VARCHAR(32) NOT NULL"/>
+          <!-- 所属对象 -->
+          <message_queue_ownerId value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属用户 -->
+          <message_queue_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 发送/接收 -->
+          <message_queue_mode value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 类型 -->
+          <message_queue_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 号码  -->
+          <message_queue_number value="VARCHAR(64) NOT NULL"/>
+
+          <!-- 定时发送时间 -->
+          <message_queue_ontime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 实际发送/接收时间 -->
+          <message_queue_time value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 发送状态 -->
+          <message_queue_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 发送次数 -->
+          <message_queue_times value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 信息内容 -->
+          <message_queue_message value="MEMO"/>
+          <!-- 处理账号 -->
+          <message_queue_account value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </message_queue>
+    </table>
+  </database>
+</tekinfo>

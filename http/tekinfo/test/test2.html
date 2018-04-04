@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/readbook-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="title" -->
+  <!-- 自定义head -->
+  <title>网页测试</title>
+  <!-- InstanceEndEditable -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="知维 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="知维 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href= "../../../favicon.ico"/>
+  <link rel="Bookmark" href= "../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+
+  <!-- readbook CSS -->
+  <link rel="stylesheet" href="../../readbook/css/readbook.css"/>
+  
+  <!-- ipassin CSS -->
+  <link rel="stylesheet" href="../../ipassin/css/ipassin-style.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../js/tekinfo.js"></script>
+
+  <!-- IPASSIN JS -->
+  <script type="text/javascript" src="../../ipassin/js/ipassin.js"></script>
+  
+  <!-- InstanceBeginEditable name="MyHead" -->
+  <!-- 自定义我的头文件 -->
+  <link rel="stylesheet" href="test2.css"/>
+
+  <script type="text/javascript" src="../../common/jqueryplugin/ajaxfileupload/ajaxfileupload.js"></script>
+  <script type="text/javascript" src="test2.js"></script>
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      initial();
+    });
+  </script>
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="MainContent" -->
+<!-- 主页面内容 -->
+<!-- Form area -->
+<div>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- .widget worange starts -->
+        <div class="widget worange" id="login_div">
+          <!-- Widget head -->
+          <div class="widget-head">
+            <i class="fa fa-tasks"></i> 网页测试
+          </div><!-- end .widget-head -->
+
+          <div class="widget-content">
+            <div class="padd">
+           	  <!--新建内容-->
+              <form class="form-horizontal" id="input-form" name="input-form" method="post" action="javascrip:;">
+                <div class='form-group'>
+                  <label class='col-lg-12'>请选择测试用例<font color="red">Excel</font>文件：</label>
+                </div>
+                <div class='form-group'>
+                  <label class='control-label col-lg-3' for='start'>测试用例</label>
+                  <div class='col-lg-9'>
+                    <input type='file' id='file' name='file'/>
+                  </div> 
+                </div>
+                                          
+				<!-- Accept box and button s-->
+                <div class="form-group">
+                  <!-- 操作按钮 -->
+                  <div id="btn" class="col-lg-12 col-lg-offset-4">
+                    <button id="test-btn" type="button" class="btn-info" onclick="webTestLoad()">加载</button>
+                  </div>
+                </div>
+              </form>
+                 
+              <div id="message"></div>
+              <div id="table" class="row"></div>
+			</div><!-- end .padd -->
+          </div><!-- end .widget-content -->
+              
+          <div class="widget-foot" align="center">
+          </div>
+        </div>  <!-- end. widget worange -->   
+      </div> <!--end .col-md-12 -->
+    </div><!--end .row -->
+  </div><!--end .containe -->
+</div><!--end .admin-form -->
+<!-- InstanceEndEditable -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class='text-center'></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div>
+
+
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script language="javascript" type="text/javascript">
+
+function initial(){
+  tek.core.getURLRequest();
+  tek.common.getUser();
+
+  if(typeof (init)== "function")
+    init();
+}
+
+$(function () {
+    var d1 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d1.push([i, parseInt(Math.random() * 30)]);
+
+    var d2 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d2.push([i, parseInt(Math.random() * 30)]);
+
+
+    var stack = 0, bars = true, lines = false, steps = false;
+    
+    function plotWithOptions() {
+		if (typeof($.plot)=="function") {
+			$.plot($("#bar-chart"), [ d1, d2 ], {
+				series: {
+					stack: stack,
+					lines: { show: lines, fill: true, steps: steps },
+					bars: { show: bars, barWidth: 0.8 }
+				},
+				grid: {
+					borderWidth: 0, hoverable: true, color: "#777"
+				},
+				colors: ["#ff6c24", "#ff2424"],
+				bars: {
+					  show: true,
+					  lineWidth: 0,
+					  fill: true,
+					  fillColor: { colors: [ { opacity: 0.9 }, { opacity: 0.8 } ] }
+				}
+			});
+		}
+    }
+
+    plotWithOptions();
+    
+    $(".stackControls input").click(function (e) {
+        e.preventDefault();
+        stack = $(this).val() == "With stacking" ? true : null;
+        plotWithOptions();
+    });
+    $(".graphControls input").click(function (e) {
+        e.preventDefault();
+        bars = $(this).val().indexOf("Bars") != -1;
+        lines = $(this).val().indexOf("Lines") != -1;
+        steps = $(this).val().indexOf("steps") != -1;
+        plotWithOptions();
+    });
+});
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<!-- 自定义Javascript -->
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

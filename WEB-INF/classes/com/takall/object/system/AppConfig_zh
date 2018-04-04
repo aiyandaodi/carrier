@@ -1,0 +1,16 @@
+name=客户端配置文件
+
+#property
+property.appconfig_id=标识
+property.appconfig_code=编码
+property.appconfig_name=名称
+property.appconfig_pagecount=每页列表数量
+property.appconfig_ratio=字体比例
+property.appconfig_store=本地存储(KB)大小
+property.appconfig_days=本地存储天数
+property.appconfig_template=使用模板
+property.appconfig_user=所属用户
+property.appconfig_device=所属设备
+
+#message
+messge.remark.system=系统设置

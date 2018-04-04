@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 客户端 -->
+<tekinfo>
+  <object>
+    <Client ResourceBundle="net.tekinfo.object.system.Client"
+        Structure="net.tekinfo.system.Client"
+        ObjectRm="net.tekinfo.remoting.system.ClientRm"
+        version="1.0" resourceVersion="1.0"
+        auth="true">
+      <autovalue>
+        <client_id base="identity"/>
+        <client_code base="" step="1" digit="10" tree="false"/>
+      </autovalue>
+      <nosamevalue>
+        <client_code/>
+        <client_token/>
+        <client_tokenSecret/>
+      </nosamevalue>
+      
+      <table nameIdentity="client_name" codeIdentity="null">
+        <client identity="client_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 是否验证回调地址 -->
+            <varify_callback_url value="0"/>
+          </parameter>
+          <item>
+            <client_code/>
+            <client_name/>
+            <client_type/>
+            <client_status rightuser="admin"/>
+            <client_domain/>
+            <client_token/>
+            <client_tokenSecret/>
+            <client_start/>
+            <client_end/>
+            <client_userName/>
+            <client_phone/>
+            <client_email/>
+            <client_postCode/>
+            <client_address/>
+            <client_remark/>
+          </item>
+        </add>
+
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 是否验证回调地址 -->
+            <varify_callback_url value="0"/>
+          </parameter>
+          <item>
+            <client_code/>
+            <client_name/>
+            <client_type/>
+            <client_status rightuser="admin"/>
+            <client_domain/>
+            <client_token/>
+            <client_tokenSecret/>
+            <client_start/>
+            <client_end/>
+            <client_userName/>
+            <client_phone/>
+            <client_email/>
+            <client_postCode/>
+            <client_address/>
+            <client_remark/>
+          </item>
+        </edit>
+
+        <list>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0"/>
+          </parameter>
+          <item>
+            <client_code/>
+            <client_name/>
+            <client_domain/>
+            <client_start/>
+            <client_end/>
+            <client_type/>
+            <client_status/>
+            <createTime/>
+            <createIp/>
+            <client_userName/>
+            <client_phone/>
+            <client_email/>
+            <client_postCode/>
+            <client_address/>
+            <client_remark/>
+            
+            <client_token/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0"/>
+          </parameter>
+          <item>
+            <client_code/>
+            <client_name/>
+            <client_domain/>
+            <client_token/>
+            <client_tokenSecret/>
+            <client_start/>
+            <client_end/>
+            <client_type/>
+            <client_status/>
+            <createTime/>
+            <createIp/>
+            <client_userName/>
+            <client_phone/>
+            <client_email/>
+            <client_postCode/>
+            <client_address/>
+            <client_remark/>
+          </item>
+        </read>
+
+        <!-- 重新分配授权码 -->
+        <allocate>
+          <parameter>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command_type value="edit"/>
+          </parameter>
+          <item>
+            <client_start/>
+            <client_end/>
+          </item>
+        </allocate>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+
+        <import/>
+        <export/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <client_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <client_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <client_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 授权码 -->
+        <client_token variable="string" maxlength="512" parse="password" format="privacy" notnull="true"/>
+        <!-- 授权码密钥 -->
+        <client_tokenSecret variable="string" maxlength="512" parse="password" format="privacy" notnull="true"/>
+        <!-- 类别 -->
+        <client_type variable="int" parse="enum" format="option" default="0x02" notnull="true">
+          <system value="0x01"/>    <!-- 系统 -->
+          <auth value="0x02"/>    <!-- 统一认证系统 -->
+          <login value="0x11"/>    <!-- 第三方登录（其他系统使用本系统用户登录） -->
+          <bind value="0x1F"/>    <!-- 第三方授权（如支付宝、银行卡、豆瓣、QQ等） -->
+          
+          <syncDown value="0x21"/>    <!-- 下级服务器 -->
+          <syncSame value="0x22"/>    <!-- 同级服务器 -->
+          <syncUp value="0x23"/>    <!-- 上级服务器 -->
+          <syncOther value="0x2F"/>    <!-- 其他服务器（系统获取，不可编辑）-->
+        </client_type>
+        <!-- 状态 -->
+        <client_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <expire value="-1"/>    <!-- 过期 -->
+          <forbid value="-2"/>    <!-- 禁止 -->
+        </client_status>
+        <!-- 域名（或IP地址） -->
+        <client_domain variable="string" length="128" notnull="true"/>
+        <!-- 有效期：开始日期 -->
+        <client_start variable="long" parse="datetime" format="yyyy-MM-dd" default="now"/>
+        <!-- 有效期：结束日期（0表示无限期） -->
+        <client_end variable="long" parse="datetime" format="yyyy-MM-dd" default="0"/>
+        <!-- 联系人 -->
+        <client_userName variable="string" maxlength="20"/>
+        <!-- 联系电话 -->
+        <client_phone variable="string" maxlength="32"/>
+        <!-- 联系邮箱 -->
+        <client_email variable="string" maxlength="32"/>
+        <!-- 邮编 -->
+        <client_postCode variable="string" maxlength="10"/>
+        <!-- 地址 -->
+        <client_address variable="string" format="textarea:4" maxlength="255"/>
+        <!-- 备注 -->
+        <client_remark variable="string" format="textarea:4" maxlength="1024"/>
+        <!-- 所有者 -->
+        <client_owner variable="long" parse="object:User" notnull="true"/>
+        
+        <!-- 虚拟域：客户端种类 -->
+        <client_category variable="int" parse="enum" format="option" default="1">
+          <category_login value="1"/>    <!-- 第三方登录（其他系统使用本系统用户登录） -->
+          <category_bind value="2"/>    <!-- 第三方授权（如支付宝、银行卡、豆瓣、QQ等） -->
+          <category_server value="3"/>    <!-- 服务器 -->
+          <category_auth value="4"/>    <!-- 统一认证 -->
+        </client_category>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      
+      <attachment>
+        <user object="User" column="user_client"/>
+        <authority object="Authority" column="authority_client"/>
+      </attachment>
+    </Client>
+  </object>
+</tekinfo>

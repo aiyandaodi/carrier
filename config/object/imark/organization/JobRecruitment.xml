@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 雇员  -->
+<tekinfo>
+  <object>
+    <JobRecruitment ResourceBundle="com.takall.organization.JobRecruitment"
+        Structure="com.takall.organization.JobRecruitment"
+        ObjectRm="com.takall.remoting.organization.JobRecruitmentRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <job_recruitment_id base="identity"/>
+        <job_recruitment_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <job_recruitment_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <job_recruitment_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="job_recruitment_name" codeIdentity="null" ownerIdentity="null">
+        <job_recruitment identity="job_recruitment_id"/>
+      </table>
+
+      <command>
+        <add url="http/ican/recruitment/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+          	<job_recruitment_code/>
+            <job_recruitment_name/>
+
+            <job_recruitment_schooling/>
+            <job_recruitment_workstart/>
+            
+            <job_recruitment_nativeplace/>
+            <job_recruitment_resident/>
+			
+			<job_recruitment_owner/>
+            <job_recruitment_status/>
+           
+            <job_recruitment_remark/>
+          </item>
+        </add>
+        
+        <edit url="http/ican/recruitment/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <job_recruitment_code/>
+            <job_recruitment_name/>
+
+            <job_recruitment_schooling/>
+            <job_recruitment_workstart/>
+            
+            <job_recruitment_nativeplace/>
+            <job_recruitment_resident/>
+			
+			<job_recruitment_owner/>
+            <job_recruitment_status/>
+           
+            <job_recruitment_remark/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ican/recruitment/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <job_recruitment_code/>
+            <job_recruitment_name/>
+
+            <job_recruitment_schooling/>
+            <job_recruitment_workstart/>
+            
+            <job_recruitment_nativeplace/>
+            <job_recruitment_resident/>
+			
+			<job_recruitment_owner/>
+            <job_recruitment_status/>
+           
+            <job_recruitment_remark/>
+          </item>
+        </read>
+        
+        <list url="http/ican/recruitment/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <job_recruitment_code/>
+            <job_recruitment_name/>
+
+            <job_recruitment_schooling/>
+            <job_recruitment_workstart/>
+            
+            <job_recruitment_nativeplace/>
+            <job_recruitment_resident/>
+			
+			<job_recruitment_owner/>
+            <job_recruitment_status/>
+           
+            <job_recruitment_remark/>
+            
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <job_recruitment_name/>
+            <job_recruitment_remark/>
+            
+          </item>
+        </search>
+        
+        <remove url="http/ican/recruitment/remove.html">
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <job_recruitment_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <job_recruitment_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 雇员名称 -->
+        <job_recruitment_name variable="string" maxlength="255" notnull="true"/>
+        
+        <!-- 籍贯 -->
+        <job_recruitment_nativeplace variable="string" maxlength="128" notnull="true"/>
+                
+        <!-- 当前居住地 -->
+        <job_recruitment_resident variable="string" maxlength="128" notnull="true"/>
+          
+        <!-- 最高学历 -->
+        <job_recruitment_schooling  variable="int" parse="enum" format="single" default="0" notnull="true">
+			<notraining value="0"/> <!-- 未接受教育 -->
+			<primary value="0x10"/> <!-- 初级教育（小学） -->
+			<secondary value="0x20"/> <!-- 中级教育（初中） -->
+			<senior value="0x40"/> <!-- 中级教育（高中、中专） -->
+			<junior value="0x80"/> <!-- 大专 -->
+			<bachelor value="0x0100"/> <!-- 本科 -->
+			<master value="0x0200"/> <!-- 硕士 -->
+			<doctor value="0x0400"/> <!-- 博士 -->
+			<postdoctor value="0x0800"/> <!-- 博士后 -->
+		</job_recruitment_schooling>
+		
+        <!-- 首次参加工作时间 -->
+        <job_recruitment_workstart variable="string" maxlength="10" format="yyyy-MM-dd" notnull="true"/>
+        
+        <!-- 状态 -->
+        <job_recruitment_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="-1"/>    <!-- 拒绝 -->
+          <apply value="0"/>    <!-- 申请 -->
+          <examine value="0x10"/>    <!-- 考查 -->
+		  <offer value="0x20"/>    <!-- 通过 -->
+		  <checkin value="0x80"/>    <!-- 入职 -->
+		  <resign value="0x400"/>    <!-- 离职 -->
+		  <retirement value="0x800"/>    <!-- 退休 -->
+        </job_recruitment_status>
+        
+        <!-- 创建者 -->
+        <job_recruitment_owner variable="long" parse="object:User" notnull="true"/>
+        
+        <!-- 所属职位 -->
+        <job_recruitment_job variable="long" parse="object:Job" notnull="true"/>
+        
+        <!-- 说明 -->
+        <job_recruitment_remark variable="string" format="textarea:4"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </JobRecruitment>
+  </object>
+</tekinfo>

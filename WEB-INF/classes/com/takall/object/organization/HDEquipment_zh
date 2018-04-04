@@ -1,0 +1,13 @@
+name=鉴定设备
+
+#property
+property.hd_equipment_id=标识
+property.hd_equipment_code=编码
+property.hd_equipment_name=设备名称
+property.hd_equipment_type=设备类型
+property.hd_equipment_tags=标签分类
+property.hd_equipment_performance=性能参数
+property.hd_equipment_remark=简介
+property.hd_equipment_organization=所属机构
+
+#message

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 客户端设备定义-用户通过该设备进行认证，设备是PC/手机/平板等 -->
+<tekinfo>
+  <database>
+    <table>
+      <app_device>
+        <item>
+          <!-- 标识 -->
+          <appdevice_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <appdevice_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名称 -->
+          <appdevice_name value="VARCHAR(200) NOT NULL"/>
+          
+          <!-- 设备MAC地址
+          <appdevice_mac value="VARCHAR(32) NOT NULL"/> -->
+          <!-- 设备标识,例如：IMEI:xxx等。如果没有，使用：MAC:00-00-...
+          <appdevice_idstr value="VARCHAR(250) NOT NULL"/> -->
+          <!-- 设备操作系统
+          <appdevice_os value="VARCHAR(250) NOT NULL"/> -->
+          <!-- 设备版本号
+          <appdevice_ver value="VARCHAR(64) NOT NULL"/> -->
+          <!-- 设备号(IMEI等) -->
+          <appdevice_identity value="VARCHAR(32) NOT NULL"/>
+          <!-- 授权码 -->
+          <appdevice_token value="VARCHAR(512) NOT NULL"/>
+          <!-- 授权码密钥 -->
+          <appdevice_tokenSecret value="VARCHAR(512) NOT NULL"/>
+          <!-- 所属用户 -->
+          <appdevice_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <appdevice_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 设备是否指定唯一用户。0-标识任何用户都可以从该设备登录。非0，则只有指定用户可以从该设备登录
+          <appdevice_reguser value="BIGINT NOT NULL"/> -->
+          <!-- 该设备最近被使用的时间
+          <appdevice_latestTime value="BIGINT DEFAULT '0'"/> -->
+          <!-- 该设备最近被使用的IP
+          <appdevice_latestIp value="BIGINT DEFAULT '0'"/> -->
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </app_device>
+    </table>
+  </database>
+</tekinfo>

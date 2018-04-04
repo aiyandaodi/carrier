@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 分组 -->
+<tekinfo>
+  <database>
+    <table>
+      <uni_group>
+        <item>
+          <!-- 标识 -->
+          <group_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <group_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名字 -->
+          <group_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 状态 -->
+          <group_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 类型 -->
+          <group_type value="SMALLINT NOT NULL"/>
+          <!-- 评价 -->
+          <group_credit value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 备注 -->
+          <group_remark value="MEMO"/>
+          <!-- 发言属性 -->
+          <group_speak value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 阅读属性 -->
+          <group_listen value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 成员加入属性 -->
+          <group_join value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 地区 -->
+          <group_locale value="VARCHAR(32) NOT NULL"/>
+          <!-- 所有者 -->
+          <group_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 文件目录 -->
+          <group_path value="VARCHAR(128)"/>
+          
+          <!-- 成员数 -->
+          <group_members value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 主题数 -->
+          <group_subjects value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 成员权限 -->
+          <group_member_right value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 目录 -->
+          <group_file value="VARCHAR(255)"/> 
+          <!-- 二维码信息-->
+          <group_qrcode value="VARCHAR(255)"/>
+          
+          <!-- 最近更新时间 -->
+          <group_latestTime value="BIGINT DEFAULT '0'"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </uni_group>
+    </table>
+  </database>
+</tekinfo>

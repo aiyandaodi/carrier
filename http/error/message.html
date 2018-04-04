@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 
+  显示错误信息
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-language" contect = "zh_CN"/>
+
+<link rel="Shortcut Icon" href= "../favicon.ico"/>
+<link rel="Bookmark" href= "../favicon.ico"/>
+  
+<link href="../style/macadmin/css/bootstrap.css" rel="stylesheet"/>
+<link href="../style/macadmin/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../style/macadmin/css/style.css" rel="stylesheet"/>
+<link href="../style/macadmin/css/bootstrap-responsive.css" rel="stylesheet"/>
+<link href="../style/macadmin/css/zeropadding-body.css" rel="stylesheet"/>
+
+<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+<script type="text/javascript" src="../common/js/common.js"></script>
+<script type="text/javascript" src="../common/js/refresh.js"></script>
+<script type="text/javascript" src="../common/js/normal.js"></script>
+<script type="text/javascript" src="../common/js/dataUtility.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      initial();
+  });
+</script>
+
+<title>错误页面</title>
+</head>
+
+<body>
+<div id="outter" class="matter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <!-- .widget worange starts -->
+        <div class="widget worange" id="login_div" >
+          <!-- Widget head -->
+          <div class="widget-head">
+            <i class="fa fa-suitcase"></i> 错误
+            <!--<div style="float:right;">
+              <a href="javascript:document.getElementById('div-init').style.display='';">系统初始化</a>
+            </div>
+            -->
+            
+            
+          </div><!-- end .widget-head -->
+
+          <div class="widget-content">
+            <div id="message" class="padd"></div>
+          </div><!-- end .widget-content -->              
+        </div>  <!-- end. widget worange -->
+              
+      </div> <!--end .col-md-12 -->
+    </div><!--end .row -->
+       
+  </div><!--end .containe -->
+</div><!--end .admin-form -->
+
+<script language="javascript" type="text/javascript">
+var request;
+
+function initial() {
+  request=GetRequest();
+  
+  var message=request["message"];
+  if(message) {
+    var msg=new StringBuffer();
+    msg.append("<font color='red'>");
+    msg.append(stringToHTML(decodeURI(message)));
+    msg.append("</font>");
+    $("#message").html(msg.toString());
+  }
+}
+</script>
+</body>
+</html>

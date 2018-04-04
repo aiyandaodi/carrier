@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 授权 -->
+<tekinfo>
+  <object>
+    <Authority ResourceBundle="net.tekinfo.object.system.Authority"
+        Structure="net.tekinfo.system.Authority"
+        ObjectRm="net.tekinfo.remoting.system.AuthorityRm"
+        version="1.0" resourceVersion="1.0"
+        auth="true">
+      <autovalue>
+        <authority_id base="identity"/>
+        <authority_code base="" step="1" digit="10" tree="false"/>
+      </autovalue>
+      <noSamevalue>
+      </noSamevalue>
+      
+      <table nameIdentity="authority_name" codeIdentity="null">
+        <authority identity="authority_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 密码类型：
+                 “1”：登录密码
+                 “2”：安全密码 -->
+            <password-type value="1"/>
+          </parameter>
+          <item>
+            <authority_name/>
+            <!-- <authority_type/> -->
+            <authority_status/>
+            <authority_token/>
+            <authority_tokenSecret/>
+            <authority_client/>
+            <authority_user/>
+            <authority_start/>
+            <authority_end/>
+          </item>
+        </add>
+
+        <edit>
+          <item>
+            <authority_name/>
+            <authority_status/>
+            <authority_token/>
+            <authority_tokenSecret/>
+            <authority_client/>
+            <authority_user/>
+            <authority_start/>
+            <authority_end/>
+          </item>
+        </edit>
+        
+        <list>
+          <item>
+          	<authority_code/>
+            <authority_name/>
+            <authority_type/>
+            <authority_status/>
+            <authority_token/>
+            <authority_tokenSecret/>
+            <authority_client/>
+            <authority_user/>
+            <authority_start/>
+            <authority_end/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </list>
+        
+        <read>
+          <item>
+            <authority_name/>
+            <authority_type/>
+            <authority_status/>
+            <authority_client/>
+            <authority_user/>
+            <authority_start/>
+            <authority_end/>
+            <createTime/>
+            <modifyTime/>
+            <authority_pwdstrength/>
+          </item>
+        </read>
+        
+        <remove/>
+        
+        <!-- 身份证、电子邮箱、手机号码绑定 -->
+        <identity>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 邮箱激活页面URL -->
+            <active-url value="http/tekinfo/authority/active-index.html"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+            <!-- 密码类型：
+                 “1”：登录密码
+                 “2”：安全密码 -->
+            <password-type value="1"/>
+          </parameter>
+          <item>
+            <authority_password/>
+            <!-- <authority_old/> -->
+            <authority_new/>
+          </item>
+        </identity>
+        
+        <!-- 授权激活 -->
+        <active>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+        </active>
+
+        <!-- 重置密码 -->
+        <reset>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 重置密码页面URL -->
+            <reset-url value="http/tekinfo/authority/reset.html"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+        </reset>
+        
+        <!-- 修改安全密码 -->
+        <password>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+            <!-- 安全密码最小位数 -->
+            <password_min_size value="10"/>
+            <!-- 安全密码最大位数 -->
+            <password_max_size value="24"/>
+            <!-- 安全密码最少包含的不同字符数 -->
+            <password_diff_count value="5"/>
+            <!-- 密码有效期（月） -->
+            <password_term value="0"/>
+          </parameter>
+          <item>
+            <authority_password/>
+            <authority_new/>
+            <authority_confirm/>
+          </item>
+        </password>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <authority_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <authority_code variable="string" maxlength="16" forbidEdit="true" notnull="true"/>
+        <!-- 名称 -->
+        <authority_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 类别 -->
+        <authority_type variable="int" parse="enum" format="option" default="0x01" notnull="true">
+          <mobile value="0x01"/>        <!-- 绑定手机号 -->	
+          <email value="0x02"/>         <!-- 绑定邮箱 -->
+          <identity value="0x0F"/>      <!-- 身份证 -->
+          
+          <fingure value="0x11"/>       <!-- 绑定指纹 -->
+          <hand value="0x12"/>          <!-- 绑定掌纹 -->
+          <face value="0x13"/>          <!-- 绑定面部 -->
+          
+          <mag value="0x21"/>           <!-- 磁卡 -->
+          <ic value="0x22"/>            <!-- IC卡 -->
+          <nfc value="0x23"/>           <!-- 绑定NFC -->
+          <device value="0x2F"/>        <!-- 应用设备 -->
+          
+          <login value="0x81"/>         <!-- 第三方登录 -->
+          <bind value="0x8F"/>          <!-- 第三方授权 -->
+          
+          <password value="0xA0"/>      <!-- 安全密码 -->
+
+          <reset value="0xF1"/>         <!-- 重置密码 -->
+          <autoLogin value="0xF2"/>     <!-- 自动登录 -->
+        </authority_type>
+        <!-- 状态 -->
+        <authority_status variable="int" parse="enum" format="option" default="0x01" notnull="true">
+          <request value="0"/>    <!-- 申请中 -->	
+          <temp value="1"/>       <!-- 临时 -->
+          <access value="10"/>    <!-- 正常 -->
+          <expire value="-1"/>    <!-- 过期 -->
+        </authority_status>
+        <!-- 授权码 -->
+        <authority_token variable="string" parse="password" format="privacy" maxlength="512" notnull="true"/>
+        <!-- 授权码密钥 -->
+        <authority_tokenSecret variable="string" parse="password" format="privacy" maxlength="512"/>
+        <!-- 所属客户端 -->
+        <authority_client variable="long" parse="object:Client" default="0" notnull="true"/>
+        <!-- 授权用户 -->
+        <authority_user variable="long" parse="object:User" default="0"/>
+        <!-- 开始日期 -->
+        <authority_start variable="long" parse="datetime" format="yyyy-MM-dd" default="now"/>
+        <!-- 结束日期 -->
+        <authority_end variable="long" parse="datetime" format="yyyy-MM-dd"/>
+        
+        <!-- 虚拟域：授权种类 -->
+        <authority_category variable="int" parse="enum" format="option" default="1">
+          <identity value="1"/>    <!-- 身份认证 -->
+          <card value="2"/>        <!-- 卡片绑定 -->
+          <login value="3"/>       <!-- 第三方登录 -->
+          <bind value="4"/>        <!-- 第三方授权 -->
+          <device value="5"/>      <!-- 移动设备 -->
+          <autologin value="6"/>   <!-- 自动登录 -->
+          <accredit value="7"/>    <!-- 应用授权 -->
+        </authority_category>
+        <!-- 虚拟域：安全密码 -->
+        <authority_password variable="string" parse="password" maxlength="512"/>
+        <!-- 虚拟域：新安全密码 -->
+        <authority_new variable="string" parse="password" maxlength="512"/>
+        <!-- 虚拟域：确认安全密码 -->
+        <authority_confirm vairable="string" parse="password" maxlength="512"/>
+        <!-- 虚拟域：密码强度 -->
+        <authority_pwdstrength variable="int" parse="enum" format="option" default="1">
+          <weak value="1"/>     <!-- 弱 -->
+          <normal value="5"/>   <!-- 中 -->
+          <strong value="10"/>  <!-- 强 -->
+        </authority_pwdstrength>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Authority>
+  </object>
+</tekinfo>

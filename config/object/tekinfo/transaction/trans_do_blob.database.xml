@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TransDo 对象文件附件BLOB记录表  -->
+<tekinfo>
+  <database>
+    <table>
+      <trans_do_blob>
+        <item>
+          <!-- 标识 -->
+          <trans_do_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件存放域 -->
+          <trans_do_blob value="BLOB"/>
+        </item>
+      </trans_do_blob>
+    </table>
+  </database>
+</tekinfo>

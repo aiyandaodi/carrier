@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- TemplateBeginEditable name="doctitle" -->
+        <title>能力维度 ICAN.VIP</title>
+        <!-- TemplateEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../favicon.ico"/>
+        <link rel="Bookmark" href="../favicon.ico"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<!-- Stylesheets -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../http/style/macadmin/css/widgets.css"/>
+		
+        <!-- owl css -->
+        <link href="../http/style/extend/css/owl.carousel.css" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+		<link href="../http/style/macadmin/css/style.css" rel="stylesheet">
+        
+        <!-- popmenu css -->
+        <link href="../http/common/popmenu/popmenu.css" rel="stylesheet">
+        
+        <link href="../http/tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../http/tekinfo/css/tekinfo-dialog.css" rel="stylesheet">
+        
+        <link href="../http/ican/css/ican.css" rel="stylesheet">
+        <link href="../http/vip/css/i-dialog.css" rel="stylesheet">
+        
+        <!-- TemplateBeginEditable name="head-css" -->
+        <!-- my css in head -->
+        
+		<!-- TemplateEndEditable -->
+        
+        <script type="text/javascript" src="../http/common/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../http/style/macadmin/js/respond.min.js"></script>
+         
+        <!-- TemplateBeginEditable name="head-js" -->
+        <!-- my head js-->
+		<!-- TemplateEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				initial();
+			});
+  		</script>
+        <!-- TemplateBeginEditable name="head" -->
+        <!-- TemplateEndEditable -->
+	</head>
+	
+<body>
+
+<!-- TemplateBeginEditable name="main content" -->
+<!-- main content -->
+<div class="foot blightblue">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          
+          <!-- User icon -->
+          <p>
+          	<span class="twitter-icon text-center">
+          		<img src="../http/ican/logo/ican-logo-white-128.png" height="64" alt="ican.vip" title="ican.vip" onClick="javascript:goHome();"/>
+          	</span>
+          </p>
+          <p>
+          	<a href="javascript:goHome();">
+          		能力维度评价系统
+          	</a>
+         </p>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<!-- TemplateEndEditable -->
+<!-- Footer -->
+
+<footer>
+  <div class="container">
+	<div class="row">
+    	<div class="col-md-12 copy">
+          	<div class="pull-left">Copyright &copy; 
+            	<a href="http://www.ican.vip">
+            		<img height="18" src="../http/ican/logo/ican-banner-128.png" alt="ican.vip 能力维度" title="能力维度"/>
+                    能力维度
+                </a>
+                - 
+                Powered by 
+            	<a href="http://www.takall.com" alt="TAKALL" target="_blank">
+                	<img src="../http/takall/logo/takall-128.png" height="22" alt="TAKALL" title="TAKALL 为创新而生"/>
+                </a>
+                
+            </div>
+            
+      	</div><!-- end .col copy-->
+
+    </div><!-- end .row -->
+  	<div class="clearfix"></div>
+  </div><!-- en .container-->
+  <br/>
+</footer> 
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class='text-center'></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<!-- TemplateBeginEditable name="pop_menu" --> 
+
+<!-- popmenu Starts -->
+<div id="pop_menu" class="popmenu">
+    
+    <div class="ui-list">
+    	<a id="goBack" href="javascript:goBack();" class="ui-tooltip bg-lblue" data-toggle="tooltip" data-placement="left" title="返回"><i class="fa fa-step-backward"></i></a>
+        <a id="addObject" href="javascript:addObject();" class="ui-tooltip bg-lblue" data-toggle="tooltip" data-placement="left" title="编辑"><i class="fa fa-edit"></i></a>
+        <a id="addFavorite" href="javascript:addFavorite();" class="ui-tooltip bg-lblue" data-toggle="tooltip" data-placement="left" title="收藏"><i class="fa fa-archive"></i></a>
+        <a id="share" href="javascript:share();" class="ui-tooltip bg-lblue" data-toggle="tooltip" data-placement="left" title="分享"><i class="fa fa-share-alt"></i></a>
+        <a id="toTop" href="#" class="ui-tooltip bg-lblue" data-toggle="tooltip" data-placement="left" title="回到顶部"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- Button -->
+	<a href="javascript:void(0);" class="popmenu-btn bg-lblue">+</a>
+</div>
+
+<div id="popmenu_Layer" onClick="javascript:popmenu_close();">
+    <!--<h1>背景层</h1>
+    &nbsp;-->
+</div>
+<!-- popmenu Ends -->
+		
+<!-- Scroll to top
+<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> --> 
+			
+<!-- TemplateEndEditable -->
+		
+		<!-- Javascript files -->
+
+
+<script src="../http/style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../http/style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="../http/style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../http/style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../http/style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../http/style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- slimscroll -->
+<script src="../http/style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<script src="../http/style/macadmin/js/excanvas.min.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../http/style/macadmin/js/jquery.flot.stack.js"></script>
+
+
+<!-- jQuery Notification - Noty -->
+<script src="../http/style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="../http/style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="../http/style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="../http/style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="../http/style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="../http/style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<script src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../http/style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../http/style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script src="../http/style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<script src="../http/style/macadmin/js/charts.js"></script> <!-- Charts & Graphs -->
+
+<!-- Owl carousel -->
+<script src="../http/style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../http/style/extend/js/placeholder.js"></script>
+
+<!-- Tekinfo JS -->
+<script type="text/javascript" src="../http/common/tek/js/tool.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/user.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/dataUtility.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/common.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/core.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/refresh.js"></script>
+<script type="text/javascript" src="../http/common/tek/js/mac-common.js"></script>
+<script type="text/javascript" src="../http/common/popmenu/popmenu.js"></script>
+<script type="text/javascript" src="../http/common/touchscreen/touchscreen.js"></script>
+<script type="text/javascript" src="../http/tekinfo/js/tekinfo.js"></script>
+<script type="text/javascript" src="../http/ican/js/ican.js"></script>
+<script type="text/javascript" src="../http/ican/js/ican-dialog.js"></script>
+        
+		<!-- TemplateBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+        
+		<!-- TemplateEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+function initial(){
+	/**
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	//showUser(); //tekinfo.js
+	
+	//tek.serverTimer.show();
+	if (tek.common.isLoggedIn()) {
+		showUserInfo();
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	
+	var error = request["error"];
+	
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	**/
+	/** 弹出菜单 **/
+	if(typeof popmenu_start == "function"){
+		popmenu_start();
+	}
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	
+	scrollPage();
+	
+	if (typeof init == "function")
+		init();
+	
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+	//alert("ok");
+}
+</script>
+
+	</body>	
+</html>

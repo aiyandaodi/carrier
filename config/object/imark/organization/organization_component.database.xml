@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构组成 -->
+<tekinfo>
+  <database>
+    <table>
+      <organization_component>
+        <item>
+          <!-- 标识 -->
+          <component_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <component_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名称 -->
+          <component_name value="VARCHAR(255)"/>
+          <!-- 机构 -->
+          <component_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 组 -->
+          <component_group value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 组的类型 -->
+          <component_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </organization_component>
+    </table>
+  </database>
+</tekinfo>

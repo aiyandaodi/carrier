@@ -1,0 +1,15 @@
+name=主题发布记录
+
+#property
+property.release_id=标识
+property.release_name=名称
+property.release_account=帐号对象名
+property.release_accountid=帐号标识
+property.release_status=发布状态
+property.release_status.apply=申请
+property.release_status.ready=正常发布
+property.release_status.release=发布完成
+property.release_status.stop=停止发布
+property.release_status.subject=发布的主题
+property.release_status.ontime=定时发布时间
+property.release_status.time=发布时间

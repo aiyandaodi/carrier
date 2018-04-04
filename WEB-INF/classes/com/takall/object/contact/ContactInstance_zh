@@ -1,0 +1,20 @@
+name=即时通
+
+#property
+property.instance_id=标识
+property.instance_code=编码
+property.instance_name=类型
+property.instance_type=账号类型
+property.instance_type.qq=QQ
+property.instance_type.wechat=微信
+property.instance_type.blog=微博
+#property.instance_type.facebook=Facebook
+#property.instance_type.googletalk=Google Talk
+#property.instance_type.msn=MSN
+#property.instance_type.xmpp=XMPP
+#property.instance_type.yahoo=Yahoo
+property.instance_type.other=其他
+property.instance_address=账号
+property.instance_contact=联系人
+
+#instance

@@ -1,0 +1,15 @@
+name=社交账号
+
+#property
+property.socialaccount_id=标识
+property.socialaccount_code=编码
+property.socialaccount_name=名称
+
+property.socialaccount_user=所属用户
+property.socialaccount_host=社交帐号主机
+
+
+
+#message
+message.add=发布信息
+

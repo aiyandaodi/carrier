@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 区镇（四级行政区划） -->
+<tekinfo>
+  <database>
+    <table>
+      <district>
+        <item>
+          <!-- 标识 -->
+          <district_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <district_code value="VARCHAR(14) NOT NULL"/>
+          <!-- 简称 -->
+          <district_name value="VARCHAR(64) NOT NULL"/>
+          <!-- 全称 -->
+          <district_fullname value="VARCHAR(64) NOT NULL"/>
+          <!-- 所属市县 -->
+          <district_state value="VARCHAR(10) NOT NULL"/>
+          <!-- 区域 -->
+          <district_locale value="VARCHAR(10) NOT NULL"/>
+          <!-- 是否有效 -->
+          <district_valid value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </district>
+    </table>
+  </database>
+</tekinfo>

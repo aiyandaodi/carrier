@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tekinfo>
+  <object>
+    <Friend ResourceBundle="com.takall.profile.Friend"
+        Structure="com.takall.profile.Friend"
+        ObjectRm="com.takall.remoting.profile.FriendRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <friend_id base="identity"/>
+        <friend_code base="yyyy" step="1" digit="10"/>
+        <friend_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="friend_name" codeIdentity="null">
+        <friend identity="friend_id"/>
+      </table>
+      
+      <index maxIcon="object/profile/Friend-48.gif"
+          minIcon="object/profile/Friend.gif"/>
+            
+      <command>
+      	<read url="http/takall/friend/read.html">
+      		<parameter>
+            	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            	<record value="0x10"/>
+          	</parameter>
+          <item>
+          	<friend_code/>
+            
+            <friend_name/>
+            <friend_other/>
+            
+            
+            <friend_tag/>
+            <friend_color/>
+            
+            <friend_ownername/>
+            <friend_owner/>
+            
+            <friend_status/>
+            <friend_remark/>
+          </item>
+        </read>
+        
+        <add url="http/takall/friend/add.html">
+        	<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x80"/>
+          	</parameter>
+          <item>
+            <friend_code/>
+            <friend_name/>
+            
+            <friend_other/>
+           
+            
+            <friend_tag/>
+            <friend_color/>
+            
+            <friend_ownername/>
+            <friend_owner/>
+            
+            <friend_status/>
+            <friend_remark/>
+          </item>
+        </add>
+        
+        <edit url="http/takall/friend/edit.html">
+        	<parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <friend_code/>
+            <friend_name/>
+            
+            
+            <friend_tag/>
+            <friend_color/>
+            
+            <friend_ownername/>
+            
+            
+            <friend_status/>
+            <friend_remark/>
+          </item>
+        </edit>
+
+        <list url="http/takall/friend/index.html">
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts value="10"/>
+      	  </parameter>
+          <item>
+            <friend_code/>
+            <friend_name/>
+            
+            <friend_other/>
+            
+            <friend_tag/>
+            <friend_color/>
+            
+            <friend_ownername/>
+            <friend_owner/>
+            
+            <friend_status/>
+            <friend_remark/>
+          </item>
+        </list>
+        
+        <remove url="http/takall/friend/remove.html">
+          <parameter>
+		  	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+            <remove_sub value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <friend_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <friend_code variable="string" maxlength="128" notnull="true"/>
+        <!-- 名称 -->
+        <friend_name variable="string" maxlength="128" notnull="true"/>
+        
+        <!-- 我的名字 -->
+        <friend_ownername variable="string"  notnull="true"/>
+        
+        <!-- 关系 -->
+        <friend_status variable="int" parse="enum" default="0" notnull="true">
+        	<stop value="-1"/>    <!-- 黑名单 -->
+          <apply value="0"/>    <!-- 申请 -->
+          <valid value="1"/>    <!-- 有效 -->
+        </friend_status>
+        
+        
+        <!-- 对方标识 -->
+        <friend_other variable="long" parse="object:User" notnull="true"/>
+        
+        <!-- 标签 -->
+        <friend_tag variable="string" maxlength="255" />
+        
+        <!-- 颜色 -->
+        <friend_color variable="string" parse="enum" format="option" default="f3f">
+          <red value="f00"/>    
+          <orange value="f90"/>
+          <yellow value="ff0"/>
+          <green value="090"/>
+          <darkblue value="39c"/>
+          <blue value="03f"/>
+          <purple value="900"/>
+          <pink value="f3f"/> 
+        </friend_color>
+        
+        <!-- 所有者 -->
+        <friend_owner variable="long" parse="object:User" default="0" notnull="true"/>
+		
+		<!-- 说明 -->
+        <friend_remark variable="string" format="textarea:4"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Friend>
+  </object>
+</tekinfo>

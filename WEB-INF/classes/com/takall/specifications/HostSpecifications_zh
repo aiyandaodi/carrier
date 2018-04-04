@@ -1,0 +1,13 @@
+name=规格
+
+#property
+property.host_specifications_id=标识
+property.host_specifications_code=编码
+property.host_specifications_name=规格名称
+property.host_specifications_site=所属主机
+property.host_specifications_type=规格类型
+property.host_specifications_value=规格值
+property.host_specifications_value.wait=准备提供
+property.host_specifications_value.apply=不再有效
+property.host_specifications_value.valid=正常规格
+property.host_specifications_remark=该规格的备注

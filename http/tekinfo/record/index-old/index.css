@@ -1,0 +1,92 @@
+/* CSS Document */
+
+/************** 操作平台label ***************/
+.record-os-label > span { margin: 0 5px 2px; }
+
+/*********** end 操作平台label ***************/
+
+#apply-subject-list,#apply-member-list li,#lastest-added-member-list{}
+
+#apply-subject-list li,#apply-member-list li,#lastest-added-member-list li{ list-style:none;}
+
+#apply-subject-list li .label-self,#apply-member-list li .label-self,#lastest-added-member-list li .label-self{padding:3px 2px !important;}
+
+.turn-page-active{ background-color:#EEEEEE !important;}
+
+.turn-page-dot{ padding:6px 12px !important;}
+
+.group-info-div-content{ padding:10px 10px !important;margin:10px 10px !important;}
+
+
+.subject-content{
+	position:relative;
+}
+
+.subject-content .subject-content-col{
+	background-color:#FAFAFA;
+	zoom:1;
+	position:absolute;
+	border:#CCC solid 1px;
+	border-radius:5px;
+	width:295px !important;
+}
+.tag-title{border:1px #aaa solid;padding:5px 8px; margin-right:5px;}
+.tag-ball{border-radius:10px !important; border:1px #aaa solid;}
+.tag-selected{background-color:#80B6DF !important;color:#FAFAFA !important; cursor:default !important;}
+.tag-ball:hover,.tag-selected:hover{background-color:#026B9C !important; color:#FFF !important;}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+.box-title-h3{min-height:40px;max-width:215px;padding:5px 1px;line-height:40px;}
+.box-title-h3 a{line-height:1.1em;}
+.box-title-img a{position:absolute;right:2px;top:2px;border-radius:3px;border:1px #E5E5E5 solid;border-radius:3px;}
+.box-title-img a:hover{border:1px #666 solid;}
+
+/*控制长图*/
+.bthumb2-overflow{max-height:300px !important;overflow:hidden !important;text-overflow:ellipsis;white-space:nowrap !important;}
+
+
+ul, ol {
+    margin-top: 0px;
+    margin-bottom: -7px;
+}
+
+.list-group {
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+/*.totop{
+	display:block !important;
+	border-radius:25px;
+	}
+.totop a i{
+	margin-top: 7px !important; 
+	}*/
+
+/*#more_page{background-color:#3CF;}*/
+#list-top>.pull-left{ margin:5px 15px 5px 5px; }
+#list-top>.btn-group{ margin-left:5px; }
+
+#table-infos>tr>.column-record_time, #table-infos>tr>.column-record_ip { text-align:center; }
+
+
+#changeline{word-wrap:break-word;
+/*white-space:normal;*/
+}
+
+.record_model{
+	margin:5px 0;
+	padding-top:1px;
+	/*white-space:nowrap;*/
+	overflow:hidden;
+}
+.record_model_by{
+	margin:0;
+	white-space:nowrap !important;
+	}
+.record_model_name{
+	margin:0px ;
+	padding-left:10px ;
+	float:left;
+}

@@ -1,0 +1,16 @@
+name=货币
+
+#property
+property.ibank_currency_id=标识
+property.ibank_currency_code=货币代码
+property.ibank_currency_name=货币名称
+property.ibank_currency_symbol=货币符号
+property.ibank_currency_type=货币类型
+property.ibank_currency_type.real=真实货币
+property.ibank_currency_type.virtual=虚拟货币
+property.ibank_currency_type.pseudo=积分
+property.ibank_currency_status=状态
+property.ibank_currency_status.stop=禁用
+property.ibank_currency_status.apply=申请中
+property.ibank_currency_status.release=发布
+property.ibank_currency_bank=发行银行

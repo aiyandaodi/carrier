@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* CSS Document */
+h5, .h5 {
+    font-size: 1em;
+}
+/** UI- 296 **/
+.ui-296{
+	margin:20px 0px;
+}
+
+.ui-296 .post-edit{
+	width:98%;
+	margin: 0 auto;
+	border: #F3F3F3 1px solid;
+}
+
+.ui-296 .img-container{
+	position: relative; 
+	float: left;
+	margin-right: 20px;
+}
+
+.ui-296 .dd-img {
+	width: 100%;
+	max-width:38px;
+	border-radius: 50%;
+}
+
+.ui-296 .pull-left{
+	float:left !important;
+}
+
+.ui-296 .pull-left p{
+	font-size:0.8em;
+	margin: 2px auto;
+	line-height: 1.2;
+}
+
+.ui-296 h5{
+	font-size:1em;
+	font-weight:bold;
+	cursor: pointer !important;
+}
+/* mood 心情 */
+.ui-296 ul li{
+	list-style:none;
+	float:left;
+	min-width:28px;
+	min-height:28px;
+	cursor:pointer;
+}
+.ui-296 ul li:hover{
+	transform: scale(1.1);
+	border-radius:2px !important;
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.7) !important;
+}
+.ui-296 ul li.active{
+	transform: scale(1.1);
+	border-radius:2px !important;
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.7) !important;
+}
+.box-shadow-block{
+	padding:15px 20px;
+	border:1px solid #e7e7e7;
+	background:#fff;
+	border-top:2px solid #32c8de;
+}
+.box-shadow-outer {
+	position: relative;
+	z-index: 1;
+}
+.box-shadow-outer .box-shadow-1 {
+	box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.2) ;
+}
+.box-shadow-outer .box-shadow-2 {
+	position: relative;
+}
+.box-shadow-outer .box-shadow-2:before,
+.box-shadow-outer .box-shadow-2:after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	top: 50%;
+	max-width: 300px;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2) !important;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.box-shadow-outer .box-shadow-2:after {
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	transform: rotate(3deg);
+	right: 10px;
+	left: auto;
+}
+.box-shadow-outer .box-shadow-3 {
+	position: relative;
+}
+.box-shadow-outer .box-shadow-3:before {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	top: 50%;
+	max-width: 300px;
+	background: rgba(0, 0, 0, 0.25);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2) !important;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.box-shadow-outer .box-shadow-4 {
+	position: relative;
+}
+.box-shadow-outer .box-shadow-4:after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 15px;
+	right: 10px;
+	left: auto;
+	width: 50%;
+	top: 40%;
+	max-width: 300px;
+	background: rgba(0, 0, 0, 0.2);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2) !important;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+.box-shadow-outer .box-shadow-5 {
+	position: relative;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.05) inset !important;
+}
+.box-shadow-outer .box-shadow-5:before,
+.box-shadow-outer .box-shadow-5:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+}
+.box-shadow-outer .box-shadow-5:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: skew(8deg) rotate(3deg);
+	-moz-transform: skew(8deg) rotate(3deg);
+	-ms-transform: skew(8deg) rotate(3deg);
+	-o-transform: skew(8deg) rotate(3deg);
+	transform: skew(8deg) rotate(3deg);
+}
+.box-shadow-outer .box-shadow-6 {
+	position: relative;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+.box-shadow-outer .box-shadow-6:before,
+.box-shadow-outer .box-shadow-6:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+}
+.box-shadow-outer .box-shadow-6:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: skew(8deg) rotate(3deg);
+	-moz-transform: skew(8deg) rotate(3deg);
+	-ms-transform: skew(8deg) rotate(3deg);
+	-o-transform: skew(8deg) rotate(3deg);
+	transform: skew(8deg) rotate(3deg);
+}

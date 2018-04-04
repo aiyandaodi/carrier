@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象目录分类 -->
+<tekinfo>
+  <database>
+    <table>
+      <object_catalog>
+        <item>
+          <!-- 标识 -->
+          <catalog_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <catalog_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <catalog_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 所属对象类型名 -->
+          <catalog_object value="VARCHAR(255) NOT NULL"/>
+          <!-- 所有者 -->
+          <catalog_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 是否停用 -->
+          <booking value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </object_catalog>
+    </table>
+  </database>
+</tekinfo>

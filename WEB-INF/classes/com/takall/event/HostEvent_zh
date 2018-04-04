@@ -1,0 +1,13 @@
+name=事件对象
+
+#property
+property.host_event_id=标识
+property.host_event_code=编码
+property.host_event_name=事件名称
+property.host_event_value=事件说明
+property.host_event_remark=事件备注
+property.host_event_time=事件记录时间
+property.host_event_status=事件紧急程度
+property.host_event_status.normal=正常
+property.host_event_status.serious=严重
+property.host_event_status.warning=警告

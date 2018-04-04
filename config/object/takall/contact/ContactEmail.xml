@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息电子邮件地址 -->
+<tekinfo>
+  <object>
+
+    <ContactEmail ResourceBundle="com.takall.contact.ContactEmail"
+        Structure="com.takall.contact.ContactEmail"
+        ObjectRm="com.takall.remoting.contact.ContactEmailRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <email_id base="identity"/>
+        <email_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="email_name" codeIdentity="null">
+        <contact_email identity="email_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <!-- <email_code/> -->
+            <email_name/>
+            <email_address/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <email_name/>
+            <email_address/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <email_code/>
+            <email_name/>
+            <email_address/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <email_code/>
+            <email_name/>
+            <email_address/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <email_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <email_code variable="string" maxlength="10"/>
+        <!-- 名字 -->
+        <email_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 电邮地址 -->
+        <email_address variable="string" maxlength="255" parse="email" notnull="true"/>
+        <!-- 所属联系信息 -->
+        <email_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactEmail>
+  </object>
+</tekinfo>

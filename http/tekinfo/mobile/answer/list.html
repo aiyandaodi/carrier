@@ -1,0 +1,674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+功能：后台管理平台模板
+参数：    
+-->
+
+<html><!-- InstanceBegin template="/Templates/tekinfo-admin.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta name="robots" content="noindex"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <title>短信应答</title>
+  
+  <link href="../../../common/tek/css/mac-list.css" rel="stylesheet">
+  <link href="list.css" rel="stylesheet">
+  
+  <script type="text/javascript" src="../../../common/tek/js/turn-page.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/mac-list.old.js"></script>
+  <script type="text/javascript" language="javascript" src="list.js"></script> 
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="后台 管理 通用 统一 平台 超级 管理员 系统设置 系统配置 统一资源 任务 服务 tekinfo takall admin administrator uniform super supervisor system setup option control"/>
+  <meta name="description" content="后台 管理 通用 统一 平台 超级 管理员 系统设置 系统配置 统一资源 任务 服务 tekinfo takall admin administrator uniform super supervisor system setup option control"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../../common/tek/css/mac-list.css">
+  <link rel="stylesheet" href="../../css/tekinfo.css"/>
+
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- MyCSS -->
+  
+	    <h2 class="pull-left">
+          <a href="../../admin/index.html"><i class="fa fa-home"></i> 系统管理</a>
+        </h2>
+        <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/serverTimer.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/mac-common.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/mac-list.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/turn-page.js"></script>
+  
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../../js/tekinfo.js"></script>
+  <script type="text/javascript" src="../../admin/control.js"></script>
+
+
+  <!-- InstanceBeginEditable name="HeadScript" -->
+  <!-- HeadJavaScript -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+	  initial();
+    });
+  </script>
+  
+</head>
+
+<body>
+  
+<div id="index_banner" class="index-banner">
+	<div id="navbar" class="navbar navbar-fixed-top bs-docs-nav" >
+       <!--Navigation starts--> 
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+        <ul class="nav navbar-nav">  
+           <!--主页--> 
+          <li class="dropdown dropdown-big">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success">
+            	<i class="fa fa-backward"></i></span>返回
+            </a>
+             <!--Dropdown--> 
+            <ul class="dropdown-menu">
+              <li>
+                 Using "fa fa-spin" class to rotate icon. 
+                <p>
+                  <a href="javascript:tek.core.goBack();">
+                    <span class="label label-info"><i class="fa fa-arrow-circle-left"></i></span> 
+                    返回前页
+                  </a>
+                </p>
+                <hr />
+                <p>
+                  <a href="javascript:tek.core.goHome();">
+                    <span class="label label-warning"><i class="fa fa-home"></i></span> 
+                    返回系统
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </li>
+
+         <!--  Sync to server link -->
+          <li class="dropdown dropdown-big">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            	<span class="label label-primary"><i class="fa fa-cloud"></i></span> 应用
+            </a>
+             <!--Dropdown--> 
+            <ul class="dropdown-menu">
+              <li>
+                <p>
+                  <a href="http://www.ipass.vip">
+                    <span class="label label-success"><i class="fa fa-user-secret"></i></span> 
+                    ipass 统一认证
+                  </a>
+                </p>
+                
+                <p>
+                  <a href="http://www.ican.vip">
+                    <span class="label label-warning"><i class="fa fa-user-plus"></i></span> 
+                    ican 能力维度
+                  </a>
+                </p>
+                <hr />
+                <p>
+                  <a href="http://www.takall.com">
+                    <span class="label label-primary"><i class="fa fa-building"></i></span> 
+                    TAKALL
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        
+         <!--Links--> 
+        <ul class="nav navbar-nav pull-right">
+        	<li id="label_register" class="pull-right">
+				<a href="javascript:goRegister();"><i class="fa fa-info"></i><span id="user-register">注册</span></a>
+			</li>
+            <li id="label_login" class="pull-right">
+				<a href="javascript:goLogin();"><i class="fa fa-sign-in"></i><span id="user-login">登录</span></a>
+			</li>
+
+			<li id="label_user" class="dropdown pull-right" style="display:none;">
+            	<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="fa fa-user"></i><span id="user-name">用户名</span><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                	<li id="user_account">
+                    	<a href="javascript:myUser();"><span class="label label-primary"><i class="fa fa-user-circle-o"></i></span>我的账户</a>
+                    </li>
+                    <li id="user_profile">
+						<a href="javascript:goLogout();"><span class="label label-info"><i class="fa fa-sign-out"></i></span>退出系统</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+            
+        
+      </nav>
+  </div>
+	
+</div>
+  <!-- Header starts -->
+<div id="tekinfo_main" class="main" style="margin-top: 48px;">
+  <header>
+    <div class="container">
+      <div class="row">
+        <!-- Logo section -->
+        <div class="col-md-4">
+          <!-- Logo. -->
+          <div class="logo">
+            <h1><a href="http://www.tekinfo.net"><img src="../../logo/tekinfo-globe-128.png" height="36" alt="tekinfo" longdesc="http://www.tekinfo.net"/></a></h1>
+            <p class="meta">Tekinfo 统一资源平台 超级管理系统</p>
+          </div>
+          <!-- Logo ends -->
+        </div>
+
+        <!-- Button section -->
+        <div class="col-md-4">
+          <!-- Buttons -->
+          <ul class="nav nav-pills">
+            
+
+            <!-- Members button with number of latest members count -->
+            <li class="dropdown dropdown-big">
+              <a class="dropdown-toggle" href="../../object/list.html">
+                <i class="fa fa-user"></i> 系统用户 <span id="object-total" class="label label-success">0</span>
+              </a>
+            </li>
+            <li class="dropdown dropdown-big">
+              <a class="dropdown-toggle" href="../../objectOption/list.html">
+                <i class="fa fa-list"></i> 操作记录 <span id="option-total" class="label label-primary">0</span>
+              </a>
+            </li>
+            <li class="dropdown dropdown-big">
+              <a class="dropdown-toggle" href="../../objectDictionary/list.html">
+                <i class="fa fa-server"></i> 服务主机 <span id="dictionary-total" class="label label-info">0</span> 
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Data section -->
+        <div class="col-md-4">
+          <div class="header-data">
+            <!-- Traffic data -->
+            <div class="hdata">
+              <div class="mcol-left">
+                <!-- Icon with red background -->
+                <i class="fa fa-signal bred"></i> 
+              </div>
+              <div class="mcol-right">
+                <!-- Number of visitors -->
+                <p><a id="record-total" href="#">0</a><em>记录</em></p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            
+            <!-- revenue data -->
+            <div class="hdata">
+              <div class="mcol-left">
+                <!-- Icon with green background -->
+                <i class="fa fa-tasks bg-orange"></i> 
+              </div>
+              <div class="mcol-right">
+                <!-- Number of visitors -->
+                <p><a id="new-group-total" href="#">0</a><em>事务</em></p>
+              </div>
+              <div class="clearfix"></div>
+            </div>   
+
+            <!-- Members data -->
+            <div class="hdata">
+              <div class="mcol-left">
+                <!-- Icon with blue background -->
+                <i class="fa fa-user bblue"></i> 
+              </div>
+              <div class="mcol-right">
+                <!-- Number of visitors -->
+                <p><a id="login-total">0</a> <em>用户</em></p>
+              </div>
+              <div class="clearfix"></div>
+            </div>                    
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header ends -->
+  
+  <!-- Main content starts -->
+  <div class="content">
+  	<!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-dropdown"><a href="#">导航</a></div>
+      <!-- Sidebar navigation -->
+      <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+      <ul id="nav">
+        <!-- Main menu with font awesome icon -->
+        <li><a href="../../admin/control.html" id="control"><i class="fa fa-server"></i> 超级控制台</a>
+        </li>
+        
+        <li id="security" class="has_sub"><a href="#"><i class="fa fa-lock"></i> 安全管理  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+          <ul>
+            <li id="system_user"><a href="../../user/list.html">用户管理</a></li>
+            <!--<li id="right_role"><a href="../http/tekinfo/rightRole/list.html">角色管理</a></li>
+            <li id="right_object"><a href="../http/tekinfo/rightObject/list.html">权限分配</a></li>-->
+            <li id="authority_list"><a href="../../authority/list.html?order=createTime&desc=1">授权记录</a></li>
+            <li id="record_list"><a href="../../record/list.html?order=record_time&desc=1">操作记录</a></li>
+          </ul>
+        </li>
+        
+        <li id="object" class="has_sub"><a href="#"><i class="fa fa-indent"></i> 对象配置  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+          <ul>
+          	<li id="object_list"><a href="../../object/list.html">系统对象</a></li>
+            <li id="object_option"><a href="../../objectOption/list.html">对象属性</a></li>
+            <li id="opject_dictionary"><a href="../../objectDictionary/list.html">对象字典</a></li>
+            
+          </ul>
+        </li>
+        
+        <li id="system" class="has_sub"><a href="#"><i class="fa fa-th"></i> 系统管理  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+          <ul>
+          	<li id="service_provider"><a href="../../service_provider/list.html">服务主机</a></li>
+            <li id="client_client"><a href="../../client/list.html?client_category=3">客户服务器管理</a></li> 
+            <li id="system_service"><a href="../../system/service/list.html">系统服务</a></li>
+            
+            <li id="system_initial"><a href="../../system/initial/list.html">系统初始化</a></li>
+          </ul>
+        </li>
+
+       
+      </ul>
+    </div>
+    <!-- Sidebar ends -->
+
+ 	<!-- Main bar -->
+  	<div class="mainbar">
+	  <!-- Page heading -->
+	  <div class="page-head">
+        
+	    <h2 class="pull-left">
+        	<a href="../../admin/index.html"><i class="fa fa-building"></i> 超级控制台 </a>
+        </h2>
+
+        <!-- Breadcrumb -->
+        <div class="bread-crumb pull-right">
+          <a href="../../admin/control.html"><i class="fa fa-server"></i> 控制台</a> 
+          <!-- Divider -->
+          <span class="divider">/</span>
+          <!-- InstanceBeginEditable name="Dashboard" -->
+          <a href="#" class="bread-current">设备</a>
+          
+                  <!-- InfoMenu -->
+				  
+          <!-- menu -->
+          <!-- InstanceEndEditable -->
+        </div>
+
+        <div class="clearfix"></div>
+	  </div>
+      <!-- Page heading ends -->
+      
+      <!-- Matter -->
+      <div class="matter">
+        <div class="container">
+		  <!-- InstanceBeginEditable name="Matter" -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="widget">
+                <div id="list-top" class="widget-head">
+                  <div class="pull-left">短信应答</div>
+          
+                  <div class="btn-group">
+                      <button class="btn btn-success" onclick="createNew()">新建</button>
+                  </div>
+                   <div class="btn-group" id="remove-list-div" >
+                      <button class="btn btn-danger" onClick="removeAnswers()">删除</button>
+                   </div>
+                  
+                   <div class="btn-group" id="refresh-list-div" >
+                      <button class="btn btn-info" onclick="customRefresh()">刷新</button>
+                  </div><!-- end .btn-group -->
+
+                  <div class="widget-icons pull-right">
+                    <div id="quickSearchDiv" style="float:left; margin-right:10px;">
+                      <input type="text" id="quickSearchKey" name="quickSearchKey" placeholder="快速查询" title="检索字段：名称" onKeyDown="quickSearchEnter(event)" onFocus="javascript:this.select();"/>
+                      <img id="quickSearchSubmit" src="../../../images/search-32.png" onClick="quickSearch($('#quickSearchKey').val())" title="查询"/>
+                    </div><!-- end quickSearchDiv-->
+                  
+                    <a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="icon-remove"></i></a>
+                  </div><!-- end .widget-icons -->
+                  <div class="clearfix"></div>
+                </div><!-- end .widget-head -->
+                
+                <div class="widget-content">
+                  <table class="table table-striped table-bordered table-hover" id="list-table"  name="list-table">
+                    <thead>
+                      <!-- 列表头 -->
+                      <tr id="table-columns" style="min-width:20px"></tr>
+                    </thead>
+                    <!-- 列表信息 -->
+                    <tbody id="table-infos"  name="table-infos"></tbody>
+                  </table>
+                  <div id="table-msg"></div>
+                  <div class="clearfix"></div>
+                </div><!-- end.widget-content -->
+
+                <div class="widget-foot">
+                  <ul class="pagination pull-right" id="page" name="page"></ul>
+                  <div class="clearfix"></div> 
+                </div><!-- end.widget-foot-->
+              </div><!-- end.widget -->
+            </div><!-- end.col-md -->
+          </div>
+          <!-- InstanceEndEditable -->
+
+          
+        </div><!-- end.container-->
+	  </div><!--end matter-->
+    </div><!-- Mainbar ends -->
+    <div class="clearfix"></div>
+  </div>
+  <!-- Content ends -->
+</div>
+<!-- Footer starts -->
+<footer>
+  <div class="container">
+    <div class="row show_wide">
+      <div class="col-left col-md-6">
+        <!-- Copyright info -->
+        <p class="copy" style="margin-top:4px;">
+          Copyright &copy; 1999-forever 
+          <a href="http://www.tekinfo.net">
+          	<img src="../../logo/tekinfo-globe-128.png" height="22" alt="TEKINFO.NET" title="TekInfo 为创新而生!"/>
+          </a>
+        </p>
+      </div>
+      
+      <div class="col-right col-md-6">
+        <p class="pull-right">
+        	Powered by 
+            <a href="http://www.tekinfo.net" title="tekinfo" target="_blank">
+            	<img src="../../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo" title="为社会创造价值"/>
+            </a>
+            ｜ 
+            Supported by 
+            <a href="http://www.takall.com" title="TAKALL" target="_blank">
+            	<img src="../../../takall/logo/takall-128.png" height="18" alt="TAKALL" title="唯“心”所创 唯“物”而造"/>
+            </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="row show_wide">
+    
+      <div class="col-left col-md-6">
+        <p class="pull-left">
+          服务器时间:<span id="serverTime" class="text-left"></span> &nbsp;&nbsp;
+          客户端时间:<span id="clientTime" class="text-left"></span>
+        </p>
+      </div>
+      
+      <div class="col-right col-md-6">
+        <p class="pull-right">
+          建议和意见:
+          <a style="word-wrap:break-word;" href="mailto:service@takall.com">service@takall.com</a>
+          &nbsp;&nbsp;
+          技术和支持:
+          <a style="word-wrap:break-word;" href="mailto:support@takall.com">support@takall.com</a>
+        </p>
+      </div>
+      
+    </div><!--  end 正常宽屏幕显示-->
+    
+    <!-- 窄宽屏幕显示-->
+    <div class="show_narrow">
+      <div class="row">
+        <div class="col-left col-md-10">
+        <!-- Copyright info -->
+          <p class="copy" style="margin-top:4px;">
+            Copyright &copy; 1999-forever 
+          	<a href="http://www.tekinfo.net">
+          		<img src="../../logo/tekinfo-globe-128.png" height="22" alt="TEKINFO.NET" title="TekInfo 为创新而生!"/>
+          	</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-left col-md-10">
+          <p class="pull-left">
+            Powered by 
+            <a href="http://www.takall.com" title="TAKALL" target="_blank">
+            	<img src="../../../takall/logo/takall-128.png" height="18" alt="TAKALL" title="唯“心”所创 唯“物”而造"/>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div><!-- end 窄宽屏幕显示-->
+  </div>
+</footer>
+<!-- Footer ends -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span> 
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class='text-center'></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<script src="../../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<!-- Script for this page -->
+<script language="javascript" type="text/javascript">
+function initial(){
+//	$("#index_banner").load(tek.common.getRootPath() + "http/vip/html/i-header.html",function(){
+//		$.getScript(tek.common.getRootPath() + "http/vip/html/i-header.js",function(){
+			if(typeof initHeader == "function"){
+				initHeader();
+			}
+//		});
+		
+		$("#index_banner").css("position","relative");
+		$("#index_banner").show();
+//	});
+	
+    tek.core.getURLRequest(); 
+	
+	tek.common.getUser();
+	showUser(); //tekinfo.js
+
+	if (tek.common.isLoggedIn()) {
+		if (tek.user.isSupervisor(parseInt(mySecurity))) {
+			showUserInfo();
+			tek.serverTimer.show();
+			//showRecordTotal();
+			//showLoginTotal();
+			//showNewGroup();
+		}else{
+			tek.macCommon.waitDialogShow(null, "你不是超级管理员，无法使用当前功能！");
+			tek.macCommon.waitDialogHide(1500, 'goBack()');
+		}
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	
+	var error=request["error"];
+	if(error&&error.length>0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+		
+	var message=request["message"];
+	if(message&&message.length>0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	
+	
+	/** 初试化导航 
+	if(typeof initNavbar == "function"){
+		initNavbar();
+	}**/
+	/** 初试化侧栏 
+	if(typeof initSidebar == "function"){
+		initSidebar();
+	}**/
+
+	/** 
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		//alert("000");
+		scrollPage();
+		//alert("111");
+	}
+	
+	if (typeof init == "function")
+		init();
+			
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+
+}
+
+</script>
+
+<!-- InstanceBeginEditable name="MyJavaScript" -->
+<script language="javascript" type="text/javascript">
+function init(){
+  showOpenClass("resource");
+  showSubClass("answer_list");
+
+  initParams();
+
+  getList();
+}
+
+/**
+ * mac-list.js的初始化参数
+ */
+function initParams() {
+  ajaxURL=tek.common.getRootPath()+"servlet/tobject";    //Ajax取得列表信息的访问地址
+  
+  params={};    //Ajax取得列表信息的调用参数
+  var key=new Array();
+  key.push("answer_");
+  key.push("skip");
+  key.push("order");
+  key.push("desc");
+  params=getRequestParams(key,request,params,true);
+  params["objectName"]="MobileAnswer";
+  params["action"]="getList";
+  params["count"]=PAGE_COUNT;
+  
+  columns=new Array();    //显示列
+  columns.push('answer_answerkey');
+  columns.push('answer_start');
+  columns.push('answer_end');
+  columns.push('answer_object');
+  columns.push('answer_flag');
+  
+  
+  searchs=new Array();    // 快速检索域
+  searchs.push("answer_answerkey");
+}
+</script>
+
+  <!-- HeadJavaScript -->
+  <!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

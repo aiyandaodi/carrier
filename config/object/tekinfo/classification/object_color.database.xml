@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 对象颜色分类 -->
+<tekinfo>
+  <database>
+    <table>
+      <object_color>
+        <item>
+          <!-- 标识 -->
+          <color_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <color_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 颜色名称 -->
+          <color_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 所属对象类型名 -->
+          <color_object value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <color_owner value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 颜色值（存入颜色的HEX值，缺省了"#"符号，例如："022bee"） -->
+          <color_value value="CHAR(6) NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0'"/>
+          <createIp value="BIGINT DEFAULT '0'"/>
+          <modifyTime value="BIGINT DEFAULT '0'"/>
+          <modifyIp value="BIGINT DEFAULT '0'"/>
+          <accessTime value="BIGINT DEFAULT '0'"/>
+          <accessIp value="BIGINT DEFAULT '0'"/>
+          <accessCount value="INT DEFAULT '0'"/>
+        </item>
+      </object_color>
+    </table>
+  </database>
+</tekinfo>

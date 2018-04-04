@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+/********************error content*********************/
+body {
+	word-wrap:break-word;
+}
+.error-content {
+    height: 300px;
+    padding-top: 145px;
+    font-size: 1.3em;
+}
+
+/********************transaction********************/
+.transaction-summary {
+    margin: 2px 0 8px;
+    padding: 0px;
+    line-height: 28px;
+}
+.transaction-foot {
+	line-height: 1.0em;
+	color: #757575;
+}
+.transaction-foot > li {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+	line-height: 1.0em;
+	font-size: 0.9em;
+	color: #757575;
+}
+.transaction-foot > .transaction-owner {
+	float: right;
+	font-weight: 700;
+	color: #005BAC;
+}
+
+/*******************trans_do_container*****************/
+.trans-do-container {
+	position: relative;
+}
+/*********shift**********/
+.trans-do-shift {
+	text-align: right;
+    line-height: 1em;
+    margin-bottom: 10px;
+}
+.trans-do-shift span {
+	cursor: pointer;
+    color: #11826A;
+    margin-right: 8px;
+}
+.trans-do-shift span:hover {
+    color: rgb(153,153,153);
+}
+/********correct**********/
+.trans-do-correct {
+	min-height: 80px;
+	padding: 10px 15px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px 1px rgba(0,0,0,0.3);
+}
+
+/******time line**********/
+.trans-do-timeline {
+	min-height: 80px;
+}
+.ui-303 .o-timeline {
+	padding-top: 0;
+	padding-bottom: 1px;
+}
+.ui-303 .o-timeline > .timeline-item:first-of-type {
+	margin-top: 0;
+}
+.o-timeline-end {
+    margin-left: 70px;
+}
+.o-timeline-end > .timeline-item {
+	margin-top: 0;
+}
+@media (max-width:500px){
+	.o-timeline-end {
+		margin-left: 0;
+	}
+}
+/*trans_do 详情*/
+.detail-modal-dialog {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: none;
+	z-index: 100;
+}
+.detail-modal-dialog > .modal-dialog {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.detail-modal-dialog > .modal-dialog .modal-body {
+	display: none;
+}
+/*trans_do 概要*/
+.trans-do-summary {
+	margin: 2px 0 5px;
+    padding: 0px;
+    line-height: 28px;
+	font-size: 13px;
+	color: #888;
+}
+/*trans_do 操作*/
+.trans-do-operate {
+	line-height: 1.0em;
+	direction: rtl;
+}
+.trans-do-operate > * {
+	direction: ltr;
+}
+.trans-do-operate > a {
+	margin: 0 5px;
+	text-decoration: none;
+}
+
+/************************split line***************************/
+.split-line {
+	border-width: 4px;
+    border-color: #17B292;
+}
+
+/*********************trans_do reply***************************/
+.trans-do-form {
+	padding: 18px 20px 25px;
+}
+.trans-do-form .form-input {
+	margin-bottom: 10px;
+}
+.trans-do-title {
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 2px 0px;
+    padding: 0 15px;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(3,67,107,0.93);
+    color: rgba(3,67,107,0.93);
+}
+.trans-do-title > input {
+    border-width: 0;
+    width: 100%;
+	background-color: inherit;
+}
+.trans-do-title > input[placeholder] {
+	color: rgba(3,67,107,0.8);
+} 
+.trans-do-title > input:-moz-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.trans-do-title > input::-moz-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.trans-do-title > input::-webkit-input-placeholder{
+	color: rgba(3,67,107,0.8);
+}
+.trans-do-title > input:-ms-input-placeholder {
+	color: rgba(3,67,107,0.8);
+}
+.trans-do-content {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	padding: 5px 15px;
+	height: 220px;
+    overflow-y: auto;
+}
+.trans-do-content *, .trans-do-content p {
+    margin: 2px 0 4px !important;
+    line-height: 1.5em;
+}
+.trans-do-type {
+	border: 1px solid #BCBCBC;
+	display: table;
+    width: 100%;
+	padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.trans-do-type .type-item {
+    overflow: hidden;
+    padding: 0px 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+.trans-do-type .type-item > label {
+    padding-left: 5px;
+}
+.trans-do-type .type-box {
+	display: table;
+    width: 100%;
+}
+.trans-do-type .type-box.padding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* UI X */
+
+.ui-303{
+	max-width:800px;
+	margin:50px auto;
+	padding:0px 20px;
+}
+.ui-303 .o-timeline{
+	border-left:1px solid rgba(8,109,109,0.51);/**#e7e7e7;**/
+	margin-left:70px;
+	padding:10px 0px;
+}
+.ui-303 .timeline-item{
+	position:relative;
+	margin:40px 0px;
+}
+.ui-303 .timeline-circle{
+	width:120px;
+	height:120px;
+	text-align:center;
+	line-height:35px;
+	font-size:14px;
+	text-transform:uppercase;
+	border-radius:100%;
+	position:absolute;
+	left:-60px;
+	color:#fff;
+	padding-top:25px;
+}
+.ui-303 .timeline-circle span{
+	display:block;
+	font-size:40px;
+}
+.ui-303 .timeline-content{
+	margin-left:90px;
+	position:relative;
+	background:#fff;
+	border:1px solid #e8e8e8;
+	border-radius:6px;
+	padding:20px 25px;
+	box-shadow:4px 4px 0px 1px rgba(0,0,0,0.06);
+}
+.ui-303 .timeline-content:after, 
+.ui-303 .timeline-content:before {
+	right: 100%;
+	top: 60px; /*top: 35%;*/
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.ui-303 .timeline-content:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #ffffff;
+	border-width: 13px;
+	margin-top: -20px;
+}
+.ui-303 .timeline-content:before {
+	border-color: rgba(238, 238, 238, 0);
+	border-right-color: #e4e4e4;
+	border-width: 14px;
+	margin-top: -21px;
+}
+.ui-303 .timeline-content p{
+	font-size:14px;
+	color:#888;
+}
+@media (max-width:900px){
+	.ui-303 .timeline-circle{
+		width:90px;
+		height:90px;
+		font-size:13px;
+		left:-45px;
+		padding-top:15px;
+		line-height:25px;
+	}
+	.ui-303 .timeline-circle span{
+		font-size:30px;
+	}
+	.ui-303 .timeline-content{
+		margin-left:75px;
+	}
+	.ui-303 .timeline-content:after, 
+	.ui-303 .timeline-content:before {
+		top: 45px; /*top: 15%;*/
+	}
+	.ui-303 .timeline-content p{
+		font-size:13px;
+	}
+}
+@media (max-width:500px){
+	.ui-303 .o-timeline{
+		margin-left:0px;
+		border:0px;
+	}
+	.ui-303 .timeline-circle{
+		position:static;
+		margin-bottom:20px;
+	}
+	.ui-303 .timeline-content{
+		padding:10px 15px;
+		margin-left:0px;
+	}
+	.ui-303 .timeline-content:after, 
+	.ui-303 .timeline-content:before {
+		display:none;
+	}
+}

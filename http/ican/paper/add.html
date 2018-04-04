@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/readbook-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="title" -->
+  <!-- 自定义head -->
+  <title>考试</title>
+  <!-- InstanceEndEditable -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="知维 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="知维 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 ipassin network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href= "../../../favicon.ico"/>
+  <link rel="Bookmark" href= "../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+
+  <!-- readbook CSS -->
+  
+  <!-- ipassin CSS -->
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <link rel="stylesheet" href="add.css" />
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+
+  <!-- IPASSIN JS -->
+  
+  <!-- InstanceBeginEditable name="MyHead" -->
+  <!-- 自定义我的头文件 -->
+  <script type="text/javascript" src="../../common/tek/js/mac-list.js"></script>
+  <!-- InstanceEndEditable -->
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      initial();
+    });
+  </script>
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="MainContent" -->
+<!-- 主页面内容 -->
+<!-- Form area -->
+<div class="slidepanel" style="position:fixed;width:100%; z-index:999;display:none;margin-top: -40px;opacity:1.5;"  id="search-tooltip">
+    <div class="container"  style="max-width:980px;background-color:white;padding-top:5px;">
+      <div class="row">
+      		<div class="col-md-12">
+            	<div class="widget-content test-button">
+                    <div class="widget-icons">
+                        <div class="pull-left" id="top-test-time">倒计时 : <font color="#d9534f"></font></div>
+                        <button class="btn btn-info btn-info pull-right" type="button" onclick="submitPaper()">提交</button>
+                        <button class="btn btn-danger btn-danger pull-right" type="button" style="margin:0px 5px;" onclick="saveReply()">保存</button>
+                    </div>
+          		</div>
+            </div>
+      </div>
+    </div>
+</div>
+  
+<div class="admin-form" style="max-width:680px !important;magin:50px auto;display:none;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      
+          <div class="widget" id="login_div">
+              <!-- Widget head -->
+              <div class="widget-head">
+              		<!--<i class="fa fa-lock"></i> 登录--> 
+              		<div class="paper-title center" id="test-paper-title1" >能力认证考试</div>
+          	  </div><!-- end .widget-head -->
+              <div class="widget-content">
+                <!-- exams message -->
+                <div class="padd">
+                    <div class="row" style="display:none;">
+                         <div class="col-md-6 col-sm-6" >
+                            <div class="center">
+                                <span>时长:120分钟</span>
+                            </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6" >
+                            <div class="center">
+                                <span>分数:100分</span>
+                            </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6" >
+                            <div class="center">
+                                <span>难度:10级</span></div>
+                            </div>
+                         <div class="col-md-6 col-sm-6" >
+                            <div class="center">
+                                <span>答题人:王军</span>
+                            </div>
+                         </div>
+                         <div class="col-md-12 col-sm-12" style="margin-top:15px;">
+                            <div class="center">
+                                <button class="btn btn-info" onclick="startTest();"> 开始考试</button>
+                            </div>
+                         </div>  
+                    </div>
+                    <div class="row">
+                    	<div class="col-md-12 col-sm-12" >
+                         	<div class="center">
+                            	<button class="btn btn-success" type="submit"> 开始考试</button>
+                            </div>
+                         </div>  
+                    </div>
+                </div>
+             </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="admin-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- .widget worange starts -->
+        <div class="widget" id="login_div">
+          <!-- Widget head -->
+          <div class="widget-head">
+            <!--<i class="fa fa-lock"></i> 登录--> 
+            <div class="paper-title center" id="test-paper-title2" >
+            	能力认证考试
+               
+            </div>
+          </div><!-- end .widget-head -->
+    
+          <div class="widget-content test-info">
+            <!-- exams message -->
+            <div class="padd">
+                <div class="row" id="test-info">
+                     <!--ajax -->   
+                </div>
+            </div>
+         </div>
+          
+          <div class="widget-content test-button hidden" style="margin-top:10px;" id="search-form">
+          		<div class="widget-icons">
+                    <div class="pull-left" style="background-color:#fff;" id="test-time">倒计时 : <span id="exams_test_duration" style="color:#d9534f;"></span></div>
+                    <button class="btn btn-info btn-info pull-right" type="button" onclick="submitPaper()">提交</button>
+                    <button class="btn btn-danger btn-danger pull-right" type="button" style="margin:0px 5px;" onclick="saveReply()">保存</button>
+          		</div>
+                <div class="clearfix">
+                </div>
+          </div>
+          
+          <div class="widget-content test-question hidden">
+            <div class="padd">
+                <div class="paper-form">
+                	<form class="form" name="add-paper-form" id="add-paper-form" action="javascript:addPaperFormBtn('add-paper-form');" role="form">
+                    	<ol class="recent hidden" id="single-list">
+                            <div class="recent-content type-info">
+                                <span id="single-info"></span>
+                            </div>
+                            <!-- ajax -->                                  
+                        </ol>
+                        <ol class="recent hidden" id="multiple-list">
+                        	<div class="recent-content type-info">
+                                <span id="multiple-info"></span>
+                            </div>
+                            <!-- ajax -->                                 
+                        </ol>
+                    </form>
+                </div>
+            </div><!-- end .padd -->
+          </div><!-- end .widget-content -->
+          <div class="widget-foot" align="center">
+          		考试备注：请认真检查好答案
+          </div>
+        </div>  <!-- end. widget worange -->
+      </div> <!--end .col-md-12 -->
+    </div><!--end .row -->
+  </div><!--end .containe -->
+</div><!--end .admin-form -->
+<!-- InstanceEndEditable -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class='text-center'></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div>
+
+
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+<script language="javascript" type="text/javascript">
+
+function initial(){
+  tek.core.getURLRequest();
+  tek.common.getUser();
+
+  if(typeof (init)== "function")
+    init();
+}
+
+$(function () {
+    var d1 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d1.push([i, parseInt(Math.random() * 30)]);
+
+    var d2 = [];
+    for (var i = 0; i <= 20; i += 1)
+        d2.push([i, parseInt(Math.random() * 30)]);
+
+
+    var stack = 0, bars = true, lines = false, steps = false;
+    
+    function plotWithOptions() {
+		if (typeof($.plot)=="function") {
+			$.plot($("#bar-chart"), [ d1, d2 ], {
+				series: {
+					stack: stack,
+					lines: { show: lines, fill: true, steps: steps },
+					bars: { show: bars, barWidth: 0.8 }
+				},
+				grid: {
+					borderWidth: 0, hoverable: true, color: "#777"
+				},
+				colors: ["#ff6c24", "#ff2424"],
+				bars: {
+					  show: true,
+					  lineWidth: 0,
+					  fill: true,
+					  fillColor: { colors: [ { opacity: 0.9 }, { opacity: 0.8 } ] }
+				}
+			});
+		}
+    }
+
+    plotWithOptions();
+    
+    $(".stackControls input").click(function (e) {
+        e.preventDefault();
+        stack = $(this).val() == "With stacking" ? true : null;
+        plotWithOptions();
+    });
+    $(".graphControls input").click(function (e) {
+        e.preventDefault();
+        bars = $(this).val().indexOf("Bars") != -1;
+        lines = $(this).val().indexOf("Lines") != -1;
+        steps = $(this).val().indexOf("steps") != -1;
+        plotWithOptions();
+    });
+});
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<!-- 自定义Javascript -->
+<script type="text/javascript" src="add.js"></script>
+<script language="javascript" type="text/javascript">
+
+// 监听滚动事件
+$(window).scroll(function(){
+  // 获得div的高度
+   var h = $("#search-form").offset().top;
+   if($(this).scrollTop()>h){
+	  // 滚动到指定位置
+	  $("#search-tooltip").show();
+
+  } else {
+	  $("#search-tooltip").hide();
+  }
+});
+
+var testId; //问题的类型
+var groupId; //小组的标识
+
+/**
+ * 初始化
+ */
+function init(){
+	testId=request["test_id"];
+	groupId=request["group_id"];
+	
+	
+	readTest();
+}
+</script>
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

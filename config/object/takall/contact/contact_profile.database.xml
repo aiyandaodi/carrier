@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系人信息 -->
+<tekinfo>
+  <database>
+    <table>
+      <contact_profile>
+        <item>
+          <!-- 标识 -->
+          <contact_profile_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <contact_profile_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 称呼(Title) -->
+          <contact_profile_title value="VARCHAR(64)"/>
+          <!-- 联系人名 -->
+          <contact_profile_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 性别 -->
+          <contact_profile_sex value="SMALLINT DEFAULT '0'"/>
+          <!-- 生日 -->
+          <contact_profile_birthday value="CHAR(10)"/>
+          
+          <!-- 工作单位 -->
+          <contact_profile_unit value="VARCHAR(250)"/>
+          <!-- 工作单位:机构imark编码 -->
+          <contact_profile_organization value="VARCHAR(20)"/>
+          <!-- 部门-->
+          <contact_profile_department value="VARCHAR(128)"/>
+          <!-- 职位 -->
+          <contact_profile_position value="VARCHAR(64)"/>
+
+          <!-- 备注 -->
+          <contact_profile_remark value="MEMO"/>
+          <!-- 联系人使用的语言（例如：zh_CN） -->
+          <contact_profile_language value="VARCHAR(10)"/>
+          <!-- 国籍 -->
+          <contact_profile_country value="VARCHAR(4)"/>
+          
+         
+          <!-- 所属联系信息 -->
+          <contact_profile_contact value="BIGINT DEFAULT '0'"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </contact_profile>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* CSS Document */
+/* 日历样式 */
+.bold {font-weight:bold;}
+.pointer {cursor:pointer;}
+.attbg {background:#ececec;}
+.tabtitle td.selected,.colorpanel,.bd,.tpinfo {border:1px solid #bfbfbf;}
+.calendar { width:100%;}
+.calendar td { font-family:Tahoma,Arial,Verdana;border-collapse:collapse;text-align:right;}
+.calendar .title_year { padding:4px 0;width:100%;text-align:center;border-width:0 0 1px 0;font-size:12px;}
+.calendar .selecter {margin:0 10px 0 8px;}
+.calendar .selecter  img { cursor:pointer;margin:0 2px; } 
+.calendar .datelist { background:#fff; }
+.calendar .day { font:normal 11px Tahoma;border:1px solid #f2f4f6;border-width:0 1px 1px 0;padding:2px 4px 2px;background-repeat:no-repeat;background-position:right top; }
+.calendar .week_title{ background:; border-width:0 0 1px 0;pointer:default;text-align:center;padding:4px 2px 2px;}
+.calendar .hover { border-color:#ccc;padding:1px 3px 3px 1px; }
+.calendar .normalday { cursor:pointer; }
+.calendar .today { background-color:#727272;color:#fff;}
+.calendar .invalidateday { color:#e0e0e0; }
+.calendar .remind { background-image:url(../../common/calendar/bg_remind_enable.gif); }
+.calendar .remind_expired { background-image:url(../../common/calendar/bg_remind_disable.gif); }
+.toolheight {*height:23px;}
+.toolheight .right, .toolheight .qm_right {margin:4px 0 0 0;}
+li.fs a.fn_list,li.fs a.fn_list:link,li.fs a.fn_list:visited {color:#fff;}
+li.fs_userlist {padding-left:0;}
+.toolbg,.toolbg1{font-size:12px;background:#d5d5d5;}
+
+
+
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+/* UI X */
+/* Login-Register */
+.login-reg{
+	max-width:600px;
+	margin:100px auto;
+	padding:30px;
+	background:#fff;
+	box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+	border-radius:5px !important;
+}
+@media (max-width:450px){
+	.login-reg{
+		margin:50px 20px;
+	}
+}
+.login-reg h4{
+	text-align:center;
+}
+.login-reg .s-media{
+	text-align:center;
+}
+.login-reg .s-media a.btn{
+	margin:2px 5px;
+}
+/* Inside login and register form */
+.login-reg-form form{
+	max-width:500px;
+}
+@media (max-width:991px){
+	.login-reg-form{
+		max-width:500px;
+	}
+}
+.login-reg-form form .form-control{
+	padding:3px 12px;
+}
+.radio-checkbox-ul, .right-radio-ul {
+	list-style: none;
+	
+}
+
+.dropdown-menu {
+    padding: 0px 10px 5px;
+    margin-left: 18px;
+}
+.dropdown-menu li {
+    cursor: pointer;
+    padding: 0;
+}
+.dropdown-menu li span{
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 15px 5px 0 0;
+}
+.dropdown-menu li strong {
+    font-weight: normal;
+}
+ .dropdown-menu li:first-child span{
+    background: #49BA17;
+}
+.dropdown-menu li:nth-child(2) span{
+    background: #E33A0C;
+}
+.dropdown-menu li:last-child span{
+    background: #3B3B3B;
+}
+
+.form-group label {
+	text-align: right;
+}
+@media (max-width: 460px) {
+    label.col-xs-3{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+input[type="radio"] {
+    margin-top: 9px;
+}
+ label.col-xs-11 {
+    padding-left: 0;
+    padding-right: 0;
+}
+textarea {
+    resize: vertical;
+}
+@media (max-width:450px){
+    .login-reg{
+        margin:20px 20px;
+    }
+    .login-reg{
+        box-shadow: none !important;
+        padding:30px 15px;
+    }
+}

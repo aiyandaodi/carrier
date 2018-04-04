@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/* CSS Document  for owner*/
+
+
+/* UI - X */
+.ui-x{
+	margin: 20px 0px;
+}
+/* Item */
+.ui-x .ui-item{
+	max-width: 700px;
+	margin: 20px auto;
+}
+/* User Image */
+.ui-x .ui-item img{
+	display: inline-block;
+	max-width: 240px;
+	max-height: 320px;
+	object-fit: cover;
+	margin-right: 10px;
+	float: left;
+}
+
+.ui-x .ui-item  .ui-social img{
+	max-height: 48px !important;
+	max-width: 48px !important;
+}
+
+@media(max-width: 534px){
+	.ui-x .ui-item img{
+		float: none;
+		margin: 20px auto;
+		object-fit: cover;
+	}
+}
+/* Content */
+.ui-x .ui-item .ui-content{
+	margin: 0px 0px 20px 20px; 
+}
+@media(max-width: 534px){
+	.ui-x .ui-item .ui-content{
+		margin-left: 0;
+		text-align: left;
+	}
+}
+/* Heading */
+.ui-x .ui-item .ui-content h3{
+	font-size: 1.2em;
+	line-height: 30px;
+	font-weight:400;
+}
+
+.ui-x .ui-item .ui-content h3 span{
+	font-size:0.8em;
+	color:rgba(3,83,100,1.00);
+}
+
+/* Skills */
+.ui-x .ui-item .ui-content .ui-skills{
+	margin: 5px 0px;
+}
+.ui-x .ui-item .ui-content .ui-skills span{
+	display: inline-block;
+	margin:5px 0px;
+	margin-right:5px;
+	font-size:0.8em;
+	background:#f8f8f8;
+	padding:2px 7px;
+	text-transform:uppercase;
+}
+/* Paragraph */
+.ui-x .ui-item .ui-content p{
+	font-size: 1.0em;
+	line-height: 28px;
+	color: rgba(105,168,178,1.00);
+}
+/* Details */
+.ui-x .ui-item .ui-content h4{
+	font-size: 1em;
+	line-height: 24px;
+	font-weight: 400;
+	margin:8px 0px;
+}
+.ui-x .ui-item .ui-content h4 > i{
+	width: 30px;
+}
+/* Social Media */
+.ui-x .ui-item .ui-content .ui-social a > i{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+	margin: 5px 2px 0px 0px;
+}
+
+/* UI - 162 */
+.ui-162{
+	margin: 20px 0;
+	position:relative;
+}
+/* Item */
+.ui-162 .ui-item{
+	margin:100px 0px;
+}
+/* Upper */
+.ui-162 .ui-item .ui-upper{
+	top:-73px;
+	max-width:302px;
+	margin:0px auto;
+	position:relative;
+	right:0px;
+	left:0px;
+}
+.ui-162 .ui-item .ui-upper .tleft{
+	left: 0px;
+	top:50px;
+}
+
+
+
+.ui-162 .ui-item .ui-upper .tcenter{
+	right:0px;
+	left:0px;
+	margin:0px auto;
+	top:-10px;
+}
+.ui-162 .ui-item .ui-upper .tright{
+	right: 0px;
+	top:50px;
+}
+/* Middle Image */
+.ui-162 .ui-item a.ui-middle{
+	display:block;
+	width:180px;
+	height:180px;
+	border-radius:100%;
+	position:relative;
+	z-index:10;
+	margin:0px auto;
+}
+.ui-162 .ui-item a.ui-middle img{
+	border-radius:100% !important;
+	width:170px;
+	height:170px;
+	margin:5px;
+	display:inline-block;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+	object-fit: cover;
+}
+/* Lower */
+.ui-162 .ui-item .ui-lower{
+	bottom:30px;
+	max-width:302px;
+	margin:0px auto;
+	position:relative;
+	right:0px;
+	left:0px;
+}
+.ui-162 .ui-item .ui-lower .bleft{
+	left: 0px;
+	bottom:-50px;
+}
+.ui-162 .ui-item .ui-lower .bcenter{
+	right:0px;
+	left:0px;
+	margin:0px auto;
+}
+.ui-162 .ui-item .ui-lower .bright{
+	right: 0px;
+	bottom:-50px;
+}
+/* Skills */
+.ui-162 .ui-item a.ui-skills{
+	display:block;
+	width:110px;
+	height:110px;
+	border-radius:100%  !important;
+	position:absolute;
+	text-align:center;
+	line-height:110px;
+	color:#aaa;
+}
+.ui-162 .ui-item a.ui-skills span{
+	color:#fff;
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:600;
+}
+/* Small Circle Top */
+.ui-162 .ui-item a.ui-skills .ui-num-top{
+	display:block;
+	top:0px;
+	border-radius: 100%;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+	width: 32px;
+	height: 32px;
+	line-height: 30px;
+	text-align: center;
+	position:absolute;
+	background:#fff;
+	right:0px;
+	left:0px;
+	margin:0px auto;
+	color:#aaa;
+	font-size:13px;
+	font-weight:600;
+}
+
+
+.ui-162 .ui-item .ui-lower a, .ui-162 .ui-item .ui-upper a{
+	opacity: 0.5;
+	filter: alpha(opacity = 30%);
+}
+.ui-162 .ui-item a.active,.ui-162 .ui-item a:hover ,.ui-162 .ui-item .ui-middle a{
+	opacity: 1;
+}
+
+.ui-162 .ui-item a.bg-red .ui-num-top{
+	right:50px;
+}
+.ui-162 .ui-item a.bg-lblue .ui-num-top{
+	right:-50px;
+}
+.ui-162 .ui-item a.bg-green .ui-num-top{
+	right:-50px;
+}
+/* Small Circle Bottom */
+.ui-162 .ui-item a.ui-skills .ui-num-bottom{
+	bottom:0px;
+	border-radius: 100%;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+	width: 32px;
+	height: 32px;
+	line-height: 30px;
+	text-align: center;
+	position:absolute;
+	background:#fff;
+	z-index:10;
+	right:0px;
+	left:0px;
+	margin:0px auto;
+	color:#aaa;
+	font-size:13px;
+	font-weight:600;
+}
+.ui-162 .ui-item a.bg-yellow .ui-num-bottom{
+	right:50px;
+}
+.ui-162 .ui-item a.bg-purple .ui-num-bottom{
+	right:50px;
+}
+.ui-162 .ui-item a.bg-rose .ui-num-bottom{
+	right:-50px;
+}
+.ui-162 .ui-item .bg-red.active,.ui-162 .ui-item .bg-red:hover {
+	border: 3px solid #fd0404;
+}
+.ui-162 .ui-item .bg-lblue.active,.ui-162 .ui-item .bg-lblue:hover {
+	border: 3px solid #16aec4;
+}
+.ui-162 .ui-item .bg-green.active,.ui-162 .ui-item .bg-green:hover {
+	border: 3px solid #12a329;
+}
+.ui-162 .ui-item .bg-rose.active,.ui-162 .ui-item .bg-rose:hover {
+	border: 3px solid #d030b8;
+}
+.ui-162 .ui-item .bg-purple.active,.ui-162 .ui-item .bg-purple:hover {
+	border: 3px solid #9933bb;
+}
+.ui-162 .ui-item .bg-yellow.active,.ui-162 .ui-item .bg-yellow:hover {
+	border: 3px solid #d1ad07;
+}
+
+ @media (max-width: 768px) {
+	.ui-x .ui-item {
+		display: none;
+	}
+} 

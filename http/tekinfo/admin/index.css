@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+.widget .widget-head, .modal-header {
+    font-size: 0.8em;
+	color:rgba(10,96,95,1.00);
+}
+
+.widget p {
+    margin: 3px 6px 5px 6px !important;
+    line-height: 2;
+    font-size: 0.8em;
+	color:rgba(3,108,120,0.84);
+
+}*/
+body {
+	background: url("../../style/macadmin/img/back.png") repeat scroll 0 0;
+/*    border-top: 3px solid #eee;*/
+    color: #888;
+    font-size: 1.6em;
+    line-height: 2em;
+	border: none;
+}
+#tekinfo_footer {
+	border-top: 3px solid #ccc;
+	padding:0;
+/*	background: -moz-linear-gradient(top, #f8f8f8, #f2f2f2);*/
+}
+.navbar {
+	background: url(../../images/background/back.png) repeat;
+	padding-bottom: 3px;
+}

@@ -1,0 +1,10 @@
+.step {
+	font-size: 20px;
+}
+
+img.arrow {
+	margin:auto 30px;
+}
+
+#reset-flow { margin:50px auto; }
+#reset-flow>span, #reset-flow>img { margin-top:10px; margin-bottom:10px; }	

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试题 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_question>
+        <item>
+          <!-- 标识 -->
+          <exams_question_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_question_code value="VARCHAR(16) NOT NULL"/>
+          <!-- 试题题目 -->
+          <exams_question_name value="VARCHAR(255)"/>
+          
+          <!-- 标签 -->
+          <exams_question_tags value="VARCHAR(512)"/>
+          <!-- 试题类型 -->
+          <exams_question_type value="SMALLINT DEFAULT '1' NOT NULL"/>
+          <!-- 所属题库 -->
+          <exams_question_library value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 创建者 -->
+          <exams_question_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 停用日期 -->
+          <exams_question_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 文件长度 -->
+          <exams_question_length value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 文件MIME类型 -->
+          <exams_question_mime value="VARCHAR(255)"/>
+          <!-- 备注 -->
+          <exams_question_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_question>
+    </table>
+  </database>
+</tekinfo>

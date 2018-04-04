@@ -1,0 +1,11 @@
+name=字典配置
+
+#property
+property.dictionary_id=标识
+property.dictionary_code=编码
+property.dictionary_name=字典翻译
+property.dictionary_original=字典原文
+property.dictionary_language=翻译语言
+property.dictionary_targetObject=目标对象类型名
+property.dictionary_targetFields=目标对象字段名
+property.dictionary_property=字典默认属性

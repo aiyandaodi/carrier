@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	border: none;
+}
+.navbar{
+	background: url(../../images/background/back.png) repeat;
+	/*margin-top: 3px;*/
+	padding-bottom: 3px;
+}
+#index_banner {
+	border: none;
+}
+nav{
+	margin-left:20px;
+	margin-right:20px;
+	padding: 0 0;
+}
+.mainbar {
+	background: none;
+}
+@media (max-width: 768px){
+	
+	.navbar-nav li {
+		float: left;
+	}
+	.navbar-nav .open .dropdown-menu {
+		position: absolute;
+		z-index: 100;
+		background: #eee;
+		min-width: 140px;
+	}
+	.navbar-nav .open .dropdown-menu > li > a {
+		padding-left: 10px;
+	}
+	#navbar {
+		height: 55px !important;
+	}
+
+}
+@media (max-width: 480px){
+	
+}

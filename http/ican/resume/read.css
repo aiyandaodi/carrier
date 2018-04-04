@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+	
+}
+.popmenu .ui-list{
+	bottom:-70px;
+}
+/** UI 62 **/
+.ui-62{
+	border:1px solid #eee;
+	max-width:800px;
+	margin:40px auto;
+	background:#fcfcfc url("../resume/http/images/background/paper.png") repeat;
+	position:relative;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.1);
+}
+.ui-62 .ui-bor{
+	width:30px;
+	position:absolute;
+	height:100%;
+	border-right:double #ff7c7c;
+}
+.ui-62 .ui-main{
+	margin-left:35px;
+	padding:25px;
+}
+.ui-62 .ui-main h2{
+	font-weight:normal;
+	font-size:25px;
+	line-height:30px;
+	color:#888;	
+}
+.ui-62 .ui-main p{
+	line-height:2.2;
+}
+
+/* .ui-main .ui-item, .favorite-info .ui-item {
+	border-bottom: 1px solid #ddd;
+}
+.ui-item {
+	padding-bottom: 10px;
+} */
+hr {
+	border-bottom: 1px solid #eee;
+}
+.ui-item h4 a{
+	color: #444;
+}
+.addResume a:hover, .addResume a.acative:blur, .addResume a:blur {
+	text-decoration: none;
+}

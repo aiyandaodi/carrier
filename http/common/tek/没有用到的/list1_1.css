@@ -1,0 +1,54 @@
+/* tekinfo6.x版本的菜单样式。需要先加载list.css */
+
+body {
+	margin-right:5px;
+}
+
+#main {
+	width: 100%;
+}
+
+#menu>.menu {
+	border: 1px solid #134566;
+	margin-left:10px;
+	padding-left:0;
+	padding-right:0;
+}
+
+#menu>.menu>li>a {
+	font-family:inherit;
+	font-weight:normal;
+	background:none;
+	color:#134566;
+	border: none;
+}
+
+#menu>.menu>li>a:hover {
+	background:#96c8fb;
+}
+
+#menu>.menu>li>a>img {
+	display:inline;
+	vertical-align:middle;
+	margin-right:3px;	
+}
+
+#listorder a:link,#listorder a:visited, #listorder a:hover {
+	color:#0f94c6;
+}
+
+.item1, .item2 {
+	font-weight:bold;
+}
+
+.item1 {
+	background:#e5edf3;
+}
+
+.item2 {
+	background:#FFF;
+}
+
+.item1:hover, .item2:hover {
+   background:#d5e8f4;
+}

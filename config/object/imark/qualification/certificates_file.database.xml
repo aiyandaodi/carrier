@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 证书文件 -->
+<tekinfo> 
+	<database> 
+		<table> 
+			<certificates_file> 
+				<item> 
+					<!-- 标识 -->  
+					<object_file_id value="BIGINT NOT NULL PRIMARY KEY"/>  
+					<!-- 所属对象标识 -->  
+					<object_file_objectId value="BIGINT DEFAULT '0' NOT NULL"/>  
+					<!-- 名称 -->  
+					<object_file_name value="VARCHAR(32) NOT NULL"/>  
+					<!-- 文件长度 -->  
+					<object_file_length value="BIGINT DEFAULT '0' NOT NULL"/>  
+					<!-- 文件MIME类型 -->  
+					<object_file_mime value="VARCHAR(128)"/>  
+					<!-- 文件路径 -->  
+					<object_file_path value="VARCHAR(255)"/>  
+					<modifyTime value="BIGINT DEFAULT '0' NOT NULL"/> 
+				</item> 
+			</certificates_file> 
+		</table> 
+	</database>
+</tekinfo>

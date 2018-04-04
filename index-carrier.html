@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" content = "zh_CN"/>
+        <!-- Title and other stuffs -->
+        <title>IPowerCarrier 智联航母</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="智联运维 智联维度 运维 控制 专家 远程控制  知识 知行合一 物联网 万物互联 智慧运维 资格 智能管理 IT运维 IT管理 监控管 开源 资产管理 物联管理 智联网 takall operation resources manager wisdom it Knowledge and action internet of Things Internet of everything DevOps  ITIL control controller console RDP office automation study alliance IAT.TOP IAT.ONE IAT.RUN"/>
+        <meta name="description" content="智联运维 智联维度 运维 控制 专家 远程控制  知识 知行合一 物联网 万物互联 智慧运维 资格 智能管理 IT运维 IT管理 监控管 开源 资产管理 物联管理 智联网 takall operation resources manager wisdom it Knowledge and action internet of Things, Internet of everything, DevOps ITIL control controller console RDP office automation study alliance IAT.TOP IAT.ONE IAT.RUN"/>
+        <meta name="author" content="IAT.TOP[http://iat.top]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="favicon.ico"/>
+        <link rel="Bookmark" href="favicon.ico"/>
+
+        <link rel="stylesheet" href="http/style/simple/css/plugins.min.css">
+        <link rel="stylesheet" href="http/style/simple/css/style.css">
+        <link rel="stylesheet" href="http/carrier/css/index.css">
+        
+
+        <!-- Modernizr -->
+        <script src="http/style/simple/js/modernizr.js"></script>
+    </head>
+    <body class="transparent-sticky-header">
+        <div id="page-loader" class="dark">
+            <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div><!-- End .sk-rect -->
+                <div class="sk-rect sk-rect2"></div><!-- End .sk-rect -->
+                <div class="sk-rect sk-rect3"></div><!-- End .sk-rect -->
+                <div class="sk-rect sk-rect4"></div><!-- End .sk-rect -->
+                <div class="sk-rect sk-rect5"></div><!-- End .sk-rect -->
+            </div><!-- End .sk-wave -->
+        </div><!-- End #page-loader -->
+        
+        <header class="header header2 transparent dark sticky-header">
+            <div class="header-inner">
+                <div class="container">
+                    <a href="index.html" class="site-logo" title="IPower Carrier - 智联航母">
+                        <img src="http/style/simple/images/logo-white.png" alt="Simple Logo">
+                        <span class="sr-only">IPOWER.ONE</span>
+                    </a>
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-container" aria-expanded="false">
+                        <span class="toggle-text">Menu</span>
+                        <span class="toggle-wrapper">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse max-height" id="main-nav-container">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页<span class="angle"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="index.html">图集</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="index.html">控制台</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">主题<span class="tip hot">5</span><span class="angle"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" >公告<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" >百科<span class="angle"></span></a>
+                                       
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" >问答<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">监测服务<span class="tip new">New</span><span class="angle"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower Monitor1<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower Monitor2<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">控制服务<span class="angle"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower Controller1<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower Controller2<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower Controller3<span class="angle"></span></a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">魔法箱<span class="angle"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower-RDP<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="portfolio-grid-4col.html">IPower-RDP1</a></li>
+                                            <li><a href="portfolio-grid-3col.html">IPower-RDP2</a></li>
+                                            <li><a href="portfolio-grid-2col.html">IPower-RDP3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower-FTP<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="portfolio-grid-4col.html">IPower-FTP1</a></li>
+                                            <li><a href="portfolio-grid-3col.html">IPower-FTP2</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPower - MyAdmin<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="portfolio-grid-4col.html">IPower-Myadmin1</a></li>
+                                            <li><a href="portfolio-grid-3col.html">IPower-Myadmin2</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+
+                            <li class="dropdown megamenu-container">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">公共服务<span class="angle"></span></a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <ul>
+                                                        <li><a href="#">Tops &amp; Blouses</a></li>
+                                                        <li><a href="#"><span>Athletic Apparel<span class="tip new">New</span></span></a></li>
+                                                        <li><a href="#">Coats &amp; Jackets</a></li>
+                                                        <li><a href="#">Dresses</a></li>
+                                                        <li><a href="#">Hosiery &amp; Socks</a></li>
+                                                        <li><a href="#">Intimates &amp; Sleep</a></li>
+                                                        <li><a href="#">Jeans</a></li>
+                                                        <li><a href="#">Jumpsuits &amp; Rompers</a></li>
+                                                        <li><a href="#"><span>Leggings<span class="tip hot">Hot</span></span></a></li>
+                                                        <li><a href="#">Skirts</a></li>
+                                                        <li><a href="#">Suits &amp; Blazers</a></li>
+                                                        <li><a href="#">Sweaters</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-sm-3 -->
+                                                <div class="col-sm-3">
+                                                    <ul>
+                                                        <li><a href="#">Sweats &amp; Hoodies</a></li>
+                                                        <li><a href="#">Hosiery &amp; Socks</a></li>
+                                                        <li><a href="#">Intimates &amp; Sleep</a></li>
+                                                        <li><a href="#">T-Shirts</a></li>
+                                                        <li><a href="#">Suits &amp; Blazers</a></li>
+                                                        <li><a href="#"><span>Skirts<span class="tip">Popular</span></span></a></li>
+                                                        <li><a href="#">Tops &amp; Blouses</a></li>
+                                                        <li><a href="#">Jumpsuits &amp; Rompers</a></li>
+                                                        <li><a href="#">Coats &amp; Jackets</a></li>
+                                                        <li><a href="#">Dresses</a></li>
+                                                        <li><a href="#">Hosiery &amp; Socks</a></li>
+                                                        <li><a href="#">Intimates &amp; Sleep</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-sm-3 -->
+                                                <div class="col-sm-3">
+                                                    <ul>
+                                                        <li><a href="#">Jumpsuits &amp; Rompers</a></li>
+                                                        <li><a href="#">Coats &amp; Jackets</a></li>
+                                                        <li><a href="#">Suits &amp; Blazers</a></li>
+                                                        <li><a href="#"><span>Tops &amp; Blouses<span class="tip hot">Hot</span></span></a></li>
+                                                        <li><a href="#">Sweats &amp; Hoodies</a></li>
+                                                        <li><a href="#">Hosiery &amp; Socks</a></li>
+                                                        <li><a href="#">Intimates &amp; Sleep</a></li>
+                                                        <li><a href="#">T-Shirts</a></li>
+                                                        <li><a href="#">Athletic Apparel</a></li>
+                                                        <li><a href="#">Sweaters</a></li>
+                                                        <li><a href="#"><span>Dresses<span class="tip new">New</span></span></a></li>
+                                                        <li><a href="#">Suits &amp; Blazers</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-sm-3 -->
+                                                <div class="col-sm-3">
+                                                    <ul>
+                                                        <li><a href="#">Hosiery &amp; Socks</a></li>
+                                                        <li><a href="#">Intimates &amp; Sleep</a></li>
+                                                        <li><a href="#">Jumpsuits &amp; Rompers</a></li>
+                                                        <li><a href="#">Coats &amp; Jackets</a></li>
+                                                        <li><a href="#">Dresses</a></li>
+                                                        <li><a href="#"><span>T-Shirts<span class="tip hot">Hot</span></span></a></li>
+                                                        <li><a href="#">Suits &amp; Blazers</a></li>
+                                                    </ul>
+                                                </div><!-- End .col-sm-3 -->
+                                            </div><!-- End .row -->
+                                        </div><!-- End .container -->
+                                    </div><!-- End .megamenu -->
+                            </li>
+                            
+                            
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IAT.TOP<span class="angle"></span></a>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IPASS.VIP 统一认证<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="header.html">IPASS.VIP 统一认证</a></li>
+                                            <li><a href="header2.html">IPASS.TAKALL.COM</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IAT-PDNS 域名服务<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="header8.html">dns1</a></li>
+                                            <li><a href="header9.html">dns2</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li><a href="elements-footers.html">Elements - Footers</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IAT-MX 邮件服务<span class="angle"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="elements-pageheaders.html">mail.iat.top</a></li>
+                                            <li><a href="elements-typography.html">mail.iat.one</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+
+                            <li class="dropdown cart-dropdown">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span>
+                                        <i class="fa fa-shopping-bag"></i>
+                                        <!--<span class="dcart-total-count">2</span>-->
+                                    </span>
+                                </a>
+
+                                <div class="dropdown-menu">
+                                    <p>联系我们 - <span>IPOWER.ONE</span></p>
+                                    <div class="dcart-products">
+                                        <div class="product">
+                                            <figure>
+                                                <a href="#">
+                                                    客户服务
+                                                </a>
+                                            </figure>
+                                            <div class="product-meta">
+                                                <h5 class="product-title">
+                                                    <a href="#">service@ipower.one</a>
+                                                </h5>
+                                                
+                                            </div><!-- End .product-meta -->
+                                            
+                                        </div><!-- End .product -->
+                                        <div class="product">
+                                            <figure>
+                                                <a href="#">
+                                                    技术支持
+                                                </a>
+                                            </figure>
+                                            <div class="product-meta">
+                                                <h5 class="product-title">
+                                                    <a href="#">support@ipower.one</a>
+                                                </h5>
+                                                
+                                            </div><!-- End .product-meta -->
+                                            
+                                        </div><!-- End .product -->
+
+                                        <div class="product">
+                                            <figure>
+                                                <a href="#">
+                                                    战略合作
+                                                </a>
+                                            </figure>
+                                            <div class="product-meta">
+                                                <h5 class="product-title">
+                                                    <a href="#">ally@ipower.one</a>
+                                                </h5>
+                                                
+                                            </div><!-- End .product-meta -->
+                                            
+                                        </div><!-- End .product -->
+                                    </div><!-- End .dcart-products -->
+
+                                    <div class="product">
+                                            <figure>
+                                                <a href="#">
+                                                    欢迎加盟
+                                                </a>
+                                            </figure>
+                                            <div class="product-meta">
+                                                <h5 class="product-title">
+                                                    <a href="#">hr@ipower.one</a>
+                                                </h5>
+                                                
+                                            </div><!-- End .product-meta -->
+                                            
+                                        </div><!-- End .product -->
+                                    </div><!-- End .dcart-products -->
+
+
+                                    
+                                </div><!-- End .dropdown-menu -->
+                            </li><!-- End .cartdropdown -->
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+
+                </div><!-- End .container -->
+            </div><!-- End .header-inner -->
+        </header><!-- End .header -->
+
+        <div id="pagepiling">
+            <div class="section" id="section1" style="background-image:url(http/carrier/images/bg1.jpg)">
+                <div class="section-intro">
+                    <h1>智联航母-一体化物联设备运维平台</h1>
+                    <p>万物互联时代，通过 IPower Carrier 集成物联设备、数据、流程等...</p>
+                    <a href="#" class="btn btn-white btn-lg">Shop Now</a>
+                </div><!-- End .section-intro -->
+            </div><!-- End .section -->
+            <div class="section" id="section2" style="background-image:url(http/carrier/images/bg2.jpg)">
+                <div class="section-intro">
+                    <h1>Men Collection</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nostrum quod in commod.</p>
+                    <a href="#" class="btn btn-white btn-lg">Shop Now</a>
+                </div><!-- End .section-intro -->
+            </div><!-- End .section -->
+            <div class="section" id="section3" style="background-image:url(http/carrier/images/bg3.jpg)">
+                <div class="section-intro">
+                    <h1>Winter Collection</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nostrum quod in commod.</p>
+                    <a href="#" class="btn btn-white btn-lg">Shop Now</a>
+                </div><!-- End .section-intro -->
+            </div><!-- End .section -->
+            <div class="section pp-scrollable" id="section4">
+                <div class="section-content">
+                    <div class="container">
+                        <h1 class="text-center text-white mb35 mb30-xs">See Products</h1>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-links style2 mb35" role="tablist">
+                                <li role="presentation" class="active"><a href="#popular-products" aria-controls="popular-products" role="tab" data-toggle="tab"><strong>Popular Products</strong></a></li>
+
+                                <li role="presentation"><a href="#recent-products" aria-controls="recent-products" role="tab" data-toggle="tab"><strong>Recent Products</strong></a></li>
+
+                                <li role="presentation"><a href="#bestseller-products" aria-controls="bestseller-products" role="tab" data-toggle="tab"><strong>Bestseller Products</strong></a></li>
+                            </ul>
+
+                            <!-- Tab Panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="popular-products">
+                                    <div class="products-container max-col-5">
+                                        <div class="shop-row">
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product2.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product2-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product5.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product6.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label popular">Popular</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product9.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product9-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product10.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product8.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product8-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product1.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product12.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+                                        </div><!-- end .row -->
+                                    </div><!-- End .products-container -->
+                                </div><!-- End .tab-pane -->
+                                <div role="tabpanel" class="tab-pane" id="recent-products">
+                                    <div class="products-container max-col-5">
+                                        <div class="shop-row">
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product5.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product6.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product7.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label popular">Popular</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product8.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product8-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label popular">Popular</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product9.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product9-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product10.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product11.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product11-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product12.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+                                        </div><!-- end .row -->
+                                    </div><!-- End .products-container -->
+                                </div><!-- End .tab-pane -->
+                                <div role="tabpanel" class="tab-pane" id="bestseller-products">
+                                    <div class="products-container max-col-5">
+                                        <div class="shop-row">
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label popular">Popular</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product1.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product1-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product2.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product2-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product7.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product10.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <span class="label discount">-50%</span>
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product3-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product4-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product11.jpg" alt="Product image" class="product-image">
+                                                            <img src="http/style/simple/images/products/index-shop2/product11-hover.jpg" alt="Product image" class="image-hover">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+
+                                            <div class="product">
+                                                <div class="product-top">
+                                                    <figure>
+                                                        <a href="product.html" title="Product Name">
+                                                            <img src="http/style/simple/images/products/index-shop2/product12.jpg" alt="Product image" class="product-image">
+                                                        </a>
+                                                    </figure>
+                                                    <a href="#" class="btn product-add-btn">Add to Cart</a>
+                                                </div><!-- End .product -->
+                                                <h3 class="product-title"><a href="product.html">Debitis reicie ndis facili salis</a></h3>
+                                                <div class="product-price-container">
+                                                    <span class="old-price">$99.00</span>
+                                                    <span class="product-price">$49.00</span>
+                                                </div><!-- End .product-price-container -->
+                                            </div><!-- End .product -->
+                                        </div><!-- end .row -->
+                                    </div><!-- End .products-container -->
+                                </div><!-- End .tab-pane -->
+                            </div><!-- End .tab-content -->
+                        </div><!-- end role[tabpanel] -->
+                    </div><!-- End .container -->
+                </div><!-- End .section-content -->
+            </div><!-- End .section -->
+        </div><!-- End #pagepiling -->
+        
+        <a id="scroll-top" href="#top" title="Scroll top"><i class="fa fa-angle-up"></i></a>
+
+        <!-- End -->
+        <script src="http/style/simple/js/plugins.min.js"></script>
+        <script src="http/style/simple/js/jquery.pagepiling.min.js"></script>
+        <script src="http/style/simple/js/main.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                /* Init Plugin */
+                $('#pagepiling').pagepiling({
+                    verticalCentered:false,
+                    css3:false,
+                    sectionsColor: ['#222', '#222', '#222', '#222'],
+                    navigation: {
+                        'textColor': '#fff',
+                        'bulletsColor': '#fff',
+                        'position': 'right',
+                        'tooltips': ['Women', 'Men', 'Winter', 'Latest']
+                    },
+                    onLeave: function(index, nextIndex, direction){
+
+                        //fading out the txt of the leaving section
+                        $('.section').eq(index -1).find('h1, p').fadeOut(700);
+
+                        //fading in the text of the destination (in case it was fadedOut)
+                        $('.section').eq(nextIndex -1).find('h1, p').fadeIn(700);
+
+
+                        //reaching our last section? The one with our normal site?
+                        if(nextIndex == 4){
+
+                            //fading out navigation bullets
+                            $('#pp-nav').fadeOut();
+
+                            $('#section4').find('.section-content').animate({
+                                top: '0%'
+                            }, 700);
+                        }
+
+                        //leaving our last section? The one with our normal site?
+                        if(index == 4){
+                            //fadding in navigation bullets
+                            $('#pp-nav').fadeIn();
+
+                            $('#section4').find('.section-content').animate({
+                                top: '100%'
+                            }, 700);
+                        }
+                    },
+                });
+            });
+        </script>
+
+    </body>
+</html>

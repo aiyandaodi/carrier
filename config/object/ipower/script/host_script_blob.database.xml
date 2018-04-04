@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  脚本文件BLOB -->
+<tekinfo>
+  <database>
+    <table>
+      <host_script_blob>
+        <item>
+          <!-- 标识 -->
+          <host_script_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件 -->
+          <host_script_blob value="BLOB"/>
+        </item>
+      </host_script_blob>
+    </table>
+  </database>
+</tekinfo>

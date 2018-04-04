@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tekinfo>
+  <database>
+    <driver>
+      <mariadb value="mariadb">
+        <class value="org.mariadb.jdbc.Driver"/>
+        <url value="jdbc:mariadb://localhost:3306/ipower_test"/>
+        <user value="root"/>
+        <password value="tekinfo"/>
+        
+
+        <minPoolSize value="0" />
+        <maxPoolSize value="15" />
+        <maxUseCount value="10" />
+        <maxTimeOut value="60" />
+        <autoId value="true" />
+        <blobAppend value="false" />
+        <native2ascii value="false" />
+        <string2bytes value="false" />
+        <field>
+          <IDENTITY value="BIGINT AUTO_INCREMENT"/>
+          <BLOB value="LONGBLOB"/>
+          <BIGINT value="BIGINT"/>
+          <BOOLEAN value="TINYINT"/>
+          <MONEY value="BIGINT"/>
+          <DOUBLE value="double"/>
+          <MEMO value="VARCHAR(4096)"/>
+          <WEIGHT value="FLOAT(16,4)" />
+        </field>
+        <sqlCommand>
+          <CREATE value="CREATE"/>
+          <INSERT value="INSERT INTO"/>
+          <INSERTVALUE value="VALUES"/>
+          <SET value="SET"/>
+          <SELECT value="SELECT"/>
+          <FROM value="FROM"/>
+          <WHERE value="WHERE"/>
+          <UPDATE value="UPDATE"/>
+          <DELETE value="DELETE FROM"/>
+          <ORDER value="ORDER BY" />
+          <ORDERDESC value="DESC"/>
+          <ORDERASC value="ASC"/>
+          <LIKE value="LIKE"/>
+          <NOTLIKE value="NOT LIKE"/>
+          <GROUPBY value="GROUP BY"/>
+          <HAVING value="HAVING"/>
+          <TOP value="null"/>
+          <LIMIT value="LIMIT"/>
+          <OFFSET value="OFFSET"/>
+          <ROWNUMBER value="null"/>
+        </sqlCommand>
+        <transfer>
+          <!-- 字符转义 -->
+          <char1 origin="%" escape="\\%"/>
+          <char2 origin="_" escape="\\_"/>
+          <char3 origin="'" escape="\\'"/>
+          <char4 origin="&#34;" escape="\\&#34;"/>
+        </transfer>
+      </mariadb>
+    </driver>
+  </database>
+</tekinfo>

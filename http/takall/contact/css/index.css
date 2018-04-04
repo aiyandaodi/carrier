@@ -1,0 +1,102 @@
+@charset "utf-8";
+/********************************* navbar ************************/
+#subject-list-ul a { cursor: pointer; }
+#subject-list-li p { width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+
+div.navbar div.navbar-header button { margin:5px 10px 5px 0; padding:6px 8px; }
+div.navbar div.navbar-header button img { width:26px; height:26px; }
+div.navbar div.navbar-header a.navbar-brand { padding-left:13px; padding-right:10px; }
+
+div.navbar nav form { padding-right:0; }
+/******************************* end navbar ************************/
+
+/********************************** header *********************************/
+header div.col-md-3, header div.col-md-6 { height:50px !important; }
+
+header div.col-md-3 div.logo { margin:9px 0 !important; }
+header div.col-md-3 div.logo a img { height:32px !important; }
+
+header div.col-md-6 ul.nav { margin:6px 0 !important; }
+header div.col-md-6 ul.nav li.dropdown > a { height:38px; }
+
+header div.col-md-3 div.header-data { height:42px !important; margin:4px 0 !important; }
+header div.col-md-3 div.header-data div.hdata div.mcol-left i { height:42px;width:42px !important; }
+
+/* apply-xxxx-list */
+.dropdown-menu li hr { }
+#apply-subject-list,#apply-member-list,#lastest-added-member-list{}
+#apply-subject-list li,#apply-member-list li,#lastest-added-member-list li{ list-style:none;}
+#apply-subject-list li .label-self,#apply-member-list li .label-self,#lastest-added-member-list li .label-self{padding:3px 2px !important;}
+
+.turn-page-active{ background-color:#EEEEEE !important;}
+.turn-page-dot{ padding:6px 12px !important;}
+/******************************** end header *********************************/
+
+
+/******************************* group-info ************************/
+.group-info-div-content{ padding:10px 10px !important;margin:10px 10px !important;}
+.text-align { text-align:left; }
+/****************************** end group-info ************************/
+
+
+/*************************************tags.menu&catalog.menu**********************************************************************/
+.selected-subject-tag-ul,.selected-subject-catalog-ul{ list-style:none;}
+.selected-subject-tag-ul li,.selected-subject-catalog-ul li{ display:inline;margin:0; padding:0;}
+.selected-subject-tag-ul li a,.selected-subject-catalog-ul li a{ margin:5px; padding:5px 8px;border:#aaa solid 1px; position:relative}
+.selected-subject-tag-ul li a i,.selected-subject-catalog-ul li a i{position:absolute; z-index:2;right:-5px;top:-5px;}
+
+#tag_menu #tag_menu_tab a{ border: 1px solid #AAA !important;}
+#tag_menu #tag_menu_tab a.active{ border-bottom:1px solid #FFF !important;}
+#tag_menu #tag_menu_content{border: 1px solid #AAA; background-color:#FBFBFB; padding:10px 0 10px 0;}
+#tag_menu #tag_menu_content ul{ list-style:none;}
+#tag_menu #tag_menu_content ul li{ display:inline; margin:0; padding:0; }
+#tag_menu #tag_menu_content ul li a{ margin:0; padding:2px 5px;border-right:#aaa solid 1px;}
+#tag_menu #tag_menu_content ul li:last-child a{ border-right:none;}
+#tag_menu #tag_menu_content ul li a:hover{ text-decoration:underline;}
+
+#catalog_menu{border: 1px solid #AAA; background-color:#FBFBFB; padding:10px 0 0 0;}
+/*************************************end tags.menu&catalog.menu**********************************************************************/
+
+/************************************* subject ****************************************************/
+/* 瀑布流 */
+
+.flow-container { position:relative; }
+.flow-container .flow-item-box{
+	background-color:#FAFAFA;
+	zoom:1;
+	position:absolute;
+	border:#CCC solid 1px;
+	border-radius:5px;
+	width: 255px !important;
+}
+
+.subject-content { margin-top:30px;margin-bottom:5px; }
+.tag-title{border:1px #aaa solid;padding:5px 8px; margin-right:5px;}
+.tag-ball{border-radius:10px !important; border:1px #aaa solid;}
+.tag-selected{background-color:#80B6DF !important;color:#FAFAFA !important; cursor:default !important;}
+.tag-ball:hover,.tag-selected:hover{background-color:#026B9C !important; color:#FFF !important;}
+
+
+/* 标签框 */
+.box-title-h3{min-height:40px; max-width:245px;padding:5px 1px;line-height:40px;}
+.box-title-h3 a{line-height:1.1em;}
+.box-title-img a{position:absolute;right:2px;top:2px;border-radius:3px;border:1px #E5E5E5 solid;border-radius:3px;}
+.box-title-img a:hover{border:1px #666 solid;}
+
+/*控制长图*/
+.bthumb2-overflow{max-height:300px !important;overflow:hidden !important;text-overflow:ellipsis;white-space:nowrap !important;}
+
+/************************************* end subject ****************************************************/
+
+#addSubjectBtn { margin-left:30px; margin-top:3px; }
+
+/*页面布局样式 覆盖掉了 bootstrap.min.css 中的样式*/
+/*@media (min-width: 1200px) {
+.container { width: auto; }
+}
+@media (min-width: 992px) {
+.container { width: auto; }
+}
+@media (min-width: 768px) {
+.container { width: auto; }
+}*/

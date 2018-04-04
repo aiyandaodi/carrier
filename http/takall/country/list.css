@@ -1,0 +1,29 @@
+.column-last button{
+  margin: 5px;
+}
+
+.column-first{text-align: center;}
+.column-country_code{text-align: center;}
+.column-country_name{text-align: center;}
+.column-country_fullname{text-align: center;}
+.column-country_timezone{text-align: center;}
+.column-country_areacode{text-align: center;}
+.column-country_locale{text-align: center;}
+.column-country_valid{text-align: center;}
+.column-last{text-align: center;}
+
+/*span.label{font-size: 1em !important;}*/
+
+h2 > i.fa{
+    display: inline-block;
+    width:38px;
+    height:38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 19px;
+    background: #eee;
+}
+
+table tr td{
+	text-align: center !important;
+}

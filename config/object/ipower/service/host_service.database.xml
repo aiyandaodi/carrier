@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主机服务 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_service>
+        <item>
+          <!-- 标识 -->
+          <host_service_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_service_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 服务名称 -->
+          <host_service_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 使用该服务的主机 -->
+          <host_service_site value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 服务类型 --> 
+          <host_service_type value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 服务有效值 --> 
+          <host_service_value value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 该服务端口 -->
+          <host_service_port value="VARCHAR(128)"/>
+          <!-- 服务是否可监控 --> 
+          <host_service_ifmonitor value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 服务是否已经监控 --> 
+          <host_service_ismonitor value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 该服务的备注 -->
+          <host_service_remark value="MEMO"/>
+
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_service>
+    </table>
+  </database>
+</tekinfo>

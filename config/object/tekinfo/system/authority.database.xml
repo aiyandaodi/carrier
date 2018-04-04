@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 授权 -->
+<tekinfo>
+  <database>
+    <table>
+      <authority>
+        <item>
+          <!-- 标识 -->
+          <authority_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <authority_code value="VARCHAR(16) NOT NULL"/>
+          <!-- 名称 -->
+          <authority_name value="VARCHAR(32) NOT NULL"/>
+          <!-- 类别 -->
+          <authority_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <authority_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 授权码 -->
+          <authority_token value="VARCHAR(512) NOT NULL"/>
+          <!-- 授权码密钥 -->
+          <authority_tokenSecret value="VARCHAR(512)"/>
+          <!-- 所属客户端 -->
+          <authority_client value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 授权账号 -->
+          <authority_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 开始日期 -->
+          <authority_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 结束日期 -->
+          <authority_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </authority>
+    </table>
+  </database>
+</tekinfo>

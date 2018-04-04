@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 证书对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <certificates>
+        <item>
+          <!-- 标识 -->
+          <certificates_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 证书编码 -->
+          <certificates_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 证书名称 -->
+          <certificates_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 获得者名字 -->
+          <certificates_getter value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 证书等级 --> 
+          <certificates_grade value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属机构 -->
+          <certificates_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属用户 -->
+          <certificates_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 有效期：开始 -->
+          <certificates_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效期：结束 -->
+          <certificates_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 证书: 状态 --> 
+          <certificates_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 证书: 所属资质  --> 
+          <certificates_qualification value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </certificates>
+    </table>
+  </database>
+</tekinfo>

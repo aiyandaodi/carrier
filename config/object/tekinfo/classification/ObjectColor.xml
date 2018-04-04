@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 标签分类 -->
+<tekinfo>
+  <object>
+    <ObjectColor ResourceBundle="net.tekinfo.object.classification.ObjectColor"
+        Structure="net.tekinfo.classification.ObjectColor"
+        ObjectRm="net.tekinfo.remoting.classification.ObjectColorRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <color_id base="identity"/>
+        <color_code base="" step="1" digit="4"/>
+      </autovalue>
+      <nosamevalue>
+        <color_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="color_name" codeIdentity="color_code" ownerIdentity="color_owner">
+        <object_color identity="color_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_object/>
+            <color_owner/>
+            <color_value/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_object/>
+            <color_owner/>
+            <color_value/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_object/>
+            <color_owner/>
+            <color_value/>
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+            
+            <!-- 要获取以下字段信息，需要传入：read-option=1 -->
+            <color_enforce/>
+            <color_private/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_value/>
+            <color_object/>
+            <color_owner/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_object/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <color_code/>
+            <color_name/>
+            <color_object/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <color_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <color_code variable="string" maxlength="64" notnull="true" right="admin"/>
+        <!-- 颜色名称 -->
+        <color_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 所属对象类型名 -->
+        <color_object variable="string" parse="objectName" maxlength="64" notnull="true"/>
+        
+        <!-- 所有者 -->
+        <color_owner variable="long" parse="object:User" default="0"/>
+        
+        <!-- 颜色值（存入颜色的HEX值，缺省了"#"符号，例如："022bee"） -->
+        <color_value variable="string" parse="string"/>
+        
+        <!-- 虚拟域：是否强制使用颜色分类（0非强制，1强制） -->
+        <color_enforce variable="string" notnull="true"/>
+        <!-- 虚拟域：是否允许私有颜色定义（0不允许，1允许） -->
+        <color_private variable="string" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ObjectColor>
+  </object>
+</tekinfo>

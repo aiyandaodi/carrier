@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 主题  -->
+<tekinfo>
+  <object>
+    <Subject ResourceBundle="com.takall.subject.Subject"
+        Structure="com.takall.subject.Subject"
+        ObjectRm="com.takall.remoting.subject.SubjectRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <subject_id base="identity"/>
+        <subject_code base="" step="1" digit="10"/>
+        <subject_owner base="userid"/>
+        <subject_author base="username"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="subject_name" codeIdentity="null" ownerIdentity="subject_owner">
+        <subject identity="subject_id"/>
+        <subject_icon identity="subject_id"/>
+        <subject_icon_blob identity="subject_id"/>
+      </table>
+      
+      <blob/>
+      
+      <!-- 对象图标存储定义
+          table - 对象图标信息存储表名称
+          blobTable - 对象图标BLOB数据存储表名称
+          blobField - 对象图标BLOB数据存储字段
+          mimeField - 对象图标MIME信息存储字段
+          lengthField - 对象图标BLOB数据长度存储字段
+          timeField - 对象图标BLOB数据更新时间存储字段
+          mimeType - 对象图标默认MIME 
+       -->
+      <icon table="subject_icon"
+          blobTable="subject_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大小组标签数 -->
+            <max_group_tags value="5"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+            <!-- 默认开始时间: 09:00:00 -->
+            <default_start_time value="32400000"/>
+            <!-- 默认结束时间: 18:00:00 -->
+            <default_end_time value="64800000"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/subject/read.html"/>
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <!-- <subject_code/> -->
+            <subject_name/>
+            <subject_type/>
+            <subject_tags/>
+            <subject_catalog/>
+            <subject_author/>
+            <subject_group/>
+            
+            <subject_date/>
+            <subject_start/>
+            <subject_end/>
+            
+            <subject_listen/>
+            <subject_speak/>
+            <subject_status/>
+            <subject_keywords/>
+            <subject_summary/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 最大小组标签数 -->
+            <max_group_tags value="5"/>
+            <!-- 最大个人标签数 -->
+            <max_user_tags value="5"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/subject/read.html"/>
+            <!-- 最大标签数 -->
+            <max_tags value="5"/>
+          </parameter>
+          <item>
+            <!-- <subject_code/> -->
+            <subject_name/>
+            <subject_type/>
+            <subject_tags/>
+            <subject_catalog/>
+            
+            <subject_author/>
+            <subject_group/>
+            
+            <subject_date/>
+            <subject_start/>
+            <subject_end/>
+            
+            <subject_participate/>
+            <subject_recommended/>
+            <subject_anti/>
+            
+            <subject_listen/>
+            <subject_speak/>
+            <subject_status/>
+            <subject_keywords/>
+            <subject_summary/>
+          </item>
+        </edit>
+        
+        <!-- 状态变更 -->
+        <audit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <subject_status/>
+          </item>
+        </audit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <subject_id/>
+            <subject_code/>
+            
+            <subject_author/>
+            <subject_name/>
+
+            <subject_status/>
+            <subject_type/>
+            <subject_tags/>
+            <subject_catalog/>
+            <subject_date/>
+            <subject_start/>
+            <subject_end/>
+            
+            <subject_credit/>
+            <!--<subject_country/>
+            <subject_state/>
+            <subject_city/>
+            <subject_region/>
+            <subject_locale/>-->
+            <subject_participate/>
+            <subject_recommended/>
+            <subject_anti/>
+            
+            <subject_listen/>
+            <subject_speak/>
+            
+            <subject_owner/>
+            <subject_group/>
+            <!--<subject_longitude/>
+            <subject_latitude/>
+            <subject_height/>
+            <subject_position/>
+            <subject_length/>-->
+            <subject_keywords/>
+            <subject_summary/>
+            
+            <createTime/>
+            <modifyTime/>
+            <accessCount/>
+          </item>
+        </read>
+
+        <list>
+          <parameter>
+            <list_counts value="500"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <subject_code/>
+            <subject_author/>
+            <subject_name/>
+            <subject_status/>
+            <subject_type/>
+            <subject_tags/>
+            <subject_catalog/>
+            <subject_date/>
+            <subject_start/>
+            <subject_end/>
+            <subject_summary/>
+            <subject_participate/>
+            <subject_recommended/>
+            <subject_anti/>
+            <subject_group/>
+            <subject_listen/>
+            <subject_speak/>
+            <subject_owner/>
+            <modifyTime/>
+            <createTime/>
+            <accessCount/>
+          </item>
+        </list>
+       
+        <search>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <subject_author/>
+            <subject_name/>
+            <subject_keywords/>
+            
+            <subject_type/>
+            
+            <subject_date/>
+            <subject_start/>
+            <subject_end/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x0"/>
+          </parameter>
+          <item>
+            <subject_author/>
+            <subject_name/>
+            <subject_keywords/>
+            <subject_tags/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <subject_id variable="long" notnull="true" forbidEdit="true" default="now"/>
+        <!-- 编码 -->
+        <subject_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <subject_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 关键字 -->
+        <subject_keywords variable="string" parse="dictionary:Subject" maxlength="255" format="single"/>
+        <!-- 概要 -->
+        <subject_summary variable="string" format="textarea:4" maxlength="1024"/>
+        <!-- 状态 -->
+        <subject_status variable="int" parse="enum" format="single" default="1" notnull="true">
+          <apply value="0"/>    <!-- 申请中 -->
+          <!--  <ready value="1"/>    准备 -->
+          <release value="1"/>    <!-- 发布 -->
+          <stop value="-1"/>    <!-- 结束 -->
+        </subject_status>
+        <!-- 类型 -->
+        <subject_type variable="string" parse="dictionary:Subject" maxlength="32" format="single" notnull="true"/>
+        <!-- 标签 -->
+        <subject_tags variable="string" parse="tag" maxlength="512" notnull="true"/>
+        <!-- 目录分类 -->
+        <subject_catalog variable="string" parse="object:SubjectCatalog" parseCondition="catalog_object='default'" maxlength="64"/>
+        <!-- 发布时间 -->
+        <subject_date variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now" notnull="true"/>
+        <!-- 开始时间 -->
+        <subject_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now+86400" notnull="true"/>
+        <!-- 结束时间（默认值是当前时间+7天）-->
+        <subject_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now+691200"/>
+        <!-- 信用度 -->
+        <subject_credit variable="int" default="0" notnull="true"/>
+        <!-- 国家/地区 
+        <subject_country variable="long" parse="object:Country" format="option" affet="subject_state"
+            notnull="true"/>-->
+        <!-- 省/州
+        <subject_state variable="long" parse="object:State" format="option" affet="subject_city" default="0"
+            notnull="true"/> -->
+        <!-- 县/市 
+        <subject_city variable="long" parse="object:City" format="option" affet="subject_region" default="0"
+            notnull="true"/>-->
+        <!-- 区域
+        <subject_region variable="long" parse="object:Region" format="option" default="0" notnull="true"/> -->
+        <!-- 语言
+        <subject_locale variable="string" parse="locale" format="option" notnull="true"/> -->
+        <!-- 参与人数 -->
+        <subject_participate variable="int" parse="int" default="0" notnull="true"/>
+        <!-- 推荐人数 -->
+        <subject_recommended variable="int" parse="int" default="0" notnull="true"/>
+        <!-- 反对人数 -->
+        <subject_anti variable="int" parse="int" default="0" notnull="true"/>
+        <!-- 阅读属性 -->
+        <subject_listen variable="int" parse="enum" format="single" default="0x04" notnull="true">
+          <system value="0x00"/>    <!-- 系统管理员可以阅读 -->
+          <admin value="0x01"/>    <!-- 群组有审核权的组员可以阅读 -->
+           <!-- <publish value="0x02"/>   具有发布权的组员可以阅读 -->
+          <member value="0x04"/>    <!-- 组员可以阅读 -->
+          <user value="0x10"/>    <!-- 系统用户可以阅读 -->
+          <anonymous value="0x40"/>    <!-- 匿名者可以阅读 -->
+        </subject_listen>
+        <!-- 附加文档属性 -->
+        <subject_speak variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <creator value="0x01"/>    <!-- 创建者可以附加文档 -->
+          <admin value="0x02"/>    <!-- 群组管理员可以附加文档 -->
+          <member value="0x04"/>    <!-- 组员可以附加文档 -->
+          <user value="0x08"/>    <!-- 系统用户可以附加文档 -->
+        </subject_speak>
+        <!-- 所有者 -->
+        <subject_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 作者名 -->
+        <subject_author variable="string" maxlength="255" notnull="true"/>
+        <!-- 主题URL地址 -->
+        <subject_url variable="string" maxlength="128"/>
+        <!-- 所属群组 -->
+        <subject_group variable="long" parse="object:Group" default="0" notnull="true"/>
+        <!-- 默认路径 
+        <subject_path variable="string" maxlength="128"/>-->
+        <!-- 发布经度（"degree"表示显示格式为度分秒，"[-180,180]"表示范围是大于等于-180且小于等于180） 
+        <subject_longitude variable="double" format="degree[-180,180]" default="360" notnull="true"/> -->
+        <!-- 发布纬度（"degree"表示显示格式为度分秒，"[-180,180]"表示范围是大于等于-180且小于等于180）
+        <subject_latitude variable="double" format="degree[-90,90]" default="360" notnull="true"/> -->
+        <!-- 发布高度 
+        <subject_height variable="long" default="0" notnull="true"/> -->
+        <!-- 虚拟域：理由 -->
+        <subject_hint variable="string" format="textarea:4" notnull="true"/>
+        <!-- 虚拟域：评价 -->
+        <subject_evaluate variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <recommended value="0x40"/>    <!-- 推荐 -->
+          <anti value="0x41"/>    <!-- 反对 -->
+        </subject_evaluate>
+        <!-- 虚拟域：是否记录发布地点 
+        <subject_gps variable="boolean" default="0x00"/>-->
+        <!-- 虚拟域：发布地点 
+        <subject_position variable="string"/>-->
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <attachment>
+        <document object="Document" column="doc_subject"/>
+        <reply object="Reply" column="reply_subject"/>
+        <!-- <flowmissive object="FlowMissive" column="missive_subject"/> -->
+      </attachment>
+    </Subject>
+  </object>
+</tekinfo>

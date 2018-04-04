@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--
+功能：帮助
+参数：
+    
+-->
+<html><!-- InstanceBegin template="/Templates/tekinfo-help.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="Title" -->
+  <title>用户帮助</title>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment" />
+  <meta name="description" content="统一资源平台 系统 帮助 读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 Unified resource platform system application development Help readbook network Social photo video art office automation joint alliance Communication Authenticate Payment"  />
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../logo/tekinfo-64.ico"/>
+  <link rel="Bookmark" href="../logo/tekinfo-64.ico"/>
+  
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <link rel="stylesheet" href="../css/tekinfo.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- MyCSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/serverTimer.js"></script>
+
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../js/tekinfo.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+	  initial();
+    });
+  </script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="conjtainer">
+    <!-- Menu button for smallar screens -->
+    <div class="navbar-header">
+      <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+		<span><img src="../../images/blue-list.png" width="28"  alt=""/></span>	  
+      </button>
+      
+      <!-- Site name for smallar screens -->
+      <a href="../../help/index/index.html" class="navbar-brand hidden-lg"><img src="../logo/tekinfo-128.png"  height="28" alt="Tekinfo 统一资源平台" longdesc="http://www.tekinfo.net"></a>
+	</div><!-- end .navbar-header -->
+    
+    <!-- Navigation starts -->
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">         
+      <ul class="nav navbar-nav">  
+        
+        <li class="dropdown dropdown-big">
+          <a href="../help/index.html">
+            <span class="label label-primary"><i class="fa fa-compass"></i></span>统一资源平台
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../help/setup.html">
+            <span class="label label-success"><i class="fa fa-square"></i></span>系统安装
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../object/help.html">
+            <span class="label label-primary"><i class="fa fa-archive"></i></span>对象说明
+          </a>
+        </li>
+        
+        <li class="dropdown dropdown-big">
+          <a href="../help/contact.html">
+            <span class="label label-warning"><i class="fa fa-map-marker"></i></span>寻求支持
+          </a>
+        </li>
+        
+      </ul><!-- end .navbar-nav-->
+      
+      
+
+        <!-- Search form
+        <form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form> -->
+        <!-- Links 
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">            
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <i class="icon-user"></i> Admin <b class="caret"></b>              
+            </a>-->
+            
+            <!-- Dropdown menu 
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+              <li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+              <li><a href="../http/user/login/login.html"><i class="icon-off"></i> Logout</a></li>
+            </ul>
+          </li>
+          
+        </ul>-->
+    </nav>
+
+  </div>
+</div>
+
+
+<header>
+  <div class="container">
+    <div class="row">
+      <!-- Logo section -->
+      <div class="col-md-4">
+        <!-- Logo. -->
+        <div class="logo">
+          <h2>
+              <a href="http://www.tekinfo.net">
+                <img src="../logo/tekinfo-128.png" height="36" alt="Tekinfo" longdesc="http://www.tekinfo.net" >
+              </a>
+              <!--<a href="../http/tekinfo/help/index.html"><span class="bold">统一资源平台</span></a>-->
+          </h2>
+        </div><!-- end .logo-->
+        <!-- Logo ends -->
+      </div><!--  end .col-md-4 -->
+
+      <!-- Button section -->
+      <div class="col-md-4">
+           
+      </div>
+
+      <!-- Data section -->
+      <div class="col-md-4">
+        <div class="header-data">
+	
+		    <!-- InstanceBeginEditable name="HelpSection" -->
+            <h3 id="help_section">
+              用户
+            </h3>
+		    <!-- InstanceEndEditable -->
+
+        </div>
+      </div>
+
+    </div><!-- end .row-->
+  </div><!-- end .container-->
+</header>
+
+<!-- Header ends -->
+
+<!-- Main content starts -->
+
+<div class="content">
+  
+  
+  <!-- Matter -->   
+  <div class="matter">
+    <div class="container">
+	<!-- InstanceBeginEditable name="MainContent" -->
+      <div class="row">
+        <!-- 系统环境 -->
+        <div class="col-md-6">
+          <div id="buy" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+              <div class="pull-left">
+              
+                <a href="#buy">基本概念</a></div>
+              <div class="widget-icons pull-right">
+                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+              </div>  
+              <div class="clearfix"></div>
+            </div><!-- end .widget-head -->
+            
+            <div class="widget-content">
+              
+              <!-- Widget content -->
+              <ul class="file-upload">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#">用户</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      使用计算机信息系统的任何人都需要一个身份，这个身份在系统中被称为用户。
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">基本内容 </a></strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      用户通常包括用户编码、用户名字以及在系统中的基本账户信息。
+                    </p>
+                  </div>
+                </li>            
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">更多说明</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      对于<a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a>，一般采用
+                      <a href="http://ipass.space">
+                        <img src="../logo/ipass-banner.png" height="22" alt="ipass.space" longdesc="http://ipass.space" > 诠证通
+                      </a>系统作为用户登录的认证系统。
+                      因此，用户的登录安全等信息，存放在ipass系统中。当用户使用基于
+                      <a href="http://www.tekinfo.net">
+                        <img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台
+                      </a>
+                      开发的应用系统中，可以授权应用系统取得
+                      <a href="http://ipass.space">
+                        <img src="../logo/ipass-banner.png" height="22" alt="ipass.space" longdesc="http://ipass.space" > 诠证通
+                      </a>
+                      存放的基本账户信息，作为该应用系统中的个人账户信息。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                     <a href="#">用户操作</a>
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      个人用户可以在个人管理界面中，修改自己的头像、用户名等账户信息。
+                      这些信息可以和用户存放在
+                      <a href="http://ipass.space">
+                        <img src="../logo/ipass-banner.png" height="22" alt="ipass.space" longdesc="http://ipass.space" > 诠证通
+                      </a>
+                      系统中的完全不同，这样方便用户在不同应用系统中，以不同的面貌出现。
+                      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      个人用户也可以通过查看自己的登录时间和ip发现问题。并将问题报告给管理员。
+                    </p>    
+                  </div>
+                </li>                                                                                                                      
+              </ul>
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+        
+        
+        <!-- 管理员指南 -->
+        <div class="col-md-6">
+          <div id="ready" class="widget">
+            <!-- Widget title -->
+            <div class="widget-head">
+              <div class="pull-left">
+              
+                <a href="#ready">管理员指南</a></div>
+              <div class="widget-icons pull-right">
+                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+              </div>  
+              <div class="clearfix"></div>
+            </div><!-- end .widget-head -->
+            
+            <div class="widget-content">
+              <!-- Widget content -->
+              <ul class="file-upload">
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#buy">管理</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      管理员可以在管理员后台界面管理用户信息。可以更改，指派用户的安全等级等内容。
+                      
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <strong>
+                    <i class="icon-upload-alt"></i> <a href="#">安全等级</a> 
+                  </strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      通过安全等级的设定，管理员可以设置用户的角色。包括：
+                     
+                    </p>
+                    
+                      <ul>
+                        <li>超级管理员：系统中唯一最高权限用户;</li>
+                        <li>管理员：负责系统管理的用户，不能设置其他管理员的信息，通常情况下，管理员主要负责用户的管理。</li>
+                        <li>审核员：主要负责对象的内容更改，和处理用户申诉流程等。</li>
+                        <li>注册用户：正常的系统使用者。</li>
+                        
+                      </ul>
+                    
+                    
+                  </div>
+                </li>
+
+                <li>
+                  <strong><i class="icon-ok"></i> 
+                    <a href="#">状态 </a></strong>
+                  <div class="file-meta">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      用户状态可以处于申请；有效和无效。用户状态的更改由管理员负责。管理员可以禁止用户（设定为无效）进入系统，也可以禁止用户一定时间内有效或者无效。
+                      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="http://www.tekinfo.net" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="Tekinfo" longdesc="http://www.tekinfo.net" > 统一资源平台</a>也为管理也提供了更多的统计、报表等辅助工具。
+                    </p>
+                  </div>
+                </li>            
+                
+              </ul>
+
+              <div class="widget-foot">
+              </div>
+
+            </div><!-- end.widget-content-->
+          </div><!-- end.widget-->
+        </div><!--end.col-md-6-->
+            
+        <!-- 协同 -->
+        <div class="col-md-6">
+          
+        </div><!--end.col-md-6-->
+      </div>
+      
+	  
+	<!-- InstanceEndEditable -->   
+    </div><!-- end .container -->
+  </div><!-- Matter ends -->
+
+    
+  <div class="clearfix"></div>
+  
+</div><!-- end .content-->
+<!-- Content ends -->
+
+<!-- Footer starts -->
+<footer>
+    <!-- 正常宽屏幕显示--> 
+    <div class="row show_wide">
+      <div class="col-xs-12">
+        <div class="col-left">
+          <!-- Copyright info -->
+          <p class="copy" style="margin-top:4px;">
+            Copyright &copy; 1999 <a href="http://www.tekinfo.net"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt=""/></a>&nbsp;|&nbsp;京ICP备05051218号&nbsp;|&nbsp;
+            
+            <!-- 友盟统计 tekinfo.net -->
+            <script type="text/javascript">
+			  var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			  document.write(unescape("%3Cspan id='cnzz_stat_icon_3661086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D3661086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+          </p>
+        </div>
+        <div class="col-right">
+          <p class="pull-right">
+            Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>&nbsp;|&nbsp;
+            Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-left">
+          <p class="pull-left">
+            服务器时间:<span id="serverTime" class="text-left"></span> &nbsp;&nbsp;
+            客户端时间:<span id="clientTime" class="text-left"></span>
+          </p>
+        </div>
+        <div class="col-right">
+          <p class="pull-right">
+            <a href="../transaction/add.html">建议和意见</a>:
+            <a style="word-wrap:break-word;" href="mailto:service@takall.com">service@takall.com</a>
+            &nbsp;&nbsp;
+            <a href="../transaction/add.html">支持和帮助</a>:
+            <a style="word-wrap:break-word;" href="mailto:support@takall.com">support@takall.com</a>
+          </p>
+        </div>
+      </div>
+    </div><!--  end 正常宽屏幕显示-->
+    
+    <!-- 窄宽屏幕显示-->
+    <div class="row show_narrow">
+      <div class="col-xs-12">
+        <!-- Copyright info -->
+        <p class="copy" style="margin-top:4px;">
+          Copyright &copy; 1999 <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a> 
+        </p>
+      </div>
+      <div class="col-xs-12">
+        <p class="pull-left">
+          Powered by <a href="http://www.tekinfo.net" title="tekinfo" target="_blank"><img src="../logo/tekinfo-color-tradmark-128.png" height="22" alt="tekinfo"/></a>&nbsp;|&nbsp;
+          Supported by <a href="http://www.takall.com" title="TAKALL" target="_blank"><img src="../../takall/logo/takall-128.png" height="18" alt="TAKALL"/></a>
+        </p>
+      </div>
+    </div><!-- end 窄宽屏幕显示-->
+
+</footer>
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+<span class="totop">
+  <a href="javascript:;"><i class="fa fa-chevron-up"></i></a>
+</span>
+
+<!-- JS -->
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script type="text/javascript" src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- jQuery Slim Scroll -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/excanvas.min.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.resize.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.pie.js"></script>
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.flot.stack.js"></script>
+
+<!-- jQuery Notification - Noty -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<!--<script type="text/javascript" src="../http/style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<!--<script type="text/javascript" src="../http/style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<!--<script src="js/charts.js"></script> <!-- Charts & Graphs -->
+
+<script type="text/javascript">
+function initial(){
+	tek.serverTimer.show();
+	
+	// 百度统计代码 readbook.com
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?703b98aa2c2b5b023c1f9db31d4e2511";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script>
+
+</body>
+<!-- InstanceEnd --></html>

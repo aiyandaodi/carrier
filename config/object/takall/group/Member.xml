@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 组员 -->
+<tekinfo>
+  <object>
+    <Member ResourceBundle="com.takall.group.Member"
+        Structure="com.takall.group.Member"
+        ObjectRm="com.takall.remoting.group.MemberRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <member_id base="identity"/>
+        <member_code base="" step="1" digit="10"/>
+        <member_creator base="userid"/>
+      </autovalue>
+      
+      <nosamevalue>
+        <member_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="member_name" codeIdentity="member_code" ownerIdentity="member_user">
+        <member identity="member_id"/>
+      </table>
+       
+      <command>
+        <!-- 申请 -->
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/group/read.html"/>
+          </parameter>
+          <item>
+            <member_code/>
+            <member_name/>
+            <member_user/>
+            <!-- <member_inform/> -->
+            <member_mobile/>
+            <member_email/>
+            <member_instant/>
+            <member_member_right/>
+            <member_subject_right/>
+            <member_status/>
+            <member_remark/>
+          </item>
+        </add>
+        
+        <!-- 修改 -->
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/group/read.html"/>
+          </parameter>
+          <item>
+            <member_code/>
+            <member_name/>
+            <!-- <member_inform/> -->
+            <member_mobile/>
+            <member_email/>
+            <member_instant/>
+            <member_member_right/>
+            <member_subject_right/>
+            <member_status/>
+            <member_remark/>
+          </item>
+        </edit>
+
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <member_code/>
+            <member_name/>
+            <member_user/>
+            
+            <member_inform/>
+            <member_mobile/>
+            <member_email/>
+            <member_instant/>
+            <member_credit/>
+            <member_member_right/>
+            <member_subject_right/>
+            <member_status/>
+            <member_creator/>
+            
+            <member_latest/>
+            <createTime/>
+            <modifyTime/>
+            <member_remark/>
+          </item>
+        </read>
+
+        <!-- 组员列表。
+             用户是正式组员，显示全部有效组员列表；如果是申请中的组员，只显示本人的信息。 -->
+        <list>
+          <item>
+            <member_code/>
+            <member_name/>
+            
+            <!-- <member_inform/> -->
+            <member_mobile/>
+            <member_email/>
+            <member_instant/>
+            <member_credit/>
+            <member_member_right/>
+            <member_subject_right/>
+            <member_status/>
+            
+            <member_group/>
+            <member_user/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <member_code/>
+            <member_name/>
+            <member_status/>
+            <member_mobile/>
+            <member_email/>
+            <member_instant/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <remove_attach value="MemberRecord=record_member"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <member_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <member_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <member_name variable="string"  maxlength="32" notnull="true"/>
+        <!-- 状态 -->
+        <member_status variable="int" parse="enum" format="option" default="0" notnull="true">
+          <stop value="-1"/>    <!-- 禁止 -->
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 普通组员 -->
+          <admin value="100"/>    <!-- 组管理员 -->
+        </member_status>
+        <!-- 信用度 -->
+        <member_credit variable="int" parse="int" default="0" notnull="true"/>
+        <!-- 备注 -->
+        <member_remark variable="string" format="textarea:4" maxlength="1024"/>
+        <!-- 权限 -->
+        <member_right variable="int"/>
+        <!-- 通知方式 -->
+        <member_inform variable="int" parse="enum" format="multiple" default="0x00" notnull="true">
+          <none value="0x00"/>    <!-- 不接收 -->
+          <email_gather value="0x01"/>    <!-- Email每天汇总 -->
+          <email_brief value="0x02"/>    <!-- Email概要 -->
+          <email_detail value="0x04"/>    <!-- Email详细 -->
+          <!-- <instant value="0x08"/>    即时通 -->
+          <!-- <mobile value="0x10"/>    手机短信 -->
+        </member_inform>
+        <!-- 电子邮箱 -->
+        <member_email variable="string" maxlength="32"/>
+        <!-- 手机号码 -->
+        <member_mobile  variable="string" maxlength="20"/>
+        <!-- 即时通号码 -->
+        <member_instant variable="string" maxlength="64"/>
+        <!-- 所属群组 -->
+        <member_group variable="long" parse="object:Group" format="select" default="0" notnull="true"/>
+        <!-- 所属系统用户 -->
+        <member_user variable="long" parse="object:User" format="select" default="0" notnull="true"/>
+        <!-- 创建者 -->
+        <member_creator variable="long" parse="object:User" format="select" default="0" notnull="true"/>
+        <!-- 成员最近访问组的时间-->
+        <member_latest variable="long" parse="datetime" format="yyyy-MM-dd hh:mm:ss"/>
+        
+        <!-- 虚拟域：组员权限 -->
+        <member_member_right variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <none value="0x00"/>    <!--  无权限 -->
+          <read_brief value="0x01"/>    <!--  允许读取其他组员简单信息 -->
+          <read_detail value="0x02"/>    <!--  允许读取其他组员详细信息 -->
+          <audit value="0x08"/>    <!-- 允许审核组员 -->
+        </member_member_right>
+
+        <!-- 虚拟域：主题权限 -->
+        <member_subject_right variable="int" parse="enum" format="single" default="0x10" notnull="true">
+          <read value="0x00"/>    <!-- 允许读取主题  -->
+          <create value="0x10"/>    <!--  允许创建主题（需要审核） -->
+          <direct value="0x20"/>    <!-- 允许直接创建主题（不审核） -->
+          <audit value="0x80"/>    <!-- 允许审核主题 -->
+        </member_subject_right>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Member>
+  </object>
+</tekinfo>

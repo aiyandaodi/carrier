@@ -1,0 +1,15 @@
+name=地址
+
+#property
+property.address_id=标识
+property.address_code=编码
+property.address_name=名称
+property.address_country=国家/地区
+property.address_state=省/市
+property.address_city=县/市/区
+property.address_street=街道
+property.address_landmark=地标建筑
+property.address_zip=邮编
+property.address_contact=联系人
+
+#message

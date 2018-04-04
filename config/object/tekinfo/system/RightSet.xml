@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 权限组 -->
+<tekinfo>
+  <object>
+    <RightSet ResourceBundle="net.tekinfo.object.system.RightSet"
+        Structure="net.tekinfo.system.RightSet"
+        ObjectRm="net.tekinfo.remoting.system.RightSetRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <rightset_id base="identity"/>
+        <rightset_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="rightset_name" codeIdentity="null">
+        <right_set identity="rightset_id"/>
+      </table>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <rightset_name/>
+            <rightset_object/>
+            <rightset_objectId/>
+            <rightset_target/>
+            <rightset_command/>
+            <rightset_start/>
+            <rightset_end/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <rightset_name/>
+            <rightset_object/>
+            <rightset_objectId/>
+            <rightset_target/>
+            <rightset_command/>
+            <rightset_start/>
+            <rightset_end/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <rightset_name/>
+            <rightset_object/>
+            <rightset_objectId/>
+            <rightset_target/>
+            <rightset_command/>
+            <rightset_start/>
+            <rightset_end/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <rightset_name/>
+            <rightset_object/>
+            <rightset_target/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <rightset_name/>
+            <rightset_object/>
+            <rightset_target/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+
+        <import/>
+        <export/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <rightset_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <rightset_code variable="string" maxlength="6" notnull="true"/>
+        <!-- 名称 -->
+        <rightset_name variable="string" maxlength="20" notnull="true"/>
+        <!-- 所属对象名 -->
+        <rightset_object variable="string" maxlength="32" notnull="true"/>
+        <!-- 所属对象 -->
+        <rightset_objectId variable="long" parse="object:rightset_object" default="0"/>
+        <!-- 目标对象 -->
+        <rightset_target variable="string" maxlength="32" notnull="true"/>
+        <!-- 目标命令 -->
+        <rightset_command variable="string" maxlength="255" notnull="true"/>
+        <!-- 有效期开始时间 -->
+        <rightset_start variable="long" parse="datetime" format="yyyy-MM-dd HH:mm"/>
+        <!-- 有效期结束时间 -->
+        <rightset_end variable="long" parse="datetime" format="yyyy-MM-dd HH:mm"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </RightSet>
+  </object>
+</tekinfo>

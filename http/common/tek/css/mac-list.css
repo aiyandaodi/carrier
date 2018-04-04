@@ -1,0 +1,18 @@
+#list-top>.pull-left{ margin:5px 15px 5px 5px; }
+#list-top>.btn-group{ margin-left:5px; }
+
+#quickSearchDiv { float:left; margin-right:10px; }
+#quickSearchKey { max-width:200px; }
+#quickSearchSubmit:hover { cursor:pointer; }
+
+#table-columns { min-width:20px; }
+#table-columns>th { text-align:center; }
+
+#table-infos>tr>td{ padding-top:12px;word-break:break-all; overflow:auto; text-align:right; }
+#table-infos>tr>.column-first { text-align:center; }
+#table-infos>tr>.column-last { text-align:center; padding-top:8px; }
+#table-infos span { font-size:1em !important; }
+#table-msg { margin:auto 5px; }
+.column-last .btn-xs{ font-size:1em; }
+
+.fa-search-th{ margin-left: 5px; }

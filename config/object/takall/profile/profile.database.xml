@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tekinfo>
+  <database>
+    <table>
+      <profile>
+        <item>
+          <!-- 标识 -->
+          <profile_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <profile_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <profile_name value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 描述 -->
+          <profile_describe value="VARCHAR(255) NOT NULL"/>
+          <!-- 人生格言 -->
+          <profile_motto value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 当前组织 -->
+          <profile_orgname value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 籍贯 -->
+          <profile_source value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 当前居住地 -->
+          <profile_resident value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 职业地 -->
+          <profile_jobarea value="VARCHAR(255) NOT NULL"/>
+          
+          
+          <!-- 性别 -->
+          <profile_sex value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 出生日期 -->
+          <profile_birthdate value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 自我描述 -->
+          <profile_remark value="MEMO"/>
+          
+          <!-- 颜色 -->
+	        <profile_color value="VARCHAR(10) DEFAULT '03f' NOT NULL"/>
+	        <!-- 标签 -->
+	        <profile_tag value="VARCHAR(128)"/>
+	        
+	        <!-- 当前学位 -->
+          <profile_degree value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 职业状态 -->
+          <profile_mode value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 对象状态 -->
+          <profile_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 所有者 -->
+          <profile_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </profile>
+    </table>
+  </database>
+</tekinfo>

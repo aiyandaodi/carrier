@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 证书  -->
+<tekinfo>
+  <object>
+    <Certificates ResourceBundle="com.takall.organization.Certificates"
+        Structure="com.takall.organization.Certificates"
+        ObjectRm="com.takall.remoting.qualification.CertificatesRm">
+      <autovalue>
+        <certificates_id base="identity"/>
+        <!-- <organization_code base="yyyyMMdd" step="1" digit="4" tree="false"/> -->
+      </autovalue>
+      
+      <nosamevalue>
+        <certificates_id/>
+      </nosamevalue>
+
+      <table nameIdentity="certificates_name" codeIdentity="null" ownerIdentity="null">
+        <certificates identity="certificates_id"/>
+      </table>
+
+      <blob blobObject="CertificatesFile"
+          table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <certificates_code/>
+            <certificates_name />
+            <certificates_qualification/>
+            <certificates_type/>
+            <certificates_start/>
+            <certificates_end/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+          <item>
+            <certificates_qualification forbidEdit="true"/>
+            <certificates_code/>
+            <certificates_name />
+            <certificates_type/>
+            <certificates_start/>
+            <certificates_end/>
+            <certificates_status/>
+          </item>
+        </edit>
+        
+        <!-- 审核 -->
+        <audit>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+            <certificates_status/>
+            <certificates_reason/>
+          </item>
+        </audit>
+
+        <read>
+        	<parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x10"/>
+          </parameter>
+          <item>
+            <certificates_code/>
+            <certificates_name/>
+            <certificates_getter/>
+            <certificates_type/>
+            <certificates_start/>
+            <certificates_end/>
+            <certificates_status/>
+            <certificates_user/>
+            <certificates_organization/>
+            <certificates_qualification/>
+          </item>
+        </read>
+        
+        <list>
+         <parameter>
+         	  <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <certificates_code/>
+            <certificates_name/>
+            <certificates_getter/>
+            <certificates_type/>
+            <certificates_start/>
+            <certificates_end/>
+            <certificates_status/>
+            <certificates_user/>
+            <certificates_organization/>
+            <certificates_qualification/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+          	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <certificates_code/>
+            <certificates_name/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <certificates_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 证书编码 -->
+        <certificates_code variable="string" maxlength="64" notnull="true"/>
+        <!-- 证书名称 -->
+        <certificates_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 获得者 -->
+        <certificates_getter variable="string" maxlength="255" notnull="true"/>
+        <!-- 资质类型 -->
+        <certificates_type variable="int" parse="enum" format="single" default="1000" notnull="true">
+          <person value="1000"/>    <!-- 授予个人的资质 1000~1999 -->
+          <organization value="8000"/>    <!-- 收于机构的资质 8000~8999 -->
+        </certificates_type>
+        
+        <!-- 有效期：开始 -->
+        <certificates_start variable="long" parse="date" format="yyyy-MM-dd" default="now" notnull="true"/>
+        <!-- 有效期：结束 -->
+        <certificates_end variable="long" parse="date" format="yyyy-MM-dd"/>
+        
+        <!-- 状态 -->
+        <certificates_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="-1"/>     <!-- 停止 -->
+          <apply value="0"/>     <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+        </certificates_status>
+        
+        <!-- 获得者：个人 -->
+        <certificates_user variable="long" parse="object:User" notnull="true"/>
+        <!-- 获得者：机构 -->
+        <certificates_organization variable="long" parse="object:Organization"/>
+        <!-- 证书：所属资质 -->
+        <certificates_qualification variable="long" parse="object:Qualification"/>
+
+        <!-- 虚拟域：审核错误原因 -->
+        <certificates_reason variable="string" format="textarea:4"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Certificates>
+  </object>
+</tekinfo>

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* CSS Document */
+
+pre{
+	padding:6px 0 6px 0; 
+	color:#666; 
+	line-height:20px; 
+	font-size:0.8em;
+	background: white;
+	border: none;
+}
+
+#subject_time{
+	width:270px;
+	padding:6px 0 6px 0; 
+	color:#666; 
+	line-height:20px; 
+	font-size: 1em;
+	background: rgba(251,253,253,1.00);
+	border:1px solid rgba(220,220,220,1.00);
+}
+
+.ui-timepicker-div .ui-widget-header { 
+	margin-bottom: 8px;
+	font-size:0.8em;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+	background-color:rgba(251,253,253,1.00);
+}
+
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+	font-size:0.8em;
+    line-height: 1.8em;
+    text-align: center;
+	background-color:rgba(251,253,253,1.00);
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    background: rgba(229,245,244,1.00);
+	color:rgba(14,97,91,1.00);
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url("../../images/ui-icons_444444_256x240.png") !important;
+}
+.ui-icon, .ui-widget-content .ui-icon {
+    background-image: url("../../images/ui-icons_444444_256x240.png") !important;
+}
+.ui-icon-circle-triangle-w {
+    background-position: -80px -192px !important;
+}
+.ui-icon-circle-triangle-e { 
+	background-position: -48px -192px !important; 
+}
+
+.ui-datepicker th {
+	font-size:0.8em;
+}
+
+.ui-timepicker-div dl { 
+	text-align: left; 
+}
+.ui-timepicker-div dl dt { 
+	height: 25px; 
+	margin-bottom: -25px; 
+}
+.ui-timepicker-div dl dd { 
+	margin: 0 10px 10px 65px; 
+}
+.ui-timepicker-div td { 
+	font-size: 80%; 
+}
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui_tpicker_hour_label,.ui_tpicker_minute_label,.ui_tpicker_second_label,.ui_tpicker_millisec_label,.ui_tpicker_time_label{
+	padding-left:20px}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: rgba(14,97,91,1.00);
+	color:rgba(236,249,248,1.00);
+}		
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: rgba(251,253,253,1.00);
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: rgba(14,97,91,1.00);
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: rgba(17,148,157,1.00);
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+    color:rgba(17,148,157,1.00);
+}

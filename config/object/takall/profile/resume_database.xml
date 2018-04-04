@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tekinfo>
+  <database>
+    <table>
+      <resume>
+        <item>
+          <!-- 标识 -->
+          <resume_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <resume_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <resume_name value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 简历MIME格式 -->
+          <resume_mime value="VARCHAR(255)"/>
+	        <!-- 简历长度 -->
+          <resume_length value="INT DEFAULT '0' NOT NULL"/>
+          <!-- 文档本地存放路径 -->
+          <resume_path value="VARCHAR(255)"/>
+	        <!-- 对象状态 -->
+          <resume_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 所有者 -->
+          <resume_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </resume>
+    </table>
+  </database>
+</tekinfo>

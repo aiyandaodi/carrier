@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 品牌  -->
+<tekinfo>
+  <object>
+    <Trademark ResourceBundle="com.takall.object.organization.Trademark"
+        Structure="com.takall.organization.Trademark"
+        ObjectRm="com.takall.remoting.organization.TrademarkRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <trademark_id base="identity"/>
+        
+        <organization_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        
+      </autovalue>
+      <nosamevalue>
+        <trademark_id/>
+       
+      </nosamevalue>
+      
+      <table nameIdentity="trademark_name" codeIdentity="trademark_code">
+        <organization_trademark identity="trademark_id"/>
+
+        <trademark_icon identity="trademark_id"/>
+        <trademark_icon_blob identity="trademark_id"/>
+      </table>
+
+      <!-- 这里要定义品牌的图标 -->
+      <icon table="trademark_icon"
+          blobTable="trademark_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          
+          <item>
+             <trademark_code/>
+            <trademark_name/>
+            
+            <trademark_catalog/>
+            <trademark_tag/>
+            
+            <trademark_organization/>
+            <trademark_authorizer/>
+            
+            <trademark_country/>
+            <trademark_status/>
+            
+            <trademark_start/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          
+          <item>
+            <trademark_code/>
+            <trademark_name/>
+            
+            <trademark_catalog/>
+            <trademark_tag/>
+            
+            <trademark_organization/>
+            <trademark_authorizer/>
+            
+            <trademark_country/>
+            <trademark_status/>
+            
+            <trademark_start/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <trademark_code/>
+            <trademark_name/>
+            
+            <trademark_catalog/>
+            <trademark_tag/>
+            
+            <trademark_organization/>
+            <trademark_authorizer/>
+            
+            <trademark_country/>
+            <trademark_status/>
+            
+            <trademark_start/>
+          </item>
+        </read>
+        
+        <list>
+         <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <trademark_code/>
+            <trademark_name/>
+            
+            <trademark_catalog/>
+            <trademark_tag/>
+            
+            <trademark_organization/>
+            <trademark_authorizer/>
+            
+            <trademark_country/>
+            <trademark_status/>
+            
+            <trademark_start/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <trademark_code/>
+            <trademark_name/>
+            <trademark_authorizer/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 品牌：标识 -->
+        <trademark_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 品牌：编码 -->
+        <trademark_code variable="string" maxlength="64" notnull="true"/>
+        <!-- 品牌：名字 -->
+        <trademark_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 品牌：所有者名字 -->
+        <trademark_authorizer variable="string" maxlength="255" notnull="true"/>
+ 
+        <!-- 品牌：标签分类 -->
+        <trademark_tag  variable="string" maxlength="256" notnull="true"/>
+
+        <!-- 品牌：目录分类 -->
+        <trademark_catalog variable="string" maxlength="128"/>
+        
+        <!-- 品牌：状态 -->
+        <trademark_status variable="int" parse="enum" format="single" default="0" notnull="true" right="audit">
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+          <stop value="-1"/>    <!-- 停止 -->
+        </trademark_status>
+        
+        <!-- 品牌：注册日期 -->
+        <trademark_start variable="string" parse="date" notnull="true"/>
+        <!-- 品牌：国别 -->
+        <trademark_country variable="string" parse="state" default="CN"/>
+        <!-- 品牌：所属机构 -->
+        <trademark_organization variable="long" parse="object:Organization"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Trademark>
+  </object>
+</tekinfo>

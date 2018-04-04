@@ -1,0 +1,6 @@
+#list-top > .pull-left{ margin:5px 15px 5px 5px; }
+#list-top > .btn-group{ margin-left:5px; }
+
+#table-infos > tr > .column-record_os > span { margin:0 5px 2px; float:left; }
+#table-infos > tr > .column-group_status { text-align:center; }
+#table-infos > tr > td{text-align: center;}

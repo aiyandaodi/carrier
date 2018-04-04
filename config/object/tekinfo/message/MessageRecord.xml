@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 通信信息 -->
+<tekinfo>
+  <object>
+    <MessageRecord ResourceBundle="net.tekinfo.object.message.MessageRecord"
+        Structure="net.tekinfo.message.MessageRecord"
+        ObjectRm="net.tekinfo.remoting.message.MessageRecordRm">
+      <autovalue>
+        <message_record_id base="time"/>
+        <message_record_code base="yyyyMMdd" step="1" digit="8"/>
+        <message_record_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="message_record_name" codeIdentity="message_record_code" ownerIdentity="null">
+        <message_record identity="message_record_id"/>
+      </table>
+      
+      <blob blobObject="MessageRecordFile"
+          table="null"
+          urlField=""
+          blobField=""
+          mimeField=""
+          lengthField=""
+          timeField="modifyTime"
+          mimeType=""/>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_type/>
+            <message_record_ontime/>
+            <message_record_archine/>
+            <message_record_account/>
+            <message_record_box/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_ontime/>
+            <message_record_status rightrole="auditor"/>
+            <message_record_archine/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <message_record_code rightrole="auditor"/>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_owner/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_forward/>
+            <message_record_mode/>
+            <message_record_type/>
+            <message_record_time/>
+            <message_record_ontime/>
+            <message_record_status/>
+            <message_record_times/>
+            <message_record_archine/>
+            <message_record_account/>
+            <message_record_box/>
+            <message_record_link rightrole="auditor"/>
+            <message_record_linkId rightrole="auditor"/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <list_counts/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <message_record_code rightrole="auditor"/>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_owner/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_forward/>
+            <message_record_mode/>
+            <message_record_type/>
+            <message_record_time/>
+            <message_record_ontime/>
+            <message_record_status/>
+            <message_record_times/>
+            <message_record_archine/>
+            <message_record_account/>
+            <message_record_box/>
+            <message_record_link rightrole="auditor"/>
+            <message_record_linkId rightrole="auditor"/>
+          </item>
+        </read>
+        
+        <search>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_owner/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_mode/>
+            <message_record_type/>
+            <message_record_time/>
+            <message_record_ontime/>
+            <message_record_status/>
+            <message_record_archine/>
+            <message_record_account/>
+            <message_record_box/>
+            <message_record_link rightrole="auditor"/>
+            <message_record_linkId rightrole="auditor"/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <message_record_name/>
+            <message_record_content/>
+            <message_record_owner/>
+            <message_record_sender/>
+            <message_record_receiver/>
+            <message_record_number/>
+            <message_record_mode/>
+            <message_record_type/>
+            <message_record_status/>
+            <message_record_archine/>
+            <message_record_link rightrole="auditor"/>
+            <message_record_linkId rightrole="auditor"/>
+          </item>
+        </textSearch>
+        
+        <download>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </download>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <message_record_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <message_record_code variable="string" maxlength="64"/>
+        <!-- 信息主题 -->
+        <message_record_name variable="string" maxlength="255"/>
+        
+        <!-- 信息内容 -->
+        <message_record_content variable="string" format="textarea:4" maxlength="4096"/>
+        
+        <!-- 信息所有者 -->
+        <message_record_owner variable="long" parse="object:User" notnull="true"/>
+        <!-- 发送人 -->
+        <message_record_sender variable="string" maxlength="64" notnull="true"/>
+        <!-- 接收人 -->
+        <message_record_receiver variable="string" maxlength="64" notnull="true"/>
+        <!-- 接收号码 -->
+        <message_record_number variable="string" maxlength="64" notnull="true"/>
+        <!-- 转发号码 -->
+        <message_record_forward variable="string" maxlength="255" />
+        
+        <!-- 方式 -->
+        <message_record_mode variable="int" parse="enum" format="single" default="0" notnull="true">
+          <send value="1"/>    <!-- 发送 -->
+          <recv value="2"/>    <!-- 接收 -->
+        </message_record_mode>
+        <!-- 类型 -->
+        <message_record_type variable="int" parse="enum" format="option" notnull="true">
+          <email value="1"/>      <!-- 电子邮件 -->
+          <sms value="2"/>        <!-- SMS短信 -->
+          <qq value="11"/>        <!-- QQ消息 -->
+          <weixin value="12"/>    <!-- 微信消息 -->
+          <sina value="21"/>      <!-- 新浪微博 -->
+        </message_record_type>
+        
+        <!-- 处理时间（实际发送时间、实际处理时间） -->
+        <message_record_time variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss"/>
+        <!-- 对于发送，定时发送时间。对于接收，可以存放实际接收时间 -->
+        <message_record_ontime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="now"/>
+        
+        <!-- 状态 -->
+        <message_record_status variable="int" parse="enum" format="option" default="0">
+          <failure value="-1"/>    <!-- 处理失败 -->
+          <ready value="0"/>       <!-- 待处理 -->
+          <finish value="1"/>      <!-- 已处理 -->
+        </message_record_status>
+        <!-- 处理次数 -->
+        <message_record_times variable="int"/>
+        
+        <!-- 归档标识：0-未归档；xxxxxxx－归档颜色 -->
+        <message_record_archive variable="int" parse="int" format="option" default="0"/>
+        <!-- 信息收发使用的账号，如果值为0，使用系统账号，收发的是系统信息 -->
+        <message_record_account variable="long" parse="object:MessageAccount" notnull="true"/>
+        <!-- 存放的信箱 -->
+        <message_record_box variable="long" parse="object:MessageBox" notnull="true"/>
+        <!-- 关联对象名 -->
+        <message_record_link variable="string" maxlength="32" notnull="true"/>
+        <!-- 关联对象 -->
+        <message_record_linkId variable="long" parse="object:this.message_record_link"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </MessageRecord>
+  </object>
+</tekinfo>

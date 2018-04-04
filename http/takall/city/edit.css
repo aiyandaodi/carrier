@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#add_a_city{
+  line-height: 50px;
+  font-size: 18px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 15px;
+}
+
+#city_form>div>label{
+  text-align: right;
+}
+
+/*#city_btn{
+  text-align: right;
+}*/
+
+#city_btn button{
+  margin: 5px;
+}
+
+@media (max-width: 400px){
+	.ui-105 {
+		 margin: 40px auto; 
+	}
+	.row h5 {
+		display: none;
+	}
+	.col-xs-3 {
+		padding-left: 0;
+	}
+}

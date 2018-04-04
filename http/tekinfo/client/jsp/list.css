@@ -1,0 +1,18 @@
+#listorder .client_code, .item1 .client_code, .item2 .client_code {width:10%;}
+#listorder .client_name, .item1 .client_name, .item2 .client_name {width:12%;}
+#listorder .client_domain, .item1 .client_domain, .item2 .client_domain {width:15%;}
+#listorder .client_start, .item1 .client_start, .item2 .client_start {display:none;}
+#listorder .client_end, .item1 .client_end, .item2 .client_end {display:none;}
+#listorder .client_type, .item1 .client_type, .item2 .client_type {width:10%;}
+#listorder .client_status, .item1 .client_status, .item2 .client_status {width:8%;}
+#listorder .createTime, .item1 .createTime, .item2 .createTime {width:16%;}
+#listorder .createIp, .item1 .createIp, .item2 .createIp {display:none;}
+#listorder .client_userName, .item1 .client_userName, .item2 .client_userName {width:11%;}
+#listorder .client_phone, .item1 .client_phone, .item2 .client_phone {display:none;}
+#listorder .client_email, .item1 .client_email, .item2 .client_email {display:none;}
+#listorder .client_postCode, .item1 .client_postCode, .item2 .client_postCode {display:none;}
+#listorder .client_address, .item1 .client_address, .item2 .client_address {display:none;}
+#listorder .client_remark, .item1 .client_remark, .item2 .client_remark {display:none;}
+
+.item1 .client_name, .item2 .client_name {text-align:left;}
+.item1 .client_userName, .item2 .client_userName {text-align:left;}

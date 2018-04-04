@@ -1,0 +1,16 @@
+name=任务
+
+#property
+property.host_task_id=标识
+property.host_task_code=编码
+property.host_task_name=任务名称
+property.host_task_remark=任务备注
+property.host_task_status=任务状态
+property.host_task_status.stop=执行完毕
+property.host_task_status.apply=即将开始
+property.host_task_status.valid=正在执行
+property.host_task_start=任务有效开始时间
+property.host_task_end=任务有效结束时间
+property.host_task_time=任务执行时间
+property.host_task_owner=任务所有者
+property.host_task_script=任务所使用的脚本

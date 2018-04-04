@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 人生经历对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <works>
+        <item>
+          <!-- 标识 -->
+          <works_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <works_code value="VARCHAR(32) NOT NULL"/>
+          <!-- 人生经历名称 -->
+          <works_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 标签分类 -->
+          <works_tag value="VARCHAR(200)"/>
+          
+          <!-- 颜色分类 -->
+          <works_color value="VARCHAR(200)"/>
+          
+          <!-- 人生经历类型 --> 
+          <works_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 人生经历状态 --> 
+          <works_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 当前用户在人生经历中的角色 -->
+          <works_role value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所有者 -->
+          <works_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 人生经历所属组织 -->
+          <works_orgname value="VARCHAR(255)"/>
+          
+          <!-- 人生经历网址-->
+          <works_url value="VARCHAR(255)  NOT NULL"/>
+          
+          <!-- 人生经历人数-->
+          <works_counts value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 读取权限-->
+          <works_property value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 人生经历开始 -->
+          <works_start value="CHAR(10)"/>
+          <!-- 人生经历结束 -->
+          <works_end value="CHAR(10)"/>
+          
+          <!-- 人生经历说明 -->
+          <works_remark value="MEMO"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </works>
+    </table>
+  </database>
+</tekinfo>

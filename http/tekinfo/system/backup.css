@@ -1,0 +1,29 @@
+/* 日历样式 */
+.bold {font-weight:bold;}
+.pointer {cursor:pointer;}
+.attbg {background:#ececec;}
+.tabtitle td.selected,.colorpanel,.bd,.tpinfo {border:1px solid #bfbfbf;}
+.calendar { width:100%;}
+.calendar td { font-family:Tahoma,Arial,Verdana;border-collapse:collapse;text-align:right;}
+.calendar .title_year { padding:4px 0;width:100%;text-align:center;border-width:0 0 1px 0;font-size:12px;}
+.calendar .selecter {margin:0 10px 0 8px;}
+.calendar .selecter  img { cursor:pointer;margin:0 2px; } 
+.calendar .datelist { background:#fff; }
+.calendar .day { font:normal 11px Tahoma;border:1px solid #f2f4f6;border-width:0 1px 1px 0;padding:2px 4px 2px;background-repeat:no-repeat;background-position:right top; }
+.calendar .week_title{ background:; border-width:0 0 1px 0;pointer:default;text-align:center;padding:4px 2px 2px;}
+.calendar .hover { border-color:#ccc;padding:1px 3px 3px 1px; }
+.calendar .normalday { cursor:pointer; }
+.calendar .today { background-color:#727272;color:#fff;}
+.calendar .invalidateday { color:#e0e0e0; }
+.calendar .remind { background-image:url(../../../common/calendar/bg_remind_enable.gif); }
+.calendar .remind_expired { background-image:url(../../../common/calendar/bg_remind_disable.gif); }
+.toolheight {*height:23px;}
+.toolheight .right, .toolheight .qm_right {margin:4px 0 0 0;}
+li.fs a.fn_list,li.fs a.fn_list:link,li.fs a.fn_list:visited {color:#fff;}
+li.fs_userlist {padding-left:0;}
+.toolbg,.toolbg1{font-size:12px;background:url(../../../common/calendar/tool-0010b3dfa.gif) repeat-x #d5d5d5;}
+
+#btn>button { margin: 5px; }
+label[for="all"]{ line-height:40px;}
+#all{ margin-top:16px;}
+#beifen{ line-height:21px;}

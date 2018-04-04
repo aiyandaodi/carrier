@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定组成员对目标组中的指定对象的权 -->
+<tekinfo>
+  <database>
+    <table>
+      <group_object_right property="UNIQUE(group_member_group,group_object_group,group_object_name,group_object_id)">
+        <item>
+          <!-- 标识 -->
+          <group_object_right_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          
+          <!-- 拥有权限的组（该组中成员都具有对目标组指定对象的权限），如果为0表示everyone -->
+          <group_member_group value="BIGINT NOT NULL"/>
+          
+          <!-- 拥有权限的组名 -->
+          <group_member_groupname value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目标组 -->
+          <group_object_group value="BIGINT NOT NULL"/>
+          
+          <!-- 目标组中对象类型名 -->
+          <group_object_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 目标组中对象标识，如果是0，表示所有该类对象的默认权-->
+          <group_object_id value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 权限 -->
+          <group_object_right value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </group_object_right>
+    </table>
+  </database>
+</tekinfo>

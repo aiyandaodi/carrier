@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Button */
+.popmenu a.popmenu-btn{
+	position: absolute;
+	bottom: 28px;
+	right: 35px;
+	width: 53px;
+	height: 53px;
+	line-height: 46px;
+	border-radius: 100% !important;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.popmenu .ui-list{
+	bottom:-120px;
+}
+.ui-list form{
+	position:absolute;
+	right:50px;
+	top:60px;
+	display:none;
+}
+.ui-list .input-group input{
+	padding:0 5px;
+	border:1px solid #ccc;
+	height:37.65px;
+}
+.ui-list .input-group span{
+	border:1px solid #ccc;
+}
+.ui-172{
+	max-width:700px;
+	margin:40px auto;
+	padding:40px 20px;
+	border:1px solid #ddd;
+	border-radius: 5px !important;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2) !important;
+}
+.ui-172 .btn-add{
+ 	margin-left:10px;
+	margin-bottom:20px;
+}
+.ui-172 .ui-item{
+	border:0px;
+	background:#fff;
+	padding:10px;
+	position:relative;
+	margin:0px 0px;
+	/*margin-right:100px;*/
+}
+
+.ui-172 h3{
+	margin-left:40px;
+	font-size:14px;
+	line-height:24px;
+}
+.ui-172 .actions{
+	position:absolute;
+	top:15px;
+	right:-90px;
+	display:none;
+}
+.ui-172 .actions input{
+	border:1px solid #ccc;
+}
+.ui-172 .actions a i{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border-radius:3px  !important ;
+	color:#888;
+	background:#f8f8f8;
+	border:1px solid #ddd;
+}
+.ui-172 .ui-item:hover .actions{
+	display:block;
+}
+.ui-172 .actions input{
+	width:50px;
+	height:30px;
+}
+/* Heading */
+.ui-172 .pro-item h3{
+	width: 130px;
+	float: left;
+	font-size: 1em;
+	line-height: 25px;
+	margin: 0px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+@media(max-width: 450px){
+	.ui-172 .pro-item h3{
+		float: none;
+		margin-bottom: 10px;
+	}
+}
+.ui-172 .pro-item h3 > a{
+	display: block;
+	background: rgba(0,0,0,0.08);
+	text-align: right;
+	padding: 10px 18px 10px 0px;
+	color: #fff;
+}
+@media(max-width: 450px){
+	.ui-172 .pro-item  h3 > a{
+		text-align: left;
+		padding-left: 10px;
+	}
+}
+/* Content */
+.ui-172 .pro-item .pro-content{
+	font-size:0.9em;
+	/*margin-left: 130px;*/
+	background: #fafafa;
+}
+@media(max-width: 450px){
+	.ui-172 .pro-item .pro-content{
+		margin-left: 0px;
+	}
+}
+/* Heading */
+.ui-172 .pro-item .pro-content h4{
+	margin: 0px;
+	font-size: 1em;
+	line-height: 25px;
+	color: #444;
+	width: 0px;
+}
+.ui-172 .pro-item .pro-content h4 > span{
+	display: block;
+	width: 100%;
+	padding: 10px 0px 10px 12px;
+}
+@media(max-width: 450px){
+	.ui-172 .pro-item .pro-content h4 > span{
+		padding-left: 10px;
+	}
+}
+#eval-level{
+	margin-bottom:10px;
+}
+#eval-ok{
+	margin-right:10px;
+}
+
+/* UI - X */
+.recommend{
+	margin: 40px auto;
+}
+/* Column Mobile */
+@media(max-width: 500px){
+	.recommend .col-mob{
+		width: 100%;
+	}
+}
+/* Item */
+.recommend .ui-item{
+	max-width: 270px;
+	margin: 20px auto;
+	background:#fff;
+}
+/* Heading */
+.recommend .ui-item h3{
+	margin: 0px;
+}
+.recommend .ui-item h3 > a{
+	display: block;
+	color: #fff;
+	font-size: 0.8em;
+	text-transform:uppercase;
+	line-height: 30px;
+	padding: 6px 15px;
+}
+/* Icon */
+.recommend .ui-item h3 > a > i{
+	float:left;
+	margin: 4px 10px;
+	font-size: 13px;
+	line-height: 23px;
+}
+/* Unordered Listing */
+.recommend .ui-item  ul{
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	border: 1px solid #e7e7e7;
+	border-top: 0px;
+}
+/* Nav Tabs */
+.recommend .ui-item ul > li > a{
+	display: block;
+	border-bottom: 1px solid #e7e7e7;
+	font-size: 0.9em;
+	line-height: 23px;
+	font-weight:600;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+	color:#888;
+}
+@media(max-width: 274px){
+	.recommend .ui-item ul > li > a{	
+		font-size: 12px;	
+	}
+}
+.recommend .ui-item ul > li:last-child > a{
+	border-bottom: 0px;
+}
+.recommend .ui-item ul > li > a:hover{
+	background: #fcfcfc;
+	color:#888;
+}
+
+.recommend .ui-item ul > li > a > span{
+	display: inline-block;
+	padding: 7px 0px 6px;
+	margin-left: 13px;
+}

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 国家/地区 -->
+<tekinfo>
+  <object>
+    <Country ResourceBundle="com.takall.state.Country"
+        Structure="com.takall.state.Country"
+        ObjectRm="com.takall.remoting.state.CountryRm">
+      <autovalue>
+        <country_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="country_name" codeIdentity="country_code" ownerIdentity="country_locale">
+        <country identity="country_id"/>
+      </table>
+
+      <command>
+        <!-- 初始化 -->
+        <initial>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+            <country_locale/>
+          </item>
+        </initial>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <country_code/>
+            <country_name/>
+            <country_fullname/>
+            <country_timezone/>
+            <country_areacode/>
+            <country_currency/>
+            <country_locale/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <country_code/>
+            <country_name/>
+            <country_fullname/>
+            <country_timezone/>
+            <country_areacode/>
+            <country_currency/>
+            <country_locale/>
+            <country_valid/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <country_code/>
+            <country_name/>
+            <country_fullname/>
+            <country_timezone/>
+            <country_areacode/>
+            <country_locale/>
+            <country_currency/>
+            <country_valid rightrole="auditor;customerService"/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+          </parameter>
+          <item>
+            <country_code/>
+            <country_name/>
+            <country_fullname/>
+            <country_timezone/>
+            <country_areacode/>
+            <country_locale/>
+            <country_currency/>
+            <country_valid rightrole="auditor;customerService"/>
+          </item>
+        </read>
+        
+        <textSearch>
+          <item>
+            <country_code/>
+            <country_name/>
+            <country_timezone/>
+            <country_fullname/>
+            <country_currency/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <country_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <country_code variable="string" maxlength="2" notnull="true"/>
+        <!-- 简称 -->
+        <country_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 全称 -->
+        <country_fullname variable="string" maxlength="64" notnull="true"/>
+        <!-- 时区 -->
+        <country_timezone variable="string" parse="enum" format="option" maxlength="3">
+          <p0 value="0"/>
+          <p1 value="+1"/>
+          <p2 value="+2"/>
+          <p3 value="+3"/>
+          <p4 value="+4"/>
+          <p5 value="+5"/>
+          <p6 value="+6"/>
+          <p7 value="+7"/>
+          <p8 value="+8"/>
+          <p9 value="+9"/>
+          <p10 value="+10"/>
+          <p11 value="+11"/>
+          <m1 value="-1"/>
+          <m2 value="-2"/>
+          <m3 value="-3"/>
+          <m4 value="-4"/>
+          <m5 value="-5"/>
+          <m6 value="-6"/>
+          <m7 value="-7"/>
+          <m8 value="-8"/>
+          <m9 value="-9"/>
+          <m10 value="-10"/>
+          <m11 value="-11"/>
+        </country_timezone>
+        
+        <!-- 货币 -->
+        <country_currency variable="string" maxlength="3" default="CNY"/>
+        <!-- 区号 -->
+        <country_areacode variable="string" parse="string" maxlength="8"/>
+        <!-- 区域 -->
+        <country_locale variable="string" maxlength="10" notnull="true"/>
+        <!-- 是否有效 -->
+        <country_valid variable="int" parse="boolean" default="1"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <attachment>
+        <state object="State" column="state_country"/>
+      </attachment>
+    </Country>
+  </object>
+</tekinfo>

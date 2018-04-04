@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 城市 -->
+<tekinfo>
+  <object>
+    <City ResourceBundle="com.takall.state.City"
+        Structure="com.takall.state.City"
+        ObjectRm="com.takall.remoting.state.CityRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <city_id base="identity"/>
+        <city_code base="" step="1" digit="4" tree="default"/>
+      </autovalue>
+      <nosamevalue>
+        <city_code/>
+      </nosamevalue>
+
+      <table nameIdentity="city_name" codeIdentity="city_code" ownerIdentity="city_locale">
+        <city identity="city_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <city_state forbidEdit="true"/>
+            <city_name/>
+            <city_fullname/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <city_state forbidEdit="true"/>
+            <city_code rightrole="auditor"/>
+            <city_name/>
+            <city_fullname/>
+            <city_valid/>
+          </item>
+        </edit>
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <city_code/>
+            <city_name/>
+            <city_fullname/>
+            <city_state/>
+            <city_locale/>
+            <city_valid rightrole="auditor;customerService"/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <city_code/>
+            <city_name/>
+            <city_fullname/>
+            <city_state/>
+            <city_locale/>
+            <city_valid rightrole="auditor;customerService"/>
+          </item>
+        </read>
+        
+        <search>
+          <item>
+            <city_name/>
+            <city_fullname/>
+            <city_locale/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <city_name/>
+            <city_fullname/>
+            <city_locale/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <city_id variable="long" notnull="true"/>
+        <!-- 编码 -->
+        <city_code variable="string" maxlength="14" notnull="true"/>
+        <!-- 简称 -->
+        <city_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 全称 -->
+        <city_fullname variable="string" maxlength="64" notnull="true"/>
+        <!-- 所属省/州 -->
+        <city_state variable="string" parse="object:State" format="option" maxlength="10" notnull="true"/>
+        <!-- 区域 -->
+        <city_locale variable="string" maxlength="10" notnull="true"/>
+        <!-- 是否有效 -->
+        <city_valid variable="int" parse="boolean" default="1"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </City>
+  </object>
+</tekinfo>

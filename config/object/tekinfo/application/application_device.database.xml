@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 应用设备  -->
+<tekinfo>
+  <database>
+    <table>
+      <application_device>
+        <item>
+          <!-- 应用设备标识 -->
+          <application_device_id value="BIGINT PRIMARY KEY"/>
+          
+          <!-- 应用设备标识编码，可以是IMEI,MAC等，由application_device_flag记录类型 -->
+          <application_device_code value="VARCHAR (512) NOT NULL"/>
+          <!-- 应用设备类型 -->
+          <application_device_flag value="VARCHAR (32) NOT NULL"/>
+          
+          <!-- 应用设备名字 -->
+          <application_device_name value="VARCHAR (128) NOT NULL"/>
+          <!-- 应用设备别名 -->
+          <application_device_alias value="VARCHAR (64) NOT NULL"/>
+          <!-- 应用设备所有者 -->
+          <application_device_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 应用设备状态 -->
+          <application_device_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 应用设备授权码 -->
+          <application_device_token value="VARCHAR(512) NOT NULL"/>
+          <!-- 应用设备授权密钥 -->
+          <application_device_tokenSecret value="VARCHAR(512) NOT NULL"/>
+          <!-- 应用设备授权时间 -->
+          <application_device_tokenTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 应用设备OS类型 -->
+          <application_device_ostype value="VARCHAR(20)"/>
+          <!-- 应用设备OS版本 -->
+          <application_device_osversion value="VARCHAR(10)"/>
+          
+          <!-- 注册位置经度 -->
+          <application_device_longitude value="DOUBLE DEFAULT '0' NOT NULL"/>
+          <!-- 注册位置维度 -->
+          <application_device_latitude value="DOUBLE DEFAULT '0' NOT NULL"/>
+          
+          <!-- 语言和国家地区，例如zh_CN -->
+          <application_device_region value="VARCHAR(10)"/>
+
+          <!-- 设备注册IP,设备注册时的IP-->
+          <application_device_ip value="BIGINT DEFAULT '0'"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+          
+        </item>
+      </application_device>
+    </table>
+  </database>
+</tekinfo>

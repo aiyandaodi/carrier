@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+.form-horizontal .control-label {
+	padding-top: 0;
+}
+form .control-label {
+	float: left !important;
+}
+@media (min-width: 768px) and (max-width: 995px){
+	form .control-label {
+		text-align: right !important;
+		width: 33.33% !important;
+	}
+}
+.radio-checkbox-ul, .right-radio-ul {
+	list-style: none;
+	
+}
+.radio-checkbox-ul li, .right-radio-ul li {
+	float: left;
+	
+}
+.right-radio-ul li,.ui-105 ul li {
+	margin-right: 15px;
+}
+.right-radio-ul li label {
+	
+	cursor: pointer;
+}
+.ui-105 ul li a {
+	border:none !important;
+	background: none;
+	font-weight: normal;
+	color: #026b9c;
+}
+.ui-105 ul li:last-child a {
+	border-right: none !important;
+}
+.ui-105 ul li a:hover {
+    border-top: none !important;
+	color: #026b9c;
+}

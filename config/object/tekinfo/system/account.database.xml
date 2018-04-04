@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 系统用户 -->
+<tekinfo>
+  <database>
+    <table>
+      <account>
+        <item>
+          <!-- 标识 -->
+          <account_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <account_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 名字 -->
+          <account_name value="VARCHAR(128) NOT NULL"/>
+          <!-- 登录名 -->
+          <account_login value="VARCHAR(64) NOT NULL"/>
+          <!-- 口令 -->
+          <account_password value="VARCHAR(255) NOT NULL"/>
+          <!-- 认证状态 -->
+          <account_auth value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属客户端 -->
+          <account_client value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 授权客户端
+          <account_loginClient value="BIGINT DEFAULT '0' NOT NULL"/> -->
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </account>
+    </table>
+  </database>
+</tekinfo>

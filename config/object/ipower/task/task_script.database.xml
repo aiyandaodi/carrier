@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 执行任务脚本 -->
+<tekinfo>
+  <database>
+    <table>
+      <task_script>
+        <item>
+          <!-- 标识 -->
+          <task_script_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <task_script_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 被执行的任务 -->
+          <task_script_task value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 执行的目标脚本 -->
+          <task_script_script value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效状态 --> 
+          <task_site_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </task_script>
+    </table>
+  </database>
+</tekinfo>

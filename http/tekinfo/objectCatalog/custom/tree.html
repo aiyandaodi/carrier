@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/hdw-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- 自定义head -->
+  <title>自定义-目录树（支持虚拟对象）</title>
+  <!-- InstanceEndEditable -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href= "../../../../favicon.ico"/>
+  <link rel="Bookmark" href= "../../../../favicon.ico"/>
+
+  <!-- Styles -->
+  <!-- Bootstrap CSS -->
+  <link href="../../../style/brave/css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Font awesome CSS -->
+  <link href="../../../style/brave/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Magnific Popup -->
+  <link href="../../../style/brave/css/magnific-popup.css" rel="stylesheet">
+  <!-- Owl carousel -->
+  <link href="../../../style/brave/css/owl.carousel.css" rel="stylesheet">
+  
+  <!-- CSS for this page -->
+  <!-- Base style -->
+  <link href="../../../style/brave/css/styles/style.css" rel="stylesheet">
+  <!-- Skin CSS -->
+  <link href="../../../style/brave/css/styles/skin-red.css" rel="stylesheet" id="color_theme">
+
+  <!-- Custom CSS. Type your CSS code in custom.css file -->
+  <link href="../../../style/brave/css/custom.css" rel="stylesheet">
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../css/tekinfo.css"/>
+  <!-- hongde CSS -->
+  <link rel="stylesheet" href="../../../hdw.top/css/hdw-style.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <link rel="stylesheet" href="../../../common/ztree/css/zTreeStyle/zTreeStyle.css"/>
+  <link rel="stylesheet" href="tree.css"/>
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../../common/tek/js/mac-common.js"></script>
+        
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../../js/tekinfo.js"></script>
+  <!-- hdw JS -->
+  <script type="text/javascript" src="../../../hdw.top/js/hdw.js"></script>
+
+  <!-- InstanceBeginEditable name="MyJS" -->
+  <!-- 自定义我的头文件 -->
+  <script type="text/javascript" src="../../../common/ztree/js/jquery.ztree.core-3.5.js"></script>
+  <script type="text/javascript" src="tree-show.js"></script>
+  <script type="text/javascript" src="tree.js"></script>
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+<main>
+	<!-- InstanceBeginEditable name="MAINCONTENT" -->
+    <!-- 主页面内容 -->
+    <!-- Outer Starts -->
+    <div class="outer">
+        <!-- Main content starts -->
+        <div class="main-block">
+
+            <!-- Page heading two starts -->
+            <div class="page-heading-two">
+                <div class="container">
+                    <h2>目录分类</h2>
+                    <div class="breads">
+                        <a href="../../../../index.html">主页</a> / <a href="#">目录树管理</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- Page heading two ends -->
+
+            <!-- Page container -->
+            <div class="container">
+
+                <!-- 选择对象 -->
+                <div class="widget-head hide" id="object_select_box">
+                    <div class="select-object">
+                        <label class="col-md-3 text-right" for="object_catalog_object_select">选择对象：</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="object_catalog_object_select" name="object_catalog_object_select">
+                                <!-- ajax 装入 -->
+                                <option value="OrganizationService1">检验鉴定服务（OrganizationService1）</option>
+                                <option value="OrganizationService2">技术协作服务（OrganizationService2）</option>
+                                <!--<option value="ExpertService">专家辅助人服务（ExpertService）</option> 预留-->
+                                <option value="Expert">专家辅助人（Expert）</option>
+                                <option value="Product">书城（Product）</option>
+                                <option value="ProductVirtual">视频（ProductVirtual）</option>
+                                <option value="SubjectDemand">需求信息（SubjectDemand）</option>
+                                <option value="SubjectCyclopedia">信息百科（SubjectCyclopedia）</option>
+                                <option value="ProductVirtualExhibition">会展（ProductVirtualExhibition）</option>
+                                <option value="SubjectStrategy">攻略（SubjectStrategy）</option>
+                            </select>
+                            <input id="object_catalog_object_select-input" class='form-control hide' name="object_catalog_object_select" disabled='disabled'/>
+                        </div>
+                        <div class="col-md-3 col-xs-12 select-object-button">
+                            <button class="btn btn-success col-xs-6" type="button" onclick="changeObjectName()"> 确 定</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div><!--end .widget-head-->
+
+                <!-- 显示tree信息 -->
+                <div class="widget-head">
+                    <div class="" id="object_catalog_title">目录分类</div>
+                </div><!--end .widget-head-->
+
+                <div class="widget-content">
+                    <div class="ztree object-catalog-ztree" id="object_catalog_ztree">
+                        <!-- 树结构显示容器 -->
+                    </div>
+                </div><!-- end.widget-content -->
+
+                <div class="widget-content">
+                    <div class="ztree-msg" id="ztree_msg">
+                        <!-- 提示（错误）信息 -->
+                    </div>
+                </div><!-- end.widget-content -->
+
+            </div>
+            <!-- Page container ends -->
+
+        </div>
+        <!-- Main content ends -->
+    </div>
+    <!--Outer Starts ends -->
+
+    <!-- 操作图层 -->
+    <div id="operate-modal-dialog" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="operate-modal-dialog-title" class="left">&nbsp;</h3>
+                </div>
+                <div id="operate-modal-dialog-body" class="modal-body">
+
+                </div>
+                <div id="operate-modal-dialog-foot" class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+        <!-- end .modal-dialog-->
+    </div>
+    <!-- InstanceEndEditable -->
+</main>
+
+<!-- Footer Starts -->
+<footer>
+	<div class="container">
+		<!-- Footer Content -->
+		<p class="pull-left">
+			Copyright &copy; 2016 - <a href="http://www.tekinfo.net"><img src="../../logo/tekinfo-white-128.png" height="22" title="tekinfo" longdesc="http://www.tekinfo.net"/></a>&nbsp;|&nbsp;
+			
+			<!-- 友盟统计：hdw.top-->
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_1260062528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260062528%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</p>
+		<ul class="list-inline pull-right">
+			<!-- List -->
+			<li><a href="hongde-help.html" target="_blank">帮助</a></li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</footer>
+<!-- Footer Ends -->
+            
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-angle-up bg-color"></i></a></span>
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<!-- Login Modal starts -->
+<div id="login" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:clickCheckUser();">×</button>
+      <h3>&nbsp;</h3>
+      </div>
+      <div id="show_div" class="modal-body">
+        <iframe id="show_frame" name="show_name" src="" allowtransparency="true" width="100%" height="100%" scrolling="auto" frameborder="0" ></iframe>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div>
+<!-- Login modal ends -->
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end message-modal-dialog-->
+
+<!-- Bootstrap JS -->
+<script src="../../../style/brave/js/bootstrap.js"></script>
+<!-- Placeholders JS -->
+<script src="../../../style/brave/js/placeholders.js"></script>
+<!-- Magnific Popup -->
+<script src="../../../style/brave/js/jquery.magnific-popup.min.js"></script>
+<!-- Owl carousel -->
+<script src="../../../style/brave/js/owl.carousel.min.js"></script>
+<!-- Respond JS for IE8 -->
+<script src="../../../style/brave/js/respond.min.js"></script>
+<!-- HTML5 Support for IE -->
+<script src="../../../style/brave/js/html5shiv.js"></script>
+<!-- Main JS -->
+<script src="../../../style/brave/js/main.js"></script>
+<!-- Custom JS. Type your JS code in custom.js file -->
+<script src="../../../style/brave/js/custom.js"></script>
+
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	/*
+	if (tek.common.isLoggedIn()) {
+		if (tek.user.isNormalUser(mySecurity)) {
+			showUserInfo();
+		} else {
+			goBack();
+		}
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	*/
+	if (typeof init == "function")
+		init();
+	
+	var error = request["error"];
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	
+	
+	<!-- 百度统计代码 hdw.top -->
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?9591e9948bc859b87d2d503643188da7";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<!-- 自定义Javascript -->
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

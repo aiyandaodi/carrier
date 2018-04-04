@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object:通信好友 -->
+
+<tekinfo>
+  <object>
+    <MessageFriend ResourceBundle="com.takall.object.message.MessageFriend"
+        Structure="com.takall.message.MessageFriend" 
+        ObjectRm="com.takall.remoting.message.MessageFriendRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <friend_id base="identity"/>
+        
+        <friend_code base="" step="1" digit="8"/>
+        <friend_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="friend_name" codeIdentity="friend_code">
+        <message_friend identity="friend_id"/>
+      </table>
+      
+      <index maxIcon="object/profile/Friend-48.gif"
+          minIcon="object/profile/Friend.gif"/>
+            
+      <command>
+        <read>
+          <item>
+            <friend_code/>
+            
+            <friend_name/>
+            <friend_user/>
+            
+            <friend_status/>
+            <friend_color/>
+            <friend_tag/>
+          </item>
+        </read>
+        
+        <add>
+        	<parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+        		
+          <item>
+            <friend_name/>
+            <friend_user/>
+            <!--<friend_status/>-->
+            <friend_color/>
+            <friend_tag/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <friend_name/>
+            <friend_status/>
+            <friend_color/>
+            <friend_tag/>
+          </item>
+        </edit>
+
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            <list_counts/>
+      	  </parameter>
+          <item>
+            <friend_id/>
+            <friend_code/>
+            <friend_name/>
+            
+            <friend_user/>
+            <friend_owner/>
+            
+            <friend_status/>
+            
+            <friend_color/>
+            <friend_tag/>
+          </item>
+        </list>
+        
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          
+            <remove_sub value="false"/>
+            
+          	
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <friend_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <friend_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 好友名 -->
+        <friend_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 好友状态 -->
+        <friend_status variable="int" parse="enum" format="single" default="0" notnull="true">
+        	<apply value="0"/>    <!-- 申请成为好友 -->
+          <friend value="1"/>    <!-- 已经是好友 -->
+          <blacklist value="-1"/>    <!-- 黑名单 -->
+        </friend_status>
+        <friend_color variable="int" parse="enum" format="option" default="0x03f" notnull="true">
+          <red value="0xf00"/>    
+          <orange value="0xf90"/>
+          <yellow value="0xff0"/>
+          <green value="0x090"/>
+          <darkblue value="0x39c"/>
+          <blue value="0x03f"/>
+          <purple value="0x900"/>
+          <pink value="0xf3f"/> 
+        </friend_color>
+        <!-- 标签 -->
+        <friend_tag variable="string" />
+        <!-- 所有者 -->
+        <friend_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 所属账号 -->
+        <friend_account variable="long" parse="object:MessageAccount" default="0" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </MessageFriend>
+  </object>
+</tekinfo>

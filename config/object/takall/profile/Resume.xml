@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tekinfo>
+  <object>
+    <Resume ResourceBundle="com.takall.profile.Resume"
+        Structure="com.takall.profile.Resume" 
+        ObjectRm="com.takall.remoting.profile.ResumeRm" 
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <resume_id base="identity"/>
+        <resume_code base="yyyy" step="1" digit="10"/>
+        <resume_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="resume_name" codeIdentity="null">
+        <resume identity="resume_id"/>
+        <resume_blob identity="resume_id"/>
+      </table>
+
+      <blob table="resume_blob"
+          urlField="resume_path"
+          blobField="resume_blob"
+          mimeField="resume_mime"
+          lengthField="resume_length"
+          timeField="modifyTime"
+          mimeType="text/plain"/>
+
+      <index maxIcon="object/resume/Resume-48.gif"
+          minIcon="object/resume/Resume.gif"/>
+            
+      <command>
+      	<read url="http/takall/resume/read.html">
+			    <parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x10"/>
+          	</parameter>
+          <item>
+          	<resume_code/>
+            <resume_name/>
+            <resume_mime/>
+            <resume_length/>
+            <resume_owner/>
+            <resume_status/>
+            
+          </item>
+        </read>
+        
+        <add url="http/takall/resume/add.html">
+        	<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x80"/>
+          	</parameter>
+          	<item>
+            	<resume_code/>
+              <resume_name/>
+              <resume_path/>
+              <resume_status/>
+              <createTime/>
+          </item>
+        </add>
+        
+        <edit url="http/takall/resume/edit.html">
+        	<parameter>
+          		<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          		<record value="0x80"/>
+          	</parameter>
+          <item>
+            <resume_code/>
+            <resume_name/>
+            
+            <resume_status/>
+          </item>
+        </edit>
+
+        <list url="http/takall/resume/index.html">
+          <parameter>
+		  	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x01"/>
+            <list_counts value="10"/>
+      	  </parameter>
+          <item>
+            <resume_code/>
+            <resume_name/>
+            <resume_status/>
+          </item>
+        </list>
+        
+        <remove url="http/takall/resume/remove.html">
+          <parameter>
+		  	<!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+            <remove_sub value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+          	<record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <resume_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <resume_code variable="string" maxlength="128" notnull="true"/>
+        <!-- 名称 -->
+        <resume_name variable="string" maxlength="128" notnull="true"/>
+        <!-- MIME类型 -->
+        <resume_mime variable="string" maxlength="255"/>
+        <!-- 长度 -->
+        <resume_length variable="long" parse="long" default="0" notnull="true"/>
+        <!-- 存放路径 -->
+        <resume_path variable="string" maxlength="255"/>
+        <!-- 二进制文件 -->
+        <resume_blob variable="blob" parse="blob" format="download"/>
+        <!-- 状态 -->
+        <resume_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="-1"/>    <!-- 停止 -->
+          <apply value="0"/>    <!-- 申请中 -->
+          <normal value="1"/>    <!-- 正常 -->
+        </resume_status>
+        
+        
+        <!-- 所有者 -->
+        <resume_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </Resume>
+  </object>
+</tekinfo>

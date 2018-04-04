@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 机构 -->
+<tekinfo>
+  <database>
+    <table>
+      <expert>
+        <item>
+          <!-- 标识 -->
+          <expert_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码-->
+          <expert_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <expert_name value="VARCHAR(255) NOT NULL"/>
+          
+          <!-- 性别 -->
+          <expert_gender value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 目录分类 -->
+          <expert_catalog value="VARCHAR(255)"/>
+          <!-- 标签分类 -->
+          <expert_tags value="VARCHAR(255)"/>
+          
+          <!-- 所属机构 -->
+          <expert_organization value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 就职单位 -->
+          <expert_employ value="VARCHAR(255)"/>
+          <!-- 职称 -->
+          <expert_title value="VARCHAR(255)"/>
+          <!-- 职务 -->
+          <expert_job value="VARCHAR(255)"/>
+          
+          <!-- 执业证号 -->
+          <expert_licence value="VARCHAR(128)"/>
+          <!-- 从业年限 -->
+          <expert_work value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 专家说明 -->
+          <expert_remark value="MEMO"/>
+          
+          <!-- 创建者 -->
+          <expert_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属用户 -->
+          <expert_user value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 附加信息 -->
+          <expert_support value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 系统优先级 -->
+          <expert_systemPriority value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 状态 -->
+          <expert_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 工作时间 -->
+          <expert_workingtime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 评分 -->
+          <expert_evaluate value="INT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 国家（标准的2字节代码） -->
+          <expert_country value="CHAR(2)"/>
+          <!-- 省（州）二级行政单位 -->
+          <expert_state value="VARCHAR(250)"/>
+          <!-- 县（市）三级行政单位 -->
+          <expert_city value="VARCHAR(250)"/>
+          <!-- 街道 -->
+          <expert_street value="VARCHAR(250)"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </expert>
+    </table>
+  </database>
+</tekinfo>

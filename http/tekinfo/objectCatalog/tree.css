@@ -1,0 +1,21 @@
+
+.select-object {
+	margin: 20px 0;
+}
+@media (max-width: 992px){
+	.select-object .select-object-button {
+		margin-top: 20px;
+	}
+}
+
+.object-catalog-ztree {
+	min-height: 40px;
+}
+
+.node-menu {
+	margin-left: 5px;
+	background-color: rgb(185, 243, 243);
+}
+.node-menu > a {
+	margin: 0 5px !important;
+}

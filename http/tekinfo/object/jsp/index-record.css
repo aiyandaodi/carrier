@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+.item_area{
+	border:1px solid #BBCAD7;
+    background: url(../../../object/images/item_back.png) no-repeat;
+	height:160px;
+}
+
+.item_area hr{
+	border-bottom:1px solid #BBCAD7;
+}
+
+.item_area a{
+	text-decoration:none;
+	color:#666;
+	font-weight:bold;
+}
+.item_area a:hover{
+	text-decoration:underline;
+}
+
+.item_area .record_time{
+	clear:both;
+	float:left;
+	margin-right:10px;
+}
+.item_area .record_userdisplay,.item_area .record_command{
+	margin-right:10px;
+	float:left;
+}
+
+
+.item_area .record_object,.item record_os{
+	clear:both;
+}
+
+.item_area .record_remark{
+	clear:both;
+	color:#408080;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.item_area .record_at{
+	clear:both;
+	float:right;
+	color: #004080;
+}
+
+.item_area .record_from{
+	clear:both;
+	float:right;
+	color: #004080;
+}
+
+.list_area {
+	float:left;
+	font-size:small;
+	list-style:none;
+	text-align:left;
+	width:360px;
+}
+
+
+.list_area a:link, .list_area a:visited, .list_area a:hover
+{ 
+	text-decoration: none;
+}
+
+.list_area a{
+	
+	width: 65px;
+    height: 28px;
+    float: left;
+    position: relative;
+
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+
+    /* Font styles */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size:small;
+    line-height: 28px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+
+.list_area a{
+	margin-right: 1%;
+    background: #34a5cf; /* Fallback */
+    background: -moz-linear-gradient(#34a5cf, #2a8ac4);
+    background: -ms-linear-gradient(#34a5cf, #2a8ac4);
+    background: -o-linear-gradient(#34a5cf, #2a8ac4);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#34a5cf), to(#2a8ac4));
+    background: -webkit-linear-gradient(#34a5cf, #2a8ac4);
+    background: linear-gradient(#34a5cf, #2a8ac4);
+    border: 1px solid #2b8bc7;
+    color: #ffffff;
+    text-shadow: 0 -1px rgba(0,0,0,0.3);
+    text-decoration: none;	
+}
+
+.list_area a:hover {
+	box-shadow: 
+        inset 0 1px rgba(255,255,255,0.3), 
+        inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.rightcolumn_area{
+	width:200px;
+	float:left;
+	padding:16px 0 96px 10px;
+}
+
+.column{
+	padding:0 0 15px 0
+}
+
+.column a{
+	text-decoration:none;
+}
+
+.column li{
+	list-style:circle;
+	font-size: medium;
+	line-height:16px;
+	margin-left:20px;
+	margin-bottom:6px;
+}
+
+.column p{
+	font-size: small;
+	color:#808080;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+.column a{
+	color:#2083B6;
+	text-decoration:underline
+}
+.column a:visited{
+	text-decoration:underline;
+}
+.column a:hover{
+	text-decoration: underline;
+}
+
+.column p a{
+	float:right;
+	color:#2083B6;
+	text-decoration:underline
+}
+.column p a:visited{text-decoration:underline}
+.column p a:hover{text-decoration:none}
+
+.column .record_userdisplay{
+	float:left;
+}
+
+.column .record_name{
+	color:#D4E9F0;
+	width: 200px;
+	background-color:#0F6A8B;
+	font-size: normal;
+	line-height:20px;
+	margin-top:10px;
+	margin-bottom: 6px;
+	padding-left:6px;
+}
+.column .record_name a{
+	text-decoration:none;
+	color:#D4E9F0;
+}
+.column .record_remark{
+	font-size:small;
+}
+
+
+
+.help_area h2{
+	text-align:center;
+	margin:4px 0 4px 0;
+}
+
+.help_area h3{
+	text-decoration:underline;
+	margin:8px 0 4px 0;
+}
+
+.menu { 
+	float: right;
+	width:auto;
+	height:30px;
+	text-align: left;
+	text-decoration: none;
+	list-style-type:none;
+	margin-right: 30px;
+	color: #808080; 
+	margin:0px;
+}
+.menu li {
+	float:left;
+	width:75px;
+	height:auto;
+	font-family:"微软雅黑";
+	font-size:small;
+	color: #808080; 
+	text-align:center;
+	text-decoration: none;
+	list-style-type:none;
+	padding: 8px 0px 8px 0px;
+}
+
+.menu li.active {
+	color: #8D9CAF; 
+	font-weight: bold; 
+}
+.menu li a { 
+	color: #808080; 
+	text-decoration: none; 
+} 	
+
+.menu li select {
+	width:auto;
+}
+
+.menu .menuover{
+	text-decoration: none;
+	background:url(../../../../images/listmenuon.png);
+	background-repeat:no-repeat;
+	background-position:top;
+	color: #D7E9F9;	
+	cursor:pointer;
+}
+
+.menu .menuout{
+	background-repeat:no-repeat;
+	background-position:top;
+	text-decoration: none;
+	color:#505050;
+}
+
+#turnpage .menu li a {
+	text-align:center;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left:5px;
+	padding-right: 5px;
+	float:left;
+	height: 18px;
+	width: 45px;
+	line-height:14px;
+	text-decoration: none;
+	list-style-type:none;
+	background:url(../../../images/turn-out.png) no-repeat;
+}
+
+#turnpage .menu li a:hover{
+	background:url(../../../images/turn-over.png) no-repeat;
+}
+
+#searchBtn {
+    background: url("../../../object/images/search.png") no-repeat scroll center top transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 30px;
+    width: 55px;
+}

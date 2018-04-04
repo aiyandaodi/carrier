@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+	
+<body>
+
+
+<!-- popmenu Starts -->
+<div id="pop_menu" class="popmenu">
+	<!-- UI # -->
+    <div class="menu-body">
+    	<div class="block-content">
+        	<!-- UI head -->
+            <div class="ui-head">
+            	<a href="javascript:goHome();" class="pull-left" alt="Home">
+                	<img src="../../ican/logo/ican-banner-128.png" class="logo-image" height="28" alt="ican.vip"/>
+                </a>
+                <a id="go_resume" href="javascript:myUser();" class="pull-right" alt="my">
+                	<i class="fa fa-user"></i>
+                </a>
+				<div class="clearfix"></div>
+			</div><!-- end .ui-head-->
+            <ul id="pop_menu_item" class="list-unstyled">
+            	<li>
+                	<a href="javascript: goInteraction()">
+                    	<i class="fa fa-user left-icon lblue"></i>
+                      	<!--<span class="right-icon"><i class="fa fa-arrow-circle-o-down"></i></span>-->
+						<h5>动态</h5>
+						<span class="sub-text">好友互动...</span>
+						<div class="clearfix"></div>
+					</a>
+				</li>
+                <li>
+                	<a href="javascript: goQuestion()">
+                    	<i class="fa fa-quora left-icon lblue"></i>
+                    	<h5>问答</h5>
+                        <span class="sub-text">提问并得到解答...</span>
+                        <div class="clearfix"></div>
+					</a>
+				</li>
+                
+                <li>
+                	<a href="../../imark/qualification/index.html">
+                    	<i class="fa fa-certificate left-icon lblue"></i>
+						<h5>资格</h5>
+                        <span class="sub-text">申报、申请资格认证...</span>
+						<div class="clearfix"></div>
+					</a>
+				</li>
+                <li>
+                	<a href="../../imark/job/index.html">
+                    	<i class="fa fa-briefcase left-icon lblue"></i>
+                    	<!--<span class="right-icon"><i class="fa fa-arrow-circle-o-down"></i></span>-->
+                    	<h5>职位</h5>
+                    	<span class="sub-text">当前有效职位...</span>
+                    	<div class="clearfix"></div>
+					</a>
+				</li>
+				
+			</ul><!-- end .list-->
+            <!-- UI head -->
+            <div class="ui-foot">
+            	<div id="pop_foot_search" class="foot-search hide">
+					
+					<form role="form">
+                    	<!-- Input Group -->
+                        <div class="input-group">
+                        	<input id="quick_search" type="text" class="form-control" placeholder="快速检索">
+                            <span class="input-group-btn">
+                            	<a href="javascript:popmenuQuickSearch();" class="btn find-btn">
+                                	<img src="../../images/search-32.png" class="img-responsive" title="输入快速检索词" alt="检索"/>
+                                </a>
+                            </span>
+						</div>
+					</form>
+					
+				</div>
+                
+            	<table id="pop_foot_menu" class="table">
+                	<tbody>
+                    	<tr>
+                        	<td>
+                    	<a href="javascript:popmenuInputSearch();">
+                    		<i class="fa fa-search lblue"></i>
+                        </a>
+                    		</td>
+                            <td>
+                    	<a href="help.html">
+                    		<i class="fa fa-question lblue"></i>
+                        </a>
+                    		</td>
+                            <td>
+                    	<a href="javascript:popmenuShare();">
+                    		<i class="fa fa-share-alt lblue"></i>
+                        </a>
+                       		</td>
+                            <td>
+                        <a href="javascript:toTop();">
+                    		<i class="fa fa-chevron-up lblue"></i>
+                        </a>
+                    		</td>
+                    	</tr>
+                    </tbody>
+                    
+                </table>
+            	
+				<div class="clearfix"></div>
+			</div><!-- end .ui-head-->
+            
+		</div><!-- end .block-content-->
+    </div><!-- end .menu-body-->
+	
+    <!-- Button -->
+	<a href="javascript:void(0);" class="popmenu-btn bg-lblue" style="text-decoration: none">+</a>
+</div>
+
+<div id="popmenu_Layer" onClick="javascript:popmenu_close();"></div>
+<!-- popmenu Ends -->
+
+	</body>	
+</html>

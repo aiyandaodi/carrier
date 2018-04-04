@@ -1,0 +1,17 @@
+name=空间
+
+#property
+property.space_id=标识
+property.space_code=编码
+property.space_name=名称
+property.space_status=状态
+property.space_status.apply=申请
+property.space_status.normal=正常
+property.space_status.stop=失效
+
+property.space_remark=备注
+property.space_owner=所有者
+property.space_path=图标路径
+property.space_file=空间目录
+
+property.space_latestTime=最近更新时间

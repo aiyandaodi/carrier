@@ -1,0 +1,8 @@
+#list-table{text-align: right;}
+th{text-align: center;}
+#table-infos > tr > td {
+	text-align: center !important;
+}
+.input-group-addon {
+	padding: 0 !important;
+}

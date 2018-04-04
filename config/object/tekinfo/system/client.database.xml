@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 客户端 -->
+<tekinfo>
+  <database>
+    <table>
+      <client>
+        <item>
+          <!-- 标识 -->
+          <client_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <client_code value="VARCHAR(10) NOT NULL"/>
+          <!-- 名称 -->
+          <client_name value="VARCHAR(32) NOT NULL"/>
+          <!-- 授权码 -->
+          <client_token value="VARCHAR(512)"/>
+          <!-- 授权码密钥 -->
+          <client_tokenSecret value="VARCHAR(512)"/>
+          <!-- 类别 -->
+          <client_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 状态 -->
+          <client_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 网址（或IP地址） -->
+          <client_domain value="VARCHAR(128) NOT NULL"/>
+          <!-- 有效期：开始日期 -->
+          <client_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效期：结束日期 -->
+          <client_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 联系人姓名 -->
+          <client_userName value="VARCHAR(20)"/>
+          <!-- 联系电话 -->
+          <client_phone value="VARCHAR(32)"/>
+          <!-- 联系邮箱 -->
+          <client_email value="VARCHAR(32)"/>
+          <!-- 邮编 -->
+          <client_postCode value="VARCHAR(10)"/>
+          <!-- 地址 -->
+          <client_address value="VARCHAR(255)"/>
+          <!-- 备注 -->
+          <client_remark value="MEMO"/>
+          <!-- 最近一次同步时间
+          <client_lastestSync value="BIGINT DEFAULT '0' NOT NULL"/> -->
+          <!-- 所有者 -->
+          <client_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </client>
+    </table>
+  </database>
+</tekinfo>

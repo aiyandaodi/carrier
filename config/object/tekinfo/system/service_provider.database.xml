@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 提供互联网服务主机 -->
+<tekinfo>
+  <database>
+    <table>
+      <service_provider>
+        <item>
+          <!-- 标识 -->
+          <service_provider_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <service_provider_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 名称 -->
+          <service_provider_name value="VARCHAR(128) NOT NULL"/>
+
+          <!-- 主机网址 -->
+          <service_provider_url value="VARCHAR(255) NOT NULL"/>
+          <!-- 主机网址 -->
+          <service_provider_port value="INT  DEFAULT '0'"/>
+
+          <!-- 主机端口 -->
+          <service_provider_status value= "SMALLINT DEFAULT '0'"/>
+
+          <!-- 服务协议 -->
+          <service_provider_protocol value="VARCHAR(128) NOT NULL"/>
+          <!-- 服务版本 -->
+          <service_provider_version value="VARCHAR(128) NOT NULL"/>
+
+          <!-- 是否该协议默认服务(如果是，系统内部所有用户默认使用该主机创建相应服务账号) -->
+          <service_provider_default value="SMALLINT DEFAULT '0'"/>
+          
+          <!-- 其他参数 -->
+          <service_provider_param value="VARCHAR(128)"/>
+          <!--·服务APPID -->
+          <service_provider_appid value="VARCHAR(128)"/>
+
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </service_provider>
+    </table>
+  </database>
+</tekinfo>

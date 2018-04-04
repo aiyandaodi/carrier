@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/hdw-dialog.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+  
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- 自定义Title -->
+  <title>网页AJAX测试</title>
+  <!-- InstanceEndEditable -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="description" content="读书 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 hongde network Social photo video art office automation joint alliance Communication Authenticate Payment"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href= "../../../favicon.ico"/>
+  <link rel="Bookmark" href= "../../../favicon.ico"/>
+
+  <!-- Styles -->
+  <!-- Bootstrap CSS -->
+  <link href="../../style/brave/css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Font awesome CSS -->
+  <link href="../../style/brave/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Magnific Popup -->
+  <link href="../../style/brave/css/magnific-popup.css" rel="stylesheet">
+  <!-- Owl carousel -->
+  <link href="../../style/brave/css/owl.carousel.css" rel="stylesheet">
+  
+  <!-- CSS for this page -->
+  <!-- Base style -->
+  <link href="../../style/brave/css/styles/style.css" rel="stylesheet">
+  <!-- Skin CSS -->
+  <link href="../../style/brave/css/styles/skin-red.css" rel="stylesheet" id="color_theme">
+
+  <!-- Custom CSS. Type your CSS code in custom.css file -->
+  <link href="../../style/brave/css/custom.css" rel="stylesheet">
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../css/tekinfo.css"/>
+  <!-- hongde CSS -->
+  <link rel="stylesheet" href="../../hdw.top/css/hdw-style.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" --> 
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+        
+  <!-- tekinfo JS -->
+  <script type="text/javascript" src="../js/tekinfo.js"></script>
+  <!-- hdw JS -->
+  <script type="text/javascript" src="../../hdw.top/js/hdw.js"></script>
+
+  <!-- InstanceBeginEditable name="MyJS" -->
+  <!-- 自定义JS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+<main>
+	<!-- InstanceBeginEditable name="MAINCONTENT" -->
+    <!-- MAINCONTENT -->
+    <!-- Outer Starts -->
+    <div class="outer">
+        <!-- Main content starts -->
+        <div class="main-block">
+            
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Contact Form -->
+                            <div class="contact-form" style="background-color:#FFFBF1;">
+                                <div class="header" style="background-color:#F6F2EA;padding:5px 10px;">
+                                  <h5>网页AJAX测试</h5>
+                                </div>
+                                <!-- Form -->
+                                <form id="ajax-load-form" class="form-horizontal" style="padding:5px 10px;">
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden" for="url">测试网页地址</label>
+                                      <div class="col-xs-9">
+                                        <input type="text" class="form-control" id="url" name="url" placeholder="http://127.0.0.1/index.html"/>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden" for="url">测试AJAX标识</label>
+                                      <div class="col-xs-9">
+                                        <input type="text" class="form-control" id="debug-id" name="debug-id" placeholder="用于AJAX嵌套的页面"/>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden"></label>
+                                      <div class="col-xs-9">
+                                        <input type="checkbox" class="col-xs-1" id="debug-all" checked="checked" onChange="select1();"/>
+                                        <label class="col-xs-5" id="label-all" for="debug-all">测试全部</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden">通用测试</label>
+                                      <div class="col-xs-9">
+                                        <input type="checkbox" class="col-xs-1" id="waiting" name="debug" value="waiting" checked="checked"/>
+                                        <label class="col-xs-5" id="label-waiting" for="waiting">测试等待框</label>
+                                        <input type="checkbox" class="col-xs-1" id="error" name="debug" value="error" checked="checked"/>
+                                        <label class="col-xs-5" id="label-error" for="error">AJAX返回：ERROR</label>
+                                        <input type="checkbox" class="col-xs-1" id="code-error" name="debug" value="code-error" checked="checked"/>
+                                        <label class="col-xs-5" id="label-code-error" for="code-error">AJAX返回：data.code!=0</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden">信息测试</label>
+                                      <div class="col-xs-9">
+                                        <input type="checkbox" class="col-xs-1" id="field-null" name="debug" value="field-null" checked="checked"/>
+                                        <label class="col-xs-5" id="label-field-null" for="field-null">AJAX返回：record.field为空</label>
+                                        <input type="checkbox" class="col-xs-1" id="field-chinese" name="debug" value="field-chinese" checked="checked"/>
+                                        <label class="col-xs-5" id="label-field-chinese" for="field-chinese">AJAX返回：record.field包含中文</label>
+                                        <input type="checkbox" class="col-xs-1" id="field-html" name="debug" value="field-html" checked="checked"/>
+                                        <label class="col-xs-5" id="label-field-html" for="field-html">AJAX返回：record.field包含HTML</label>
+                                        <input type="checkbox" class="col-xs-1" id="field-newline" name="debug" value="field-newline" checked="checked"/>
+                                        <label class="col-xs-5" id="label-field-newline" for="field-newline">AJAX返回：record.field包含换行</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-xs-3" style="overflow:hidden">列表测试</label>
+                                      <div class="col-xs-9">
+                                        <input type="checkbox" class="col-xs-1" id="record-0" name="debug" value="record-0" checked="checked"/>
+                                        <label class="col-xs-5" id="label-record-0" for="record-0">AJAX返回：没有数据</label>
+                                        <input type="checkbox" class="col-xs-1" id="record-1" name="debug" value="record-1" checked="checked"/>
+                                        <label class="col-xs-5" id="label-record-1" for="record-1">AJAX返回：只有一条数据</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group center">
+                                      <button type="button" class="btn-info" onclick="test()">开始测试</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Main content ends -->
+    
+    </div>
+    <!-- Outer Ends -->
+    <!-- InstanceEndEditable -->
+</main>
+
+<!-- Footer Starts -->
+<footer>
+	<div class="container">
+		<!-- Footer Content -->
+		<p class="pull-left">
+			Copyright &copy; 2016 - <a href="http://www.tekinfo.net"><img src="../logo/tekinfo-white-128.png" height="22" title="tekinfo" longdesc="http://www.tekinfo.net"/></a>&nbsp;|&nbsp;
+			
+			<!-- 友盟统计：hdw.top-->
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_1260062528'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260062528%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</p>
+		<ul class="list-inline pull-right">
+			<!-- List -->
+			<li><a href="hongde-help.html" target="_blank">帮助</a></li>
+		</ul>
+		
+		<div class="clearfix"></div>
+	</div>
+</footer>
+<!-- Footer Ends -->
+            
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-angle-up bg-color"></i></a></span>
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<!-- Login Modal starts -->
+<div id="login" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:clickCheckUser();">×</button>
+      <h3>&nbsp;</h3>
+      </div>
+      <div id="show_div" class="modal-body">
+        <iframe id="show_frame" name="show_name" src="" allowtransparency="true" width="100%" height="100%" scrolling="auto" frameborder="0" ></iframe>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div>
+<!-- Login modal ends -->
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end message-modal-dialog-->
+
+<!-- Bootstrap JS -->
+<script src="../../style/brave/js/bootstrap.js"></script>
+<!-- Placeholders JS -->
+<script src="../../style/brave/js/placeholders.js"></script>
+<!-- Magnific Popup -->
+<script src="../../style/brave/js/jquery.magnific-popup.min.js"></script>
+<!-- Owl carousel -->
+<script src="../../style/brave/js/owl.carousel.min.js"></script>
+<!-- Respond JS for IE8 -->
+<script src="../../style/brave/js/respond.min.js"></script>
+<!-- HTML5 Support for IE -->
+<script src="../../style/brave/js/html5shiv.js"></script>
+<!-- Main JS -->
+<script src="../../style/brave/js/main.js"></script>
+<!-- Custom JS. Type your JS code in custom.js file -->
+<script src="../../style/brave/js/custom.js"></script>
+
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	/*
+	if (tek.common.isLoggedIn()) {
+		if (tek.user.isNormalUser(mySecurity)) {
+			showUserInfo();
+		} else {
+			goBack();
+		}
+	} else {
+		tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+		tek.macCommon.waitDialogHide(1500, 'goLogin()');
+	}
+	*/
+	if (typeof init == "function")
+		init();
+	
+	var error = request["error"];
+	if (error && error.length > 0)
+		showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+	
+	var message = request["message"];
+	if (message && message.length > 0)
+		showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+	
+	
+	<!-- 百度统计代码 hdw.top -->
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?9591e9948bc859b87d2d503643188da7";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<!-- 自定义Javascript -->
+<script language="javascript">
+function test() {
+  var params=tek.common.getSerializeObjectParameters("ajax-load-form");
+  if(!params) {
+	tek.macCommon.waitDialogShow(null, "未输入测试参数！");
+	return;
+  }
+  
+  var testURL=$("#url").val();
+  if(!testURL || testURL.length<=0) {
+	tek.macCommon.waitDialogShow(null, "请输入测试页面！");
+	return;
+  }
+  
+  if(testURL.indexOf("http")!=0)
+    testURL="http://"+testURL;
+	
+  var debugId=params["debug-id"];
+  if(debugId && debugId.length>0)
+    testURL=tek.common.appendURLParam(testURL, "debug-id", debugId);
+  
+  var array=tek.dataUtility.stringToArray(params["debug"],";");
+  if(!array || array.length<=0) {
+	tek.macCommon.waitDialogShow(null, "请选择测试内容！");
+	return;
+  }
+  
+  for (var i in array) {
+    var result=window.confirm("测试内容：“"+$("#label-"+array[i]).html()+"”。确定后，请在新窗口查看测试结果。");
+    if(result) {
+      var url=tek.common.appendURLParam(testURL, "debug", array[i]);
+      window.open(url, "_blank");
+    } else
+      break;
+  }
+}
+
+function select1() {
+  if(document.getElementsByName("debug-all").checked=="checked") {
+    // 测试全部
+	document.getElementsByName("debug-all").checked="";
+	var elems=document.getElementsByName("debug");
+	for(var i in elems)
+	  elems[i].checked="checked"; 
+  } else {
+	// 取消全部
+	document.getElementsByName("debug-all").checked="checked";
+	var elems=document.getElementsByName("debug");
+	for(var i in elems)
+	  elems[i].checked=""; 
+  }
+}
+
+function test2(debug) {
+  //var params=tek.common.getSerializeObjectParameters("ajax-load-form");
+  var testURL = $("#url").val();
+  if(!testURL || testURL.length<=0) {
+	tek.macCommon.waitDialogShow(null, "请输入测试页面！");
+	return;
+  }
+  
+  if(testURL.indexOf("http")!=0)
+    testURL="http://"+testURL;
+  testURL=tek.common.appendURLParam(testURL,"debug",debug);
+  window.open(testURL, "_blank");
+}
+</script>
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

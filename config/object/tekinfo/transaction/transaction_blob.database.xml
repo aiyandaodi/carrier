@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Transaction 对象文件附件BLOB记录表  -->
+<tekinfo>
+  <database>
+    <table>
+      <transaction_blob>
+        <item>
+          <!-- 标识 -->
+          <transaction_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 二进制文件存放域 -->
+          <transaction_blob value="BLOB"/>
+        </item>
+      </transaction_blob>
+    </table>
+  </database>
+</tekinfo>

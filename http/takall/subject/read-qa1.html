@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh"><!-- InstanceBegin template="/Templates/i-read.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="content-language" contect = "zh_CN"/>
+        <!-- InstanceBeginEditable name="doctitle" -->
+        <title>问答</title>
+        <!-- InstanceEndEditable -->
+        <!-- Description, Keywords and Author -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination Authenticate Payment"/>
+        <meta name="description" content="能力维度 人力资源 学习 鉴定 专家 技术协作  知识 知行合一 评价 社交 考核 资格 资质 资历 证书 学习曲线 开源 人力资产 人力成本 精品 takall human resources question answer Knowledge and action Knowledge Base labor cost manpower budget floating value art office automation study alliance Examination"/>
+        <meta name="author" content="TAKALL[http://www.takall.com]"/>
+        <!-- Favicon -->
+        <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+        <link rel="Bookmark" href="../../../favicon.ico"/>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<!-- Stylesheets -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  		<!-- Font awesome icon -->
+ 		<link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  		<!-- jQuery UI -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  		<!-- Calendar -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  		<!-- prettyPhoto -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  		<!-- Star rating -->
+  		<link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>		
+        <!-- owl css -->
+        <link href="../../style/extend/css/owl.carousel.css" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        
+        <link href="../../tekinfo/css/tekinfo.css" rel="stylesheet">
+        <link href="../../tekinfo/css/tekinfo-dialog.css" rel="stylesheet">
+        
+        <link href="../../vip/css/i.css" rel="stylesheet">
+        <link href="../../vip/css/i-dialog.css" rel="stylesheet">
+        
+        <!-- InstanceBeginEditable name="head-css" -->
+        <!-- my css in head -->
+        <link href="read.css" rel="stylesheet">
+        <link href="read-qa.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../common/summernote/summernote.css">
+		<!-- InstanceEndEditable -->
+        
+        <script src="../../common/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../../style/macadmin/js/respond.min.js"></script>
+         
+        <!-- InstanceBeginEditable name="head-js" -->
+        <!-- my head js-->
+        <script src="../../common/summernote/summernote.js"></script>
+        <script src="../../common/summernote/lang/summernote-zh-CN.js"></script>
+        <script type="text/javascript" src="../../common/jqueryplugin/ajaxfileupload/ajaxfileupload.js"></script>
+        <script src="add-document.js"></script>
+		<!-- InstanceEndEditable -->
+
+        <script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				initial();
+			});
+  		</script>
+        <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+	</head>
+	
+<body>
+<div id="index_banner" class="index-banner">
+	
+</div><!-- end .index-banner -->
+<!-- tekinfo_main 配合 tekinfo_footer 根据高度设置位置--->
+<div id="tekinfo_main" class="main">
+<!-- InstanceBeginEditable name="main content" -->
+<!-- main content -->
+
+<div class="container">
+    <div class="row">
+      	<div class="col-md-8 col-sm-12">
+      	<br/>
+        <div class="hero-title">
+        	
+            <div id="subject_content" class="ui-217 show-content">
+            
+          		<div class="ui-item clearfix">
+           			
+<!--            		<span class="bg-lblue">&#8220;</span>-->
+                	<div class="ui-details">
+                		<a href="#" class="ui-img"><img id="user_icon" src="images/1.jpg" alt="" /></a>
+						<h3><a href="#" id="subject_author"></a> <span id="subject_date"></span></h3>
+           		
+                		<p id="subject_name" class="subject-name"></p>
+                    	<p id="subject_summary"></p>
+                        <div class="clearfix"></div>
+                        <div class="pull-right operateBtn">
+                    		<a href="javascript:;" id="editBtn" class="btn btn-edit hide" onclick="editQuestion();">编辑</a>
+                    		
+                    		<select id="change-subject-status" class="btn btn-release hide" onchange="changeSubjectStatus(this.value)">
+								<option class="btn-default" value="0">申请</option>
+								<option class="btn-default" value="1">发布</option>
+								<option class="btn-default" value="-1">结束</option>
+							</select>
+                    	</div>
+                    	
+					</div>
+                	
+				</div>
+          	</div><!-- end #subject_content -->
+            
+            <div class="show-classification clearfix text-left">
+            	
+            </div>
+            <div class="clearfix"></div>
+          </div><!-- end .hero-title-->
+          
+          <div id="document_content" class="ui-5">
+            	<h3><i class="fa fa-comments-o"></i>&nbsp; <span id="h3Title">回答</span></h3>
+				<div class="chat-content" id="chat_content">
+                    
+                </div>
+               
+                <div class="pull-right">
+            		<a href="javascript:;" class="btn btn-more hide" id="moreBtn" onclick="moreBtn()">更多回答</a>
+            	</div>
+                <hr/>
+                <br/>
+                <!-- Answer message input box -->
+                <div class="reply-content" style="position: relative;border:1px solid #ddd;padding:5px;border-radius: 5px;">
+					<div style="margin-left: 10px;">
+						<a href="#" class="ui-img"><img id="reply_icon" src="images/1.jpg" alt="" /></a>
+						<a href="#" id="reply_author"></a><span id="subject_date"></span>
+					</div>
+					<hr/>
+					 <form name="add_form" id="add_form" class="reply-form" action="javascript:addDocumentFormBtn();" style="">
+						<div id="document_form_field"></div>
+						<div id="summernote_pc"></div>
+						<div style="background: #fff;" class="text-right">
+							<button class="btn btn-primary" id="commitBtn" type="submit" style="border-radius: 5px;">提交</button>
+							<button class="btn btn-primary hide" type="button" id="editCommitBtn" style="border-radius: 5px;" onclick="editDocumentFormBtn()">提交修改</button>
+							<button class="btn btn-default hide" type="button" id="cancelCommitBtn" style="border-radius: 5px;" onclick="cancelEditDocumentBtn()">取消</button>
+						</div>
+
+					</form>
+			  	</div>
+			<!--</div> end .ui-window-->
+		</div><!-- end .document_content -->
+        <div class="clearfix"></div>
+
+      	</div><!-- end .col -->
+		
+      	<div class="col-md-4 col-sm-12">
+      		<div class="sidebar">
+        
+        		<!-- 发布者 -->
+				<div class="s-widget">
+					<div class="row">
+						<div class="col-md-4 col-sm-12">
+								<a href="blog-author-img" style="display:inline-block; width: 100px;height: 100px">
+								<img src="images/1.jpg" alt="作者名" class="img-responsive img-thumbnail">
+							</a>
+						  <a href="" class="btn btn-primary">
+								关注提问者
+							</a>
+						</div>
+						<div class="col-md-8 col-sm-12">
+							<p>
+								作者是一个奇女子，山长写作绘画。喜爱结交好友。
+							</p>  
+						</div>
+					</div>
+				</div>
+				<div class="hr-color bg-main"></div>
+          	</div>
+            
+        	<!-- 附件文档 -->
+        	<div class="s-widget">
+            	<div class="row">
+            		<h5 class="pull-left"><i class="fa fa-bookmark bblue"></i> <span id="documents_counts">8</span> 个类似问题 </h5>
+                	
+                </div>
+            
+          		<!-- Author section -->
+          		<div class="blog-author well">
+                	<div class="blog-author-img">
+            			<a href="#"><img src="images/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+					</div>
+            		<div class="blog-author-content">
+            			<h5><a href="#">Ashok Ramesh： <span>夏威夷的阳光和美国宪法精神一</span></a></h5>
+                		<p>宪法另一条最基本的规定是，政府由平等的行政、立法和司法机关组成。谁都无权凌驾于其他机关之上，这样独裁者就无法掌握控制权，自己制定法律。宪法适用于所有的州，包括夏威夷，如果对宪法的规定持有异议，法官须作出定夺。 
+                		</p>
+            		</div>
+		    		<div class="clearfix"></div>
+		  		</div>
+          
+          		<div class="blog-author well">
+          			<div class="blog-author-img">
+            			<a href="#"><img src="images/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+					</div>
+            		<div class="blog-author-content">
+            			<h5><a href="#">Ashok Ramesh： <span>夏威夷的阳光和美国宪法精神二</span></a></h5>
+                		<p>宪法另一条最基本的规定是，政府由平等的行政、立法和司法机关组成。谁都无权凌驾于其他机关之上，这样独裁者就无法掌握控制权，自己制定法律。宪法适用于所有的州，包括夏威夷，如果对宪法的规定持有异议，法官须作出定夺。 
+                		</p>
+            		</div>
+		    		<div class="clearfix"></div>
+		  		</div>
+          		<div class="blog-author well">
+          			<div class="blog-author-img">
+            			<a href="#"><img src="images/1.jpg" alt="" class="img-responsive img-thumbnail" /></a>
+					</div>
+            		<div class="blog-author-content">
+            			<h5><a href="#">Ashok Ramesh： <span>夏威夷的阳光和美国宪法精神三</span></a></h5>
+                		<p>宪法另一条最基本的规定是，政府由平等的行政、立法和司法机关组成。谁都无权凌驾于其他机关之上，这样独裁者就无法掌握控制权，自己制定法律。宪法适用于所有的州，包括夏威夷，如果对宪法的规定持有异议，法官须作出定夺。 
+                		</p>
+            		</div>
+		    		<div class="clearfix"></div>
+				</div>
+            </div><!-- end .s-widget -->
+            
+        </div><!-- end .sidebar-->
+        
+    </div><!-- end .row -->
+</div><!-- end .container-->
+
+<!--修改主题-->
+<div id="edit-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="edit-modal-dialog-title" class="center">编辑问题</h3>
+      </div>
+      <div id="edit-modal-dialog-body" class="modal-body center">
+		  <textarea type="text" row=2 class="form-control" id="edit_subject_name" style="margin-top:10px;resize : none;" placeholder='请输入你的问题'></textarea>
+        <br>
+        <div class="text-left">问题描述(可选):</div>
+        <textarea class="form-control" rows="5" id="edit_subject_summary" placeholder='添加问题描述'></textarea>
+      </div>
+      <div class="modal-footer text-center">
+      	<button class="btn btn-primary col-md-offset-4 col-md-4" onclick="addSubjectNameBtn()">提交修改</button>
+      	<!--<button class="btn btn-default col-md-2" data-dismiss="modal">取消</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--修改文档-->
+<div id="document-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="document-modal-dialog-title" class="center">修改</h3>
+      </div>
+      <div id="document-modal-dialog-body" class="modal-body center">
+		  
+        
+        <form name="edit_form" id="edit_form" class="reply-form" action="javascript:editDocumentFormBtn();" style="">
+			<div id="document_form_edit_field"></div>
+			<div id="summernote_edit"></div>
+			<div style="background: #fff;" class="text-right">
+				<button class="btn btn-primary" type="submit" style="border-radius: 5px;">提交</button>
+			</div>
+
+		</form>
+        
+        <div class="text-left"></div>
+<!--        <textarea class="form-control" rows="5" id="edit_subject_summary" placeholder='添加问题描述'></textarea>-->
+      </div>
+      <div class="modal-footer text-center">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- InstanceEndEditable -->
+</div><!-- end .main-->  
+
+<!-- Footer 自动载入vip/html/i-footer.html 内容-->
+<div id="tekinfo_footer"></div>
+
+<!-- 等待图层 -->
+<div id="waiting-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="waiting-modal-dialog-title" class="center">&nbsp;</h3>
+      </div>
+      <div id="waiting-modal-dialog-body" class="modal-body center">
+        <p id="waiting-msg" class="text-center"></p>
+        <span id="waiting-timer-msg" style="text-align:center"></span>
+      </div>
+      <div class="col-lg-12" align="center">
+      </div>
+    </div>
+  </div><!-- end .modal-dialog -->
+</div>
+
+<!-- 提示信息代码 -->
+<div id="message-modal-dialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="closeLogin1" type="button" class="close" data-dismiss="modal" aria-hidden="true"  onclick="javascript:;">×</button>
+        <h3 id="message-modal-dialog-title" class="">提示信息:</h3>
+      </div>
+      <div class="modal-body">
+        <div id="message">
+        
+        </div>
+        <div class="clearfix"></div>
+        <!-- JiaThis Button END -->
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end share-modal-dialog-->
+
+<!--蒙版-->
+<!--<div id="tekinfo_Layer" onClick="javascript:changeTekinfoLayerColor();"></div>-->
+<!--<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> --> 
+<!-- popmenu -->
+<div id="tekinfo_popmenu"></div>
+		
+<!-- Javascript files -->
+<script src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+<script src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- slimscroll -->
+<script src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+<!-- jQuery Flot -->
+<script src="../../style/macadmin/js/excanvas.min.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.resize.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.pie.js"></script>
+<script src="../../style/macadmin/js/jquery.flot.stack.js"></script>
+
+
+<!-- jQuery Notification - Noty -->
+<script src="../../style/macadmin/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/themes/default.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+<script src="../../style/macadmin/js/layouts/top.js"></script> <!-- jQuery Notify -->
+<!-- jQuery Notification ends -->
+
+<script src="../../style/macadmin/js/sparklines.js"></script> <!-- Sparklines -->
+<script src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+<script src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script src="../../style/macadmin/js/filter.js"></script> <!-- Filter for support page -->
+<script src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+<script src="../../style/macadmin/js/charts.js"></script> <!-- Charts & Graphs -->
+
+<!-- Owl carousel -->
+<script src="../../style/extend/js/owl.carousel.min.js"></script>
+<!-- Placeholder JS -->
+<script src="../../style/extend/js/placeholder.js"></script>
+
+<!-- Tekinfo JS -->
+<script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+<script type="text/javascript" src="../../common/tek/js/user.js"></script>
+<script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+<script type="text/javascript" src="../../common/tek/js/common.js"></script>
+<script type="text/javascript" src="../../common/tek/js/core.js"></script>
+<script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+<script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+<script type="text/javascript" src="../../common/touchscreen/touchscreen.js"></script>
+<script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script>
+<script type="text/javascript" src="../../vip/js/i.js"></script>
+<script type="text/javascript" src="../../vip/js/i-dialog.js"></script>
+<script type="text/javascript" src="../../ican/login/index.js"></script> 
+                     
+		<!-- InstanceBeginEditable name="bootom-js" -->
+        <!-- my js in bottom -->
+        <script type="text/javascript" src="read-qa.js"></script>
+		<!-- InstanceEndEditable --> 
+        
+<script language="javascript" type="text/javascript">
+function initial(){
+	/** 载入页面顶部信息 **/
+	$("#index_banner").load(tek.common.getRootPath() + "http/vip/html/i-header.html",function(){
+		var cssurl=tek.common.getRootPath()+"http/vip/html/i-header.css";
+			//alert("cssurl="+cssurl);
+			loadCSS(cssurl);
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-header.js",function(){
+			
+			if(typeof initHeader == "function"){
+				initHeader();
+			}
+		});
+		
+		$("#index_banner").css("position","relative");
+		$("#index_banner").show();
+		
+		tek.core.getURLRequest();
+	
+		tek.common.getUser();
+		showUser(); //tekinfo.js
+
+		//tek.serverTimer.show();
+		if (tek.common.isLoggedIn()) {
+			showUserInfo();
+			
+			if (tek.role.isAuditor(myRole)) {
+				$("#user_tekinfo").removeClass("hide"); 
+			} 
+			if(tek.role.isCustomerService(myRole)){
+				$("#user_takall").removeClass("hide");
+				$("#user_ican").removeClass("hide");
+			}
+		} else {
+			/*tek.macCommon.waitDialogShow("<font color='red'>请先登录</font>", "正在跳转登录页面...", null, 0);
+			tek.macCommon.waitDialogHide(1500, 'goLogin()');*/
+			iLogin();
+		}
+
+		var error = request["error"];
+
+		if (error && error.length > 0)
+			showError(tek.dataUtility.stringToHTML(decodeURIComponent(error)));
+
+		var message = request["message"];
+		if (message && message.length > 0)
+			showMessage(tek.dataUtility.stringToHTML(decodeURIComponent(message)));
+		
+		if (typeof init == "function") 
+			init();
+	});
+	
+	
+	/** 载入页面底部信息 **/
+	$("#tekinfo_footer").load(tek.common.getRootPath() + "http/vip/html/i-footer.html",function(){
+		//alert("111 js="+tek.common.getRootPath() + "http/vip/html/i-footer.js");
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-footer.js",function(){
+			//alert("111 initFooter="+(typeof initFooter));
+			if(typeof initFooter == "function"){
+				initFooter();
+			}
+		});
+	});
+	
+	
+	/** 载入弹出菜单 **/
+	$("#tekinfo_popmenu").load(tek.common.getRootPath() + "http/vip/html/i-readmenu.html",function(){
+		$.getScript(tek.common.getRootPath() + "http/vip/html/i-readmenu.js",function(){
+			//alert("initReadmenu="+(typeof initReadmenu));
+			if(typeof initReadmenu == "function"){
+				initReadmenu();
+			}
+		});
+	});
+	
+	
+	
+	
+	
+	/**
+	* 屏幕滚动操作
+	**/
+	if(typeof scrollPage == "function"){
+		scrollPage();
+	}
+	
+	
+	
+	/** 触屏控制 **/
+	if(typeof isTouchScreenDevice == "function"){
+		isTouchScreenDevice();
+	}
+	
+	/** 友盟统计 - 永远放在最后**/
+	if(typeof addCnzzYmeng  == "function")
+		addCnzzYmeng();
+	/** 百度统计  - 永远放在最后**/
+	if(typeof addBaiduTongji  == "function")
+		addBaiduTongji();
+	
+	//alert("ok");
+}
+</script>
+
+	</body>	
+<!-- InstanceEnd --></html>

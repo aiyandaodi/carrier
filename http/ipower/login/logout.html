@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--
+登录界面：
+
+调用方法一：直接调用，
+callback-url -- 登录成功后返回的页面
+callback-params -- 登录成功后返回页面的参数
+本页面可能调用注册页面register.html
+
+调用方法二：在其他页面中载入本页面，该页面需要一些javascript 函数
+showRegister() -- 调用注册页面
+refreshPage() -- 登录成功后，调用的函数
+-->
+
+<html><!-- InstanceBegin template="/Templates/hdw-login.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="content-language" contect = "zh_CN"/>
+
+  <!-- InstanceBeginEditable name="Title" -->
+  <!-- Title and other stuffs -->
+  <title>退出登录</title>
+  <!-- InstanceEndEditable -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="弘德网 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 慢生活 浪漫 优雅 探索 不平则鸣 弘德网 network Social photo video art office automation joint alliance Communication Authenticate Payment Discovery Curiosity Where　there　is　injustice；there　will　be　an　outcry"/>
+  <meta name="description" content="弘德网 网络 社交 图片 相册 影像 文学 办公 协同 开源 求知 旅行 精品 支付 认证 慢生活 浪漫 优雅 探索 解惑 不平则鸣 弘德网 network Social photo video art office automation joint alliance Communication Authenticate Payment Discovery Curiosity Where　there　is　injustice；there　will　be　an　outcry"/>
+  <meta name="author" content="Tekinfo[http://www.tekinfo.net]"/>
+  
+  <!-- Favicon -->
+  <link rel="Shortcut Icon" href="../../../favicon.ico"/>
+  <link rel="Bookmark" href="../../../favicon.ico"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap.min.css"/>
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/macadmin/css/font-awesome.min.css"/>
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery-ui.css"/>
+  <!-- Calendar -->
+  <link rel="stylesheet" href="../../style/macadmin/css/fullcalendar.css"/>
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="../../style/macadmin/css/prettyPhoto.css"/>
+  <!-- Star rating -->
+  <link rel="stylesheet" href="../../style/macadmin/css/rateit.css"/>
+  <!-- Date picker -->
+  <link rel="stylesheet" href="../../style/macadmin/css/bootstrap-datetimepicker.min.css"/>
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.cleditor.css"/>
+  <!-- Data tables -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.dataTables.css"/>
+  <!-- Bootstrap toggle -->
+  <link rel="stylesheet" href="../../style/macadmin/css/jquery.onoff.css"/>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/style.css"/>
+  <!-- Widgets stylesheet -->
+  <link rel="stylesheet" href="../../style/macadmin/css/widgets.css"/>
+  
+  <!-- tekinfo CSS -->
+  <link rel="stylesheet" href="../../tekinfo/css/tekinfo.css"/>
+  <!-- hdw CSS -->
+  <link rel="stylesheet" href="../css/hdw-style.css"/>
+  
+  <!-- InstanceBeginEditable name="MyCSS" -->
+  <!-- 自定义CSS -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript" src="../../common/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/tool.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/user.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/dataUtility.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/common.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/core.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/refresh.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/login.js"></script>
+  <script type="text/javascript" src="../../common/tek/js/mac-common.js"></script>
+  
+  <!-- tekinfo JS --> 
+  <script type="text/javascript" src="../../tekinfo/js/tekinfo.js"></script> 
+  <!-- hongde JS --> 
+  <script type="text/javascript" src="../js/hdw.js"></script>
+  
+  <!-- InstanceBeginEditable name="MyJS" -->
+  <!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        initial();
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="matter">
+	<div class="container vcdiv">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- .widget worange starts -->
+				<div class="widget worange" id="login_show">
+					<div class="widget-content">
+						<!--<div class="padd">-->
+						<img id="slider-img" src="" width="800" height="450" class="carousel-inner img-responsive img-rounded" alt="WWW.HDW.TOP"/>
+
+						<div class="label-info center" style="color:white; font-weight:bold; line-height: 50px">
+							<a href="http://hdw.top" target="_blank">
+								<img src="../logo/hongde-banner-256.png" height="28" alt="弘德网" style="margin-bottom:10px; margin-top:10px;"/>
+							</a>
+							&nbsp;&nbsp;
+							<span id="slider-msg" style="margin-bottom:10px; margin-top:10px;"></span>
+						</div>
+						<!-- </div>end .padd -->
+					</div>
+					<!-- end .widget-content -->
+
+				</div>
+				<!-- end. widget worange -->
+			</div><!--end .col-md-12 -->
+
+			<!-- InstanceBeginEditable name="MAINCONTENT" -->
+            <!-- 登录域 -->
+              <div class="col-md-6" id="login_area">
+                <div class="widget">
+                  <div class="widget-head">
+                    <div class="pull-left">当前用户</div>
+                    <div class="clearfix"></div>
+                  </div><!-- end .widget-head-->
+                  
+                  <div class="widget-content">
+                    <div class="padd">
+                      <table width="100%"><tbody><tr>
+                        <td width="100" align="center">
+                          <a href="javascript:;">
+                            <img id="my_icon" alt="" width="100" height="100"/>
+                          </a>
+                        </td>
+                        <td>
+                          <div style="margin-left:20px;">
+                            <h4>&quot;<span id='user_name'></span>&quot;：您要退出吗？
+                              <button type="button" class="btn btn-info btn-xs" onclick="logout();" style="font-size:0.8em">一键退出</button>
+                            </h4>
+                            <div class="row">
+                              <div class="col-xs-5 text-right">当前登录时间：</div><div id="user_lastestTime" class="row col-xs-7"></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-5 text-right">当前登录IP：</div><div id="user_lastestIp" class="row col-xs-7"></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr></tbody></table><!-- end table -->
+                    </div><!-- end .padd-->
+                  </div><!-- end .widget-content-->
+                  
+                  <div class="widget-foot center">
+                    取消退出? <button type="button" class="btn btn-success btn-xs" onclick="goBack();" style="font-size:1em;">返回系统</button>
+                  </div><!-- end .widget-foot-->
+                </div><!-- end .widget-->
+                
+                <div class="col-xs-12" align="center">
+                  <span id="timer-msg"></span>
+                </div>
+              </div><!-- end .col-md -->
+			<!-- InstanceEndEditable -->
+
+		</div><!--end .row -->
+	</div><!--end .containe -->
+</div><!--end .matter -->
+
+<form id="call_form" name="call_form" method="post" accept-charset="UTF-8" style="display:none"></form>
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+<!-- 等待图层 -->
+<div class="modal fade" id="waiting-modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="center" id="waiting-modal-dialog-title">&nbsp;</h3>
+      </div>
+      <div class="modal-body center">
+        <p style="margin-bottom: 8px;" id="waiting-modal-dialog-body"></p>
+        <div id="waiting-modal-dialog-timer"></div>
+      </div>
+    </div>
+  </div><!-- end .modal-dialog-->
+</div><!-- end .modal-->
+
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap.js"></script> <!-- Bootstrap -->
+<script type="text/javascript" src="../../style/macadmin/js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+<script type="text/javascript" src="../../style/macadmin/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.cleditor.min.js"></script> <!-- CL Editor -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.slimscroll.min.js"></script> <!-- Slim Scroll -->
+<script type="text/javascript" src="../../style/macadmin/js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+<script type="text/javascript" src="../../style/macadmin/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+<script type="text/javascript" src="../../style/macadmin/js/custom.js"></script> <!-- Custom codes -->
+
+
+<script type="text/javascript">
+function initial() {
+	tek.core.getURLRequest();
+	
+	tek.common.getUser();
+	
+	randomSlider();
+	
+	if(typeof init == "function")
+		init();
+}
+
+/**
+ * 显示随机图片
+ */
+function randomSlider() {
+	var imgdiv=document.getElementById("slider-img");
+	if(imgdiv){
+		imgdiv.onload = vcdiv;
+  		
+		var i=Math.ceil(Math.random()*14);
+		var src=tek.common.getRootPath()+"http/hdw.top/images/sliders/s"
+			+((i<10) ? "0" + i : i)+".jpg";
+  		
+  		$("#slider-img").attr("src", src);
+  
+		var msg=new Array(
+	  		"改变，从弘德网开始 &nbsp; ...",
+	  		"梦想，从弘德网开始 &nbsp; ...",
+	  		"思考，从弘德网开始 &nbsp; ...",
+	  		"创造，从弘德网开始 &nbsp; ...",
+	  		"未来，从弘德网开始 &nbsp; ...",
+	  		"求道，从弘德网开始 &nbsp; ...",
+	  		"解惑，从弘德网开始 &nbsp; ...",
+	  		"生活，从弘德网开始 &nbsp; ...",
+	  		"创新，从弘德网开始 &nbsp; ...",
+	  		"弘德网,公共安全领域一站式解决方案平台。"
+		);
+	  
+		var j=Math.ceil(Math.random()*msg.length);
+			
+		$("#slider-msg").html(msg[j]);
+	}
+}
+
+function showMessage(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p>"+msg+"</p>");
+    obj.innerHTML="<p>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+function showError(msg){
+  var obj = document.getElementById("message");
+  if(obj){
+    //obj.insertAdjacentHTML('BeforeEnd', "<p style='color:red'>"+msg+"</p>");
+    obj.innerHTML="<p style='color:red'>"+msg+"</p>";
+    //obj.focus();
+  }
+  else
+    alert(msg);
+}
+
+$(window).resize(function(){ 
+    vcdiv();
+})
+
+function vcdiv(){
+  $(".vcdiv").css({ 
+      position: "absolute",
+      left: ($(window).width() - $(".vcdiv").outerWidth())/2,
+      top: ($(window).height() - $(".vcdiv").outerHeight())/2-20
+  });
+}
+</script>
+
+<!-- InstanceBeginEditable name="MyJavascript" -->
+<script type="text/javascript">
+function init() {
+	
+	if(tek.common.isLoggedIn()){
+		$("#my_icon").attr("src",myIcon);
+		$("#user_name").html(myName);
+		$("#user_lastestTime").html(myLoginTime);
+		$("#user_lastestIp").html(myLoginIp);
+
+		$("#timer-msg").html("<font id='logout-time' color=red>5</font>秒后退出登录");
+		showTimer();
+	} else {
+		var obj=document.getElementById("user-info");
+		if(obj)
+			obj.style.display="none";
+
+		tek.macCommon.waitDialogShow(null, "用户没有登录!", null, 2);
+		tek.macCommon.waitDialogHide(3000, "showTimer()");
+	}
+}
+//showUser();
+
+
+//显示倒数计时 --由 seconds 决定
+function showTimer(){
+	var seconds=parseInt($("#logout-time").html());
+	
+	if(seconds && (--seconds)>0){
+		if(myId && myId!=0)//如果用户已登陆
+			$("#timer-msg").html("页面<font id='logout-time' color=red>"+seconds+"</font>秒后退出登录");
+		else
+			$("#timer-msg").html("<font size=3><b>注销成功</b></font>&nbsp;&nbsp;页面<font id='logout' color=red>"+seconds+"</font>秒后返回系统主界面");
+		
+		setTimeout("showTimer()",1000);
+	}else{
+		if(myId && myId!=0)//如果用户已登陆
+			logout(); //注销
+		else
+			goHome(); //返回系统主页面
+	}
+}
+
+//注销
+function logout() {
+	//注销用户 common.js 中的函数
+	tek.common.logout(callbackURL, showError);
+}
+</script>
+<!-- InstanceEndEditable --> 
+
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,31 @@
+/*body {
+	font-size: x-small;
+}
+
+
+input,select,textarea
+{
+ 
+  font-size: x-small;
+}
+
+
+.menu li {
+	font-size: x-small;
+}
+
+#listorder
+{
+    font-size: x-small;
+}
+
+
+
+.item
+{
+	font-size:x-small;
+}
+*/
+#listorder .selectinfo input {
+	margin-top:5px;
+}

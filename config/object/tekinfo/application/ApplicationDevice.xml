@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 应用设备 -->
+<tekinfo>
+  <object>
+    <ApplicationDevice ResourceBundle="net.tekinfo.object.application.ApplicationDevice"
+        Structure="net.tekinfo.application.ApplicationDevice" version="2.0" 
+        ObjectRm="net.tekinfo.remoting.application.ApplicationDeviceRm"
+        resourceVersion="1.0">
+      <autovalue>
+        <application_device_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+       
+      <table nameIdentity="application_device_name">
+        <application_device identity="application_device_id"/>
+      </table>
+      
+      <command>
+        <list>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <application_device_alias/>
+            <application_device_name/>
+            <application_device_ostype/>
+            <application_device_osversion/>
+            <application_device_region/>
+            <application_device_status/>
+            <createTime/>
+            <application_device_ip/>
+            <application_device_owner/>
+          </item>
+        </list>
+        
+        <read>
+          <parameter>
+            <!-- 授权码有效期（天）-->
+            <token_survival value="30"/>
+          </parameter>
+          <item>
+            <application_device_alias/>
+            <application_device_name/>
+            <application_device_flag rightuser="supervisor"/>
+            <application_device_code rightuser="admin"/>
+            <application_device_ostype/>
+            <application_device_osversion/>
+            <application_device_region rightuser="supervisor"/>
+            <application_device_status/>
+            <application_device_token/>
+            <application_device_tokenSecret/>
+            <application_device_tokenTime/>
+            <createTime/>
+            <application_device_ip/>
+            <application_device_owner/>
+          </item>
+        </read>
+
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <device value="0x80"/>
+          </parameter>
+          <item>
+            <application_device_alias/>
+            <application_device_name/>
+            <application_device_flag/>
+            <application_device_code/>
+            <application_device_ostype/>
+            <application_device_osversion/>
+            <application_device_region/>
+          </item>
+        </add>
+        
+        <edit>
+          <item>
+            <application_device_name/>
+            <application_device_osversion/>
+            <application_device_region/>
+          </item>
+        </edit>
+        
+        <!-- 绑定/解绑用户 -->
+        <bind>
+          <parameter>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+          <item>
+            <application_device_pwd/>
+            <application_device_alias/>
+            <application_device_status/>
+          </item>
+        </bind>
+
+        <!-- 重置授权码 -->
+        <reset>
+          <parameter>
+            <!-- 命令类型（以“,”分割多种类型）：
+                 “edit”：编辑
+                 “read”：读取
+                 “remove”：删除
+                 “admin”：系统管理 -->
+            <command-type value="edit"/>
+          </parameter>
+        </reset>
+
+        <search>
+          <item>
+            <application_device_flag/>
+            <application_device_name/>
+          </item>
+        </search>
+        
+        <textSearch>
+          <item>
+            <application_device_name/>
+            <application_device_alias/>
+            <application_device_ostype/>
+            <application_device_osversion/>
+          </item>
+        </textSearch>
+        
+        <remove/>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <application_device_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 设备类型 -->
+        <application_device_flag variable="string" maxlength="32" notnull="true"/>
+        <!-- 设备标识编码，可以是IMEI,UUID,MAC等，由application_device_flag记录类型 -->
+        <application_device_code variable="string" maxlength="512" parse="password" format="privacy" notnull="true"/>
+        <!-- 语言和国家地区，例如zh_CN -->
+        <application_device_region variable="string" maxlength="10"/>
+        <!-- 设备名称 -->
+        <application_device_name variable="string" maxlength="128" notnull="true"/>
+        <!-- 应用设备别名 -->
+        <application_device_alias variable="string" maxlength="64" notnull="true"/>
+        <!-- 应用设备所有者 -->
+        <application_device_owner variable="long" parse="object:User"/>
+
+        <!-- 应用设备状态 -->
+        <application_device_status variable="int" parse="enum" format="option" default="2">
+          <forbid value="0"/>    <!-- 禁止 -->
+          <self value="1"/>    <!-- 只允许自己使用 -->
+          <everyone value="2"/>    <!-- 所有人可以使用 -->
+        </application_device_status>
+        <!-- 应用设备授权码 -->
+        <application_device_token variable="string" maxlength="512" parse="password" format="privacy" notnull="true"/>
+        <!-- 应用设备授权密钥 -->
+        <application_device_tokenSecret variable="string" maxlength="512" parse="password" format="privacy"/>
+        <!-- 应用设备授权时间 -->
+        <application_device_tokenTime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" notnull="true"/>
+        
+        <!-- 操作者操作系统OS -->
+        <application_device_ostype variable="string" maxlength="20" parse="enum" format="option">
+          <android value="Android"/>
+          <ios value="iOS"/>
+          <wp value="WindowsPhone"/>
+        </application_device_ostype>
+        <!-- 操作者操作系统OS版本 -->
+        <application_device_osversion variable="string" maxlength="10"/>
+        
+        <!-- 记录IP地址
+        <application_device_ip variable="long" parse="inetaddress" default="0" /> -->
+        <!--
+        <application_device_longitude variable="double" default="0"/>
+        <application_device_latitude variable="double" default="0"/> -->
+
+        <!-- 虚拟域：安全密码 -->
+        <application_device_pwd variable="string" parse="string" maxlength="255"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ApplicationDevice>
+  </object>
+</tekinfo>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 主机群组组员 -->
+<tekinfo>
+  <object>
+    <HostMember ResourceBundle="com.takall.hostgroup.HostMember"
+        Structure="com.takall.hostgroup.HostMember"
+        ObjectRm="com.takall.remoting.hostgroup.HostMemberRm">
+      <autovalue>
+        <host_member_id base="identity"/>
+        <host_member_code base="" step="1" digit="10"/>
+        <host_member_creator base="userid"/>
+      </autovalue>
+      
+      <nosamevalue>
+        <host_member_code/>
+      </nosamevalue>
+      
+      <table nameIdentity="host_member_name" codeIdentity="host_member_code" ownerIdentity="host_member_user">
+        <host_member identity="host_member_id"/>
+      </table>
+       
+      <command>
+        <!-- 申请 -->
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/group/read.html"/>
+          </parameter>
+          <item>
+            <host_member_code/>
+            <host_member_name/>
+            <host_member_user/>
+            <host_member_group/>
+            <host_member_right/>
+
+            <host_member_creator/>
+            
+            <host_member_latest/>
+          </item>
+        </add>
+        
+        <!-- 修改 -->
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+            <!-- email通告中使用的链接 -->
+            <uri-path value="/http/takall/group/read.html"/>
+          </parameter>
+          <item>
+            <host_member_code/>
+            <host_member_name/>
+            <host_member_user/>
+            <host_member_group/>
+            <host_member_right/>
+
+            <host_member_creator/>
+            
+            <host_member_latest/>
+          </item>
+        </edit>
+        
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <host_member_code/>
+            <host_member_name/>
+            <host_member_user/>
+            <host_member_group/>
+            <host_member_right/>
+
+            <host_member_creator/>
+            
+            <host_member_latest/>
+            <createTime/>
+            <modifyTime/>
+          </item>
+        </read>
+        
+        <!-- 组员列表。
+             用户是正式组员，显示全部有效组员列表；如果是申请中的组员，只显示本人的信息。 -->
+        <list>
+          <item>
+            <host_member_code/>
+            <host_member_name/>
+            
+            <host_member_creator/>
+            
+            <host_member_group/>
+            <host_member_user/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_member_code/>
+            <host_member_name/>
+            <host_member_user/>
+            <host_member_group/>
+          </item>
+        </search>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <remove_attach value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+       
+      <property>
+        <!-- 标识 -->
+        <host_member_id variable="long" forbidEdit="true" notnull="true"/>
+        <!-- 编码 -->
+        <host_member_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <host_member_name variable="string"  maxlength="32" notnull="true"/>
+        <!-- 权限 -->
+        <host_member_right variable="int" parse="enum" format="single" default="0x00" notnull="true">
+          <none value="0x00"/>    <!--  无权限 -->
+          <read_brief value="0x01"/>    <!--  允许查看 -->
+          <read_detail value="0x02"/>    <!--  允许操作 -->
+        </host_member_right>
+
+        <!-- 所属主机群组 -->
+        <host_member_group variable="long" parse="object:Group" format="select" default="0" notnull="true"/>
+        <!-- 所属系统用户 -->
+        <host_member_user variable="long" parse="object:User" format="select" default="0" notnull="true"/>
+        <!-- 创建者 -->
+        <host_member_creator variable="long" parse="object:User" format="select" default="0" notnull="true"/>
+        <!-- 成员最近访问组的时间-->
+        <host_member_latest variable="long" parse="datetime" format="yyyy-MM-dd hh:mm:ss"/>
+        
+    
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </HostMember>
+  </object>
+</tekinfo>

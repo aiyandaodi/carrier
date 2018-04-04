@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 主机  -->
+<tekinfo>
+  <object>
+    <HostSite ResourceBundle="com.takall.site.HostSite"
+        Structure="com.takall.site.HostSite"
+        ObjectRm="com.takall.remoting.site.HostSiteRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <host_site_id base="identity"/>
+        <host_site_code base="yyyyMMdd" step="1" digit="4" tree="false"/>
+        <host_site_user base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <host_site_id/>
+      </nosamevalue>
+      
+      <table nameIdentity="host_site_name" codeIdentity="null" ownerIdentity="null">
+        <host_site identity="host_site_id"/>
+      </table>
+
+      <command>
+        <add url="http/ipower/site/add.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_site_code/>
+            <host_site_name/>
+            <host_host_id/>
+            
+            <host_site_catalog/>
+            <host_site_group/>
+            <host_site_tags/>
+
+            <host_site_remark/>
+            <host_site_status/>
+
+            <host_site_mac/>
+            <host_site_buytime/>
+            <host_site_stoptime/>
+
+            <host_site_user/>
+            <host_site_supplier/>
+            <host_site_contact/>
+          </item>
+        </add>
+        
+        <edit url="http/ipower/site/edit.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <host_site_code/>
+            <host_site_name/>
+            <host_host_id/>
+            
+            <host_site_catalog/>
+            <host_site_group/>
+            <host_site_tags/>
+
+            <host_site_remark/>
+            <host_site_status/>
+
+            <host_site_mac/>
+            <host_site_buytime/>
+            <host_site_stoptime/>
+            
+            <host_site_user/>
+            <host_site_supplier/>
+            <host_site_contact/>
+            
+          </item>
+        </edit>
+
+        
+        <read url="http/ipower/site/read.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <host_site_code/>
+            <host_site_name/>
+            <host_host_id/>
+            
+            <host_site_catalog/>
+            <host_site_group/>
+            <host_site_tags/>
+
+            <host_site_remark/>
+            <host_site_status/>
+
+            <host_site_mac/>
+            <host_site_buytime/>
+            <host_site_stoptime/>
+            
+            <host_site_user/>
+            <host_site_supplier/>
+            <host_site_contact/>
+
+            <createTime/>
+          </item>
+        </read>
+        
+        <list url="http/ipower/site/index.html">
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_site_code/>
+            <host_site_name/>
+            <host_host_id/>
+            
+            <host_site_catalog/>
+            <host_site_group/>
+            <host_site_tags/>
+
+            <host_site_remark/>
+            <host_site_status/>
+
+            <host_site_mac/>
+            <host_site_buytime/>
+            <host_site_stoptime/>
+            
+            <host_site_user/>
+            <host_site_supplier/>
+            <host_site_contact/>
+            
+            <createTime/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <host_site_name/>
+            <host_site_remark/>
+            <host_site_group/>
+            <host_site_tag/>
+            <host_site_catalog/>
+          </item>
+        </search>
+        
+        <remove url="http/ipower/site/remove.html">
+          <parameter>
+        
+            <remove_sub value="true"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <download/>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <host_site_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <host_site_code variable="string" maxlength="32" notnull="true"/>
+        <!-- 主机名称 -->
+        <host_site_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 管理台主机标识 -->
+        <host_host_id variable="long" notnull="true" default="0"/>
+        
+        <!-- 目录分组 -->
+        <host_site_catalog  variable="string" maxlength="255"/>
+        <!-- 所属管理组 -->
+        <host_site_group variable="long" parse="object:Group"/>
+        <!-- 标识 -->
+        <host_site_tags variable="string" maxlength="255"/>
+        <!-- 主机备注 -->
+        <host_site_remark variable="string" format="textarea:4"/>
+        
+        <!-- 主机状态 -->
+        <host_site_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <stop value="0"/>    <!-- 停止 -->
+          <apply value="-1"/>    <!-- 报废 -->
+          <valid value="1"/>    <!-- 正常使用 -->
+        </host_site_status>
+
+        <!-- 主机运行状态 -->
+        <host_site_runstatus variable="int" parse="enum" format="single" default="0">
+          <stop value="0"/>    <!-- 停止 -->
+          <apply value="-1"/>    <!-- 禁用 -->
+          <valid value="1"/>    <!-- 运行正常 -->
+        </host_site_runstatus>
+        
+        <!-- 主机类型 -->
+        <host_site_type variable="int" parse="enum" format="single" default="0" notnull="true">
+          <network value="0"/>    <!-- 网络设备 -->
+          <computer value="1"/>    <!-- 计算机设备 -->
+          <intel value="2"/>    <!-- 智能设备 -->
+        </host_site_type>
+
+        <!-- 主机IP地址 -->
+        <host_site_ip variable="string" maxlength="255" default="0" notnull="true"/>
+        <!-- 主机IP类型 -->
+        <host_site_iptype variable="int" parse="enum" format="single" default="0" notnull="true">
+          <static value="0"/>    <!-- 静态IP -->
+          <trends value="1"/>    <!-- 动态IP -->
+        </host_site_iptype>
+
+        <!-- 主机MAC地址 -->
+        <host_site_mac variable="string" maxlength="255" default="0" />
+
+        <!-- 主机采购时间 -->
+        <host_site_buytime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+        <!-- 主机停用时间 -->
+        <host_site_stoptime variable="long" parse="datetime" format="yyyy-MM-dd HH:mm:ss" default="0" notnull="true"/>
+
+        <!-- 主机使用者 -->
+        <host_site_user variable="long" parse="object:User" notnull="true" default="0"/>
+        <!-- 供货商 -->
+        <host_site_supplier variable="string" maxlength="255" notnull="true"/>
+        <!-- 主机联络人 -->
+        <host_site_contact variable="long" parse="object:Contact" notnull="true"/>
+
+        
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <!-- 附件 -->
+      <attachment>
+        <!-- 附件对象：
+            name：附件名称（自定义）
+            object：附件对象名
+            column：附件对象记录当前对象值的字段名
+            remove：附件删除类型（0 - 删除附件信息；1 - 不删除附件信息；2 - 存在附件信息，禁止删除） -->
+        
+      </attachment>
+    </HostSite>
+  </object>
+</tekinfo>

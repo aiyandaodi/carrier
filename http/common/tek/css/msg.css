@@ -1,0 +1,30 @@
+body {
+	text-align:center;
+	margin: 0px; 
+	font-size:13px;
+}
+img{border:none; }
+#main { 
+	width: 96%; 
+	height: auto;
+	margin: 0 auto; 
+	padding:15px 10px 10px 10px;
+	font-size:small;
+	text-decoration:none;
+	
+	border:1px solid #aaa;
+}
+
+li {
+	list-style:none;
+	text-align:center;
+}
+
+.button {
+	width:auto;
+}
+
+.msg {
+	width:auto;
+	text-align:left;	
+}

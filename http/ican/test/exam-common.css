@@ -1,0 +1,146 @@
+.exam-outer {
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 0px 10px;
+}
+
+
+.header-title {
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #337ab7;
+}
+
+.header-author {
+    color: rgb(92, 158, 145);
+	text-align:center;
+	font-size: 0.9em;
+}
+
+.top-content {
+    margin: 20px auto;
+}
+
+.content-catalog {
+    font-size: 0.82em;
+    line-height: 22px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    color: #999;
+    font-weight: 400;
+}
+
+.content-wiget {
+    font-size: 0.9em;
+    background: #fff;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.07);
+}
+
+.wiget-info {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.exam-tags {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 0.9em;
+    font-weight: 400;
+    padding: 5px 8px;
+    margin-left: 10px;
+}
+
+.info-buttons{
+	text-align:center;
+}
+
+.info-buttons button{
+	font-size:0.9em;
+}
+
+.bottom-header .header-title{
+	font-size:1.0em;
+}
+
+
+/*考题的单独样式 strat*/
+.question-item{
+	font-size: 0.9em;
+}
+
+.question-item input {
+    position: relative;
+    top: 2px;
+    margin-right: 8px;
+    line-height: normal;
+}
+
+.question-item .item-heading {
+    color: #677;
+}
+
+.question-item .heading-date{
+	color: rgb(92, 158, 145);
+}
+
+.question-item .item-btn {
+    top: 3px;
+    padding: 5px 0px;
+	float:right;
+}
+
+.answer-list {
+    padding: 0px 24px;
+    background-color: rgba(203, 203, 203, 0.1);
+    border: 1px solid #FFF;
+    border-radius: 5px;
+}
+
+.answer-list i.fa-check{
+	color: rgb(92, 158, 145);
+}
+
+.text-page{
+	text-align:center;
+}
+
+.page-message{
+	font-size:1.0em;
+}
+
+.pagination li{
+	padding:5px 12px;
+}
+
+.exam-radio {
+	font-weight:300;
+	font-size:1.0em;
+	color:#5bc0de;
+}
+
+.exam-checkbox {
+	font-weight:300;
+	font-size:1.0em;
+	color:#5cb85c;
+}
+
+.exam-input {
+	font-weight:300;
+	font-size:1.0em;
+	color:#f0ad4e;
+}
+
+.exam-textarea {
+	font-weight:300;
+	font-size:1.0em;
+	color:#d9534f;
+}
+/*考题的单独样式 end*/

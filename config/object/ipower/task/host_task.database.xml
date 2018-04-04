@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 任务 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_task>
+        <item>
+          <!-- 标识 -->
+          <host_task_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_task_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 任务名称 -->
+          <host_task_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 任务有效开始时间 -->
+          <host_task_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 任务有效结束时间 -->
+          <host_task_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 任务执行时间 -->
+          <host_task_time value="VARCHAR(250) DEFAULT '0' NOT NULL"/>
+          <!-- 任务状态 --> 
+          <host_task_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 任务所有者 -->
+          <host_task_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 任务备注 -->
+          <host_task_remark value="MEMO"/>
+
+
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_task>
+    </table>
+  </database>
+</tekinfo>

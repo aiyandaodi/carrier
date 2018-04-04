@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 伙伴  -->
+<tekinfo>
+  <database>
+    <table>
+      <partner>
+        <item>
+          <!-- 标识 -->
+	        <partner_id value="BIGINT NOT NULL PRIMARY KEY"/>
+	        <!-- 编码 -->
+	        <partner_code value="VARCHAR(128) NOT NULL"/>
+	        <!-- 名称 -->
+	        <partner_name value="VARCHAR(32) NOT NULL"/>
+	        <!-- 备注 -->
+	        <partner_remark value="VARCHAR(255) NOT NULL"/>
+	        <!-- 所属空间 -->
+	        <partner_space value="BIGINT DEFAULT '0' NOT NULL"/>
+	        <!-- 所属系统用户 -->
+	        <partner_user value="BIGINT DEFAULT '0' NOT NULL"/>
+	        <!-- 伙伴状态 -->
+	        <partner_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        <!-- 伙伴角色 -->
+	        <partner_role value="SMALLINT DEFAULT '0' NOT NULL"/>
+	        
+	        <!-- 创建者 -->
+	        <partner_creator value="BIGINT DEFAULT '0' NOT NULL"/>
+	        <!-- 伙伴最近访问当前空间的时间 -->
+          <partner_latest value="BIGINT DEFAULT '0' NOT NULL"/>
+	  
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+	      </item>
+      </partner>
+    </table>
+  </database>
+</tekinfo>

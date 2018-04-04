@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试卷答题 -->
+
+<tekinfo>
+  <object>
+    <ExamsReply ResourceBundle="com.takall.exams.ExamsReply"
+        Structure="com.takall.exams.ExamsReply"
+        ObjectRm="com.takall.remoting.exams.ExamsReplyRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <exams_reply_id base="identity"/>
+        <exams_reply_code base="yyyy" step="1" digit="10"/>
+        <exams_reply_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+
+      <table nameIdentity="exams_reply_name" codeIdentity="null" ownerIdentity="exams_reply_owner">
+        <exams_reply identity="exams_reply_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_reply_name/>
+            <exams_reply_score/>
+            <exams_reply_status/>
+            <exams_reply_question/>
+            <exams_reply_paper/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_reply_name/>
+            <exams_reply_score/>
+            <exams_reply_status/>
+            <exams_reply_question/>
+            <exams_reply_paper/>
+          </item>
+        </edit>
+
+        <!-- 判卷 -->
+        <audit>
+          <parameter>
+            <!-- 是否新建操作 -->
+            <add value="false"/>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <exams_reply_score/>
+          </item>
+        </audit>
+
+        <read>
+          <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <exams_reply_name/>
+            <exams_reply_score/>
+            <exams_reply_status/>
+            <exams_reply_question/>
+            <exams_reply_paper/>
+          </item>
+        </read>
+
+        <list>
+          <parameter>
+            <parameter>
+            <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+            <record value="0x10"/>
+            <list_counts value="10"/>
+          </parameter>
+          </parameter>
+          <item>
+            <exams_reply_name/>
+            <exams_reply_score/>
+            <exams_reply_status/>
+            <exams_reply_question/>
+            <exams_reply_paper/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="false"/>
+              <!-- 0x00 不记录；0x01 只记录所有用户的最近一次操作；0x10 记录当前用户最近一次操作；0x80 每一次都记录 -->
+              <record value="0x80"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <exams_reply_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <exams_reply_code variable="string" maxlength="16" notnull="true"/>
+        <!-- 答案 -->
+        <exams_reply_name variable="string" maxlength="512" notnull="false"/>
+
+        <!-- 得分 -->
+        <exams_reply_score variable="int" parse="int" default="0" notnull="false"/>
+        <!-- 状态 -->
+        <exams_reply_status variable="int" parse="enum" format="single" default="0" notnull="true">
+          <forbid value="-1"/>    <!-- 禁止 -->
+          <apply value="0"/>    <!-- 答题中 -->
+          <submit value="1"/>    <!-- 已交卷 -->
+          <stop value="2"/>    <!-- 完成 -->
+        </exams_reply_status>
+        <!-- 所属试题 -->
+        <exams_reply_question variable="long" parse="object:ExamsQuestion" notnull="true"/>
+        <!-- 试题类型 -->
+        <exams_reply_type variable="int" parse="enum" format="single" default="0x02" notnull="true">
+          <single value="0x02"/>         <!-- 单选题 -->
+          <multiple value="0x04"/>       <!-- 多选题 -->
+          <fillblanks value="0x08"/>     <!-- 填空题 -->
+          <!-- <judge value="0x10"/>          对错判断 -->
+          <!-- <composition value="0x20"/>    问答题 -->
+        </exams_reply_type>
+
+        <!-- 所属考卷 -->
+        <exams_reply_paper variable="long" parse="object:ExamsPaper" notnull="false"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ExamsReply>
+  </object>
+</tekinfo>

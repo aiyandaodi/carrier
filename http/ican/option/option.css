@@ -1,0 +1,39 @@
+/* option.css */
+
+/* Background color classes */
+.bg-white {
+  background-color: #ffffff !important;
+}
+.bg-grey {
+  background-color: #eeeeee !important;
+}
+.bg-black {
+  background-color: #555555 !important;
+}
+.bg-red {
+  background-color: #f75353 !important;
+}
+.bg-green {
+  background-color: #51d466 !important;
+}
+.bg-lblue {
+  background-color: #32c8de !important;
+}
+.bg-blue {
+  background-color: #609cec !important;
+}
+.bg-orange {
+  background-color: #f78153 !important;
+}
+.bg-yellow {
+  background-color: #fcd419 !important;
+}
+.bg-purple {
+  background-color: #cb79e6 !important;
+}
+.bg-rose {
+  background-color: #ff61e7 !important;
+}
+.bg-brown {
+  background-color: #d08166 !important;
+}

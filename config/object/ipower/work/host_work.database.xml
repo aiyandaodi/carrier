@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 任务执行 -->
+<tekinfo>
+  <database>
+    <table>
+      <host_work>
+        <item>
+          <!-- 标识 -->
+          <host_work_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <host_work_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 工作名称 -->
+          <host_work_name value="VARCHAR(250) NOT NULL"/>
+          <!-- 工作类型 --> 
+          <host_work_type value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 工作所有者 --> 
+          <host_work_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 任务标识 -->
+          <host_work_task value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 工作进行的状态值 --> 
+          <host_work_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 执行的错误数 -->
+          <host_work_error value="VARCHAR(128)"/>
+          <!-- 有效开始时间 -->
+          <host_work_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 有效结束时间 -->
+          <host_work_end value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </host_work>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息对象 -->
+<tekinfo>
+  <database>
+    <table>
+      <contact>
+        <item>
+          <!-- 标识 -->
+          <contact_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <contact_code value="VARCHAR(64) NOT NULL"/>
+          <!-- 联系信息名 -->
+          <contact_name value="VARCHAR(250) NOT NULL"/>
+
+          <!-- 备注 -->
+          <contact_remark value="MEMO"/>
+          <!-- 所有者（表明该记录所属用户） -->
+          <contact_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 链接对象名（表明该记录属于指定对象类型） -->
+          <contact_objectName value="VARCHAR(64) NOT NULL"/>
+          <!-- 链接对象标识（表明该记录属于指定对象类型contact_objectName的标识） -->
+          <contact_objectId value="BIGINT DEFAULT '0' NOT NULL"/>
+
+          <!-- 目录分类 -->
+          <contact_catalog value="VARCHAR(128)"/>
+          <!-- 类型分类 -->
+          <contact_tags value="VARCHAR(255)"/>
+          <!-- 颜色分类 -->
+          <contact_color value="VARCHAR(200)"/>
+          
+          <!-- 属性：阅读权限 -->
+          <contact_property value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 属性：是否是默认联系信息 -->
+          <contact_default value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </contact>
+    </table>
+  </database>
+</tekinfo>

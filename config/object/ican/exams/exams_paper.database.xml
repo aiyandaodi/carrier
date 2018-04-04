@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 试卷 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <exams_paper>
+        <item>
+          <!-- 标识 -->
+          <exams_paper_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <exams_paper_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 试卷名称 -->
+          <exams_paper_name value="VARCHAR(32) NOT NULL"/>
+          
+          <!-- 答题开始时间 -->
+          <exams_paper_start value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 答题结束时间 -->
+          <exams_paper_end value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 提交时间 -->
+          <exams_paper_submit value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 答卷状态 -->
+          <exams_paper_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 得分 -->
+          <exams_paper_score value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 结果 -->
+          <exams_paper_result value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 人工审核 -->
+          <exams_paper_booking value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 所属考试 -->
+          <exams_paper_test value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 答卷人 -->
+          <exams_paper_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 判卷人 -->
+          <exams_paper_auditor value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </exams_paper>
+    </table>
+  </database>
+</tekinfo>

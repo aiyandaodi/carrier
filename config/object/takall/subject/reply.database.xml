@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 回复 -->
+<tekinfo>
+  <database>
+    <table>
+      <reply>
+        <item>
+          <!-- 标识 -->
+          <reply_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <reply_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 记录名 -->
+          <reply_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 概要 -->
+          <reply_summary value="MEMO"/>
+          <!-- 备注 -->
+          <reply_remark value="MEMO NOT NULL"/>
+          <!-- 状态 -->
+          <reply_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          <!-- 所有者 -->
+          <reply_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属主题 -->
+          <reply_subject value="BIGINT DEFAULT '0' NOT NULL"/>
+          <!-- 所属文档 -->
+          <reply_document value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </reply>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 好友 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <friend>
+        <item>
+          <!-- 标识 -->
+          <friend_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <friend_code value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 名称（对方名） -->
+          <friend_name value="VARCHAR(128) NOT NULL"/>
+          <!-- 对方 -->
+          <friend_other value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          
+          <!-- 我的名字 -->
+          <friend_ownername value="VARCHAR(128) NOT NULL"/>
+	        <!-- 所有者 -->
+          <friend_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+         
+          
+          <!-- 标签 -->
+          <friend_tag value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 颜色 -->
+	        <friend_color value="VARCHAR(10) DEFAULT '03f' NOT NULL"/>
+          
+          
+          <!-- 状态 -->
+          <friend_status value="SMALLINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 备注 -->
+          <friend_remark value="MEMO"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </friend>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,14 @@
+#Resume
+name=简历
+
+#property
+property.resume_id=标识
+property.resume_code=编码
+property.resume_name=名称
+property.resume_mime=MIME类型
+property.resume_length=长度
+property.resume_status=状态
+property.resume_status.stop=停止
+property.resume_status.apply=申请中
+property.resume_status.normal=正常
+property.resume_owner=所有者

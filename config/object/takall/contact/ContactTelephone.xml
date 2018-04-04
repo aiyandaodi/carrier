@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系信息电话 -->
+<tekinfo>
+  <object>
+    <ContactTelephone ResourceBundle="com.takall.contact.ContactTelephone"
+        Structure="com.takall.contact.ContactTelephone"
+        ObjectRm="com.takall.remoting.contact.ContactTelephoneRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <telephone_id base="identity"/>
+        <telephone_code base="" step="1" digit="6"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="telephone_name" codeIdentity="null" ownerIdentity="null">
+        <contact_telephone identity="telephone_id"/>
+      </table>
+      
+      <blob table="null"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="null"
+          mimeType=""/>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <telephone_name/>
+            <telephone_type/>
+            <telephone_intercode/>
+            <telephone_areacode/>
+            <telephone_number/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <telephone_name/>
+            <telephone_type/>
+            <telephone_intercode/>
+            <telephone_areacode/>
+            <telephone_number/>
+          </item>
+        </edit>
+
+        <read>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+          </parameter>
+          <item>
+            <telephone_name/>
+            <telephone_type/>
+            <telephone_phone/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x10"/>
+            
+            <list_counts/>
+          </parameter>
+          <item>
+            <telephone_name/>
+            <telephone_type/>
+            <telephone_phone/>
+          </item>
+        </list>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <telephone_id variable="long" forbidEdit="true"/>
+        <!-- 编码 -->
+        <telephone_code variable="string" maxlength="10"/>
+        <!-- 名字 -->
+        <telephone_name variable="string" maxlength="32" notnull="true"/>
+        <!-- 号码 -->
+        <telephone_number variable="string" maxlength="32" notnull="true"/>
+        <!-- 国际区号 -->
+        <telephone_intercode variable="string" maxlength="8" default="86"/>
+        <!-- 地区区号 -->
+        <telephone_areacode variable="string" maxlength="8" default=""/>
+        <!-- 类型 -->
+        <telephone_type variable="int" parse="enum" format="option" default="0x00" notnull="true">
+          <normal value="0x00"/>    <!-- 电话 -->
+          <mobile value="0x01"/>    <!-- 手机 -->
+          <fax value="0x02"/>       <!-- 传真 -->
+        </telephone_type>
+        <!-- 所属联系信息 -->
+        <telephone_contact variable="long" parse="object:Contact" default="0" notnull="true"/>
+        
+        <!-- +国际区号-地区区号-电话号码 -->
+        <telephone_phone variable="string"/>
+
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+    </ContactTelephone>
+  </object>
+</tekinfo>

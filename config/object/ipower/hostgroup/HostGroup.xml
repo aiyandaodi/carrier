@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- object: 分组  -->
+<tekinfo>
+  <object>
+    
+    <Group ResourceBundle="com.takall.hostgroup.HostGroup"
+        Structure="com.takall.hostgroup.HostGroup"
+        ObjectRm="com.takall.remoting.hostgroup.HostGroupRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <group_id base="identity"/>
+        <group_code base="" step="1" digit="6"/>
+        <group_owner base="userid"/>
+      </autovalue>
+      <nosamevalue>
+        <group_code/>
+        <group_name/>
+        <group_file/>
+      </nosamevalue>
+      
+      <table nameIdentity="group_name" codeIdentity="null" ownerIdentity="group_owner">
+        <uni_group identity="group_id"/>
+        <group_icon identity="group_id"/>
+        <group_icon_blob identity="group_id"/>
+      </table>
+      
+      <blob table="uni_group"
+          urlField="null"
+          blobField="null"
+          mimeField="null"
+          lengthField="null"
+          timeField="modifyTime"
+          mimeType=""/>
+      
+      <!-- 对象图标存储定义
+          table - 对象图标信息存储表名称
+          blobTable - 对象图标BLOB数据存储表名称
+          blobField - 对象图标BLOB数据存储字段
+          mimeField - 对象图标MIME信息存储字段
+          lengthField - 对象图标BLOB数据长度存储字段
+          timeField - 对象图标BLOB数据更新时间存储字段
+          mimeType - 对象图标默认MIME 
+       -->
+      <icon table="group_icon"
+          blobTable="group_icon_blob"
+          urlField="null"
+          blobField="icon_blob"
+          mimeField="icon_mime"
+          lengthField="icon_length"
+          timeField="icon_time"
+          mimeType="null"/>
+
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <group_code/>
+            <group_name/>
+            <!--
+            <group_speak/>
+            <group_listen/>
+            <group_join/>
+            <group_locale/>
+            <group_country/>
+            <group_state/>
+            <group_city/>
+            <group_region/> -->
+            <group_type/>
+            <group_speak/>
+            <group_listen/>
+            
+            <group_join/>
+            
+            <group_member_memberright/>
+            <!--<group_member_subjectright/>-->
+            <group_status rightuser="admin"/>
+          
+            <group_remark/>
+            <!--
+            <group_blob/>
+            -->
+            <group_qrcode/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <group_code/>
+            <group_name/>
+            <!--
+            <group_speak/>
+            <group_listen/>
+            <group_join/>
+            <group_locale/>
+            <group_country/>
+            <group_state/>
+            <group_city/>
+            <group_region/>
+            -->
+            <group_speak/>
+            <group_listen/>
+            
+            <group_join/>
+            <group_member_memberright/>
+            <!--
+            <group_member_subjectright/>-->
+            <group_status rightuser="admin"/>
+            <group_type/>
+           
+            <group_remark/>
+            <!--
+            <group_blob/>
+
+            <group_hint/>
+            -->
+            <group_qrcode/>
+          </item>
+        </edit>
+
+        <read>
+          <item>
+            <group_id/>
+            <group_code/>
+            <group_name/>
+            
+            <group_status/>
+            <group_type/>
+            <group_credit/>
+            
+            <createTime/>
+            <createIp/>
+            <modifyTime/>
+            <modifyIp/>
+            
+            <!--
+            <group_credit/>
+            <group_speak/>
+            <group_listen/>
+            <group_join/>
+            <group_locale/>
+            <group_country/>
+            <group_state/>
+            <group_city/>
+            <group_region/>
+            <group_owner/>
+            <group_members/>
+            -->
+            <group_speak/>
+            <group_listen/>
+            
+            <group_subjects/>
+            <group_owner/>
+            <group_locale/>
+            
+            <group_members/>
+            <group_join/>
+            <group_member_memberright/>
+
+            <!--
+            <group_member_subjectright/>-->
+            <group_remark/>
+            <group_latestTime/>
+            <group_qrcode/>
+          </item>
+        </read>
+        
+        <list>
+          <parameter>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <group_code/>
+            <group_name/>
+            
+            <createTime/>
+            <modifyTime/>
+            <group_status/>
+            <group_type/>
+            <group_credit/>
+            
+            <group_subjects/>
+            <group_members/>
+            <group_speak/>
+            <group_listen/>
+            
+            <group_owner/>
+            <group_join/>
+
+            <group_remark/>
+            <group_latestTime/>
+          </item>
+        </list>
+        
+        <search>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <group_name/>
+            <group_locale/>
+            <group_type/>
+            <group_remark/>
+          </item>
+        </search>
+
+        <textSearch>
+          <parameter>
+            <list_counts/>
+          </parameter>
+          <item>
+            <group_name/>
+            <group_remark/>
+          </item>
+        </textSearch>
+        
+        <!-- 推荐群组 -->
+        <recommend>
+          <parameter>
+            <list_counts value="500"/>
+          </parameter>
+          <item>
+            <group_id/>
+            <group_name/>
+            <group_credit/>
+            <group_city/>
+            <group_members/>
+            <group_remark/>
+            <group_subjectCounts/>;
+            <group_length/>
+          </item>
+        </recommend>
+        
+        <remove>
+          <parameter>
+            <remove_sub value="true"/>
+            <record value="0x80"/>
+          </parameter>
+        </remove>
+        
+        <upload>
+          <parameter>
+            <!-- 支持的图像文件后缀 -->
+            <support_suffix value="gif,png,jpg,bmp"/>
+            <!-- 上传文件最大长度(kb) -->
+            <max_length value="5000"/>
+            
+            <!-- 是否支持图标文件 -->
+            <icon_file value="true"/>
+            <!-- 最小图标宽度 -->
+            <min_width value="0"/>
+            <!-- 最大图标宽度 -->
+            <max_width value="0"/>
+            <!-- 最小图标高度 -->
+            <min_height value="0"/>
+            <!-- 最大图标高度 -->
+            <max_height value="0"/>
+          </parameter>
+        </upload>
+        
+        <download>
+          <parameter>
+            <download_counts/>
+          </parameter>
+        </download>
+      </command>
+
+      <property>
+        <!-- 标识 -->
+        <group_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <group_code variable="string" maxlength="10" forbidEdit="true" notnull="true"/>
+        <!-- 名字 -->
+        <group_name variable="string" maxlength="255" notnull="true"/>
+        <!-- 状态 -->
+        <group_status variable="int" parse="enum" format="option" default="0" notnull="true">
+          <apply value="0"/>    <!-- 申请 -->
+          <normal value="1"/>    <!-- 审核通过 -->
+          <stop value="-1"/>    <!-- 停止 -->
+        </group_status>
+        <!-- 类型 -->
+        <group_type variable="int" parse="enum" format="option" notnull="true">
+          <site value="0"/>    <!-- 主机群组 -->
+          <member value="1"/>    <!-- 成员群组 -->
+        </group_type>
+        <!-- 评级 -->
+        <group_credit variable="int" default="0" forbidEdit="true" notnull="true"/>
+        <!-- 备注 -->
+        <group_remark variable="string" parse="string" format="textarea:4"/>
+        <!-- 发言属性 -->
+        <group_speak variable="int" parse="enum" format="single" default="0x04" notnull="true">
+          <anonymous value="0x01"/>    <!-- 允许匿名发言 -->
+          <user value="0x02"/>    <!-- 允许系统用户发言 -->
+          <member value="0x04"/>    <!-- 允许组内成员发言 -->
+          <admin value="0x08"/>    <!-- 允许组内管理员发言 -->
+          <system value="0x10"/>    <!-- 系统发言 -->
+        </group_speak>
+        <!-- 阅读属性 -->
+        <group_listen variable="int" parse="enum" format="single" default="0x04" notnull="true">
+          <system value="0x00"/>    <!-- 系统阅读 -->
+          <admin value="0x01"/>    <!-- 组管理员阅读 -->
+          <member value="0x04"/>    <!-- 组内成员阅读 -->
+          <user value="0x10"/>    <!-- 普通用户阅读 -->
+          <anonymous value="0x40"/>    <!-- 匿名阅读 -->
+        </group_listen>
+        <!-- 申请加入属性 -->
+        <group_join variable="int" parse="enum" format="option" default="0x00" notnull="true">
+          <admin value="0x00"/>    <!-- 组管理员指定成员加入 -->
+          <apply value="0x01"/>    <!-- 用户申请加入，组管理员批准 -->
+          <direct value="0x02"/>    <!-- 用户直接加入-->
+        </group_join>
+        <!-- 区域属性 -->
+        <group_locale variable="string" parse="language" format="option" notnull="true"/>
+        <!-- 所有者 -->
+        <group_owner variable="long" parse="object:User" default="0" notnull="true"/>
+        <!-- 文件目录（如果为null，主题存放在数据库中；否则存放在指定目录下） -->
+        <group_path variable="string" maxlength="128"/>
+        <!-- 成员数 -->
+        <group_members variable="int" default="0"/>
+        <!-- 主题数 -->
+        <group_subjects variable="int" default="0"/>
+        <!-- 成员权限 -->
+        <group_member_right variable="int" defalt="0"/>
+        <!-- 文件-->
+        <group_file variable="string"/>
+        <!-- 最近主题更新时间 -->
+        <group_latestTime variable="long" parse="datetime" default="0" notnull="true"/>
+
+
+        <!-- 组员对成员权限 -->
+        <group_member_memberright variable="int" parse="enum" format="single" default="0x01" notnull="true">
+          <none value="0x00"/>    <!--  没有 --> 
+          <read_brief value="0x01"/>    <!--  阅读成员简要信息 --> 
+          <read_detail value="0x02"/>    <!--  阅读成员详细信息 -->
+          <audit value="0x08"/>    <!-- 可以审核申请者 -->
+        </group_member_memberright>
+        <!-- 组员对主题权限 -->
+        <group_member_subjectright variable="int" parse="enum" format="single" default="0x10" notnull="true">
+          <read value="0x00"/>    <!-- 阅读  -->
+          <create value="0x10"/>    <!--  创建 -->
+          <direct value="0x20"/>    <!-- 直接发布 -->
+          <audit value="0x80"/>    <!-- 审核其他人发布主题 -->
+        </group_member_subjectright>
+        
+        
+        <!-- 二维码信息 -->
+        <group_qrcode variable="string" format="textarea:4" default="URL:http://www.ipsee.org/download;mailto:admin@ipsee.org;"/>
+
+        <!-- 虚拟域：提示信息 -->
+        <group_hint variable="string" format="textarea:4"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <attachment>
+        <organizationComponent object="OrganizationComponent" column="component_group"/>
+        <member object="Member" column="member_group"/>
+        <subject object="Subject" column="subject_group"/>
+      </attachment>
+    </Group>
+  </object>
+</tekinfo>

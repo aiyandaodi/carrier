@@ -1,0 +1,13 @@
+name=固定考题
+
+#property
+property.exams_topic_id=考题标识
+property.exams_topic_code=考题编码
+property.exams_topic_name=考题名称
+
+property.exams_topic_score=考题分数
+property.exams_topic_question=所属试题
+property.exams_topic_test=所属考卷
+
+#command
+command.bind=绑定用户

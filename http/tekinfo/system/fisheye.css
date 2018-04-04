@@ -1,0 +1,137 @@
+
+.expand-down {
+  font-family:Arial, Helvetica, sans-serif;
+  left:50%;
+  margin-left: 200px;
+  line-height:normal;
+  height:150px;
+  width:auto;
+  min-width:600px;
+  text-align:center;
+  margin-bottom:30px;
+}
+/* reset margins and paddings */
+.expand-down * {
+  margin: 0;
+  padding: 0;
+}
+.expand-down ul {
+  padding-top:10px;
+  margin-left:10px;
+  text-align:center;
+}
+.expand-down ul li {
+  float:left;
+  list-style-type:none;
+}
+.expand-down ul li a {
+  text-decoration:none;
+}
+.expand-down ul li a img {
+  width:60px;  /* initial width of images, 50% of width */
+  height:60px; /* initial height of images, 50% of height */
+  border:none;
+}
+/* 先隐藏<span> */
+.expand-down ul li a span {
+  font-size:13px;
+  text-align: center;
+}
+.expand-down ul li:hover a span {
+  /* 显示*/
+  display:block;
+  font-family:"微软雅黑";
+  font-size:17px;
+  text-align: center;
+  background-color:#65ACFC;
+  color:#EAFEDE;
+}
+/* 鼠标经过时放大图片.
+** an image becomes active when mouse hovers it
+** ideally, the image should have same width and height as below
+*/
+.expand-down ul li:hover a img {
+  width:100px;
+  height:100px;
+}
+/*设置相邻的li宽高 注意'+'选择器*/
+.expand-down ul li:hover + li a img {
+  width:90px;
+  height:90px;
+}
+/*第二相邻li的宽高 这里用两个'+'*/
+.expand-down ul li:hover + li + li a img {
+  width:80px;
+  height:80px;
+}
+
+
+
+.expand-up {
+	position: absolute;
+	left:50%;
+	margin-left: -200px;
+  width: 500px;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height:normal;
+  height:150px;
+  overflow:visible;
+  margin-bottom:30px;
+  
+
+}
+/* reset margins and paddings */
+
+.expand-up ul {
+  margin-left:10px;
+}
+.expand-up ul li {
+  float:left;
+  list-style-type:none;
+  /* create a reserved space for expanded image to make this work in ie */
+  padding-top:65px;
+  /* margin to place the menu at the bottom */
+  margin-top:25px;
+}
+.expand-up ul li a {
+  text-decoration:none;
+}
+.expand-up ul li a img {
+  width:60px;  /* initial width of images, 50% of width */
+  height:60px; /* initial height of images, 50% of height */
+  border:none;
+}
+/* initially, don't show the label inside <span> tag */
+.expand-up ul li a span {
+  display:none;
+}
+.expand-up ul li:hover a span {
+  /* show item label on mouse hover */
+  display:block;
+  font-size:14px;
+  text-align:center;
+  
+  /* move label up to move image up */
+  margin-top:-65px;
+}
+/* expand the image to 100% on mouse hover.
+** again, ideal dimension of image is equal to width and height below
+*/
+.expand-up ul li:hover a img {
+  width:100px;
+  height:100px;
+}
+/* expand the image next to the right of active image to 60% using + selector */
+.expand-up ul li:hover + li a img {
+  width:90px;
+  height:90px;
+  /* move image up by 10px so bottom aligns with other images */
+  margin-top:-10px;
+}
+/* expand the image second to the right of active image to 55% using + selectors */
+.expand-up ul li:hover + li + li a img {
+  width:80px;
+  height:80px;
+  /* move image up by 5px so bottom aligns with the other items */
+  margin-top:-5px;
+}

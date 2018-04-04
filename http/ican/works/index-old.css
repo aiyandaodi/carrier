@@ -1,0 +1,37 @@
+.ui-224{
+    margin:60px 0px;
+}
+.ui-224 .item{
+    margin:20px auto;
+    max-width:350px;
+}
+.ui-224 .item h3{
+    color:#fff;
+    font-size:1.2em;
+    line-height:2em;
+    padding:5px 15px;
+    margin:0px;
+    border-top-left-radius:4px !important;
+    border-top-right-radius:4px !important;
+}
+.ui-224 .item .content{
+    background:#fff;
+    border-bottom-left-radius:4px !important;
+    border-bottom-right-radius:4px !important;
+    padding:15px;
+    margin: 0;
+    border:1px solid #ddd;
+    border-top:0px;
+}
+.ui-224 .item h2{
+    font-size:1.2em;
+    line-height:1.8em;
+    margin:0px;
+    text-transform:uppercase;
+}
+.ui-224 .item p{
+    font-size:1em;
+    line-height:2em;
+    color:#888;
+    margin-bottom:0px;
+}

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 省/州 -->
+<tekinfo>
+  <object>
+    <State ResourceBundle="com.takall.state.State"
+        Structure="com.takall.state.State"
+        ObjectRm="com.takall.remoting.state.StateRm"
+        version="1.0" resourceVersion="1.0">
+      <autovalue>
+        <state_id base="identity"/>
+      </autovalue>
+      <nosamevalue>
+      </nosamevalue>
+      
+      <table nameIdentity="state_name" codeIdentity="state_code" ownerIdentity="state_locale">
+        <state identity="state_id"/>
+      </table>
+      
+      <command>
+        <add>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <state_name/>
+            <state_fullname/>
+            <state_shortname/>
+            <state_areacode/>
+            <state_timezone/>
+          </item>
+        </add>
+        
+        <edit>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+          </parameter>
+          <item>
+            <state_name/>
+            <state_fullname/>
+            <state_shortname/>
+            <state_areacode/>
+            <state_timezone/>
+            <state_valid/>
+          </item>
+        </edit>
+        
+        <list>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x01"/>
+            <list_counts/>
+          </parameter>
+          <item>
+            <state_code/>
+            <state_name/>
+            <state_fullname/>
+            <state_shortname/>
+            <state_areacode/>
+            <state_timezone/>
+            <state_country/>
+            <state_locale/>
+            <state_valid rightrole="auditor;customerService"/>
+          </item>
+        </list>
+        
+        <read>
+          <item>
+            <state_code/>
+            <state_name/>
+            <state_fullname/>
+            <state_shortname/>
+            <state_areacode/>
+            <state_timezone/>
+            <state_country/>
+            <state_locale/>
+            <state_valid rightrole="auditor;customerService"/>
+          </item>
+        </read>
+        
+        <textSearch>
+          <item>
+            <state_code/>
+            <state_name/>
+            <state_fullname/>
+            <state_shortname/>
+            <state_areacode/>
+            <state_timezone/>
+            <state_locale/>
+          </item>
+        </textSearch>
+        
+        <remove>
+          <parameter>
+            <!-- 0x00不记录；0x01 只记录所有用户一次最近操作；0x10 记录当前用户最近一次操作; 0x80 每一次操作都记录-->
+            <record value="0x80"/>
+            <remove_sub value="true"/>
+          </parameter>
+        </remove>
+      </command>
+      
+      <property>
+        <!-- 标识 -->
+        <state_id variable="long" notnull="true" forbidEdit="true"/>
+        <!-- 编码 -->
+        <state_code variable="string" maxlength="10" notnull="true"/>
+        <!-- 名称 -->
+        <state_name variable="string" maxlength="64" notnull="true"/>
+        <!-- 全称 -->
+        <state_fullname variable="string" maxlength="255" notnull="true"/>
+        <!-- 简称 -->
+        <state_shortname variable="string" maxlength="64" notnull="true"/>
+        <!-- 区号 -->
+        <state_areacode variable="string" maxlength="8"/>
+        <!-- 时区 -->
+        <state_timezone variable="string" parse="enum" format="option">
+          <p0 value="0"/>
+          <p1 value="+1"/>
+          <p2 value="+2"/>
+          <p3 value="+3"/>
+          <p4 value="+4"/>
+          <p5 value="+5"/>
+          <p6 value="+6"/>
+          <p7 value="+7"/>
+          <p8 value="+8"/>
+          <p9 value="+9"/>
+          <p10 value="+10"/>
+          <p11 value="+11"/>
+          <m1 value="-1"/>
+          <m2 value="-2"/>
+          <m3 value="-3"/>
+          <m4 value="-4"/>
+          <m5 value="-5"/>
+          <m6 value="-6"/>
+          <m7 value="-7"/>
+          <m8 value="-8"/>
+          <m9 value="-9"/>
+          <m10 value="-10"/>
+          <m11 value="-11"/>
+        </state_timezone>
+        <!-- 所属国家/地区 -->
+        <state_country variable="string" parse="object:Country" format="option" maxlength="2" notnull="true"/>
+        <!-- 区域 -->
+        <state_locale variable="string" maxlength="10" notnull="true"/>
+        <!-- 是否有效 -->
+        <state_valid variable="int" parse="boolean" default="1"/>
+        
+        <createTime/>
+        <createIp/>
+        <modifyTime/>
+        <modifyIp/>
+        <accessTime/>
+        <accessIp/>
+        <accessCount/>
+      </property>
+      <attachment>
+        <city object="City" column="city_state"/>
+      </attachment>
+    </State>
+  </object>
+</tekinfo>

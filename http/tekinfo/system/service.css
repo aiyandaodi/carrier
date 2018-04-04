@@ -1,0 +1,9 @@
+
+#listorder .first-column, .item1 .first-column, .item2 .first-column { 
+	width: 10%;
+	min-width: 0px;
+}
+
+#listorder .service-name, .item1 .service-name, .item2 .service-name { width: 25%;}
+#listorder .service-type, .item1 .service-type, .item2 .service-type { width: 20%;}
+#listorder .action, .item1 .action, .item2 .action { width:20%;}

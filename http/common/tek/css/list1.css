@@ -1,0 +1,56 @@
+/* table表格样式的列表，需要先加载list.css */
+
+#menu {
+	width:100%;
+	float:left;
+	/*background:#D7E2EA;*/
+}
+
+#menu .menu {
+	max-width:600px;
+	height:auto;
+	margin: 5px auto;
+}
+
+#listorder {
+	margin:0;
+	padding:0;
+}
+
+#listorder>li {
+	margin-left:0;
+	margin-right:0;
+	border-left:1px solid #bbbbbb;
+	border-right:none;/*1px solid #bbbbbb;*/
+}
+
+.item1, .item2
+{
+    margin-bottom:0;
+    margin-top:0;
+	padding-left: 0px;
+	border-left:1px solid #bbbbbb;
+	border-bottom:1px solid #bbbbbb;
+	border-right:1px solid #bbbbbb;
+	overflow:auto;
+	height:auto;
+	font-size:small;
+}
+
+.item1>li, .item2>li
+{
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	border-left:1px solid #bbbbbb;
+	/*border-right:1px solid #bbbbbb;*/
+}
+
+.item1:hover, .item2:hover {
+	cursor:auto;
+}
+
+#turn {
+	margin-top:5px;
+	margin-bottom:5px;
+}

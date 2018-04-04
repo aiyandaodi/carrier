@@ -1,0 +1,114 @@
+﻿<!-- 
+    * 建表页面
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page contentType="text/html; charset=utf-8"%>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>建表</title>
+</head>
+
+<body>
+<%@ include file="../../config.jsp" %>
+
+<%@ page import="java.util.Map.Entry" %>
+<%@ page import="java.util.Iterator" %>
+
+<%@ page import="net.tekinfo.http.HttpUtility" %>
+<%@ page import="net.tekinfo.remoting.DatabaseRemoting" %>
+<%@ page import="net.tekinfo.remoting.Result" %>
+<%@ page import="net.tekinfo.system.Credentials" %>
+<%@ page import="net.tekinfo.system.Host" %>
+<%@ page import="net.tekinfo.system.User" %>
+<%@ page import="net.tekinfo.util.DataUtility" %>
+<%@ page import="net.tekinfo.util.StringHash" %>
+
+<%
+	if (!isLogin) {
+		// 没有权限
+		out.println("没有权限!");
+		return ;
+	}
+	
+	//Host host = hostManager.getHost(token.getTokenCode(), DataUtility.IpToLong(clientIp), null);
+	if (host == null || !host.isAlive()) {
+		// 没有权限
+		out.println("没有权限!");
+		return ;		
+	}
+	
+	Credentials credentials = host.getCredentials();
+	if (credentials == null) {
+		// 没有权限
+		out.println("没有权限!");
+		return ;		
+	}
+	
+	User user = credentials.getUser();
+	if (user == null || !user.isAdminUser(host)) {
+		// 没有权限
+		out.println("没有权限!");
+		return ;		
+	}
+	
+	DatabaseRemoting dr = new DatabaseRemoting();
+	Result stringResult = dr.getTableNames(token.getTokenCode(), clientIp);
+	if (stringResult != null) {
+		if (stringResult.getCode() == Result.RESULT_OK) {
+			String[] tableNames = DataUtility.StringToArray(stringResult.getValue(), ",");
+			if (tableNames != null && tableNames.length > 0) {
+				// 创建表
+				Result intResult = dr.createTables(token.getTokenCode(), clientIp, tableNames);
+				if (intResult != null) {
+					if (intResult.getCode() == Result.RESULT_OK)
+						out.println("建表成功!<br/>");
+					else
+						out.println("建表失败!<br/>");
+					String msg = intResult.getMessage();
+					if (msg != null) {
+						msg = msg.replaceAll("\r\n", "<br/>");
+						out.println(msg);
+					}
+				} else
+					out.println("创建表失败!<br/>");
+			} else {
+				out.println("未取到表名称!<br/>");
+			} // end if (tableNames != null && tableNames.length > 0) else
+		} else {
+			out.println("取得表名称失败!<br/>");
+			String msg = stringResult.getMessage();
+			if (msg != null) {
+				msg = msg.replaceAll("\r\n", "<br/>");
+				out.println(msg);
+			}
+		} // end if (stringResult.getCode() == Result.RESULT_OK) else 
+	} else
+		out.println("取得表名称失败！<br/>");
+
+	String callbackURL = HttpUtility.GetParameter(request, "callbackURL");                   //返回地址
+	if (callbackURL == null || callbackURL.isEmpty())
+		callbackURL = "index.jsp";
+	String callbackParams = HttpUtility.GetParameter(request, "callbackParams");             //返回参数
+	
+	
+%>
+  <form action="<%= callbackURL %>" id="callback" name="callback" method="post" style="display:none">
+<%
+	StringHash p = DataUtility.StringToInfo(callbackParams, "&");
+	if (p != null) {
+		Iterator<Entry<String, String>> iterator = p.entrySet().iterator();
+		if (iterator != null) {
+			while (iterator.hasNext()) {
+				Entry<String, String> entry = iterator.next();
+%>
+    <input type="hidden" id="<%= entry.getKey() %>" name="<%= entry.getKey() %>" value="<%= entry.getValue() %>"/>
+<%
+			}
+		} // end if (iterator != null)
+	} // end if (p != null)
+%>
+  </form>
+</body>
+</html>

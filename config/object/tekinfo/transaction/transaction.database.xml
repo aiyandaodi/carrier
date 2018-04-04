@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 问题对象  -->
+<tekinfo>
+  <database>
+    <table>
+      <transaction>
+        <item>
+          <!-- 标识 -->
+          <transaction_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <transaction_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名字 -->
+          <transaction_name value="VARCHAR(255) NOT NULL"/>
+          <!-- 问题类型 -->
+          <transaction_type value="INT DEFAULT '0'"/>
+          <!-- 标签 -->
+          <transaction_tags value="VARCHAR(255)"/>
+          <!-- 目录分类 -->
+          <transaction_catalog value="VARCHAR(255)"/>
+
+          <!-- 概要 -->
+          <transaction_summary value="MEMO"/>
+          
+          <!-- 内容长度 -->
+          <transaction_length value="BIGINT DEFAULT '0'"/>
+          <!-- 内容MIME格式 -->
+          <transaction_mime value="VARCHAR(255)"/>
+          <!-- 内容本地存放路径 -->
+          <transaction_path value="VARCHAR(1024)"/>
+          
+          <!-- 所有者 -->
+          <transaction_owner value="BIGINT DEFAULT '0'"/>
+          
+          <!-- 状态 -->
+          <transaction_status value="TINYINT DEFAULT '0'"/>
+          <!-- 问题开始时间 -->
+          <transaction_start value="BIGINT DEFAULT '0'"/>
+          <!-- 问题完成时间 -->
+          <transaction_end value="BIGINT DEFAULT '0'"/>
+          <!-- 问题最新更新时间 -->
+          <transaction_latestTime value="BIGINT DEFAULT '0'"/>
+
+          <!-- 阅读属性 -->
+          <transaction_read value="SMALLINT DEFAULT '0'"/>
+          <!-- 阅读属性 -->
+          <transaction_answer value="SMALLINT DEFAULT '0'"/>
+
+          <!-- 关联对象类型名（如：主题、小组等） -->
+          <transaction_objectName value="VARCHAR(255)"/>
+          <!-- 关联对象标识。 -->
+          <transaction_objectId value="BIGINT DEFAULT '0'"/>
+
+          <!-- 对该问题的解答数（TransDo的数量） -->
+          <transaction_answerCount value="INT DEFAULT '0'"/>
+
+          <!-- 对该问题的评价 -->
+          <transaction_evaluate value="SMALLINT DEFAULT '0'"/>
+          
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </transaction>
+    </table>
+  </database>
+</tekinfo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 收藏集 -->
+
+<tekinfo>
+  <database>
+    <table>
+      <favorite_set>
+        <item>
+        	
+          <!-- 标识 -->
+          <favorite_set_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <favorite_set_code value="VARCHAR(128) NOT NULL"/>
+          <!-- 名称 -->
+          <favorite_set_name value="VARCHAR(32) NOT NULL"/>
+          
+          <!-- 颜色 -->
+	      <favorite_set_color value="VARCHAR(10) DEFAULT 'ff0000' NOT NULL"/>
+	      <!-- 标签 -->
+	      <favorite_set_tag value="VARCHAR(128)"/>
+	        
+	      <!-- 状态 -->
+	      <favorite_set_status value="VARCHAR(128)"/>
+	        
+	        
+	      <!-- 所有者 -->
+          <favorite_set_owner value="BIGINT DEFAULT '0' NOT NULL"/>
+          
+          <!-- 说明 -->
+          <favorite_set_remark value="MEMO"/>
+	        
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </favorite_set>
+    </table>
+  </database>
+</tekinfo>

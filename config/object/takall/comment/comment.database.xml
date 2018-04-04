@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 评论对象  -->
+<tekinfo>
+  <database>
+    <table>
+    	<!-- 数据库表名 -->
+      <comment>
+        <item>
+          <!-- 标识 -->
+          <comment_id value="BIGINT NOT NULL PRIMARY KEY"/>
+          <!-- 编码 -->
+          <comment_code value="VARCHAR(32) NOT NULL"/>
+		  <!--评论标签关键字名称 -->
+          <comment_name value="VARCHAR(128) NOT NULL"/>
+          
+          <!-- 评论内容 -->
+          <comment_content value="MEMO"/>
+          
+		  <!-- 评论分类: 好评，中评，差评 --> 
+          <comment_rank value="SMALLINT DEFAULT '0' NOT NULL"/>
+		  
+          
+          <!-- 评论所属对象：对象类型名 -->
+          <comment_objectName value="VARCHAR(128) NOT NULL"/>
+          <!-- 评论所属对象：对象标识 -->
+          <comment_objectId value="BIGINT NOT NULL"/>
+          
+          <!-- 来源 -->
+          <comment_user value="BIGINT DEFAULT '0'"/>
+          
+          <createTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <createIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <modifyIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessTime value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessIp value="BIGINT DEFAULT '0' NOT NULL"/>
+          <accessCount value="INT DEFAULT '0' NOT NULL"/>
+        </item>
+      </comment>
+    </table>
+  </database>
+</tekinfo>

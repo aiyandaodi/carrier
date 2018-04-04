@@ -1,0 +1,17 @@
+name=主题分类
+
+#property
+property.tag_id=标识
+property.tag_code=编码
+property.tag_name=分类名称
+property.tag_object=所属对象
+property.tag_type=类型
+property.tag_group=所属小组
+property.tag_user=所属用户
+
+#message
+message.tag.update=数据升级
+message.tag.store=存档
+
+message.error.typeIsNull=类型不能为空!
+message.error.tagIsExist=标签已经存在!
